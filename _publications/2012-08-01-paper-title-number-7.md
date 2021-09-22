@@ -1,5 +1,5 @@
 ---
-title: "Towards an accurate topological localization using a Bag-of-SIFT-visual-Words modeltation"
+title: "Towards an accurate topological localization using a Bag-of-SIFT-visual-Words model"
 collection: publications
 permalink: /publication/2012-08-01-paper-title-number-7
 date: 2012-08-01
