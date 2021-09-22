@@ -8,6 +8,3 @@ citation: 'Gînscă, Alexandru-Lucian, Emanuela Boroș, Sabin-Corneliu Buraga, a
 ---
 
 [Download paper here](https://profs.info.uaic.ro/~adria/publications/Alexandru-Lucian%20G%EEnsca,%20Emanuela%20Boro%3F,%20Sabin-Corneliu%20Buraga,%20Lenu%3Fa%20Alboaie_Semantic_user_profile_2012.pdf)
-
-
-
