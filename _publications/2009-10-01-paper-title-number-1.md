@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 date: 2009-10-01
 venue: 'Proceedings of the CLEF 2009 Workshop'
-citation: 'Emanuela Boros, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+citation: 'E Boroş, G Roşca, A Iftene. (2009). &quot;Uaic: Participation in ImageCLEF 2009 robot vision task.&quot; <i>Proceedings of the CLEF 2009 Workshop</i>.'
 ---
 This year marked our first participation at the Robot Vision task a new task from ImageCLEF competition.
 
