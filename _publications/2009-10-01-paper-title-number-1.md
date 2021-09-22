@@ -1,15 +1,14 @@
 ---
-title: "Paper Title Number 1"
+title: "Uaic: Participation in ImageCLEF 2009 robot vision task"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2009-10-01
-venue: 'Journal 1'
+venue: 'Proceedings of the CLEF 2009 Workshop'
 paperurl: 'http://academicpages.github.io/files/paper1.pdf'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+This year marked our first participation at the Robot Vision task a new task from ImageCLEF competition. The paper represents a brief description of our system as the solution to the problem of topological localization of a mobile robot using visual information. We were asked to determine the topological location of a robot based on images acquired with a perspective camera mounted on a robot platform. And so, we decided that we don't need an incremental learning system and we approached a statistical method that always will work the best results. We used to apply a feature-based method (SIFT1) and two main systems in order to search and classify the given images written by us. At the same time, the systems preserve the recognition performance of the batch algorithm. The first system is reordering the images so we can get the most important/representative images for a room's category. This is done using SIFT. The second system is a brute one, just for testing the differences between this one and the first one, not selecting the representative images. We acquired a separation in directories for every room capturing the key points saved in files for every image (or representative) from every room. About the changes in the environment, the SIFT algorithm occupies itself. The entire recognition system consists in a server–client architecture. Server is processing one single search at a time, and after the search ends connection with the client closes. The resulting file is the asked-for file with the final results for the batched images.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+[Download paper here](https://d1wqtxts1xzle7.cloudfront.net/49366618/borosCLEF2009_Image_RobotVision.pdf?1475654602=&response-content-disposition=inline%3B+filename%3DUaic_Participation_in_imageclef_2009_rob.pdf&Expires=1632331260&Signature=bATdw5VgDE6ehiBW9NWCiLRgNhobZpsmjod~ZPP20pH5updIpjnM9FLA7u0bZEgio~XrHuG5VsDhqWfwHZcd1lb4UAHt~q7MVpGoo8HgtyHom~jx8~38cnDSUV~Y~m9qt1LRspu5Y1V-scF3V9Yp5aFHTCu7FqAPfdeUIVvIrtz32icYT0RVmY~stqQ~4VHpNCiDguuDjkLcNZ~oQhHtfn8q~9U-c6KpSOnxxfC0-R6m2pOGWNZKKFBhBFA4cbw3zPQZkclzPRuzxA0Xszs7-0Nrt0bOxJG03tp8Eg90Ah3tG~6G6hD31FHWlCQRCz688g1z9dIrWVgTzcjLqT29WA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA)
 
 Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
