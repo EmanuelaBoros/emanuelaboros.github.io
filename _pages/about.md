@@ -13,7 +13,7 @@ Salut ! I'm Ema, a postdoctoral scholar at the University of La Rochelle, France
 L3i Laboratory. 
 
 I have a background in computer science and arts which means I can develop emotionally and intellectually engaging algorithms (i.e. works of art) and I can cause trouble in both fields.
-I'm quite enthusiastic when it comes to participating in data science competitions. My free time is filled with a strong interest in cognitive science and history books, movies and TV series.
+I'm quite enthusiastic when it comes to participating in data science competitions and when I am not coding, my time is filled with a strong interest in cognitive science and history books, movies and TV series.
 
 I go by the principle talking less is more thinking and getting things done, thus I listen more than I talk.
 My research and teaching are founded on the idea that science is an inherently social activity, where knowledge should be shared and not forced.
