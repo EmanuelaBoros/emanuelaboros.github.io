@@ -1,13 +1,13 @@
 ---
-title: "L3i_LBPAM at the FinSim-2 task: Learning Financial Semantic Similarities with Siamese Transformers"
+title: "A Multilingual Dataset for Named Entity Recognition, Entity Linking and Stance Detection in Historical Newspapers"
 collection: publications
-permalink: /publication/2021-04-19-paper-title-number-22
-date: 2021-04-19
-venue: 'Proceedings of the WWW '21: Companion Proceedings of the Web Conference 2021'
-citation: 'Nguyen, Nhu Khoa, Emanuela Boros, Gaël Lejeune, Antoine Doucet, and Thierry Delahaut. "L3i_LBPAM at the FinSim-2 task: Learning Financial Semantic Similarities with Siamese Transformers." In Companion Proceedings of the Web Conference 2021, pp. 302-306. 2021. Online.'
+permalink: /publication/2021-07-11-paper-title-number-24
+date: 2021-07-11
+venue: 'Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval'
+citation: 'Hamdi, Ahmed, Elvys Linhares Pontes, Emanuela Boros, Thi Tuyet Hai Nguyen, Günter Hackl, Jose G. Moreno, and Antoine Doucet. "A Multilingual Dataset for Named Entity Recognition, Entity Linking and Stance Detection in Historical Newspapers." In Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval, pp. 2328-2334. 2021. Online.'
 ---
 
-[Download paper here](https://dl.acm.org/doi/pdf/10.1145/3442442.3451384?casa_token=UyUOofHyeLcAAAAA:afxo4WKfvsBDg2s2wJYFmah0SQq8pCjxgm_9wTVYAzalREcHc3IiiANYeBLhMfWxWgyfcr2arHioKQ)
+[Download paper here](https://dl.acm.org/doi/pdf/10.1145/3404835.3463255?casa_token=ARdaGLX8LtoAAAAA:Zra9af-nY-AXBKe6Rr9y6TnjCcXBJj-M_WjpABQ_iBzbkMQWYdpDcw_LMWquI5LCuoPtFuA9LiwwcQ)
 
 
 
