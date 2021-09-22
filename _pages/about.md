@@ -9,8 +9,7 @@ redirect_from:
 ---
 
 
-Salut ! I'm Ema, a postdoctoral scholar at the University of La Rochelle, France, in the 
-L3i Laboratory. 
+Salut ! I'm Ema, a postdoctoral scholar at the University of La Rochelle, France, in the [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction) Laboratory. 
 
 I have a background in computer science and arts which means I can develop emotionally and intellectually engaging algorithms (i.e. works of art) and I can cause trouble in both fields.
 I'm quite enthusiastic when it comes to participating in data science competitions and when I am not coding, my time is filled with a strong interest in cognitive science and history books, movies and TV series.
