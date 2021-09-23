@@ -25,7 +25,7 @@ Work experience
 * 2017-2020: Machine Learning Scientist
   * [Teklia](https://teklia.com/)
 
-* 2017-2020: Research Assistant
+* 2016-2017: Research Assistant
   * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory)
 
 * 2013-2016: Ph.D Candidate
