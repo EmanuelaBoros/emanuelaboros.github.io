@@ -12,9 +12,9 @@ redirect_from:
 Education
 ======
 * B.S. in Computer Science, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2010
-* B.S. in Computer Science, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2010
+* B.S. in Arts, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2010
 * M.S. in Software Engineering, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2012
-* M.S. in Jekyll, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2012
+* M.S. in Arts, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2012
 * Ph.D in Computer Science, [Paris-Saclay University](https://www.universite-paris-saclay.fr/en), 2018
 
 Work experience
