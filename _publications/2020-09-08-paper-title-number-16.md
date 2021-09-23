@@ -1,7 +1,7 @@
 ---
 title: Multilingual Epidemiological Text Classification: A Comparative Study"
 collection: publications
-permalink: /publication/2020-09-08-paper-title-number-20
+permalink: /publication/2020-09-08-paper-title-number-16
 date: 2020-09-08
 venue: 'Proceedings of the 2020 28th International Conference on Computational Linguistics (COLING)'
 citation: 'Mutuvi, Stephen, Emanuela Boros, Antoine Doucet, Gaël Lejeune, Adam Jatowt, and Moses Odeo. "Multilingual Epidemiological Text Classification: A Comparative Study." In COLING, International Conference on Computational Linguistics. 2020. Online.'
