@@ -11,22 +11,27 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Computer Science, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2010
+* B.S. in Computer Science, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2010
+* M.S. in Software Engineering, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2012
+* M.S. in Jekyll, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2012
+* Ph.D in Computer Science, [Paris-Saclay University](https://www.universite-paris-saclay.fr/en), 2018
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Since 2020: Postdoctoral Researcher
+  * University of La Rochelle, France, in the [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction) Laboratory
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
+* 2017-2020: Machine Learning Scientist
+  * [Teklia](https://teklia.com/)
+
+* 2017-2020: Research Assistant
+  * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory)
+
+* 2013-2016: Ph.D Candidate
+  * [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)
+  * LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
+
 Skills
 ======
 * Skill 1
