@@ -1,5 +1,5 @@
 ---
-title: "Intérêt des modèles de caractères pour la détection d'événements"
+title: "Intérêt des modèles de caractères pour la détection d'événements "
 collection: publications
 permalink: /publication/2021-06-28-paper-title-number-23
 date: 2021-06-28
