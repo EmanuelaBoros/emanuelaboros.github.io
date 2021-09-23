@@ -26,7 +26,7 @@ Work experience
   * [Teklia](https://teklia.com/)
 
 * 2016-2017: Research Assistant
-  * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory)
+  * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory, now [IJCLab](https://www.ijclab.in2p3.fr/en/home/))
 
 * 2013-2016: Ph.D Candidate
   * [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)
