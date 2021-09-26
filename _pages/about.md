@@ -28,7 +28,7 @@ I also obtained my M.A and B.A in arts (video & photography) from the [George En
 During my Ph.D, for three years I've been at [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology) and LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences), both in Orsay, France. For the next year, I've been a research engineer at the [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory),
 in the [Paris Saclay Center for Data Science](http://www.datascience-paris-saclay.fr/) context, where my work focused on NLP applications in French law (case outcome predictive analytics, etc.) and the detection of fake news. 
 
-From 2017, I've worked as a machine learning scientist at [Teklia](https://teklia.com/) and focused on research and development of technologies for digitized/historical document understanding (handwriting recognition, article separation, named entity recognition).
+From 2017, I've worked as a machine learning scientist at [Teklia](https://teklia.com/) and focused on the research and the development of technologies for digitized/historical document understanding (handwriting recognition, article separation, named entity recognition).
 
 From the beginning of 2020, I decided to return to the academic environement, and started a postdoctoral scholar position at the University of La Rochelle, in La Rochelle, France.
 
