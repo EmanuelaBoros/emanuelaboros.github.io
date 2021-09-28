@@ -1,5 +1,5 @@
 ---
-title: "Apprentissage profond pour TALN"
+title: "Apprentissage profond pour le traitement automatique du langage naturel (TALN)"
 collection: teaching
 type: "Master II"
 permalink: /teaching/2018-autumn-teaching-1
