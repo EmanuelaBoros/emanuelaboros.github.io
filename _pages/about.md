@@ -29,6 +29,6 @@ in the [Paris Saclay Center for Data Science](http://www.datascience-paris-sacla
 
 From 2017, I've worked as a machine learning scientist at [Teklia](https://teklia.com/) and focused on the research and the development of technologies for digitized/historical document understanding (handwriting recognition, article separation, named entity recognition).
 
-From the beginning of 2020, I decided to return to the academic environement, and started a postdoctoral scholar position at the University of La Rochelle, in La Rochelle, France.
+From the beginning of 2020, I decided to return to the academic environement, and started a postdoctoral scholar position at the University of La Rochelle, in La Rochelle, France. My main research is based on information extraction (entities, relations, events, terminology) from historical documents.
 
 ------
