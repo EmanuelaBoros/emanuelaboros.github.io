@@ -14,7 +14,7 @@ Salut ! I'm Ema, a postdoctoral researcher at the University of La Rochelle, Fra
 I have a background in computer science and arts which means I can develop algorithmic works of art. I'm quite enthusiastic when it comes to participating in data science competitions and when I am not coding, my time is filled with a strong interest in cognitive science and history books, movies and TV series.
 
 I go by the principle that talking less is more thinking and getting things done, thus I listen more than I talk.
-My research and teaching are founded on the idea that if knowledge is not shared, that it's not really knowledge.
+My research and teaching are founded on the idea that if knowledge is not shared, then it's not really knowledge.
 
 
 
