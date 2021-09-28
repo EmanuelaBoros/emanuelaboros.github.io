@@ -1,7 +1,7 @@
 ---
 title: "Bases de la Conception Orientée Objets"
 collection: teaching
-type: "Undergraduate course"
+type: "Licence"
 permalink: /teaching/2014-winter-teaching-1
 venue: "IUT D'Orsay"
 date: 2014-12-01
