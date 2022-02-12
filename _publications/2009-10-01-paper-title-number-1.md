@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 date: 2009-10-01
 venue: 'Proceedings of the CLEF 2009 Workshop'
-citation: '<b>Emanuela Boros</b>, George Roşca, and Adrian Iftene. (2009). &quot;Uaic: Participation in ImageCLEF 2009 robot vision task.&quot; <i>Proceedings of the CLEF 2009 Workshop</i>.'
+citation: '<b>Emanuela Boros</b>, George Roşca, and Adrian Iftene. (2009). <i>UAIC: Participation in ImageCLEF 2009 robot vision task</i>. In Proceedings of the CLEF 2009 Workshop.'
 ---
 This year marked our first participation at the Robot Vision task a new task from ImageCLEF competition.
 
