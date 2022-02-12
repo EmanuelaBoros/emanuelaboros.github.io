@@ -32,14 +32,6 @@ Work experience
   * [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)
   * LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
 
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
 
 Publications
 ======
