@@ -1,5 +1,5 @@
 ---
-title: "UAIC participation at Wikipedia Retrieval@ ImageCLEF 2011"
+title: "UAIC  participation at Wikipedia Retrieval@ ImageCLEF 2011"
 collection: publications
 permalink: /publication/2015-10-01-paper-title-number-4
 date: 2011-09-01
