@@ -1,5 +1,5 @@
 ---
-title: Multilingual Epidemiological Text Classification: A Comparative Study"
+title: "Multilingual Epidemiological Text Classification: A Comparative Study"
 collection: publications
 permalink: /publication/2020-09-08-paper-title-number-16
 date: 2020-09-08
