@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Emanuela Boros"
   avatar           : "profile.png"
-  bio              : "Doctor in Computer Science \n Research Engineer at University of La Rochelle"
-  employer         :  "University of La Rochelle"
-  location         : "La Rochelle"
+  bio              : "Doctor in Computer Science \n Research Scientist at DHLAB, EPFL"
+  employer         :  "DHLAB, EPFL"
+  location         : "Lausanne"
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=emanuela+boros"
   googlescholar    : "https://scholar.google.com/citations?user=JKQGkrIAAAAJ&hl=en"
   email            :
