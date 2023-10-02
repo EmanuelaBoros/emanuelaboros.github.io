@@ -19,8 +19,11 @@ Education
 
 Work experience
 ======
-* Since 2020: Postdoctoral Researcher
-  * University of La Rochelle, France, in the [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction) Laboratory
+* Since 2023: Research Scientist
+  * EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
+    
+* 2020-2022: Postdoctoral Researcher
+  * University of La Rochelle, France, [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction Laboratory)
 
 * 2017-2020: Machine Learning Scientist
   * [Teklia](https://teklia.com/)
@@ -28,7 +31,7 @@ Work experience
 * 2016-2017: Research Assistant
   * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory, now [IJCLab](https://www.ijclab.in2p3.fr/en/home/))
 
-* 2013-2016: Ph.D Candidate
+* 2013-2016: PhD Candidate
   * [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)
   * LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
 
@@ -53,4 +56,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different Slack teams
