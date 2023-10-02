@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-Hello, I'm Ema, a [research scientist at DHLAB at EPFL](https://people.epfl.ch/emanuela.boros?lang=en) in Lausanne, Switzerland.
+Hello, I'm Ema, a [research scientist at DHLAB (Digital Humanities Laboratory) at EPFL](https://people.epfl.ch/emanuela.boros?lang=en) in Lausanne, Switzerland.
 
 I have a computer science and art background, which means I can develop algorithmic works of art (joking - I might be funny also). I'm pretty enthusiastic about participating in data science competitions. When I am not coding, my time is filled with a strong interest in history books, movies, and TV series.
 
