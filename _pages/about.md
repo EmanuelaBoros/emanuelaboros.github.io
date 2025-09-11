@@ -13,7 +13,7 @@ Hello, I’m Ema — a [research scientist at DHLAB (Digital Humanities Laborato
 
 I have a background in both **computer science and art**, which shapes the way I approach research, creativity, and problem-solving. While my main focus today is on **natural language processing (NLP)** and historical document analysis, I also studied video and photography — two practices that continue to influence how I see patterns, identity, and representation.  
 
-Outside of research, I’m usually at a **metal festival**, camping, or watching **movies and series** (always) and sometimes books. 
+Outside of research, I’m usually at a **metal festival**, camping, or watching **movies and series** (always) and sometimes reading non-fantasy books. 
 
 Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, George Carlin-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty.
 
