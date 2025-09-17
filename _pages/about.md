@@ -15,7 +15,7 @@ I have a background in both **computer science and art**, which shapes the way I
 
 Outside of research, I’m usually at a **metal festival**, camping, or watching **movies and series** (always) and sometimes reading non-fantasy books. 
 
-Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, George Carlin-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty.
+Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, Ricky Gervais-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty.
 
 My background
 ======
