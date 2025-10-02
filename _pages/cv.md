@@ -107,7 +107,9 @@ Teaching
 #### 2013 · Paris-Sud University – IUT d’Orsay, France
 
 - **Foundations of Object-Oriented Design** (Bachelor): Delivered tutorials and practical sessions prepared by the course professor.
-  
+
+---
+
 ## Scientific Organization and Mentorship
 
 - Organizer and discussion chair at [DAS – Document Analysis Systems](https://das2022.univ-lr.fr/)
