@@ -63,10 +63,93 @@ This talk was based on my first-year PhD research, later published at EMNLP (Cor
   
 Teaching
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
+### Courses and Responsibilities
+
+#### 2023–2025 · EPFL – École Polytechnique Fédérale de Lausanne, Lausanne, Switzerland
+
+- **Academic Coordination and Administration**  
+  - Organized Bachelor’s and Master’s midterm and final presentations, including scheduling, communication with students, and evaluation logistics.  
+  - Coordinated with supervisors to ensure smooth progress tracking and assessments.
+
+---
+
+#### 2020–2022 · University of La Rochelle, France – L3i Laboratory
+
+- **Databases** (Bachelor 3)  
+  - Delivered tutorials and supervised sessions; designed and graded final project.
+
+- **Process Dematerialization** (Master 2)  
+  - Lectures and tutorials on information extraction from documents, from text representations to NLP techniques.
+
+- **Introduction to Computer Systems** (Bachelor 1)  
+  - Led tutorials and practicals prepared by the professor; introduced topics through demonstrations.
+
+- **EU-CONEXUS – Tourism Facing Digital Transition** (All Bachelor levels, in English)  
+  - Delivered 2 lectures and practicals on machine learning in tourism for non-specialist students.
+
+- **Cloud Developer – Introduction to NLP Methods and Techniques** (Professional Bachelor, IUT Niort)  
+  - Designed lectures and practical sessions on basic ML algorithms for NLP.
+
+- **Big Data Analysis – Text and Image Classification** (DUT 2)  
+  - Taught text/image preprocessing and classification methods.
+
+---
+
+#### 2019 · French Institute of Hanoi (Remote)
+
+- **Multimedia Indexing** (Master 2)  
+- **Deep Learning for Natural Language Processing** (Master 2)  
+  - Lectures and practicals on text representations, ML, and DL for NLP.
+
+---
+
+#### 2017–2019 · University of Rouen Normandy, France
+
+- **Deep Learning for Natural Language Processing** (Master 1 & 2, Data Science)  
+  - Prepared advanced practical sessions on embeddings, classification, and language models.
+
+---
+
+#### 2013 · Paris-Sud University – IUT d’Orsay, France
+
+- **Foundations of Object-Oriented Design** (Bachelor)  
+  - Delivered tutorials and practical sessions prepared by the course professor.
   
 Service and leadership
 ======
-* Currently signed in to 43 different Slack teams
+
+## Scientific Organization and Mentorship
+
+- Organizer and discussion chair at [DAS – Document Analysis Systems](https://das2022.univ-lr.fr/)
+- Mentor at [ICPRAI – Doctoral Consortium](https://icprai2022.sciencesconf.org/resource/page/id/3)
+- Organizer of the “JIDAP” day at L3i – a local research community event for postdocs, PhDs, engineers, and ATERs
+- Organizer of a fake news detection competition with the Paris-Saclay Center for Data Science ([RAMP Challenge](https://ramp.studio/problems/fake_news))
+- Supervised or co-supervised 22 students across PhD (4), Master’s (14), and Bachelor’s (2) levels, internship (2), on interdisciplinary projects spanning NLP, digital humanities, AI, and cultural heritage.
+
+## Public Outreach
+
+- Participated in Open Days at the University of La Rochelle, presenting research to prospective students and their families.
+- Presenter at [Fête de la Science](https://www.univ-larochelle.fr/actualites/fete-de-la-science-2021/), a national outreach event — showcased research on event extraction from digitized French newspapers (1900–1944).
+- Organizer of the “JIDAP” event at L3i — a lab-wide open day for postdocs, PhDs, engineers, and newcomers to present research and share resources.
+- Organizer of a student competition on fake news detection at MINES ParisTech as part of the Paris-Saclay Center for Data Science initiative.  
+  [RAMP Challenge](https://ramp.studio/problems/fake_news) · [GitHub](https://github.com/ramp-kits/fake_news)
+
+---
+
+## Awards and Competitions
+
+- 🥈 **SemEval 2022** – 2nd place: *Multilingual News Article Similarity*; strong performance in *MultiCoNER*  
+- 🥇 **CLEF-HIPE 2022** – 1st place: Global Adaptation Challenge; 2nd place: Multilingual Newspaper Challenge  
+- 🥇 **TREC 2021 (Incident Streams)** – 1st in recall across 33 submissions  
+- 🥇 **TREC 2021 (NewsTrack)** – 1st place across all metrics  
+- 🥇 **TAC 2020 – RUFES** – 1st place in ultra-fine entity recognition  
+- 🥇 **CLEF-HIPE 2020** – 1st out of 13 international teams across all historical NER leaderboards  
+- 🥈 **ImageCLEF 2009–2012** – Top 3 finishes in Robot Vision and Wikipedia Retrieval tracks  
+  (2nd in 2009, 3rd in 2010, 2011, and 2012)
+
+---
+
+## Fun facts
+
+* Currently signed in to 30 different Slack teams
