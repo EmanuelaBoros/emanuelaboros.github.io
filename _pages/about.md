@@ -16,7 +16,7 @@ Outside of research, I’m usually at a **metal festival**, camping, or watching
 
 Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, Ricky Gervais-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty. 
 
-👉 **As of early 2026, I’m open to new job opportunities**. If my profile aligns with your team’s needs in **NLP**, **digital humanities**, or ** depe learning learning for cultural data**, feel free to reach out.
+👉 **As of early 2026, I’m open to new job opportunities**. If my profile aligns with your team’s needs in **NLP**, **digital humanities**, or **deep learning learning for cultural data**, feel free to reach out.
 
 My background
 ======
