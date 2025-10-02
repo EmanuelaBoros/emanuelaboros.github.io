@@ -8,14 +8,15 @@ redirect_from:
   - /about.html
 ---
 
-
 Hello, I’m Ema — a [research scientist at DHLAB (Digital Humanities Laboratory), EPFL](https://people.epfl.ch/emanuela.boros?lang=en) in Lausanne, Switzerland.  
 
 I have a background in both **computer science and art**, which shapes the way I approach research, creativity, and problem-solving. While my main focus today is on **natural language processing (NLP)** and historical document analysis, I also studied video and photography — two practices that continue to influence how I see patterns, identity, and representation.  
 
-Outside of research, I’m usually at a **metal festival**, camping, or watching **movies and series** (always) and reading **non-fantasy books** (sometimes). 
+Outside of research, I’m usually at a **metal festival**, camping, or watching **movies and series** (always) and reading **non-fantasy books** (sometimes).  
 
-Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, Ricky Gervais-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty.
+Generally, I value **listening, clarity, and thoughtful action** — I believe in speaking with purpose, without unnecessary repetition, and following through. Harsh this sentence, ain't it? Yes, my humor is Bukowski-like at times, Ricky Gervais-like at others — dry, blunt, and a little irreverent, but usually funny in its honesty. 
+
+👉 **As of early 2026, I’m open to new job opportunities**. If my profile aligns with your team’s needs in **NLP**, **digital humanities**, or ** depe learning learning for cultural data**, feel free to reach out.
 
 My background
 ======
@@ -34,4 +35,4 @@ My main research interest is **information extraction** — entities, relations,
 
 _"Sometimes the most important discoveries are about what doesn’t work."_ (Mikhail Biriuchinskii, Lisbon, DH2025)
 
-------
+---
