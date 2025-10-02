@@ -153,4 +153,4 @@ Teaching
 * Don't believe in fantasy books, but can dream up neural architectures that read medieval charters.
 * Once built a pipeline that processed 40 million historical newspaper articles — and still found time to watch movies and go to metal festivals.
 * Known to advance the state of the art by gently correcting it. _"Sometimes the most important discoveries are about what doesn’t work."_ (Mikhail Biriuchinskii, Lisbon, DH2025)
-* _When Ema joins a shared task, everyone updates their baselines._
+* __When Ema joins a shared task, everyone updates their baselines.__
