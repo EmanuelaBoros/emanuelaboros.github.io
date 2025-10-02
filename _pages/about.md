@@ -32,4 +32,6 @@ In 2020, I returned to academia as a **postdoctoral researcher** at the [Univers
 
 My main research interest is **information extraction** — entities, relations, and events — from **digitised documents**, at the intersection of NLP, machine learning, and cultural data. 
 
+_"Sometimes the most important discoveries are about what doesn’t work."_ (Mikhail Biriuchinskii, Lisbon, DH2025)
+
 ------
