@@ -32,9 +32,34 @@ Publications
   
 Talks
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+**November 7, 2024**  
+🎤 *Keynote speaker* at the **GDR TAL CNRS 2024** annual meeting: _"Traitement Automatique des Langues et les Humanités Numériques"_, La Rochelle, France.  
+Talk: *The Ongoing Struggle for Alleviating Digitisation Errors in Historical Document Processing: A Necessary Effort?*  
+🔗 [Event page](https://gdr-tal-hn.sciencesconf.org/resource/page/id/2)
+
+---
+
+**September 16, 2022**  
+🎤 *Invited speaker* at the **NER for OCR’ed Historical Documents Seminar Series**, Maison de la Recherche, Paris, France.  
+Talk (with Antoine Doucet): *Impact of Optical Character Recognition on Named Entity Recognition*  
+🔗 [Event site](https://ner-for-historical-docs.github.io/)
+
+---
+
+**November 8, 2017**  
+🎤 Presentation: *Fake News Detection* at the **Paris-Saclay Center for Data Science (CDS) Annual Pitching Day**.  
+Talk focused on defining fake news, detection tactics, and evaluation metrics used in a student competition.  
+🔗 [Pitching Day Info](https://indico.ijclab.in2p3.fr/event/4667/timetable/)
+
+---
+
+**October 15, 2014**  
+🎤 Presentation: *Learning word representations for event extraction from text*  
+(Fr: *Apprentissage des représentations de mots pour l’extraction d’événements à partir de texte*)  
+At **Paris Machine Learning Group #2, Season 2**: *Learning Causality, Words, the Higgs & more*.  
+This talk was based on my first-year PhD research, later published at EMNLP (Core A).  
+🔗 [Group page](http://parismlgroup.org/#about)  
+🔗 [Meetup event](https://www.meetup.com/Paris-Machine-learning-applications-group/events/208223682/)
   
 Teaching
 ======
