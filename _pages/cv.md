@@ -19,28 +19,16 @@ Education
 
 Work experience
 ======
-* 2023-2025: Research Scientist
-  * EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
-    
-* 2020-2022: Postdoctoral Researcher
-  * University of La Rochelle, France, [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction Laboratory)
-
-* 2017-2020: Machine Learning Scientist
-  * [Teklia](https://teklia.com/)
-
-* 2016-2017: Research Assistant
-  * [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory, now [IJCLab](https://www.ijclab.in2p3.fr/en/home/))
-
-* 2013-2016: PhD Candidate
-  * [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)
-  * LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
+* Jan 2023-Dec 2025: Research Scientist at EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
+* Jan 2020-Dec 2022: Postdoctoral Researcher at University of La Rochelle, France, [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction Laboratory)
+* Jan 2017-Dec 2020: Machine Learning Scientist at [Teklia](https://teklia.com/)
+* Oct 2016-Apr 2017: Research Assistant at [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory, now [IJCLab](https://www.ijclab.in2p3.fr/en/home/))
+* Feb 2013-Sep 2018: PhD Candidate at [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology) and LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
 
 
 Publications
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=JKQGkrIAAAAJ&hl=en).
   
 Talks
 ======
