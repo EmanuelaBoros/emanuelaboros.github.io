@@ -19,7 +19,7 @@ Education
 
 Work experience
 ======
-* Since 2023: Research Scientist
+* 2023-2025: Research Scientist
   * EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
     
 * 2020-2022: Postdoctoral Researcher
