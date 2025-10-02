@@ -71,6 +71,7 @@ Teaching
 - **Academic Coordination and Administration**  
   - Organized Bachelor’s and Master’s midterm and final presentations, including scheduling, communication with students, and evaluation logistics.  
   - Coordinated with supervisors to ensure smooth progress tracking and assessments.
+  - Supervised and co-supervised student semester projects (Bachelor and Master).
 
 ---
 
