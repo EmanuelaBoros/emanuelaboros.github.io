@@ -76,37 +76,37 @@ Teaching
 
 #### 2020–2022 · University of La Rochelle, France – L3i Laboratory
 
-- **Databases** (Bachelor 3)  
+- **Databases** (Bachelor)  
   - Delivered tutorials and supervised sessions; designed and graded final project.
 
-- **Process Dematerialization** (Master 2)  
+- **Process Dematerialization** (Master)  
   - Lectures and tutorials on information extraction from documents, from text representations to NLP techniques.
 
-- **Introduction to Computer Systems** (Bachelor 1)  
+- **Introduction to Computer Systems** (Bachelor)  
   - Led tutorials and practicals prepared by the professor; introduced topics through demonstrations.
 
 - **EU-CONEXUS – Tourism Facing Digital Transition** (All Bachelor levels, in English)  
   - Delivered 2 lectures and practicals on machine learning in tourism for non-specialist students.
 
-- **Cloud Developer – Introduction to NLP Methods and Techniques** (Professional Bachelor, IUT Niort)  
+- **Cloud Developer – Introduction to NLP Methods and Techniques** (Professional Bachelor, IUT)  
   - Designed lectures and practical sessions on basic ML algorithms for NLP.
 
-- **Big Data Analysis – Text and Image Classification** (DUT 2)  
+- **Big Data Analysis – Text and Image Classification** (DUT)  
   - Taught text/image preprocessing and classification methods.
 
 ---
 
 #### 2019 · French Institute of Hanoi (Remote)
 
-- **Multimedia Indexing** (Master 2)  
-- **Deep Learning for Natural Language Processing** (Master 2)  
+- **Multimedia Indexing** (Master)  
+- **Deep Learning for Natural Language Processing** (Master)  
   - Lectures and practicals on text representations, ML, and DL for NLP.
 
 ---
 
 #### 2017–2019 · University of Rouen Normandy, France
 
-- **Deep Learning for Natural Language Processing** (Master 1 & 2, Data Science)  
+- **Deep Learning for Natural Language Processing** (Master)  
   - Prepared advanced practical sessions on embeddings, classification, and language models.
 
 ---
