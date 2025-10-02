@@ -114,8 +114,6 @@ Teaching
 
 - Organizer and discussion chair at [DAS – Document Analysis Systems](https://das2022.univ-lr.fr/)
 - Mentor at [ICPRAI – Doctoral Consortium](https://icprai2022.sciencesconf.org/resource/page/id/3)
-- Organizer of the “JIDAP” day at L3i – a local research community event for postdocs, PhDs, engineers, and ATERs
-- Organizer of a fake news detection competition with the Paris-Saclay Center for Data Science ([RAMP Challenge](https://ramp.studio/problems/fake_news))
 - Supervised or co-supervised 22 students across PhD (4), Master’s (14), and Bachelor’s (2) levels, internship (2), on interdisciplinary projects spanning NLP, digital humanities, AI, and cultural heritage.
 
 ## Public Outreach
