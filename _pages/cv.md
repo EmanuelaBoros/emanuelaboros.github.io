@@ -116,9 +116,6 @@ Teaching
 - **Foundations of Object-Oriented Design** (Bachelor)  
   - Delivered tutorials and practical sessions prepared by the course professor.
   
-Service and leadership
-======
-
 ## Scientific Organization and Mentorship
 
 - Organizer and discussion chair at [DAS – Document Analysis Systems](https://das2022.univ-lr.fr/)
@@ -152,4 +149,8 @@ Service and leadership
 
 ## Fun facts
 
-* Currently signed in to 30 different Slack teams
+* Currently signed in to 30 different Slack teams.
+* Don't believe in fantasy books, but can dream up neural architectures that read medieval charters.
+* Once built a pipeline that processed 40 million historical newspaper articles — and still found time to watch movies and go to metal festivals.
+* Known to advance the state of the art by gently correcting it.
+* _When Ema joins a shared task, everyone updates their baselines._
