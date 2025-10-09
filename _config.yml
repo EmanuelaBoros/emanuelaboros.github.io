@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "Emanuela Boros"
   avatar           : "profile.png"
-  bio              : "Doctor in Computer Science \n Research Scientist at DHLAB, EPFL"
-  employer         :  "DHLAB, EPFL"
-  location         : "Lausanne"
+  bio              : "Doctor in Computer Science \n Research Scientist"
+  employer         :  ""
+  location         : ""
   #pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=emanuela+boros"
   googlescholar    : "https://scholar.google.com/citations?user=JKQGkrIAAAAJ&hl=en"
   email            :
