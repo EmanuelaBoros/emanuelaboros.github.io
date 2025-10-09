@@ -19,15 +19,13 @@ Before that, I earned:
 - an **M.Sc.** in *Software Engineering* and a **B.Sc.** in *Computer Science* from [Alexandru I. Cuza University](https://www.uaic.ro/en), Iași, Romania  
 - an **M.A.** and **B.A.** in *Visual Arts (video & photography)* from the [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), Iași, Romania  
 
-During my Ph.D., I spent three years at:
-- [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology)  
-- [LIMSI (now LISN)](https://www.lisn.upsaclay.fr/) in Orsay, France  
+During my Ph.D., I spent three years at [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology) and five years at [LIMSI (now LISN)](https://www.lisn.upsaclay.fr/) in Orsay, France.
 
 I then worked as a **research engineer** at the [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory), within the [Paris-Saclay Center for Data Science](http://www.datascience-paris-saclay.fr/), focusing on **NLP applications for French law** (case outcome prediction) and **fake news detection**.  
 
-From 2017 to 2019, I joined [Teklia](https://teklia.com/) as a **Machine Learning Scientist**, developing technologies for **digitised and historical document understanding**, including **handwriting recognition**, **article separation**, and **named entity recognition**.  
+From 2017 to 2019, I joined [Teklia](https://teklia.com/) as a **machine learning scientist**, developing technologies for **digitised and historical document understanding**, including **handwriting recognition**, **article separation**, and **named entity recognition**.  
 
-From 2020 to 2022, I worked as a **Postdoctoral Researcher** at the [University of La Rochelle](https://l3i.univ-larochelle.fr/?lang=en), within the **L3i Laboratory (IT, Image & Interaction)**.  
+From 2020 to 2022, I worked as a **postdoctoral researcher** at the [University of La Rochelle](https://l3i.univ-larochelle.fr/?lang=en), within the **L3i Laboratory (IT, Image & Interaction)**.  
 
 My main research interests include:
 - **Information extraction** — entities, relations, and events  
