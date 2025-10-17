@@ -19,9 +19,4 @@ I value **listening, clarity, and thoughtful action** — speaking with purpose,
 
 ---
 
-## Current Position
-
-At DHLAB-EPFL, I’ve been contributing to the development of machine learning and NLP technologies for large-scale cultural data. Although this role has provided valuable experience in engineering and infrastructure, it has evolved away from the research-oriented and collaborative focus that aligns most closely with my strengths and interests.
-
-👉 **As of early 2026, I’m open to new opportunities** — particularly roles involving **NLP**, **digital humanities**, or **deep learning for cultural and historical data**. If my profile aligns with your team’s needs, feel free to reach out.
-
+*Welcome to my page!*
