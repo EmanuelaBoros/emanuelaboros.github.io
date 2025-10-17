@@ -15,7 +15,7 @@ I have a background in both **computer science** and **art**, which shapes the w
 
 Outside of research, you’ll likely find me at a **metal festival**, camping, or watching **films and series** (always) and reading **non-fantasy books** (sometimes).  
 
-I value **listening, clarity, and thoughtful action** — speaking with purpose, avoiding unnecessary repetition, and following through. My humor tends to be dry and irreverent 🥴 — somewhere between **Bukowski** and **Ricky Gervais** — blunt, honest, and usually funny in its own way.  
+I value **listening, clarity, and thoughtful action** — speaking with purpose, avoiding unnecessary repetition, and following through. My humor tends to be dry and irreverent 🥴 — somewhere between **Bukowski** and **Ricky Gervais** — blunt, honest, and usually funny in its own way 🙃. 
 
 ---
 
