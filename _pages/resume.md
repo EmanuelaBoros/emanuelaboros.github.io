@@ -23,9 +23,12 @@ During my Ph.D., I spent three years at [CEA, List](http://www-list.cea.fr/en/) 
 
 I then worked as a **research engineer** at the [LAL](https://www.lal.in2p3.fr/en/) (Linear Accelerator Laboratory), within the [Paris-Saclay Center for Data Science](http://www.datascience-paris-saclay.fr/), focusing on **NLP applications for French law** (case outcome prediction) and **fake news detection**.  
 
-From 2017 to 2019, I joined [Teklia](https://teklia.com/) as a **machine learning scientist**, developing technologies for **digitised and historical document understanding**, including **handwriting recognition**, **article separation**, and **named entity recognition**.  
+From 2017 to 2020, I joined [Teklia](https://teklia.com/) as a **machine learning scientist**, developing technologies for **digitised and historical document understanding**, including **handwriting recognition**, **article separation**, and **named entity recognition**.  
 
-From 2020 to 2022, I worked as a **postdoctoral researcher** at the [University of La Rochelle](https://l3i.univ-larochelle.fr/?lang=en), within the **L3i Laboratory (IT, Image & Interaction)**.  
+From 2020 to 2022, I worked as a **postdoctoral researcher** at the [University of La Rochelle](https://l3i.univ-larochelle.fr/?lang=en), within the **L3i Laboratory (IT, Image & Interaction)**.
+
+From 2023 to 2026, I was a scientist at the Digital Humanities Laboratory (DHLAB) at École Polytechnique Fédérale de Lausanne (EPFL), where I worked on the Impresso project, focusing on large-scale multilingual historical newspaper processing, named entity recognition and linking, OCR post-correction, semantic enrichment, and the development of evaluation benchmarks for historical NLP.
+
 
 My main research interests include:
 - **Information extraction** — entities, relations, and events  
@@ -142,6 +145,14 @@ Teaching
 - Mentor at [ICPRAI – Doctoral Consortium](https://icprai2022.sciencesconf.org/resource/page/id/3)
 - Supervised or co-supervised 22 students across PhD (4), Master’s (14), and Bachelor’s (2) levels, internship (2), on interdisciplinary projects spanning NLP, digital humanities, AI, and cultural heritage.
 
+## Program Committee Member / Organizational Roles / Reviewer
+
+**[ARR (ACL Rolling Review)](https://openreview.net/)** (every year since 2019), **[CLEF](https://www.clef-initiative.eu)** (2020, 2026), **[SIGIR](https://sigir.org)** (2022, 2025, 2026), **[SIGIR-AP](https://sigir-ap.org)** (2025), **[CIKM](https://www.cikmconference.org)** (2023–2026), **[ECIR](https://www.ecirconference.org)** (2023–2026), **[CHR (Computational Humanities Research)](https://computational-humanities-research.org)** (2021–2025), **[ICADL](https://icadl.net)** (2022–2024; 2024 Program Chair), **[ISCRAM](https://iscram.org)** (2022), **[ICPRAI](https://icprai.org)** (2022), **[WWW (The Web Conference)](https://www2026.thewebconf.org)** (2026), **[LREC](https://lrec-conf.org)** (2025 Reviewer, 2026 Area Chair), **[DAS](https://das2022.univ-lr.fr)** (2022 – Reviewer, Organizing Committee, Chair), **[ICFHR](http://icfhr2018.org)** (2018), **[ASAR (IEEE)](https://asar.ieee.tn)** (2018), **SwissText** (2024), **HIP** (2023), **SoICT** (2022), **RobustAL** (2022).
+
+## Reviewer / External Reviewer
+
+**ACL** (ARR, Main Conference), **EMNLP** (including Industry Track), **NAACL-HLT**, **COLING** (including Demos), **EACL**, **LREC-COLING**, **LaTeCH-CLfL**, **SemEval**, **CoNLL**, **TALN**, **CORIA**, **FinNLP**, **Hackashop**, **IEEE Transactions on Knowledge and Data Engineering (TKDE)**, **Journal on Computing and Cultural Heritage (JOCCH)**, **Language Resources and Evaluation (Springer)**.
+  
 ## Public Outreach
 
 - Participated in Open Days at the University of La Rochelle, presenting research to prospective students and their families.
