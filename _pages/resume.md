@@ -38,7 +38,7 @@ My main research interests include:
 
 ---
 
-## Education {#education}
+## Education
 
 ======
 * B.S. in Computer Science, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2010
@@ -47,7 +47,7 @@ My main research interests include:
 * M.S. in Arts, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2012
 * Ph.D in Computer Science, [Paris-Saclay University](https://www.universite-paris-saclay.fr/en), 2018
 
-## Work experience {#work-experience}
+## Work experience
 
 ======
 * Jan 2023-Dec 2025: Research Scientist at EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
@@ -57,7 +57,7 @@ My main research interests include:
 * Feb 2013-Sep 2018: PhD Candidate at [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology) and LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
 
 
-## Publications {#publications}
+## Publications
 
 ======
   For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=JKQGkrIAAAAJ&hl=en).
@@ -99,7 +99,7 @@ This talk was based on my first-year PhD research, later published at EMNLP (Cor
 🔗 [Group page](http://parismlgroup.org/#about)  
 🔗 [Meetup event](https://www.meetup.com/Paris-Machine-learning-applications-group/events/208223682/)
   
-## Teaching {#teaching}
+## Teaching
 
 ======
 
