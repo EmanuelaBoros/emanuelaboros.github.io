@@ -69,9 +69,15 @@ Talk: *The Ongoing Struggle for Alleviating Digitisation Errors in Historical Do
 ---
 
 **September 16, 2022**  
-🎤 *Invited speaker* at the **NER for OCR’ed Historical Documents Seminar Series**, Maison de la Recherche, Paris, France.  
+🎤 Invited speaker at the **NER for OCR’ed Historical Documents Seminar Series**, Maison de la Recherche, Paris-Sorbonne, France.  
 Talk (with Antoine Doucet): *Impact of Optical Character Recognition on Named Entity Recognition*  
 🔗 [Event site](https://ner-for-historical-docs.github.io/)
+
+---
+
+**March 3, 2022**
+🎤 Invited speaker: _Reconnaissance d'entités nommées et extraction d'événements dans les documents historiques_ at the **CERES study day on digital methods for humanities**, La Rochelle, France.  
+🔗 [CERES](https://ceres.sorbonne-universite.fr/afd066b1-96a9-417b-801b-4268f13bce39/)
 
 ---
 
