@@ -11,7 +11,7 @@ redirect_from:
 
 ---
 
-## Background
+## Background {#background}
 
 I received my **Ph.D. in Computer Science** (2018) from [Paris-Saclay University](https://www.universite-paris-saclay.fr/en), France, where my [thesis](https://tel.archives-ouvertes.fr/tel-01943841/document) proposed several neural architectures for event extraction from unstructured text.  
 
@@ -38,7 +38,7 @@ My main research interests include:
 
 ---
 
-Education
+## Education {#education}
 ======
 * B.S. in Computer Science, [Alexandru I. Cuza University, Faculty of Computer Science](https://www.uaic.ro/en/), 2010
 * B.S. in Arts, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2010
@@ -46,7 +46,7 @@ Education
 * M.S. in Arts, [George Enescu National University of Arts](https://www.arteiasi.ro/?page_id=1144&lang=eng), 2012
 * Ph.D in Computer Science, [Paris-Saclay University](https://www.universite-paris-saclay.fr/en), 2018
 
-Work experience
+## Work experience {#work-experience}
 ======
 * Jan 2023-Dec 2025: Research Scientist at EPFL, [DHLAB](https://www.epfl.ch/labs/dhlab/) (Digital Humanities Laboratory)
 * Jan 2020-Dec 2022: Postdoctoral Researcher at University of La Rochelle, France, [L3i](https://l3i.univ-larochelle.fr/?lang=en) (IT, Image and Interaction Laboratory)
@@ -55,11 +55,11 @@ Work experience
 * Feb 2013-Sep 2018: PhD Candidate at [CEA, List](http://www-list.cea.fr/en/) (Laboratory for Integration of Systems and Technology) and LIMSI (now [LISN](https://www.lisn.upsaclay.fr/), Interdisciplinary Laboratory of Digital Sciences)
 
 
-Publications
+## Publications {#publications}
 ======
   For a complete list of publications, please visit my [Google Scholar profile](https://scholar.google.com/citations?user=JKQGkrIAAAAJ&hl=en).
   
-Talks
+## Talks {#talks}
 ======
 **November 7, 2024**  
 🎤 *Keynote speaker* at the **GDR TAL CNRS 2024** annual meeting: _"Traitement Automatique des Langues et les Humanités Numériques"_, La Rochelle, France.  
@@ -90,7 +90,7 @@ This talk was based on my first-year PhD research, later published at EMNLP (Cor
 🔗 [Group page](http://parismlgroup.org/#about)  
 🔗 [Meetup event](https://www.meetup.com/Paris-Machine-learning-applications-group/events/208223682/)
   
-Teaching
+## Teaching {#teaching}
 ======
 
 ### Courses and Responsibilities
@@ -139,21 +139,21 @@ Teaching
 
 ---
 
-## Scientific Organization and Mentorship
+## Scientific Organization and Mentorship {#organization}
 
 - Organizer and discussion chair at [DAS – Document Analysis Systems](https://das2022.univ-lr.fr/)
 - Mentor at [ICPRAI – Doctoral Consortium](https://icprai2022.sciencesconf.org/resource/page/id/3)
 - Supervised or co-supervised 22 students across PhD (4), Master’s (14), and Bachelor’s (2) levels, internship (2), on interdisciplinary projects spanning NLP, digital humanities, AI, and cultural heritage.
 
-## Program Committee Member / Organizational Roles / Reviewer
+## Program Committee Member / Organizational Roles / Reviewer {#pc-service}
 
 **[ARR (ACL Rolling Review)](https://openreview.net/)** (every year since 2019), **[CLEF](https://www.clef-initiative.eu)** (2020, 2026), **[SIGIR](https://sigir.org)** (2022, 2025, 2026), **[SIGIR-AP](https://sigir-ap.org)** (2025), **[CIKM](https://www.cikmconference.org)** (2023–2026), **[ECIR](https://www.ecirconference.org)** (2023–2026), **[CHR (Computational Humanities Research)](https://computational-humanities-research.org)** (2021–2025), **[ICADL](https://icadl.net)** (2022–2024; 2024 Program Chair), **[ISCRAM](https://iscram.org)** (2022), **[ICPRAI](https://icprai.org)** (2022), **[WWW (The Web Conference)](https://www2026.thewebconf.org)** (2026), **[LREC](https://lrec-conf.org)** (2025 Reviewer, 2026 Area Chair), **[DAS](https://das2022.univ-lr.fr)** (2022 – Reviewer, Organizing Committee, Chair), **[ICFHR](http://icfhr2018.org)** (2018), **[ASAR (IEEE)](https://asar.ieee.tn)** (2018), **SwissText** (2024), **HIP** (2023), **SoICT** (2022), **RobustAL** (2022).
 
-## Reviewer / External Reviewer
+## Reviewer / External Reviewer {#reviewer}
 
 **ACL** (ARR, Main Conference), **EMNLP** (including Industry Track), **NAACL-HLT**, **COLING** (including Demos), **EACL**, **LREC-COLING**, **LaTeCH-CLfL**, **SemEval**, **CoNLL**, **TALN**, **CORIA**, **FinNLP**, **Hackashop**, **IEEE Transactions on Knowledge and Data Engineering (TKDE)**, **Journal on Computing and Cultural Heritage (JOCCH)**, **Language Resources and Evaluation (Springer)**.
   
-## Public Outreach
+## Public Outreach {#outreach}
 
 - Participated in Open Days at the University of La Rochelle, presenting research to prospective students and their families.
 - Presenter at [Fête de la Science](https://www.univ-larochelle.fr/actualites/fete-de-la-science-2021/), a national outreach event — showcased research on event extraction from digitized French newspapers (1900–1944).
@@ -163,7 +163,7 @@ Teaching
 
 ---
 
-## Awards and Competitions
+## Awards and Competitions {#awards}
 
 - 🥈 **SemEval 2022** – 2nd place: *Multilingual News Article Similarity*; strong performance in *MultiCoNER*  
 - 🥇 **CLEF-HIPE 2022** – 1st place: Global Adaptation Challenge; 2nd place: Multilingual Newspaper Challenge  
@@ -176,7 +176,7 @@ Teaching
 
 ---
 
-## Fun facts
+## Fun facts {#fun-facts}
 
 * Currently signed in to 30 different Slack teams.
 * Don't believe in fantasy books, but can dream up neural architectures that read medieval charters.
