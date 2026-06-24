@@ -21,6 +21,8 @@
         <a href="#about">About</a>
         <a href="#obsessions">Obsessions</a>
         <a href="#work">Work</a>
+        <a href="things.html">Things</a>
+        <a href="writing.html">Writing</a>
         <a href="#photo-projects">Photo projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -37,20 +39,28 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#work">See work</a>
-            <a class="button button-light" href="#photo-projects">Photo projects</a>
+            <a class="button button-light" href="things.html">Developed projects</a>
+            <a class="button button-light" href="writing.html">Posts / opinions</a>
           </div>
         </div>
 
-        <aside class="obsession-board" aria-label="Current obsessions preview">
-          <div class="board-header">CURRENT OBSESSIONS</div>
-          <ul>
-            <li><span>01</span> AI for difficult documents</li>
-            <li><span>02</span> Entities that change with time</li>
-            <li><span>03</span> Archives as evidence machines</li>
-            <li><span>04</span> Photo projects, not lonely photos</li>
-          </ul>
-          <p>Not a moodboard. A small evidence locker.</p>
-        </aside>
+        <div class="hero-visual">
+          <figure class="portrait-bubble">
+            <img src="images/emanuela-bubble.jpg" alt="Stylised portrait of Emanuela Boros" />
+            <figcaption>yes, still human</figcaption>
+          </figure>
+
+          <aside class="obsession-board" aria-label="Current obsessions preview">
+            <div class="board-header">CURRENT OBSESSIONS</div>
+            <ul>
+              <li><span>01</span> AI for difficult documents</li>
+              <li><span>02</span> Entities that change with time</li>
+              <li><span>03</span> Archives as evidence machines</li>
+              <li><span>04</span> Photo projects, not lonely photos</li>
+            </ul>
+            <p>Not a moodboard. A small evidence locker.</p>
+          </aside>
+        </div>
       </section>
 
       <section id="about" class="about panel panel-cream two-col">
@@ -72,27 +82,31 @@
           <h2>Small things currently taking too much space in my brain</h2>
         </div>
 
-        <div class="obsession-grid">
-          <article>
+        <div class="obsession-grid moving-obsession-grid" aria-label="Clickable current obsessions">
+          <a class="obsession-card moving-obsession" href="things.html#noisy-documents">
             <span>NO. 1</span>
             <h3>OCR ghosts</h3>
             <p>Errors, distortions, damaged text, and the strange poetry of machine mistakes.</p>
-          </article>
-          <article>
+            <strong>Follow the ghosts →</strong>
+          </a>
+          <a class="obsession-card moving-obsession" href="things.html#historical-ai">
             <span>NO. 2</span>
             <h3>Temporal entities</h3>
             <p>Names, places, roles, aliases, and meanings that change across decades or centuries.</p>
-          </article>
-          <article>
+            <strong>Open time →</strong>
+          </a>
+          <a class="obsession-card moving-obsession" href="writing.html">
             <span>NO. 3</span>
             <h3>LLMs in archives</h3>
             <p>Fluent answers, weak evidence, historical hallucinations, and models pretending to understand time.</p>
-          </article>
-          <article>
+            <strong>Read notes →</strong>
+          </a>
+          <a class="obsession-card moving-obsession" href="index.html#photo-projects">
             <span>NO. 4</span>
             <h3>Visual evidence</h3>
             <p>Photographs, layout, bodies, rooms, objects, traces, and personal space as a stubborn archive.</p>
-          </article>
+            <strong>See photo projects →</strong>
+          </a>
         </div>
       </section>
 
@@ -100,44 +114,51 @@
         <div class="section-heading floating-heading">
           <p class="section-label">Selected work</p>
           <h2>Things I keep returning to</h2>
+          <p class="heading-note">A compressed map of recurring projects. Each box is clickable — open the one that pulls you in.</p>
         </div>
 
-        <div class="card-grid">
-          <article class="work-card card-red">
+        <div class="card-grid moving-card-grid" aria-label="Clickable project themes">
+          <a class="work-card card-red moving-card" href="things.html#noisy-documents">
             <span class="card-number">01</span>
             <h3>Noisy Documents</h3>
             <p>I study OCR, HTR, digitization errors, degraded text, and how noise changes downstream meaning.</p>
-          </article>
+            <span class="card-link-label">Open project →</span>
+          </a>
 
-          <article class="work-card card-orange">
+          <a class="work-card card-orange moving-card" href="things.html#semantic-extraction">
             <span class="card-number">02</span>
             <h3>Semantic Extraction</h3>
             <p>I work on named entities, entity linking, relations, events, and the small structures that make documents searchable.</p>
-          </article>
+            <span class="card-link-label">Open project →</span>
+          </a>
 
-          <article class="work-card card-mint">
+          <a class="work-card card-mint moving-card" href="things.html#historical-ai">
             <span class="card-number">03</span>
             <h3>Historical AI</h3>
-            <p>I care about temporal modelling, historical newspapers, multilingual archives, and language that refuses to stay stable.</p>
-          </article>
+            <p>I care about temporal modelling, multilingual archives, and language that refuses to stay stable.</p>
+            <span class="card-link-label">Open project →</span>
+          </a>
 
-          <article class="work-card card-orange">
+          <a class="work-card card-orange moving-card" href="things.html#cultural-heritage">
             <span class="card-number">04</span>
             <h3>Cultural Heritage</h3>
             <p>I work with digital epigraphy, Armenian and Ukrainian heritage, cultural weaponization, and structured memory.</p>
-          </article>
+            <span class="card-link-label">Open project →</span>
+          </a>
 
-          <article class="work-card card-mint">
+          <a class="work-card card-mint moving-card" href="things.html#multimodal-archives">
             <span class="card-number">05</span>
             <h3>Multimodal Archives</h3>
             <p>I connect text, image, layout, typography, photographs, and visual traces in document collections.</p>
-          </article>
+            <span class="card-link-label">Open project →</span>
+          </a>
 
-          <article class="work-card card-red">
+          <a class="work-card card-red moving-card" href="things.html#applied-document-intelligence">
             <span class="card-number">06</span>
             <h3>Applied Document Intelligence</h3>
             <p>I have also worked on document fraud, fake news detection, epidemic monitoring, and large-scale research infrastructures.</p>
-          </article>
+            <span class="card-link-label">Open project →</span>
+          </a>
         </div>
       </section>
 
@@ -194,6 +215,31 @@
             </div>
           </a>
         </div>
+      </section>
+
+      <section id="writing-preview" class="writing-preview panel panel-white">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Writing</p>
+            <h2>Posts, notes, opinions</h2>
+          </div>
+          <p class="project-intro">
+            A place for short texts about AI, archives, cultural heritage, evidence, noise, and other things that refuse to stay neatly technical.
+          </p>
+        </div>
+        <div class="post-preview-grid">
+          <a class="post-card" href="writing.html#llms-archives">
+            <span>Opinion</span>
+            <h3>LLMs in archives: fluent, useful, suspicious</h3>
+            <p>On why good prose is not the same thing as grounded historical understanding.</p>
+          </a>
+          <a class="post-card" href="writing.html#documents-evidence">
+            <span>Note</span>
+            <h3>Documents are evidence, not just data</h3>
+            <p>A small manifesto for building AI systems that keep traces attached to claims.</p>
+          </a>
+        </div>
+        <a class="mini-link mini-link-block" href="writing.html">Read / add posts →</a>
       </section>
 
       <section id="contact" class="contact panel panel-cream">

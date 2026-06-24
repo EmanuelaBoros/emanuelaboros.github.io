@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writing · Emanuela Boros</title>
+  <meta name="description" content="Posts, notes, opinions, and short essays by Emanuela Boros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Home">
+        <span class="logo-mark">EB</span>
+        <span class="logo-text">EMANUELA<br>BOROS</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#obsessions">Obsessions</a>
+        <a href="index.html#work">Work</a>
+        <a href="things.html">Things</a>
+        <a href="writing.html">Writing</a>
+        <a href="index.html#photo-projects">Photo projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="project-page-main">
+      <section class="project-hero panel panel-pink">
+        <div>
+          <a class="back-link" href="index.html">← back home</a>
+          <p class="section-label">Posts / opinions</p>
+          <h1>Things written by me</h1>
+          <div class="project-meta">
+            <span>notes</span>
+            <span>opinions</span>
+            <span>small essays</span>
+            <span>not peer review, thank god</span>
+          </div>
+        </div>
+        <p class="project-description">
+          A place for shorter texts: opinions, notes, unfinished arguments, fragments about AI, archives, evidence, cultural heritage, research work, and anything that does not want to become a paper.
+        </p>
+      </section>
+
+      <section class="writing-index panel panel-white">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Index</p>
+            <h2>Draft posts</h2>
+          </div>
+          <p class="project-intro">These are starter cards. Replace the text, duplicate a post block, or turn each one into a separate page later.</p>
+        </div>
+
+        <div class="post-list">
+          <a href="#llms-archives">
+            <span>Opinion</span>
+            <strong>LLMs in archives: fluent, useful, suspicious</strong>
+            <em>Why grounded evidence matters more than pretty answers.</em>
+          </a>
+          <a href="#documents-evidence">
+            <span>Note</span>
+            <strong>Documents are evidence, not just data</strong>
+            <em>A small manifesto for traceable document AI.</em>
+          </a>
+          <a href="#noise-not-bug">
+            <span>Fragment</span>
+            <strong>Noise is not always a bug</strong>
+            <em>Sometimes the damage is the object.</em>
+          </a>
+        </div>
+      </section>
+
+      <article id="llms-archives" class="post-full panel panel-cream">
+        <p class="section-label">Opinion</p>
+        <h2>LLMs in archives: fluent, useful, suspicious</h2>
+        <p class="post-date">Draft note · replace date</p>
+        <p>
+          I am interested in LLMs in archives because they are genuinely useful and genuinely suspicious. They can summarize, reformulate, search, translate, and help people move through collections that are too large to read manually. But their fluency creates a problem: a good sentence can look like evidence even when it is only a performance of confidence.
+        </p>
+        <p>
+          For historical and cultural heritage collections, this matters. A generated answer should not detach itself from the document, the image, the page, the date, the OCR quality, the uncertainty, or the historical context. I do not want systems that only sound right. I want systems that show where they are standing.
+        </p>
+      </article>
+
+      <article id="documents-evidence" class="post-full panel panel-white">
+        <p class="section-label">Note</p>
+        <h2>Documents are evidence, not just data</h2>
+        <p class="post-date">Draft note · replace date</p>
+        <p>
+          Calling documents “data” is useful, but it also hides something. Documents are traces of institutions, bodies, decisions, machines, errors, power, memory, and bureaucracy. When we process them automatically, we are not only extracting text. We are rearranging evidence.
+        </p>
+        <p>
+          This is why I care about traceability. If an AI system extracts a person, a place, a relation, or an event, I want to know where it came from, how damaged the source was, what alternatives existed, and how much the model is guessing.
+        </p>
+      </article>
+
+      <article id="noise-not-bug" class="post-full panel panel-cream">
+        <p class="section-label">Fragment</p>
+        <h2>Noise is not always a bug</h2>
+        <p class="post-date">Draft fragment · replace date</p>
+        <p>
+          Noise is often treated as something to remove before the “real” work begins. But in historical collections, noise can tell us about scanning practices, paper quality, typography, language change, archival decisions, and the violence of compression into machine-readable form.
+        </p>
+        <p>
+          The question is not only how to clean the document. The question is what kind of document remains after cleaning, and what kind of history becomes easier — or harder — to see.
+        </p>
+      </article>
+
+      <section class="project-nav panel panel-cream">
+        <a href="things.html">← Developed projects</a>
+        <a href="index.html#photo-projects">Photo projects →</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Emanuela Boros. Posts, notes, opinions.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

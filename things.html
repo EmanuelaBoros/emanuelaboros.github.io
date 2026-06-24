@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Things I keep returning to · Emanuela Boros</title>
+  <meta name="description" content="Developed projects, tools, datasets, demos, and recurring research themes by Emanuela Boros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Home">
+        <span class="logo-mark">EB</span>
+        <span class="logo-text">EMANUELA<br>BOROS</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html#about">About</a>
+        <a href="index.html#obsessions">Obsessions</a>
+        <a href="index.html#work">Work</a>
+        <a href="things.html">Things</a>
+        <a href="writing.html">Writing</a>
+        <a href="index.html#photo-projects">Photo projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="project-page-main">
+      <section class="project-hero panel panel-pink">
+        <div>
+          <a class="back-link" href="index.html#work">← back home</a>
+          <p class="section-label">Developed projects</p>
+          <h1>Things I keep returning to</h1>
+          <div class="project-meta">
+            <span>tools</span>
+            <span>datasets</span>
+            <span>demos</span>
+            <span>infrastructures</span>
+            <span>unfinished obsessions</span>
+          </div>
+        </div>
+        <p class="project-description">
+          This is the project side of the website: the things I build, test, release, supervise, break, repair, and keep coming back to. It is not a complete CV. It is a more readable map of recurring work.
+        </p>
+      </section>
+
+      <section class="things-section panel panel-white">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Project map</p>
+            <h2>Click one of the boxes</h2>
+          </div>
+          <p class="project-intro">The cards move because the work does too: between archives, models, images, evaluation, and strange documents that do not behave.</p>
+        </div>
+
+        <div class="card-grid moving-card-grid">
+          <a class="work-card card-red moving-card" href="#noisy-documents">
+            <span class="card-number">01</span>
+            <h3>Noisy Documents</h3>
+            <p>OCR, HTR, damaged text, digitization errors, and semantic damage.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+          <a class="work-card card-orange moving-card" href="#semantic-extraction">
+            <span class="card-number">02</span>
+            <h3>Semantic Extraction</h3>
+            <p>Entities, events, relations, linking, and structured access to collections.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+          <a class="work-card card-mint moving-card" href="#historical-ai">
+            <span class="card-number">03</span>
+            <h3>Historical AI</h3>
+            <p>Time-aware models, historical language, multilingual collections, unstable meanings.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+          <a class="work-card card-orange moving-card" href="#cultural-heritage">
+            <span class="card-number">04</span>
+            <h3>Cultural Heritage</h3>
+            <p>Epigraphy, contested memory, endangered heritage, structured vocabularies.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+          <a class="work-card card-mint moving-card" href="#multimodal-archives">
+            <span class="card-number">05</span>
+            <h3>Multimodal Archives</h3>
+            <p>Text, image, layout, typography, photographs, and visual evidence.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+          <a class="work-card card-red moving-card" href="#applied-document-intelligence">
+            <span class="card-number">06</span>
+            <h3>Applied Document Intelligence</h3>
+            <p>Fraud, misinformation, emergency events, and production-scale pipelines.</p>
+            <span class="card-link-label">Jump there →</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="noisy-documents" class="project-detail panel panel-cream">
+        <p class="section-label">01 · Project theme</p>
+        <h2>Noisy Documents</h2>
+        <p>
+          I keep returning to documents that arrive already damaged: OCR errors, HTR errors, broken segmentation, missing accents, strange line breaks, degraded scans, and transcripts that look clean until a model has to reason over them.
+        </p>
+        <div class="thing-tags"><span>OCR</span><span>HTR</span><span>post-correction</span><span>evaluation</span><span>robustness</span></div>
+      </section>
+
+      <section id="semantic-extraction" class="project-detail panel panel-white">
+        <p class="section-label">02 · Project theme</p>
+        <h2>Semantic Extraction</h2>
+        <p>
+          I work on extracting the small structures that make collections searchable and arguable: people, places, organizations, events, relations, roles, mentions, links, and evidence. I care less about clean labels and more about whether the extracted structure survives noisy documents and real use.
+        </p>
+        <div class="thing-tags"><span>NER</span><span>entity linking</span><span>relations</span><span>events</span><span>evidence</span></div>
+      </section>
+
+      <section id="historical-ai" class="project-detail panel panel-cream">
+        <p class="section-label">03 · Project theme</p>
+        <h2>Historical AI</h2>
+        <p>
+          Historical language is not stable. Names move. Borders move. Political words change meaning. A system that treats all periods as one flat present will make confident mistakes. I work on temporal modelling, long-horizon representations, and evaluation setups that make these failures visible.
+        </p>
+        <div class="thing-tags"><span>temporality</span><span>diachronic language</span><span>historical collections</span><span>long horizon</span></div>
+      </section>
+
+      <section id="cultural-heritage" class="project-detail panel panel-white">
+        <p class="section-label">04 · Project theme</p>
+        <h2>Cultural Heritage</h2>
+        <p>
+          I work with cultural heritage as data, evidence, memory, and conflict. This includes digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, cultural weaponization, contested narratives, and computational methods that must remain accountable to domain experts.
+        </p>
+        <div class="thing-tags"><span>epigraphy</span><span>heritage</span><span>SKOS</span><span>EpiDoc/TEI</span><span>memory</span></div>
+      </section>
+
+      <section id="multimodal-archives" class="project-detail panel panel-cream">
+        <p class="section-label">05 · Project theme</p>
+        <h2>Multimodal Archives</h2>
+        <p>
+          Documents are not only text. Layout, typography, images, tables, margins, page structure, photographs, and visual noise often carry the evidence. I am interested in models that connect these signals without pretending that the page is just a bag of words.
+        </p>
+        <div class="thing-tags"><span>layout</span><span>vision-language</span><span>document images</span><span>photographs</span><span>visual evidence</span></div>
+      </section>
+
+      <section id="applied-document-intelligence" class="project-detail panel panel-white">
+        <p class="section-label">06 · Project theme</p>
+        <h2>Applied Document Intelligence</h2>
+        <p>
+          The same problems reappear outside archives: forged receipts, insurance claims, fake news, epidemic monitoring, emergency events, administrative records, and production workflows where models must be robust enough to be useful and transparent enough to be questioned.
+        </p>
+        <div class="thing-tags"><span>fraud detection</span><span>misinformation</span><span>event monitoring</span><span>pipelines</span><span>deployment</span></div>
+      </section>
+
+      <section class="project-nav panel panel-cream">
+        <a href="writing.html">Posts / opinions →</a>
+        <a href="index.html#photo-projects">Photo projects →</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Emanuela Boros. Things I keep returning to.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
