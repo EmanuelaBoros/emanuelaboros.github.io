@@ -1,26 +1,20 @@
-const slides = Array.from(document.querySelectorAll('.slide'));
-const previousButton = document.querySelector('#prev');
-const nextButton = document.querySelector('#next');
-const year = document.querySelector('#year');
-let currentSlide = 0;
+const year = document.getElementById('year');
+const projectStrip = document.getElementById('projectStrip');
+const previousProject = document.getElementById('prevProject');
+const nextProject = document.getElementById('nextProject');
 
-year.textContent = new Date().getFullYear();
-
-function showSlide(index) {
-  slides.forEach((slide) => slide.classList.remove('active'));
-  slides[index].classList.add('active');
+function scrollProjects(direction) {
+  if (!projectStrip) return;
+  const card = projectStrip.querySelector('.project-cover');
+  const distance = card ? card.offsetWidth + 22 : 360;
+  projectStrip.scrollBy({ left: direction * distance, behavior: 'smooth' });
 }
 
-function goToNextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+if (previousProject && nextProject && projectStrip) {
+  previousProject.addEventListener('click', () => scrollProjects(-1));
+  nextProject.addEventListener('click', () => scrollProjects(1));
 }
 
-function goToPreviousSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
-
-nextButton.addEventListener('click', goToNextSlide);
-previousButton.addEventListener('click', goToPreviousSlide);
-setInterval(goToNextSlide, 6000);

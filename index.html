@@ -1,114 +1,199 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Emanuela Boros</title>
-  <meta name="description" content="Research, writing, photography, and digital humanities work by Emanuela Boros." />
+  <meta name="description" content="Research, writing, photography, and digital humanities by Emanuela Boros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#top">Emanuela Boros</a>
-    <nav aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#photographs">Photographs</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="page-frame">
+    <header class="site-header">
+      <a class="logo" href="index.html" aria-label="Home">
+        <span class="logo-mark">EB</span>
+        <span class="logo-text">EMANUELA<br>BOROS</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#obsessions">Obsessions</a>
+        <a href="#work">Work</a>
+        <a href="#photo-projects">Photo projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <p class="eyebrow">NLP · Digital Humanities · Historical Documents · Visual Work</p>
-      <h1>Researching archives, language, memory, and the strange afterlife of documents.</h1>
-      <p class="hero-text">
-        I work at the intersection of natural language processing, cultural heritage, and historical documents.
-        This site gathers selected research, projects, writing, and photographic fragments.
-      </p>
-      <div class="hero-actions">
-        <a class="button" href="#work">See selected work</a>
-        <a class="button secondary" href="#photographs">View photographs</a>
-      </div>
-    </section>
+    <main id="top">
+      <section class="hero panel panel-pink">
+        <div class="hero-copy">
+          <p class="eyebrow">AI · archives · entities · photographs</p>
+          <h1>Research with color, memory, and teeth.</h1>
+          <p class="hero-text">
+            I work with historical documents, noisy OCR, multilingual NLP, named entities,
+            cultural heritage, and the very suspicious lives of archives.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">See work</a>
+            <a class="button button-light" href="#photo-projects">Photo projects</a>
+          </div>
+        </div>
 
-    <section id="work" class="section two-column">
-      <div>
-        <p class="eyebrow">Selected work</p>
-        <h2>Research and projects</h2>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <h3>Historical NLP</h3>
-          <p>Named entity recognition, entity linking, OCR noise, and multilingual historical newspapers.</p>
-        </article>
-        <article class="card">
-          <h3>OCR post-correction</h3>
-          <p>Benchmarks, model evaluation, and LLM-assisted correction for historical text.</p>
-        </article>
-        <article class="card">
-          <h3>Cultural heritage</h3>
-          <p>Computational approaches to archives, memory, digital narratives, and contested heritage.</p>
-        </article>
-      </div>
-    </section>
+        <aside class="obsession-board" aria-label="Current obsessions preview">
+          <div class="board-header">CURRENT OBSESSIONS</div>
+          <ul>
+            <li><span>01</span> OCR noise as biography</li>
+            <li><span>02</span> Entities that refuse to behave</li>
+            <li><span>03</span> Archives as messy machines</li>
+            <li><span>04</span> Photographic projects, not lonely photos</li>
+          </ul>
+          <p>Not a moodboard. A small evidence locker.</p>
+        </aside>
+      </section>
 
-    <section id="photographs" class="section photographs">
-      <p class="eyebrow">Photographic fragments</p>
-      <h2>Small evidence of being somewhere</h2>
-      <p class="section-intro">
-        A small rotating selection of rooms, bodies, surfaces, accidents, and traces.
-        Replace these placeholders with your own photographs in the <code>images/</code> folder.
-      </p>
+      <section id="about" class="about panel panel-cream two-col">
+        <div>
+          <p class="section-label">About</p>
+          <h2>Mostly serious work. Not always serious tone.</h2>
+        </div>
+        <p>
+          I research historical newspapers, named entities, OCR post-correction, multilingual NLP,
+          and computational methods for cultural heritage. This page is a first small home for my
+          projects, publications, experiments, writing, and photographs.
+        </p>
+      </section>
 
-      <div class="slideshow" aria-label="Selected photographs slideshow">
-        <button class="slide-button" id="prev" aria-label="Previous photograph">‹</button>
+      <section id="obsessions" class="obsessions panel panel-white">
+        <div class="section-heading">
+          <p class="section-label">Current obsessions</p>
+          <h2>Small things currently taking too much space in my brain</h2>
+        </div>
 
-        <figure class="slide active">
-          <img src="images/photo-1.jpg" alt="Placeholder for photograph one" />
-          <figcaption>The body as a room.</figcaption>
-        </figure>
-        <figure class="slide">
-          <img src="images/photo-2.jpg" alt="Placeholder for photograph two" />
-          <figcaption>Objects pretending not to remember.</figcaption>
-        </figure>
-        <figure class="slide">
-          <img src="images/photo-3.jpg" alt="Placeholder for photograph three" />
-          <figcaption>Small evidence of being somewhere.</figcaption>
-        </figure>
+        <div class="obsession-grid">
+          <article>
+            <span>NO. 1</span>
+            <h3>OCR ghosts</h3>
+            <p>Errors, distortions, damaged text, and the strange poetry of machine mistakes.</p>
+          </article>
+          <article>
+            <span>NO. 2</span>
+            <h3>Entity lives</h3>
+            <p>Names, places, people, functions, aliases, and all the ways identity breaks in archives.</p>
+          </article>
+          <article>
+            <span>NO. 3</span>
+            <h3>Historical QA</h3>
+            <p>Small language models, historical newspapers, and questions that look simple but are not.</p>
+          </article>
+          <article>
+            <span>NO. 4</span>
+            <h3>Visual evidence</h3>
+            <p>Photographs, bodies, rooms, objects, traces, and personal space as a stubborn archive.</p>
+          </article>
+        </div>
+      </section>
 
-        <button class="slide-button" id="next" aria-label="Next photograph">›</button>
-      </div>
-    </section>
+      <section id="work" class="work">
+        <div class="section-heading floating-heading">
+          <p class="section-label">Selected work</p>
+          <h2>Things I keep returning to</h2>
+        </div>
 
-    <section id="about" class="section two-column">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>Biography</h2>
-      </div>
-      <p>
-        I am a researcher working on natural language processing for historical documents, with interests in
-        OCR post-correction, entity recognition and linking, multilingual archives, cultural heritage, and the
-        way documents preserve, distort, and revive memory.
-      </p>
-    </section>
+        <div class="card-grid">
+          <article class="work-card card-red">
+            <span class="card-number">01</span>
+            <h3>Historical NLP</h3>
+            <p>Named entity recognition and linking for multilingual historical newspapers and noisy archives.</p>
+          </article>
 
-    <section id="contact" class="section contact">
-      <p class="eyebrow">Contact</p>
-      <h2>Find me online</h2>
-      <p>
-        Add your email, GitHub, Google Scholar, ORCID, LinkedIn, or project links here.
-      </p>
-      <p class="links">
-        <a href="https://github.com/emanuelaboros">GitHub</a>
-        <a href="mailto:your.email@example.com">Email</a>
-      </p>
-    </section>
-  </main>
+          <article class="work-card card-orange">
+            <span class="card-number">02</span>
+            <h3>OCR Post-Correction</h3>
+            <p>Benchmarks, datasets, prompts, and evaluation setups for correcting historical text.</p>
+          </article>
 
-  <footer>
-    <p>© <span id="year"></span> Emanuela Boros</p>
-  </footer>
+          <article class="work-card card-mint">
+            <span class="card-number">03</span>
+            <h3>Entity Profiles</h3>
+            <p>Embeddings, biographies, context, and strange neighbors in large-scale newspaper collections.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="photo-projects" class="photo-projects panel panel-pink">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Photographs</p>
+            <h2>Photo projects</h2>
+          </div>
+          <p class="project-intro">
+            Covers first. Click a project to open its own page, then scroll through the images inside it.
+          </p>
+        </div>
+
+        <div class="project-controls" aria-label="Project carousel controls">
+          <button class="slide-button" id="prevProject" aria-label="Previous photo project">‹</button>
+          <button class="slide-button" id="nextProject" aria-label="Next photo project">›</button>
+        </div>
+
+        <div class="project-strip" id="projectStrip">
+          <a class="project-cover cover-red" href="projects/personal-space.html">
+            <img src="images/projects/personal-space-1.jpg" alt="Cover for Personal Space photo project" />
+            <span class="project-number">01</span>
+            <div>
+              <h3>Personal Space</h3>
+              <p>Body, room, performance, interior pressure.</p>
+            </div>
+          </a>
+
+          <a class="project-cover cover-yellow" href="projects/still-rooms.html">
+            <img src="images/projects/still-rooms-1.jpg" alt="Cover for Still Rooms photo project" />
+            <span class="project-number">02</span>
+            <div>
+              <h3>Still Rooms</h3>
+              <p>Domestic traces and places pretending to be empty.</p>
+            </div>
+          </a>
+
+          <a class="project-cover cover-mint" href="projects/surface-tension.html">
+            <img src="images/projects/surface-tension-1.jpg" alt="Cover for Surface Tension photo project" />
+            <span class="project-number">03</span>
+            <div>
+              <h3>Surface Tension</h3>
+              <p>Skin, glass, fabric, reflection, small collisions.</p>
+            </div>
+          </a>
+
+          <a class="project-cover cover-cream" href="projects/accidental-compositions.html">
+            <img src="images/projects/accidental-compositions-1.jpg" alt="Cover for Accidental Compositions photo project" />
+            <span class="project-number">04</span>
+            <div>
+              <h3>Accidental Compositions</h3>
+              <p>Things found before they knew they were arranged.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="contact" class="contact panel panel-cream">
+        <div>
+          <p class="section-label">Contact</p>
+          <h2>For collaborations, papers, archives, or suspiciously good ideas.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:your.email@example.com">Email</a>
+          <a href="https://github.com/emanuelaboros">GitHub</a>
+          <a href="https://emanuelaboros.github.io">Website</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Emanuela Boros. Built loudly, with photo projects.</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
