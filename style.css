@@ -159,7 +159,7 @@ h2 {
   color: var(--raspberry);
   text-shadow: 2px 2px 0 var(--cream), 4px 4px 0 var(--black);
 }
-h3 { font-size: 1.55rem; color: var(--ink); }
+h3 { font-size: 1rem; color: var(--ink); }
 
 .hero-text {
   max-width: 650px;
