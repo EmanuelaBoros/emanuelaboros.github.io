@@ -38,3 +38,35 @@ The `-1.jpg` image is used as the cover on the homepage.
 2. Rename it, for example `new-project.html`.
 3. Add a new card in the homepage `project-strip`.
 4. Add images in `images/projects/`.
+
+
+## Etsy shop
+
+The homepage includes a `Quiet Soup Club` shop section linking to `https://www.etsy.com/shop/QuietSoupClub`. If your Etsy shop slug is different, update the link in `index.html`.
+
+
+## Quiet Soup Club logo
+
+The Etsy section now uses a clean CSS/HTML soup-bowl logo with real selectable text, so the name is not cropped or misspelled inside an image.
+
+
+Updated: Quiet Soup Club is now a small corner badge instead of a full-width website column.
+
+## Quiet Soup Club badge
+The Etsy shop is linked from a small half-patched corner sticker on the homepage. The image is `images/quiet-soup-club-corner-patch.png`; replace it if you want another logo version.
+
+
+## Extracted art portfolio projects
+
+The `projects/` folder now includes pages extracted from `ArtPortfolio_February_2011.pdf`:
+
+- Space in Time
+- 2007 Journal
+- Christmas '10
+- Tableau Vivant
+- Tătărași
+- A reface
+- The same
+- Înainte de a adormi
+
+Rendered portfolio plates are stored in `images/portfolio/`.

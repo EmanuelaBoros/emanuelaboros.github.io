@@ -987,3 +987,678 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
 @media (prefers-reduced-motion: reduce) {
   .portrait-bubble { animation: none; }
 }
+
+
+/* Etsy shop section */
+.shop-section {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 5vw, 60px);
+  overflow: hidden;
+}
+
+.shop-copy p:not(.section-label) {
+  max-width: 620px;
+  margin: 22px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  font-weight: 850;
+  color: var(--raspberry-dark);
+}
+
+.shop-button { margin-top: 26px; }
+
+.shop-logo-card {
+  display: block;
+  border: 5px solid var(--black);
+  border-radius: 36px;
+  background: var(--pink-soft);
+  box-shadow: 16px 16px 0 var(--black);
+  overflow: hidden;
+  transform: rotate(1.2deg);
+  animation: shopFloat 5.4s ease-in-out infinite;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.shop-logo-card:hover,
+.shop-logo-card:focus-visible {
+  animation-play-state: paused;
+  transform: translate(-8px, -8px) rotate(-1deg) scale(1.015);
+  box-shadow: 24px 24px 0 var(--black);
+  filter: saturate(1.08);
+  outline: none;
+}
+
+.shop-logo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes shopFloat {
+  0%, 100% { transform: rotate(1.2deg) translateY(0); }
+  50% { transform: rotate(-0.4deg) translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+  .shop-section { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shop-logo-card { animation: none; }
+}
+
+
+/* Clean Quiet Soup Club logo — no cropped text image */
+.shop-section-clean {
+  grid-template-columns: minmax(280px, 0.82fr) minmax(300px, 1fr);
+  background: linear-gradient(135deg, #fff6df 0%, #ffe1ec 100%);
+}
+
+.shop-copy-clean h2 {
+  margin: 0;
+  color: var(--raspberry);
+  text-shadow: 4px 4px 0 var(--black);
+}
+
+.soup-badge-card {
+  background: #fff6df;
+  min-height: 390px;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  position: relative;
+}
+
+.soup-badge {
+  width: min(430px, 100%);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.avatar-soup {
+  width: 62%;
+  aspect-ratio: 1 / 1;
+  border: 5px solid var(--black);
+  border-radius: 50%;
+  background: var(--raspberry);
+  box-shadow: 10px 10px 0 var(--black);
+  overflow: hidden;
+  transform: translateY(-26px) rotate(-3deg);
+  z-index: 2;
+}
+
+.avatar-soup img {
+  width: 118%;
+  height: 118%;
+  object-fit: cover;
+  object-position: 52% 42%;
+  transform: translate(-7%, -5%);
+  filter: saturate(1.1) contrast(1.05);
+}
+
+.bowl {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 9%;
+  height: 34%;
+  border: 6px solid var(--black);
+  border-radius: 16px 16px 105px 105px;
+  background: var(--yellow);
+  box-shadow: 12px 12px 0 var(--black);
+  z-index: 3;
+  display: grid;
+  place-items: end center;
+  padding-bottom: 18px;
+  overflow: visible;
+}
+
+.bowl::before {
+  content: '';
+  position: absolute;
+  left: -4%;
+  right: -4%;
+  top: -27px;
+  height: 54px;
+  border: 6px solid var(--black);
+  border-radius: 50%;
+  background: #fff8df;
+  z-index: -1;
+}
+
+.bowl::after {
+  content: '';
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -22px;
+  height: 20px;
+  border: 5px solid var(--black);
+  border-top: 0;
+  border-radius: 0 0 30px 30px;
+  background: var(--yellow);
+}
+
+.bowl strong {
+  font-family: var(--font-display);
+  font-size: clamp(2.0rem, 5vw, 4.1rem);
+  line-height: 0.78;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: var(--raspberry);
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 var(--black);
+  z-index: 5;
+}
+
+.noodles {
+  position: absolute;
+  top: -18px;
+  left: 15%;
+  right: 15%;
+  height: 28px;
+  border-top: 5px solid var(--black);
+  border-radius: 50%;
+  box-shadow: 0 8px 0 #f7d05d, 0 14px 0 var(--black), 0 19px 0 #f7d05d;
+  z-index: 2;
+}
+
+.chopstick {
+  position: absolute;
+  width: 8px;
+  height: 160px;
+  background: #c8204d;
+  border: 3px solid var(--black);
+  border-radius: 99px;
+  top: -120px;
+  z-index: 6;
+}
+
+.chopstick-one { left: 20%; transform: rotate(-30deg); }
+.chopstick-two { left: 27%; transform: rotate(-23deg); }
+
+.steam {
+  position: absolute;
+  top: 8%;
+  width: 58px;
+  height: 90px;
+  border-left: 7px solid rgba(216, 6, 75, 0.35);
+  border-radius: 50%;
+  z-index: 1;
+  animation: steamWiggle 3.6s ease-in-out infinite;
+}
+
+.steam-one { left: 17%; transform: rotate(-20deg); }
+.steam-two { right: 15%; transform: rotate(18deg); animation-delay: 0.8s; }
+
+.soup-badge-card:hover .soup-badge,
+.soup-badge-card:focus-visible .soup-badge {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.soup-badge { transition: transform 180ms ease; }
+
+@keyframes steamWiggle {
+  0%, 100% { opacity: .55; transform: translateY(0) rotate(-12deg); }
+  50% { opacity: .9; transform: translateY(-12px) rotate(12deg); }
+}
+
+@media (max-width: 900px) {
+  .shop-section-clean { grid-template-columns: 1fr; }
+  .soup-badge-card { min-height: 320px; }
+  .soup-badge { max-width: 340px; }
+}
+
+/* Updated pho logo: full image, no cropping, with greens/noodles visible */
+.pho-logo-card {
+  background: #fff6df;
+  padding: clamp(12px, 2vw, 20px);
+  display: block;
+}
+
+.pho-logo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+}
+
+.pho-logo-card:hover,
+.pho-logo-card:focus-visible {
+  filter: saturate(1.08) contrast(1.03);
+}
+
+
+/* Quiet Soup Club: small corner badge, not a full column */
+.etsy-mini-badge {
+  position: fixed;
+  right: clamp(14px, 2vw, 28px);
+  bottom: clamp(14px, 2vw, 28px);
+  width: clamp(82px, 8vw, 118px);
+  z-index: 50;
+  display: block;
+  text-decoration: none;
+  transform: rotate(3deg);
+  opacity: 0.92;
+  transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
+}
+
+.etsy-mini-badge img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--black);
+  border-radius: 22px;
+  background: #fff6df;
+  box-shadow: 7px 7px 0 var(--black);
+}
+
+.etsy-mini-badge span {
+  position: absolute;
+  left: 50%;
+  bottom: -9px;
+  transform: translateX(-50%) rotate(-3deg);
+  white-space: nowrap;
+  padding: 4px 8px;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: 3px 3px 0 var(--black);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.etsy-mini-badge:hover,
+.etsy-mini-badge:focus-visible {
+  opacity: 1;
+  transform: translate(-4px, -4px) rotate(-2deg) scale(1.12);
+  filter: saturate(1.06);
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .etsy-mini-badge {
+    width: 74px;
+    right: 12px;
+    bottom: 12px;
+  }
+  .etsy-mini-badge span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etsy-mini-badge { transition: none; }
+}
+
+/* Quiet Soup Club — small patched corner badge */
+.etsy-corner-patch {
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 184px;
+  min-height: 68px;
+  padding: 9px 13px 9px 10px;
+  color: var(--black);
+  text-decoration: none;
+  background: var(--cream);
+  border: 4px solid var(--black);
+  border-radius: 999px 26px 26px 999px;
+  box-shadow: 8px 8px 0 var(--black);
+  transform: rotate(-2deg);
+  opacity: 0.92;
+  transition: transform 170ms ease, opacity 170ms ease, box-shadow 170ms ease;
+}
+
+.etsy-corner-patch::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 2px solid rgba(216, 11, 76, 0.28);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.patch-bowl {
+  position: relative;
+  flex: 0 0 auto;
+  width: 52px;
+  height: 42px;
+  display: block;
+}
+
+.patch-bowl::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  height: 24px;
+  background: var(--yellow);
+  border: 3px solid var(--black);
+  border-top: 0;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 3px 3px 0 var(--black);
+}
+
+.patch-bowl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 23px;
+  height: 13px;
+  background: #fff8e7;
+  border: 3px solid var(--black);
+  border-radius: 50%;
+}
+
+.patch-greens {
+  position: absolute;
+  left: 15px;
+  bottom: 24px;
+  width: 10px;
+  height: 10px;
+  background: var(--mint);
+  border: 2px solid var(--black);
+  border-radius: 70% 20% 70% 20%;
+  transform: rotate(-28deg);
+  z-index: 2;
+}
+
+.patch-greens::before,
+.patch-greens::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--mint);
+  border: 2px solid var(--black);
+  border-radius: 70% 20% 70% 20%;
+}
+
+.patch-greens::before { left: 7px; top: 3px; transform: rotate(60deg); }
+.patch-greens::after { left: -7px; top: 4px; transform: rotate(-55deg); }
+
+.patch-steam {
+  position: absolute;
+  top: -4px;
+  width: 12px;
+  height: 22px;
+  border-left: 4px solid var(--raspberry);
+  border-radius: 50%;
+  opacity: .55;
+  z-index: 1;
+}
+.patch-steam-one { left: 17px; transform: rotate(20deg); }
+.patch-steam-two { left: 31px; transform: rotate(-16deg); animation: patchSteam 2.3s ease-in-out infinite; }
+
+.patch-copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 2px;
+  line-height: 0.88;
+}
+
+.patch-kicker {
+  width: fit-content;
+  padding: 4px 8px;
+  border: 2px solid var(--black);
+  border-radius: 999px;
+  background: var(--raspberry);
+  color: var(--white);
+  font-size: 0.58rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.patch-title {
+  color: var(--raspberry);
+  font-family: "Archivo Black", "Inter", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 1.7px 1.7px 0 var(--black);
+}
+
+.etsy-corner-patch:hover,
+.etsy-corner-patch:focus-visible {
+  opacity: 1;
+  transform: translate(-3px, -3px) rotate(1deg) scale(1.04);
+  box-shadow: 11px 11px 0 var(--black);
+  outline: none;
+}
+
+@keyframes patchSteam {
+  0%, 100% { transform: translateY(0) rotate(-16deg); opacity: .45; }
+  50% { transform: translateY(-5px) rotate(8deg); opacity: .8; }
+}
+
+@media (max-width: 900px) {
+  .etsy-corner-patch {
+    top: 18px;
+    left: 18px;
+    width: 66px;
+    min-height: 58px;
+    padding: 7px;
+    border-radius: 20px;
+  }
+  .etsy-corner-patch .patch-copy { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .etsy-corner-patch,
+  .patch-steam-two { transition: none; animation: none; }
+}
+
+/* Quiet Soup Club — half-patched corner sticker with head-in-soup logo */
+.page-frame { position: relative; overflow: visible; }
+
+.etsy-corner-patch {
+  position: absolute;
+  top: -38px;
+  left: -38px;
+  z-index: 90;
+  display: block;
+  width: clamp(118px, 12vw, 172px);
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 32px;
+  box-shadow: none;
+  transform: rotate(-5deg);
+  opacity: 0.94;
+  transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
+}
+
+.etsy-corner-patch::before { display: none; }
+
+.etsy-corner-patch img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 4px solid var(--black);
+  border-radius: 30px;
+  box-shadow: 10px 10px 0 var(--black);
+  background: var(--cream);
+}
+
+.etsy-corner-patch:hover,
+.etsy-corner-patch:focus-visible {
+  opacity: 1;
+  transform: translate(4px, 4px) rotate(-2deg) scale(1.04);
+  filter: saturate(1.06);
+  outline: none;
+}
+
+.etsy-corner-patch:hover img,
+.etsy-corner-patch:focus-visible img {
+  box-shadow: 13px 13px 0 var(--black);
+}
+
+@media (max-width: 900px) {
+  .etsy-corner-patch {
+    top: -22px;
+    left: -22px;
+    width: 104px;
+    min-height: auto;
+    padding: 0;
+    border-radius: 24px;
+  }
+
+  .etsy-corner-patch img {
+    border-radius: 22px;
+    box-shadow: 7px 7px 0 var(--black);
+  }
+}
+
+
+/* Extracted 2010 art portfolio projects */
+.cover-orange { background: var(--orange); }
+.project-cover small {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 3px solid var(--black);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--raspberry-dark);
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
+}
+.cover-red small { background: var(--yellow); color: var(--ink); }
+.portfolio-gallery img {
+  height: auto;
+  min-height: unset;
+  object-fit: contain;
+  background: var(--white);
+}
+.portfolio-plate figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.portfolio-plate figcaption span {
+  color: var(--raspberry-dark);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* Bigger list view for extracted art portfolio plates */
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(26px, 4vw, 46px);
+}
+.portfolio-gallery .portfolio-plate {
+  max-width: 1040px;
+  margin-inline: auto;
+  transform: none !important;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.portfolio-gallery .portfolio-plate:hover {
+  transform: translate(-5px, -5px) !important;
+  box-shadow: 18px 18px 0 var(--black);
+}
+.portfolio-gallery .portfolio-plate img {
+  width: 100%;
+  max-height: none;
+  height: auto;
+  min-height: unset;
+  object-fit: contain;
+  background: var(--white);
+  cursor: zoom-in;
+}
+.portfolio-gallery .portfolio-plate figcaption {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+.portfolio-gallery::before {
+  content: "Click any plate to open it larger";
+  display: inline-flex;
+  width: fit-content;
+  padding: 10px 14px;
+  border: 3px solid var(--black);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--raspberry-dark);
+  box-shadow: 5px 5px 0 var(--black);
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.76rem;
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 44px);
+  background: rgba(5, 5, 5, 0.86);
+}
+.lightbox.is-open { display: flex; }
+.lightbox-inner {
+  position: relative;
+  max-width: min(1180px, 96vw);
+  max-height: 92vh;
+}
+.lightbox img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 82vh;
+  border: 4px solid var(--black);
+  border-radius: 22px;
+  background: var(--white);
+  box-shadow: 14px 14px 0 var(--raspberry);
+}
+.lightbox-caption {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border: 3px solid var(--black);
+  border-radius: 18px;
+  background: var(--cream);
+  color: var(--raspberry-dark);
+  font-weight: 1000;
+  box-shadow: 6px 6px 0 var(--black);
+}
+.lightbox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid var(--black);
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 5px 5px 0 var(--black);
+  font-size: 1.5rem;
+  font-weight: 1000;
+  cursor: pointer;
+}
+@media (max-width: 680px) {
+  .portfolio-gallery::before { font-size: 0.65rem; }
+  .lightbox-close { top: -10px; right: -10px; }
+}
