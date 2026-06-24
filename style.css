@@ -1922,3 +1922,131 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
   .timeline-wave-cell.strength-3 { min-height: 52px; }
 }
 
+
+
+/* Paper detail placeholder pages */
+.paper-page-main {
+  display: grid;
+  gap: 28px;
+}
+.paper-hero h1 {
+  font-size: clamp(2rem, 5vw, 4.8rem);
+  max-width: 1100px;
+}
+.paper-actions {
+  margin-top: 18px;
+}
+.disabled-link {
+  opacity: .75;
+  cursor: default;
+}
+.paper-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.paper-note-card {
+  padding: 26px;
+}
+.paper-note-card h2 {
+  font-family: 'Archivo Black', Impact, sans-serif;
+  color: var(--hot-pink);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  margin: 0 0 12px;
+  text-transform: uppercase;
+}
+.empty-note {
+  min-height: 88px;
+  border: 3px dashed rgba(0,0,0,.25);
+  border-radius: 18px;
+  padding: 18px;
+  color: rgba(34, 0, 17, .62);
+  font-weight: 800;
+}
+@media (max-width: 760px) {
+  .paper-notes-grid { grid-template-columns: 1fr; }
+}
+
+/* Subject waves line plot */
+.subject-line-section {
+  overflow: hidden;
+}
+.line-plot-wrap {
+  overflow-x: auto;
+  padding: 0.4rem 0 0.6rem;
+  -webkit-overflow-scrolling: touch;
+}
+.subject-line-plot {
+  min-width: 860px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.plot-bg {
+  fill: var(--cream);
+  stroke: var(--ink);
+  stroke-width: 4;
+  filter: drop-shadow(10px 12px 0 var(--ink));
+}
+.plot-grid-line {
+  stroke: rgba(20, 0, 10, 0.16);
+  stroke-width: 2;
+  stroke-dasharray: 6 8;
+}
+.plot-grid-horizontal {
+  stroke: rgba(20, 0, 10, 0.10);
+}
+.plot-year {
+  font-family: var(--display);
+  font-size: 18px;
+  fill: var(--red);
+  paint-order: stroke;
+  stroke: var(--cream);
+  stroke-width: 4px;
+}
+.subject-line {
+  fill: none;
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(5px 6px 0 var(--ink));
+  opacity: 0.94;
+  animation: waveFloat 5.8s ease-in-out infinite;
+}
+.subject-line-noisy { stroke: var(--red); animation-delay: -0.2s; }
+.subject-line-semantic { stroke: var(--orange); animation-delay: -0.8s; }
+.subject-line-historical { stroke: var(--mint); animation-delay: -1.2s; }
+.subject-line-cultural { stroke: var(--yellow); animation-delay: -1.6s; }
+.subject-line-multimodal { stroke: var(--pink); animation-delay: -2s; }
+.subject-line-applied { stroke: #9f1744; animation-delay: -2.4s; }
+.subject-point {
+  stroke: var(--ink);
+  stroke-width: 4;
+  filter: drop-shadow(4px 5px 0 var(--ink));
+}
+.subject-point-noisy { fill: var(--red); }
+.subject-point-semantic { fill: var(--orange); }
+.subject-point-historical { fill: var(--mint); }
+.subject-point-cultural { fill: var(--yellow); }
+.subject-point-multimodal { fill: var(--pink); }
+.subject-point-applied { fill: #9f1744; }
+@keyframes waveFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@media (max-width: 760px) {
+  .subject-line-plot { min-width: 760px; }
+  .subject-line-section .project-heading-row { gap: 1rem; }
+  .plot-year { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .subject-line { animation: none; }
+}
+
+/* Cleaner subject waves: no heavy paper markers, only colored lines. */
+.subject-point {
+  display: none;
+}
+.subject-line {
+  filter: drop-shadow(4px 5px 0 var(--ink));
+}

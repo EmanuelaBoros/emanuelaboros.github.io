@@ -70,3 +70,11 @@ The `projects/` folder now includes pages extracted from `ArtPortfolio_February_
 - Înainte de a adormi
 
 Rendered portfolio plates are stored in `images/portfolio/`.
+
+
+## Update: publication additions
+
+The Things page now includes additional publications from the uploaded application PDF, grouped by research theme, with placeholder pages under `papers/` for later notes/results.
+
+
+Update: `things.html` now uses a curated high-impact publication shortlist rather than a complete bibliography.
