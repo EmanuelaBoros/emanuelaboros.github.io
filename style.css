@@ -1662,3 +1662,87 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
   .portfolio-gallery::before { font-size: 0.65rem; }
   .lightbox-close { top: -10px; right: -10px; }
 }
+
+/* Research + papers blocks on Things page */
+.research-block {
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+  max-width: 1040px;
+}
+
+.research-block h3 {
+  margin: 8px 0 0;
+  font-family: "Archivo Black", "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  color: var(--raspberry);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.research-points,
+.paper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.research-points li,
+.paper-list li {
+  border: 3px solid var(--black);
+  border-radius: 20px;
+  background: var(--white);
+  box-shadow: 6px 6px 0 var(--black);
+  padding: 14px 16px;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.project-detail.panel-white .research-points li,
+.project-detail.panel-white .paper-list li {
+  background: var(--cream);
+}
+
+.paper-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.paper-list a,
+.paper-title {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 1000;
+}
+
+.paper-list a:hover,
+.paper-list a:focus-visible {
+  color: var(--raspberry);
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+.paper-list span:last-child {
+  justify-self: end;
+  white-space: nowrap;
+  display: inline-flex;
+  padding: 7px 10px;
+  border: 3px solid var(--black);
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--black);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 720px) {
+  .paper-list li { grid-template-columns: 1fr; }
+  .paper-list span:last-child { justify-self: start; white-space: normal; }
+}

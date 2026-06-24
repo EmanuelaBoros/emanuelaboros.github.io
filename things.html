@@ -43,7 +43,7 @@
           </div>
         </div>
         <p class="project-description">
-          This is the project side of the website: the things I build, test, release, supervise, break, repair, and keep coming back to. It is not a complete CV. It is a more readable map of recurring work.
+          This is the project side of the website: the things I build, test, release, supervise, break, repair, and keep coming back to. Each section now collects the research direction, the kind of work I do there, and selected papers that belong to it.
         </p>
       </section>
 
@@ -103,6 +103,23 @@
           I keep returning to documents that arrive already damaged: OCR errors, HTR errors, broken segmentation, missing accents, strange line breaks, degraded scans, and transcripts that look clean until a model has to reason over them.
         </p>
         <div class="thing-tags"><span>OCR</span><span>HTR</span><span>post-correction</span><span>evaluation</span><span>robustness</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Measuring how OCR/HTR noise changes downstream semantic tasks, not only character accuracy.</li>
+            <li>Designing post-correction and robustness experiments for historical and degraded text.</li>
+            <li>Testing whether models remain reliable when the input is damaged, fragmented, or historically unstable.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://aclanthology.org/2020.conll-1.35/" target="_blank" rel="noopener">Alleviating Digitization Errors in Named Entity Recognition for Historical Documents</a><span>CoNLL 2020</span></li>
+            <li><a href="https://hal.science/hal-03635985v1" target="_blank" rel="noopener">Assessing the Impact of OCR Noise on Multilingual Event Detection over Digitised Documents</a><span>IJDL 2022</span></li>
+            <li><a href="https://aclanthology.org/2024.latechclfl-1.14/" target="_blank" rel="noopener">Post-correction of Historical Text Transcripts with Large Language Models: An Exploratory Study</a><span>LaTeCH-CLfL 2024</span></li>
+            <li><a href="https://link.springer.com/chapter/10.1007/978-981-96-0865-2_5" target="_blank" rel="noopener">Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents</a><span>ICADL 2024</span></li>
+            <li><a href="https://ieeexplore.ieee.org/document/9257761" target="_blank" rel="noopener">A Comparison of Sequential and Combined Approaches for Named Entity Recognition in a Corpus of Handwritten Medieval Charters</a><span>ICFHR 2020</span></li>
+          </ul>
+        </div>
       </section>
 
       <section id="semantic-extraction" class="project-detail panel panel-white">
@@ -112,6 +129,23 @@
           I work on extracting the small structures that make collections searchable and arguable: people, places, organizations, events, relations, roles, mentions, links, and evidence. I care less about clean labels and more about whether the extracted structure survives noisy documents and real use.
         </p>
         <div class="thing-tags"><span>NER</span><span>entity linking</span><span>relations</span><span>events</span><span>evidence</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Named entity recognition, entity linking, relation extraction, and event extraction.</li>
+            <li>Entity-centered ways of making large document collections searchable, comparable, and arguable.</li>
+            <li>Evaluation setups where semantic structure matters more than a clean-looking label.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-030-72240-1_20" target="_blank" rel="noopener">Event Detection with Entity Markers</a><span>ECIR 2021</span></li>
+            <li><a href="https://hal.science/hal-03635982v1/document" target="_blank" rel="noopener">Exploring Entities in Event Detection as Question Answering</a><span>ECIR 2022</span></li>
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-030-64452-9_19" target="_blank" rel="noopener">Entity Linking for Historical Documents: Challenges and Solutions</a><span>ICADL 2020</span></li>
+            <li><a href="https://hal.science/hal-04750083v1" target="_blank" rel="noopener">MELHISSA: A Multilingual Entity Linking Architecture for Historical Press Articles</a><span>IJDL 2021</span></li>
+            <li><a href="https://hal.science/hal-03418387v1/document" target="_blank" rel="noopener">A Multilingual Dataset for Named Entity Recognition, Entity Linking and Stance Detection in Historical Newspapers</a><span>SIGIR 2021</span></li>
+          </ul>
+        </div>
       </section>
 
       <section id="historical-ai" class="project-detail panel panel-cream">
@@ -121,6 +155,22 @@
           Historical language is not stable. Names move. Borders move. Political words change meaning. A system that treats all periods as one flat present will make confident mistakes. I work on temporal modelling, long-horizon representations, and evaluation setups that make these failures visible.
         </p>
         <div class="thing-tags"><span>temporality</span><span>diachronic language</span><span>historical collections</span><span>long horizon</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Temporal modelling for documents where names, roles, borders, and meanings do not stay fixed.</li>
+            <li>Experiments with temporal knowledge injection, temporal fusion, and long-horizon representations.</li>
+            <li>Critiques of fluent AI answers when evidence is weak, noisy, or historically misplaced.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-28244-7_24" target="_blank" rel="noopener">Injecting Temporal-Aware Knowledge in Historical Named Entity Recognition</a><span>ECIR 2023</span></li>
+            <li><a href="https://doi.org/10.1007/978-3-032-06136-2_2" target="_blank" rel="noopener">A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts</a><span>TPDL 2025</span></li>
+            <li><a href="https://dl.acm.org/doi/10.1109/JCDL57899.2023.00034" target="_blank" rel="noopener">Yes but.. Can ChatGPT Identify Entities in Historical Documents?</a><span>JCDL 2023</span></li>
+            <li><a href="https://aclanthology.org/2023.jeptalnrecital-international.8/" target="_blank" rel="noopener">Injection de connaissances temporelles dans la reconnaissance d’entités nommées historiques</a><span>TALN 2023</span></li>
+          </ul>
+        </div>
       </section>
 
       <section id="cultural-heritage" class="project-detail panel panel-white">
@@ -130,6 +180,23 @@
           I work with cultural heritage as data, evidence, memory, and conflict. This includes digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, cultural weaponization, contested narratives, and computational methods that must remain accountable to domain experts.
         </p>
         <div class="thing-tags"><span>epigraphy</span><span>heritage</span><span>SKOS</span><span>EpiDoc/TEI</span><span>memory</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Structured vocabularies and computational methods for underrepresented cultural heritage material.</li>
+            <li>Digital epigraphy, inscription corpora, and standards-oriented encoding.</li>
+            <li>Computational analysis of cultural heritage narratives, memory, and contested heritage.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-72440-4_2" target="_blank" rel="noopener">Developing a Standardised Vocabulary for Ukrainian Epigraphy and Expanding Digital Epigraphic Resources</a><span>TPDL 2024</span></li>
+            <li><a href="https://doi.org/10.2312/dh.20253226" target="_blank" rel="noopener">Corpus-Based SKOS Development for Underrepresented and Endangered Ukrainian Epigraphic Heritage</a><span>Digital Heritage 2025</span></li>
+            <li><a href="https://doi.org/10.5281/zenodo.18198117" target="_blank" rel="noopener">Armenian Epigraphic Corpus</a><span>Dataset</span></li>
+            <li><span class="paper-title">Building a SKOS Vocabulary for Armenian Epigraphy: A Corpus-Driven and NLP-Assisted Approach</span><span>LaTeCH-CLfL 2026</span></li>
+            <li><span class="paper-title">Armenian AutoEpiDoc: Automated Extraction and Encoding of Armenian Inscriptions into EpiDoc TEI/XML</span><span>LaTeCH-CLfL 2026</span></li>
+          </ul>
+        </div>
       </section>
 
       <section id="multimodal-archives" class="project-detail panel panel-cream">
@@ -139,6 +206,22 @@
           Documents are not only text. Layout, typography, images, tables, margins, page structure, photographs, and visual noise often carry the evidence. I am interested in models that connect these signals without pretending that the page is just a bag of words.
         </p>
         <div class="thing-tags"><span>layout</span><span>vision-language</span><span>document images</span><span>photographs</span><span>visual evidence</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Document images, page structure, layout, photographs, and visual evidence.</li>
+            <li>Connections between image processing, document analysis, and semantic modelling.</li>
+            <li>Work that treats the page as a visual object, not only as text after OCR.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://ieeexplore.ieee.org/document/8978196" target="_blank" rel="noopener">Automatic Page Classification in a Large Collection of Manuscripts Based on the International Image Interoperability Framework</a><span>ICDAR 2019</span></li>
+            <li><a href="https://asistdl.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/asi.24565" target="_blank" rel="noopener">Integrated Interdisciplinary Workflows for Research on Historical Newspapers</a><span>JASIST 2021</span></li>
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-642-15751-6_34" target="_blank" rel="noopener">Using SIFT Method for Global Topological Localization for Indoor Environments</a><span>CLEF 2010</span></li>
+            <li><a href="https://drops.dagstuhl.de/entities/document/10.4230/OASIcs.ICCSW.2012.22" target="_blank" rel="noopener">Targeting a Practical Approach for Robot Vision with Ensembles of Visual Features</a><span>ICCSW 2012</span></li>
+          </ul>
+        </div>
       </section>
 
       <section id="applied-document-intelligence" class="project-detail panel panel-white">
@@ -148,6 +231,24 @@
           The same problems reappear outside archives: forged receipts, insurance claims, fake news, epidemic monitoring, emergency events, administrative records, and production workflows where models must be robust enough to be useful and transparent enough to be questioned.
         </p>
         <div class="thing-tags"><span>fraud detection</span><span>misinformation</span><span>event monitoring</span><span>pipelines</span><span>deployment</span></div>
+
+        <div class="research-block">
+          <h3>What this contains</h3>
+          <ul class="research-points">
+            <li>Document fraud detection, forged receipts, insurance claims, and applied document reasoning.</li>
+            <li>Multilingual epidemic monitoring and emergency event detection.</li>
+            <li>Fake news, misinformation, and workflows where models have to survive real constraints.</li>
+          </ul>
+          <h3>Selected papers</h3>
+          <ul class="paper-list">
+            <li><a href="https://hal.science/hal-04296021v1/file/ICDAR_2023_Detecting_Forged_Receipts_with_Domain_specific_Ontology_based_Entities_Relations%20%281%29.pdf" target="_blank" rel="noopener">Detecting Forged Receipts with Domain-Specific Ontology-Based Entities &amp; Relations</a><span>ICDAR 2023</span></li>
+            <li><a href="https://l3i.univ-larochelle.fr/app/uploads/sites/12/2024/05/ICDAR_2023_Find_it_again.pdf" target="_blank" rel="noopener">Receipt Dataset for Document Forgery Detection</a><span>ICDAR 2023</span></li>
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-24337-0_2" target="_blank" rel="noopener">Knowledge-Based Techniques for Document Fraud Detection: A Comprehensive Study</a><span>CICLing 2019</span></li>
+            <li><a href="https://aclanthology.org/2020.coling-main.543/" target="_blank" rel="noopener">Multilingual Epidemiological Text Classification: A Comparative Study</a><span>COLING 2020</span></li>
+            <li><a href="https://zenodo.org/records/5780020" target="_blank" rel="noopener">Token-Level Multilingual Epidemic Dataset for Event Extraction</a><span>TPDL 2021</span></li>
+            <li><a href="https://hal.science/hal-03861202v1" target="_blank" rel="noopener">Adapting Transformers for Detecting Emergency Events on Social Media</a><span>KDIR 2022</span></li>
+          </ul>
+        </div>
       </section>
 
       <section class="project-nav panel panel-cream">
