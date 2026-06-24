@@ -1,0 +1,211 @@
+:root {
+  --background: #f7f2ea;
+  --text: #211f1d;
+  --muted: #6f6760;
+  --line: #ded4c9;
+  --card: #fffaf3;
+  --accent: #7f3d2b;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+a:hover { color: var(--accent); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 5vw, 4rem);
+  background: rgba(247, 242, 234, 0.9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.hero {
+  min-height: 78vh;
+  display: grid;
+  align-content: center;
+  padding: clamp(4rem, 8vw, 8rem) clamp(1rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+h1, h2, h3 { line-height: 1.05; letter-spacing: -0.055em; }
+
+h1 {
+  max-width: 980px;
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 6.7rem);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h3 { margin: 0 0 0.75rem; font-size: 1.35rem; }
+
+.hero-text {
+  max-width: 680px;
+  margin: 1.5rem 0 0;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.05rem;
+  border: 1px solid var(--text);
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--background);
+  font-weight: 700;
+}
+
+.button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+.button.secondary { background: transparent; color: var(--text); }
+.button.secondary:hover { color: var(--accent); background: transparent; }
+
+.section {
+  padding: clamp(3rem, 7vw, 6rem) clamp(1rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(260px, 1.4fr);
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.3rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+}
+
+.card p, .section-intro, .two-column > p, .contact p {
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.section-intro { max-width: 700px; }
+
+.slideshow {
+  position: relative;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 820px) auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.slide {
+  display: none;
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 1.4rem;
+  overflow: hidden;
+}
+
+.slide.active { display: block; }
+
+.slide img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: linear-gradient(135deg, #ded4c9, #b8a99c);
+}
+
+.slide figcaption {
+  padding: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.slide-button {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.slide-button:hover { border-color: var(--accent); color: var(--accent); }
+
+.links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  border-bottom: 1px solid currentColor;
+}
+
+footer {
+  padding: 2rem clamp(1rem, 8vw, 8rem);
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .site-header { align-items: flex-start; gap: 1rem; flex-direction: column; }
+  nav { flex-wrap: wrap; }
+  .two-column { grid-template-columns: 1fr; }
+  .slideshow { grid-template-columns: 1fr; }
+  .slide-button { justify-self: center; }
+}

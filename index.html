@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emanuela Boros</title>
+  <meta name="description" content="Research, writing, photography, and digital humanities work by Emanuela Boros." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">Emanuela Boros</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#photographs">Photographs</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">NLP · Digital Humanities · Historical Documents · Visual Work</p>
+      <h1>Researching archives, language, memory, and the strange afterlife of documents.</h1>
+      <p class="hero-text">
+        I work at the intersection of natural language processing, cultural heritage, and historical documents.
+        This site gathers selected research, projects, writing, and photographic fragments.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#work">See selected work</a>
+        <a class="button secondary" href="#photographs">View photographs</a>
+      </div>
+    </section>
+
+    <section id="work" class="section two-column">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2>Research and projects</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Historical NLP</h3>
+          <p>Named entity recognition, entity linking, OCR noise, and multilingual historical newspapers.</p>
+        </article>
+        <article class="card">
+          <h3>OCR post-correction</h3>
+          <p>Benchmarks, model evaluation, and LLM-assisted correction for historical text.</p>
+        </article>
+        <article class="card">
+          <h3>Cultural heritage</h3>
+          <p>Computational approaches to archives, memory, digital narratives, and contested heritage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="photographs" class="section photographs">
+      <p class="eyebrow">Photographic fragments</p>
+      <h2>Small evidence of being somewhere</h2>
+      <p class="section-intro">
+        A small rotating selection of rooms, bodies, surfaces, accidents, and traces.
+        Replace these placeholders with your own photographs in the <code>images/</code> folder.
+      </p>
+
+      <div class="slideshow" aria-label="Selected photographs slideshow">
+        <button class="slide-button" id="prev" aria-label="Previous photograph">‹</button>
+
+        <figure class="slide active">
+          <img src="images/photo-1.jpg" alt="Placeholder for photograph one" />
+          <figcaption>The body as a room.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/photo-2.jpg" alt="Placeholder for photograph two" />
+          <figcaption>Objects pretending not to remember.</figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="images/photo-3.jpg" alt="Placeholder for photograph three" />
+          <figcaption>Small evidence of being somewhere.</figcaption>
+        </figure>
+
+        <button class="slide-button" id="next" aria-label="Next photograph">›</button>
+      </div>
+    </section>
+
+    <section id="about" class="section two-column">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Biography</h2>
+      </div>
+      <p>
+        I am a researcher working on natural language processing for historical documents, with interests in
+        OCR post-correction, entity recognition and linking, multilingual archives, cultural heritage, and the
+        way documents preserve, distort, and revive memory.
+      </p>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Find me online</h2>
+      <p>
+        Add your email, GitHub, Google Scholar, ORCID, LinkedIn, or project links here.
+      </p>
+      <p class="links">
+        <a href="https://github.com/emanuelaboros">GitHub</a>
+        <a href="mailto:your.email@example.com">Email</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Emanuela Boros</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
