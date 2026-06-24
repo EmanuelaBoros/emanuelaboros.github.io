@@ -539,14 +539,16 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
   left: 28px;
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+  min-width: 76px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
   background: var(--raspberry);
   color: var(--white);
   border: 3px solid var(--black);
   box-shadow: 5px 5px 0 var(--black);
   font-family: "Archivo Black", sans-serif;
+  font-size: 1rem;
 }
 .project-cover h3 {
   font-family: "Archivo Black", "Inter", sans-serif;
@@ -2202,4 +2204,27 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
     border-width: 2px;
     box-shadow: 3px 4px 0 var(--ink);
   }
+}
+
+.artist-note {
+  margin-top: 28px;
+}
+
+.artist-note h2 {
+  max-width: 760px;
+}
+
+.artist-note p:not(.section-label) {
+  max-width: 850px;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.75;
+  font-weight: 800;
+}
+
+.artist-note-placeholder {
+  background: var(--cream);
+}
+
+.artist-note-placeholder h2 {
+  color: var(--ink);
 }
