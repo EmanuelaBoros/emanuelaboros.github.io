@@ -2243,7 +2243,7 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
 }
 
 .artist-note {
-  margin-top: 28px;
+  padding: 26px;
 }
 
 .artist-note h2 {

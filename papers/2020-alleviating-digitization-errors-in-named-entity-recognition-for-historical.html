@@ -32,17 +32,104 @@
           <p class="section-label">CoNLL 2020 · 2020 · Noisy documents</p>
           <h1>Alleviating Digitization Errors in Named Entity Recognition for Historical Documents</h1>
         </div>
-        <p class="project-description">A placeholder page for notes, results, figures, and commentary. Fill this later with the parts of the paper you want people to remember.</p>
-        <div class="paper-actions"><a class="button button-primary" href="https://aclanthology.org/2020.conll-1.35/" target="_blank" rel="noopener">Publication link →</a></div>
+        <p class="project-description">
+          This paper asks whether named entity recognition can be made more robust when historical documents arrive through damaged OCR: misspelled names, broken words, unstable spelling, and text that looks almost readable until a model has to classify it. The proposed answer is architectural: keep the BERT encoder, but stack extra Transformer blocks above it so the model has more room to handle noisy, abnormal, or historically unstable word forms before the CRF prediction layer.
+        </p>
+        <div class="paper-actions">
+          <a class="button button-primary" href="https://aclanthology.org/2020.conll-1.35/" target="_blank" rel="noopener">Publication link →</a>
+          <a class="button button-light" href="https://aclanthology.org/2020.conll-1.35.pdf" target="_blank" rel="noopener">PDF →</a>
+        </div>
       </section>
 
       <section class="paper-notes-grid">
-        <article class="paper-note-card panel panel-white"><h2>Research question</h2><p class="empty-note">Add the question or problem this paper addresses.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Main result</h2><p class="empty-note">Add the central result, finding, or claim.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Method / experiment</h2><p class="empty-note">Add the method, data, model, benchmark, or experimental setup.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Figures / tables</h2><p class="empty-note">Add images, plots, tables, or screenshots later.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Why it matters</h2><p class="empty-note">Add your own explanation of why this paper matters.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Reuse / links</h2><p class="empty-note">Add code, data, demo, slides, or related projects.</p></article>
+        <article class="paper-note-card panel panel-white">
+          <h2>Research question</h2>
+          <p>
+            Can a Transformer-based NER model better survive digitization errors in historical newspapers without relying on language-specific handcrafted features or a separate OCR correction step?
+          </p>
+          <p>
+            The paper focuses on the uncomfortable zone where OCR damage and historical language variation meet: entities are still there, but the surface forms are misspelled, fragmented, old-fashioned, or only partially readable.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Main result</h2>
+          <p>
+            Adding one or two Transformer blocks on top of BERT improves NER performance on French and German historical newspaper datasets, with statistically significant gains over a BiLSTM-CNN baseline and improvements over stand-alone BERT.
+          </p>
+          <p>
+            The extra Transformer layers also avoid damaging performance on a modern benchmark, which is useful: the model becomes more robust to historical noise without becoming weirdly bad on clean contemporary text.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Method / experiment</h2>
+          <p>
+            The model starts with a fine-tuned BERT encoder, adds <em>n</em> extra Transformer blocks on top, and uses a CRF layer for sequence prediction. The paper compares BERT alone, BERT+1×Transformer, and BERT+2×Transformer.
+          </p>
+          <p>
+            Experiments are run on two French/German historical newspaper benchmarks and on CoNLL-2003 as a contemporary control. The analysis then looks at OCR-related misspellings, long entities, partial predictions, and spurious entity predictions.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Figures / tables</h2>
+          <div class="paper-figures">
+            <figure class="paper-figure featured-figure">
+              <img src="../images/papers/alleviating-digitization-errors/table2-historical-ner-results.png" alt="Table of NER results comparing BiLSTM-CNN, BERT, and BERT plus stacked Transformer layers on French and German historical newspaper datasets." />
+              <figcaption><strong>Table 2.</strong> The main result table: BERT plus stacked Transformer layers improves entity-level precision, recall, and F1 on noisy historical newspaper data.</figcaption>
+            </figure>
+            <figure class="paper-figure">
+              <img src="../images/papers/alleviating-digitization-errors/fig2-ner-prediction-examples.png" alt="Examples of NER predictions comparing gold standard, BERT, and BERT plus Transformer layers on French and German historical text." />
+              <figcaption><strong>Figure 2.</strong> Qualitative examples showing how the stacked model recovers entities that stand-alone BERT misses or fragments.</figcaption>
+            </figure>
+            <div class="figure-grid">
+              <figure class="paper-figure">
+                <img src="../images/papers/alleviating-digitization-errors/fig3-misspelled-entities-levenshtein.png" alt="Bar charts of correct predictions of misspelled entities by Levenshtein ratio for French and German historical data." />
+                <figcaption><strong>Figure 3.</strong> Correctly predicted misspelled entities, grouped by Levenshtein distance. This is the noise-behaviour figure.</figcaption>
+              </figure>
+              <figure class="paper-figure">
+                <img src="../images/papers/alleviating-digitization-errors/fig4-spurious-entities.png" alt="Plot comparing spurious entity cases with micro and macro F1 scores." />
+                <figcaption><strong>Figure 4.</strong> Spurious entity predictions: BERT gets performance partly by overpredicting; the stacked model is more conservative.</figcaption>
+              </figure>
+            </div>
+            <figure class="paper-figure">
+              <img src="../images/papers/alleviating-digitization-errors/table4-long-entity-examples.png" alt="Examples of long named entities where the stacked Transformer model predicts fuller entity spans than BERT." />
+              <figcaption><strong>Table 4.</strong> Long entity examples. The useful part is boring but important: full spans matter, especially when historical text is already damaged.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Why it matters</h2>
+          <p>
+            This was one of the early steps in my recurring obsession with noisy documents: OCR is not only a preprocessing inconvenience; it changes how semantic extraction behaves.
+          </p>
+          <p>
+            The paper shows that robustness can be pursued inside the NER architecture itself. Instead of only cleaning the input, the model can be given extra representational capacity to absorb spelling variation, OCR damage, and longer historical entity spans.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Reuse / links</h2>
+          <p>
+            Useful for work on historical NER, OCR robustness, entity span quality, long entity recognition, and model behaviour under digitization noise.
+          </p>
+          <p>
+            Reuse idea: compare a clean modern benchmark with noisy historical collections, then inspect not only F1 but also misspelled entities, long spans, and spurious predictions. The interesting failures usually hide there, as usual.
+          </p>
+          <div class="paper-actions inline-paper-actions">
+            <a class="button button-primary" href="https://aclanthology.org/2020.conll-1.35/" target="_blank" rel="noopener">ACL Anthology →</a>
+            <a class="button button-light" href="https://aclanthology.org/2020.conll-1.35.pdf" target="_blank" rel="noopener">PDF →</a>
+          </div>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>One-line takeaway</h2>
+          <p>
+            Noisy historical text does not only need better OCR; it also needs models that do not panic when names arrive slightly broken.
+          </p>
+        </article>
       </section>
     </main>
 
