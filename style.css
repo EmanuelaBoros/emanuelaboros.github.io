@@ -2228,3 +2228,76 @@ footer { width: min(1160px, calc(100% - 32px)); margin: 26px auto 38px; color: v
 .artist-note-placeholder h2 {
   color: var(--ink);
 }
+
+.profile-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.profile-badges a {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 130px;
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  padding: 0.7rem 0.9rem;
+  background: var(--white);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 5px 6px 0 var(--ink);
+  transform: rotate(-1deg);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.profile-badges a:nth-child(even) {
+  background: var(--yellow);
+  transform: rotate(1deg);
+}
+
+.profile-badges a:nth-child(3n) {
+  background: var(--mint);
+}
+
+.profile-badges a span {
+  color: var(--raspberry);
+  font-family: "Archivo Black", sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.profile-badges a strong {
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile-badges a:hover {
+  transform: translate(-2px, -3px) rotate(0deg);
+  box-shadow: 8px 9px 0 var(--ink);
+}
+
+@media (max-width: 640px) {
+  .profile-badges {
+    gap: 0.55rem;
+  }
+
+  .profile-badges a {
+    min-width: 110px;
+    padding: 0.6rem 0.75rem;
+    border-width: 2px;
+    box-shadow: 3px 4px 0 var(--ink);
+  }
+
+  .profile-badges a span {
+    font-size: 0.75rem;
+  }
+
+  .profile-badges a strong {
+    font-size: 0.65rem;
+  }
+}
