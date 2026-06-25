@@ -32,17 +32,112 @@
           <p class="section-label">EMNLP 2014 · 2014 · Semantic extraction</p>
           <h1>Event Role Extraction using Domain-Relevant Word Representations</h1>
         </div>
-        <p class="project-description">A placeholder page for notes, results, figures, and commentary. Fill this later with the parts of the paper you want people to remember.</p>
-        <div class="paper-actions"><a class="button button-primary" href="https://aclanthology.org/D14-1199/" target="_blank" rel="noopener">Publication link →</a></div>
+        <p class="project-description">
+          This paper is one of the early roots of my semantic extraction work: event roles, domain adaptation, and the question of how much structure can be extracted from text without building a giant hand-engineered system. It uses domain-relevant word representations to identify event role fillers in MUC-4 news articles.
+        </p>
+        <div class="paper-actions">
+          <a class="button button-primary" href="https://aclanthology.org/D14-1199/" target="_blank" rel="noopener">Publication page →</a>
+          <a class="button button-light" href="https://aclanthology.org/D14-1199.pdf" target="_blank" rel="noopener">PDF →</a>
+        </div>
       </section>
 
       <section class="paper-notes-grid">
-        <article class="paper-note-card panel panel-white"><h2>Research question</h2><p class="empty-note">Add the question or problem this paper addresses.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Main result</h2><p class="empty-note">Add the central result, finding, or claim.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Method / experiment</h2><p class="empty-note">Add the method, data, model, benchmark, or experimental setup.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Figures / tables</h2><p class="empty-note">Add images, plots, tables, or screenshots later.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Why it matters</h2><p class="empty-note">Add your own explanation of why this paper matters.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Reuse / links</h2><p class="empty-note">Add code, data, demo, slides, or related projects.</p></article>
+        <article class="paper-note-card panel panel-white">
+          <h2>Research question</h2>
+          <p>
+            Event extraction systems usually need domain-specific knowledge, carefully designed features, and annotated data. That makes them expensive to build and annoying to move from one domain to another.
+          </p>
+          <p>
+            This paper asks whether event roles can be extracted using automatically learned, domain-relevant word representations instead of a large set of manually engineered linguistic features.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Main result</h2>
+          <p>
+            Domain-relevant vectors work surprisingly well. The DRVR-50 model reaches the best average F1 score on the MUC-4 string-slot task, outperforming previous state-of-the-art systems and generic embedding baselines.
+          </p>
+          <p>
+            The useful part is not only the score. It shows that compact semantic representations learned from domain text can carry enough information to identify event role fillers such as perpetrators, victims, targets, and weapons.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Method / experiment</h2>
+          <p>
+            The method learns 50-dimensional word representations from domain-specific data. A small set of event seed words helps order the dictionary toward the event domain, rather than simply using word frequency.
+          </p>
+          <p>
+            Event role fillers are treated as noun phrases. The system extracts noun chunks, builds phrase representations by max-pooling the word vectors inside each chunk, and classifies them with an extra-trees ensemble classifier.
+          </p>
+          <p>
+            Experiments use the MUC-4 corpus: terrorist-event news articles with roles such as individual perpetrator, organization perpetrator, target, victim, and weapon.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Why it matters</h2>
+          <p>
+            This is an old paper, but the problem is not old. Domain adaptation is still the boring monster under the bed: models work nicely until the domain changes and the features stop being cute.
+          </p>
+          <p>
+            For my later work, this is one of the roots of semantic extraction: how to move from raw text to structured evidence while keeping the system less dependent on heavy feature engineering.
+          </p>
+        </article>
+      </section>
+
+      <section class="paper-figures panel panel-cream" aria-labelledby="figures-heading">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Figures / tables</p>
+            <h2 id="figures-heading">The useful bits</h2>
+          </div>
+          <p class="project-intro">
+            The page keeps the clearest things: the main result table, a compact average-F1 view, and a simple method diagram for the extraction pipeline.
+          </p>
+        </div>
+
+        <figure class="paper-figure featured-figure">
+          <img src="../images/papers/event-role-extraction/table1-muc4-results.png" alt="Table of precision, recall, and F1 scores for MUC-4 event role extraction systems." loading="lazy">
+          <figcaption>
+            <strong>Table 1.</strong> Main MUC-4 results. DRVR-50 has the best average F1 among the compared systems, with especially strong performance on perpetrator organization and victim roles.
+          </figcaption>
+        </figure>
+
+        <div class="figure-grid">
+          <figure class="paper-figure">
+            <img src="../images/papers/event-role-extraction/average-f1-by-system.png" alt="Horizontal bar chart comparing average F1 by event extraction system." loading="lazy">
+            <figcaption>
+              <strong>Average F1.</strong> A cleaned-up view of the result table: word-embedding models jump above the older feature-heavy systems, and DRVR-50 is slightly ahead.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="../images/papers/event-role-extraction/method-flow.png" alt="Flow diagram showing domain text, word vectors, noun phrases, classifier, and event roles." loading="lazy">
+            <figcaption>
+              <strong>Method flow.</strong> Domain text becomes word vectors; noun phrases become max-pooled representations; the classifier turns them into event roles. Not glamorous. Useful.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="paper-notes-grid">
+        <article class="paper-note-card panel panel-white">
+          <h2>Reuse / links</h2>
+          <p>
+            Useful for work on event extraction, domain adaptation, semantic role-like extraction, low-feature NLP pipelines, and comparisons between generic and domain-specific representations.
+          </p>
+          <p>
+            Reuse idea: keep the extraction target structured, but reduce the amount of task-specific feature engineering by learning representations from domain text first.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>One-line takeaway</h2>
+          <p>
+            Domain-relevant word representations can extract event roles better than older heavily engineered systems — and they are much easier to move around.
+          </p>
+        </article>
       </section>
     </main>
 
