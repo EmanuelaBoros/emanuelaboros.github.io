@@ -32,17 +32,111 @@
           <p class="section-label">ICADL 2024 · 2024 · Noisy documents</p>
           <h1>Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents</h1>
         </div>
-        <p class="project-description">A placeholder page for notes, results, figures, and commentary. Fill this later with the parts of the paper you want people to remember.</p>
-        <div class="paper-actions"><a class="button button-primary" href="https://link.springer.com/chapter/10.1007/978-981-96-0865-2_5" target="_blank" rel="noopener">Publication link →</a></div>
+        <p class="project-description">
+          This paper asks a very specific question: are some neurons inside large language models unusually sensitive to OCR noise, and can controlling them improve named entity recognition on historical documents? We look inside Llama2 and Mistral, compare how their layers react to clean and OCR-corrupted text, identify OCR-sensitive neurons, and test whether neutralising them makes NER more robust.
+        </p>
+        <div class="paper-actions">
+          <a class="button button-primary" href="https://link.springer.com/chapter/10.1007/978-981-96-0865-2_5" target="_blank" rel="noopener">Publication link →</a>
+          <a class="button button-light" href="https://arxiv.org/abs/2409.16934" target="_blank" rel="noopener">arXiv →</a>
+          <a class="button button-light" href="https://github.com/EmanuelaBoros/ocr-sensitive-neurons" target="_blank" rel="noopener">Code →</a>
+        </div>
       </section>
 
       <section class="paper-notes-grid">
-        <article class="paper-note-card panel panel-white"><h2>Research question</h2><p class="empty-note">Add the question or problem this paper addresses.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Main result</h2><p class="empty-note">Add the central result, finding, or claim.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Method / experiment</h2><p class="empty-note">Add the method, data, model, benchmark, or experimental setup.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Figures / tables</h2><p class="empty-note">Add images, plots, tables, or screenshots later.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Why it matters</h2><p class="empty-note">Add your own explanation of why this paper matters.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Reuse / links</h2><p class="empty-note">Add code, data, demo, slides, or related projects.</p></article>
+        <article class="paper-note-card panel panel-white">
+          <h2>Research question</h2>
+          <p>
+            OCR noise is usually treated as something to clean before modelling. This paper asks a more internal question: where does OCR damage appear inside the model itself?
+          </p>
+          <p>
+            We test whether specific layers and neurons in Llama2 and Mistral react strongly to corrupted tokens, and whether reducing the influence of those neurons improves named entity recognition on historical documents.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Main result</h2>
+          <p>
+            OCR noise leaves measurable traces inside the models. Some MLP regions behave differently for clean and noisy inputs, and selected neurons consistently react to OCR-like distortions.
+          </p>
+          <p>
+            Neutralising OCR-sensitive neurons can improve NER performance. The strongest gains appear in specific middle and late layers, depending on the dataset and model.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Method / experiment</h2>
+          <p>
+            The study creates clean/noisy token pairs from corrected French historical newspaper text, then introduces synthetic OCR-like character errors at low, average, and high noise levels.
+          </p>
+          <p>
+            Those token pairs are passed through Llama2 and Mistral. We compare layer activations with CKA similarity, identify OCR-sensitive neurons from activation differences, and test neuron neutralisation during NER inference.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Why it matters</h2>
+          <p>
+            This is a way of studying OCR robustness from inside the model, not only from the input side. Instead of only asking whether noise hurts, the paper asks where the damage travels.
+          </p>
+          <p>
+            For historical NLP, that matters because archives rarely arrive clean. Robust extraction needs models that can handle damaged text without quietly turning small character errors into semantic errors.
+          </p>
+        </article>
+      </section>
+
+      <section class="paper-figures panel panel-cream" aria-labelledby="figures-heading">
+        <div class="section-heading project-heading-row">
+          <div>
+<!--            <p class="section-label">Figures</p>-->
+<!--            <h2 id="figures-heading">What to show first</h2>-->
+          </div>
+          <p class="project-intro">
+            Three figures tell the story quickly: where OCR noise appears inside the models, and where neuron neutralisation improves NER.
+          </p>
+        </div>
+
+        <figure class="paper-figure featured-figure">
+          <img src="../images/papers/ocr-sensitive-neurons/fig1-cka-layers-neurons.png" alt="CKA layer similarity values and number of OCR-sensitive neurons for Llama2 and Mistral." loading="lazy">
+          <figcaption>
+            <strong>Figure 1.</strong> CKA values compare clean tokens with OCR-corrupted versions across model layers. The purple area shows the number of OCR-sensitive neurons. This is the best overview figure: it makes the internal sensitivity visible.
+          </figcaption>
+        </figure>
+
+        <div class="figure-grid">
+          <figure class="paper-figure">
+            <img src="../images/papers/ocr-sensitive-neurons/fig2-newspaper-f1-improvements.png" alt="Heatmaps of F1-score improvements by layer and neuron bins on a French historical newspaper benchmark." loading="lazy">
+            <figcaption>
+              <strong>Figure 2.</strong> F1-score improvements on the historical newspaper benchmark. Warmer regions show where neutralising OCR-sensitive neurons helps most.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="../images/papers/ocr-sensitive-neurons/fig3-ajmc-f1-improvements.png" alt="Heatmaps of F1-score improvements by layer and neuron bins on the AJMC classical commentary benchmark." loading="lazy">
+            <figcaption>
+              <strong>Figure 3.</strong> F1-score improvements on AJMC. Here, improvements concentrate around a smaller set of middle-to-late layers, especially around layers 20-24.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="paper-notes-grid">
+        <article class="paper-note-card panel panel-white">
+          <h2>Reuse / links</h2>
+          <p>
+            Useful for work on OCR robustness, neuron analysis, historical NER, model interpretability, and controlled noise experiments.
+          </p>
+          <div class="paper-actions inline-paper-actions">
+            <a class="button button-primary" href="https://github.com/EmanuelaBoros/ocr-sensitive-neurons" target="_blank" rel="noopener">Code / experiments →</a>
+            <a class="button button-light" href="https://arxiv.org/abs/2409.16934" target="_blank" rel="noopener">arXiv →</a>
+          </div>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>One-line takeaway</h2>
+          <p>
+            OCR errors are not just ugly characters at the input: they activate identifiable regions inside the model, and carefully reducing their influence can make historical NER less fragile.
+          </p>
+        </article>
       </section>
     </main>
 
