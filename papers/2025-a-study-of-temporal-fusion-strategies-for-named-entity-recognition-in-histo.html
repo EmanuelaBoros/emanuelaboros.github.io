@@ -32,17 +32,125 @@
           <p class="section-label">TPDL 2025 · 2025 · Historical AI</p>
           <h1>A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts</h1>
         </div>
-        <p class="project-description">A placeholder page for notes, results, figures, and commentary. Fill this later with the parts of the paper you want people to remember.</p>
-        <div class="paper-actions"><a class="button button-primary" href="https://doi.org/10.1007/978-3-032-06136-2_2" target="_blank" rel="noopener">Publication link →</a></div>
+        <p class="project-description">
+          This paper asks how time can be added to named entity recognition models without turning the whole architecture into a monster. It compares lightweight temporal fusion strategies for historical NER, using publication years as explicit signals and testing whether models become more robust across decades, languages, noisy periods, and drifting entity forms.
+        </p>
+        <div class="paper-actions">
+          <a class="button button-primary" href="https://doi.org/10.1007/978-3-032-06136-2_2" target="_blank" rel="noopener">Publication link →</a>
+        </div>
       </section>
 
       <section class="paper-notes-grid">
-        <article class="paper-note-card panel panel-white"><h2>Research question</h2><p class="empty-note">Add the question or problem this paper addresses.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Main result</h2><p class="empty-note">Add the central result, finding, or claim.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Method / experiment</h2><p class="empty-note">Add the method, data, model, benchmark, or experimental setup.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Figures / tables</h2><p class="empty-note">Add images, plots, tables, or screenshots later.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Why it matters</h2><p class="empty-note">Add your own explanation of why this paper matters.</p></article>
-        <article class="paper-note-card panel panel-white"><h2>Reuse / links</h2><p class="empty-note">Add code, data, demo, slides, or related projects.</p></article>
+        <article class="paper-note-card panel panel-white">
+          <h2>Research question</h2>
+          <p>
+            Historical language does not stay politely still. Names change, places drift, organizations appear and vanish, spellings move, and old documents arrive with OCR noise already attached.
+          </p>
+          <p>
+            The paper asks whether publication-year metadata can help Transformer-based NER models deal with this diachronic mess, and which temporal fusion strategy works best: early fusion, late fusion, absolute year encoding, or distance-from-present encoding.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Main result</h2>
+          <p>
+            Late fusion strategies are the most robust. They usually perform better than early fusion and the baseline, especially in early or noisy periods where historical variation and OCR degradation make entity recognition harder.
+          </p>
+          <p>
+            The gains are modest, not fireworks, but they are consistent enough to be useful. Late cross-attention is the strongest candidate, with the clearest significant improvement over the baseline.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Method / experiment</h2>
+          <p>
+            The model is treated as a standard token classifier, but each document also carries a publication year. That year is embedded and fused with token representations using several strategies.
+          </p>
+          <p>
+            The study compares a baseline with no temporal fusion, early cross-attention, late adapter fusion, concatenation, relative temporal fusion, and late cross-attention. Each strategy is tested with absolute year embeddings and time-distance embeddings, where the year is represented as distance from 2025.
+          </p>
+          <p>
+            Experiments use the French and German subsets of a historical NER benchmark, covering long time spans and noisy OCR conditions.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>Why it matters</h2>
+          <p>
+            Most NER models behave as if every document lives in the same flat present. That is convenient, and historically ridiculous.
+          </p>
+          <p>
+            This paper shows that even simple metadata — the year — can be structurally useful when it is injected in the right place. It matters for historical NLP because temporal drift is not a decorative problem; it changes what entities look like, how they are mentioned, and whether they are recognized at all.
+          </p>
+        </article>
+      </section>
+
+      <section class="paper-figures panel panel-cream" aria-labelledby="figures-heading">
+        <div class="section-heading project-heading-row">
+          <div>
+            <p class="section-label">Figures</p>
+            <h2 id="figures-heading">What to show first</h2>
+          </div>
+          <p class="project-intro">
+            Five figures tell the story: temporal fusion over decades, absolute versus distance-based time, entity length, entity type gains, and whether models really encode time internally.
+          </p>
+        </div>
+
+        <figure class="paper-figure featured-figure">
+          <img src="../images/papers/temporal-fusion/fig1-f1-over-time.png" alt="F1 scores over time for French and German historical NER under absolute and time-distance temporal modes." loading="lazy">
+          <figcaption>
+            <strong>Figure 1.</strong> F1 scores across publication years. The useful pattern is not a giant jump, but a stability story: late fusion holds up better across time, especially in earlier and noisier decades.
+          </figcaption>
+        </figure>
+
+        <div class="figure-grid">
+          <figure class="paper-figure">
+            <img src="../images/papers/temporal-fusion/fig2-time-mode-difference.png" alt="Average F1 score difference between time-distance and absolute temporal modes for French and German." loading="lazy">
+            <figcaption>
+              <strong>Figure 2.</strong> Absolute year versus time-distance encoding. German benefits more clearly from time-distance for several strategies; French is more mixed, which is annoying but honest.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="../images/papers/temporal-fusion/fig3-entity-length-sensitivity.png" alt="Difference in F1 score between long and short entities across decades and temporal fusion strategies." loading="lazy">
+            <figcaption>
+              <strong>Figure 3.</strong> Entity length sensitivity. Late fusion tends to behave more steadily for longer entity mentions, especially where older documents make surfaces more fragile.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="../images/papers/temporal-fusion/fig4-entity-type-gains.png" alt="Distribution of gain over baseline by entity type for French and German." loading="lazy">
+            <figcaption>
+              <strong>Figure 4.</strong> Entity-type gains. Locations show the largest variability and occasional gains, which makes sense: places drift, names change, and historical geography refuses to be tidy.
+            </figcaption>
+          </figure>
+
+          <figure class="paper-figure">
+            <img src="../images/papers/temporal-fusion/fig5-probing-time.png" alt="Probing accuracy grouped by fusion type and fusion strategy." loading="lazy">
+            <figcaption>
+              <strong>Figure 5.</strong> Probing for time. Late-fusion models encode temporal information more strongly than the baseline or early fusion, even when the gold year is not directly available at probing time.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="paper-notes-grid">
+        <article class="paper-note-card panel panel-white">
+          <h2>Reuse / links</h2>
+          <p>
+            Useful for historical NER, temporal modelling, metadata-aware NLP, diachronic evaluation, and experiments where publication dates are available but should not be treated as decorative metadata.
+          </p>
+          <p>
+            Reuse ideas: add year embeddings, compare early and late fusion, test absolute versus relative time, evaluate by decade, and probe whether temporal information is actually internalised.
+          </p>
+        </article>
+
+        <article class="paper-note-card panel panel-white">
+          <h2>One-line takeaway</h2>
+          <p>
+            Time helps historical NER most when it is added after the model has understood the sentence — not before the model has even started reading it.
+          </p>
+        </article>
       </section>
     </main>
 
