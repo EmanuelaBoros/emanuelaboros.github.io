@@ -102,6 +102,18 @@ const TYPE_LABELS = {
   conf: 'Conference', journal: 'Journal', workshop: 'Workshop & shared task', preprint: 'Preprint & data', thesis: 'Thesis',
 };
 
+// Venue rankings: CORE 2023 for conferences, SCImago quartile for journals.
+// Only main-track papers; workshops, Findings and competitions are not ranked.
+const RANKS = [
+  [/^(ACL|EMNLP|SIGIR) /, 'CORE A*'],
+  [/^(ECIR|ICDAR) /, 'CORE A'],
+  [/^(COLING|CoNLL|TPDL|ICFHR) /, 'CORE B'],
+  [/^(CICLing|NLDB) /, 'CORE C'],
+  [/^JASIST$/, 'SJR Q1'],
+  [/^International Journal on Digital Libraries/, 'SJR Q2'],
+];
+const rankOf = (p) => (p.type === 'conf' || p.type === 'journal') && (RANKS.find(([re]) => re.test(p.venue)) || [])[1];
+
 (function renderPublications() {
   const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -155,6 +167,7 @@ const TYPE_LABELS = {
   const filters = document.getElementById('pubFilters');
   const search = document.getElementById('pubSearch');
   const count = document.getElementById('pubCount');
+  document.querySelectorAll('[data-pub-ranked]').forEach((el) => { el.textContent = PUBLICATIONS.filter(rankOf).length; });
   document.querySelectorAll('[data-pub-total]').forEach((el) => { el.textContent = PUBLICATIONS.length; });
   if (!list) return;
   const boldMe = (authors) => escape(authors).replace(/E\. Boros/g, '<strong>E. Boros</strong>');
@@ -166,9 +179,11 @@ const TYPE_LABELS = {
       const link = p.page || p.url;
       const title = link ? `<a href="${link}"${p.url ? ' target="_blank" rel="noopener"' : ''}>${escape(p.title)}</a>` : escape(p.title);
       const tags = [`<span class="pub-type pub-type-${p.type}">${TYPE_LABELS[p.type]}</span>`];
+      const rank = rankOf(p);
+      if (rank) tags.push(`<span class="pub-type pub-rank" data-rank="${rank.split(' ')[1]}" title="${rank.startsWith('CORE') ? 'CORE 2023 conference rank' : 'SCImago journal quartile'}">${rank}</span>`);
       if (p.lang === 'fr') tags.push('<span class="pub-type">FR</span>');
       if (p.page) tags.push('<span class="pub-type pub-has-notes">notes + figures</span>');
-      return `<li class="pub-item" data-type="${p.type}" data-lang="${p.lang || 'en'}" data-text="${escape((p.title + ' ' + p.authors + ' ' + p.venue).toLowerCase())}">
+      return `<li class="pub-item" data-type="${p.type}" data-ranked="${rank ? 'yes' : 'no'}" data-lang="${p.lang || 'en'}" data-text="${escape((p.title + ' ' + p.authors + ' ' + p.venue).toLowerCase())}">
         <div class="pub-main"><h3>${title}</h3><p class="pub-authors">${boldMe(p.authors)}</p>
         <p class="pub-meta"><span class="pub-venue-name">${escape(p.venue)}</span>${tags.join('')}</p></div>
         <span class="pub-cites">${p.cited ? p.cited + '<small>cited</small>' : ''}</span></li>`;
@@ -208,7 +223,7 @@ const TYPE_LABELS = {
     const q = (search?.value || '').trim().toLowerCase();
     let shown = 0;
     list.querySelectorAll('.pub-item').forEach((li) => {
-      const typeOk = active === 'all' || (active === 'fr' ? li.dataset.lang === 'fr' : li.dataset.type === active);
+      const typeOk = active === 'all' || (active === 'fr' ? li.dataset.lang === 'fr' : active === 'ranked' ? li.dataset.ranked === 'yes' : li.dataset.type === active);
       const textOk = !q || li.dataset.text.includes(q);
       li.hidden = !(typeOk && textOk);
       if (!li.hidden) shown++;

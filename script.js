@@ -103,3 +103,15 @@ document.querySelectorAll('.nav a').forEach((link) => {
     link.setAttribute('aria-current', 'page');
   }
 });
+
+// Personal texts: switch between the English version and the Romanian original
+document.querySelectorAll('.lang-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const article = btn.closest('.personal-text');
+    const ro = btn.getAttribute('aria-pressed') !== 'true';
+    article.querySelectorAll('.t-en').forEach((el) => { el.hidden = ro; });
+    article.querySelectorAll('.t-ro').forEach((el) => { el.hidden = !ro; });
+    btn.setAttribute('aria-pressed', ro);
+    btn.textContent = ro ? 'English version' : 'Romanian original';
+  });
+});
