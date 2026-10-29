@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents are evidence · Emanuela Boros</title>
+<script>document.documentElement.classList.add('js');</script>
+  <meta name="description" content="An essay on receipts, claims, page layouts, outbreak reports and Wikipedia revisions: why AI systems should keep the trace between a claim and its source." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css?v=202610291845" />
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+<a aria-label="Home" class="logo" href="../index.html">
+<span class="logo-mark">EB</span>
+<span class="logo-text">Emanuela Boros</span>
+</a>
+<nav aria-label="Main navigation" class="nav">
+<a href="../things.html">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../writing.html">Writing</a>
+<a href="../photography.html">Photography</a>
+<a href="../index.html#about">About</a>
+</nav>
+</header>
+
+    <main class="article-page-main">
+      <article class="article-panel panel panel-cream">
+        <a class="back-link" href="../writing.html">← back to writing</a>
+        <p class="section-label">Essay</p>
+        <h1>Documents are evidence, not just data</h1>
+        <p class="post-date">Essay · October 2026 · about 8 minutes</p>
+
+        <div class="article-bubbles">
+          <span>receipts</span>
+          <span>claims</span>
+          <span>page layout</span>
+          <span>outbreak reports</span>
+          <span>revision histories</span>
+          <span>provenance</span>
+        </div>
+
+        <p class="article-lede">A receipt, an insurance claim, a news report about an outbreak, a revision of a Wikipedia article. We feed them to models as text, rows or pixels. But each of them exists to prove something to someone, and an AI system that forgets where a claim came from has kept the data and thrown away the evidence.</p>
+
+        <h2>A document is a claim with a witness</h2>
+        <p>A receipt says: this shop, on this day, sold these things at these prices, for this total. Nobody reads a receipt for pleasure. It is there to be checked, by an accountant, an employer, an insurer, a tax office.</p>
+        <p>That is also why it gets forged. With colleagues in La Rochelle we built one of the few public datasets for it: 988 scanned receipts with their transcriptions, of which 163 were altered by hand, in realistic ways, and annotated (Tornés et al., 2023a). The forgeries are small. A total, a quantity, a date, a product line. Nothing in the image needs to look wrong.</p>
+
+        <figure class="article-figure receipt-fig reveal" aria-label="A receipt whose total is changed; the items no longer add up to the new total">
+          <div class="receipt">
+            <p class="r-shop">CORNER MART<br><span>12 Jalan Besar · 14/03/2018 · 10:42</span></p>
+            <div class="r-line"><span>Mineral water ×2</span><span>2.40</span></div>
+            <div class="r-line"><span>Bread loaf</span><span>3.10</span></div>
+            <div class="r-line"><span>Coffee 200 g</span><span>8.90</span></div>
+            <div class="r-line r-sum"><span>Items</span><span class="r-calc">14.40</span></div>
+            <div class="r-line r-total"><span>TOTAL</span><span class="r-amount"><s>14.40</s><b>41.40</b></span></div>
+            <p class="r-flag"><span>2.40 + 3.10 + 8.90 = 14.40 ≠ 41.40</span></p>
+          </div>
+          <div class="r-graph" aria-hidden="true">
+            <span class="g-node">shop</span><span class="g-edge">sells</span><span class="g-node">item</span><span class="g-edge">priced</span><span class="g-node">amount</span><span class="g-edge g-break">sums to</span><span class="g-node g-bad">total</span>
+          </div>
+          <figcaption>An illustration of the kind of forgery in the dataset: one digit moved, an image that still looks clean. Read as a set of entities and relations, the receipt contradicts itself.</figcaption>
+        </figure>
+
+        <p>Read as a bag of words, a forged receipt is almost identical to the real one. Read as a set of claims that have to agree with each other, it is not. In a second paper we gave a language model the receipt three ways: as raw text, as extracted entities, and as triples built from a small ontology of shops, products, prices and totals. How well forgeries were caught depended on which entities and relations the model could see (Tornés et al., 2023b). The evidence is not in any single field. It is in whether the fields still hold together.</p>
+        <p>Car insurance claims make the same point from the other direction. Most of what an insurer holds is a table: dates, amounts, vehicle, policy. To use a language model at all, we had to serialise those tables into text, and the way we flattened them changed what the model could learn (Telnoff et al., 2023). Turning a record into a sentence is already an interpretation.</p>
+
+        <h2>A page is not a photo</h2>
+        <p>Even the explanation of a decision has to respect where the evidence sits. LIME, a popular explanation method, hides regions of an image and watches how the classifier's answer changes. The regions usually come from superpixel algorithms designed for photographs, where pixels of similar colour belong together. On a document page, that logic cuts words in half and joins lines that have nothing to do with each other.</p>
+        <p>The standard benchmark for this, RVL-CDIP, has its own history. Its pages come from the Legacy Tobacco Documents Library, industry papers made public through the 1998 tobacco settlement: documents that were, quite literally, evidence before they became training data.</p>
+
+        <figure class="article-figure seg-fig reveal" aria-label="Consistency of LIME explanations for four segmentations: Quickshift 0.43, SLIC 0.79, OCR boxes 0.93, 4 by 4 grid 0.98">
+          <div class="seg-grid">
+            <div class="seg">
+              <svg viewBox="0 0 80 104" class="seg-page"><g class="txt"><rect x="10" y="12" width="60" height="5"/><rect x="10" y="24" width="46" height="3"/><rect x="10" y="31" width="56" height="3"/><rect x="10" y="38" width="50" height="3"/><rect x="10" y="52" width="28" height="22"/><rect x="42" y="52" width="28" height="22"/><rect x="10" y="82" width="54" height="3"/><rect x="10" y="89" width="40" height="3"/></g>
+                <g class="cut"><path d="M6 8 Q22 20 14 34 T26 60 Q30 80 18 100"/><path d="M30 6 Q44 18 36 30 Q28 44 48 50 T40 98"/><path d="M58 4 Q50 22 64 36 Q74 52 56 66 T66 100"/><path d="M4 46 Q30 40 44 48 T78 44"/><path d="M4 78 Q24 70 40 80 T78 76"/></g></svg>
+              <p class="seg-name">Quickshift</p><div class="seg-track"><span style="--w:43%"></span></div><p class="seg-val">0.43</p>
+            </div>
+            <div class="seg">
+              <svg viewBox="0 0 80 104" class="seg-page"><g class="txt"><rect x="10" y="12" width="60" height="5"/><rect x="10" y="24" width="46" height="3"/><rect x="10" y="31" width="56" height="3"/><rect x="10" y="38" width="50" height="3"/><rect x="10" y="52" width="28" height="22"/><rect x="42" y="52" width="28" height="22"/><rect x="10" y="82" width="54" height="3"/><rect x="10" y="89" width="40" height="3"/></g>
+                <g class="cut"><path d="M27 4 L25 100"/><path d="M53 4 L55 100"/><path d="M4 28 L76 26"/><path d="M4 56 L76 58"/><path d="M4 84 L76 82"/></g></svg>
+              <p class="seg-name">SLIC</p><div class="seg-track"><span style="--w:79%"></span></div><p class="seg-val">0.79</p>
+            </div>
+            <div class="seg">
+              <svg viewBox="0 0 80 104" class="seg-page"><g class="txt"><rect x="10" y="12" width="60" height="5"/><rect x="10" y="24" width="46" height="3"/><rect x="10" y="31" width="56" height="3"/><rect x="10" y="38" width="50" height="3"/><rect x="10" y="52" width="28" height="22"/><rect x="42" y="52" width="28" height="22"/><rect x="10" y="82" width="54" height="3"/><rect x="10" y="89" width="40" height="3"/></g>
+                <g class="cut box"><rect x="8" y="10" width="64" height="9"/><rect x="8" y="22" width="60" height="21"/><rect x="8" y="50" width="32" height="26"/><rect x="40" y="50" width="32" height="26"/><rect x="8" y="80" width="58" height="14"/></g></svg>
+              <p class="seg-name">OCR boxes</p><div class="seg-track"><span style="--w:93%"></span></div><p class="seg-val">0.93</p>
+            </div>
+            <div class="seg">
+              <svg viewBox="0 0 80 104" class="seg-page"><g class="txt"><rect x="10" y="12" width="60" height="5"/><rect x="10" y="24" width="46" height="3"/><rect x="10" y="31" width="56" height="3"/><rect x="10" y="38" width="50" height="3"/><rect x="10" y="52" width="28" height="22"/><rect x="42" y="52" width="28" height="22"/><rect x="10" y="82" width="54" height="3"/><rect x="10" y="89" width="40" height="3"/></g>
+                <g class="cut"><path d="M20 2 V102"/><path d="M40 2 V102"/><path d="M60 2 V102"/><path d="M2 26 H78"/><path d="M2 52 H78"/><path d="M2 78 H78"/></g></svg>
+              <p class="seg-name">4×4 grid</p><div class="seg-track"><span style="--w:98%"></span></div><p class="seg-val">0.98</p>
+            </div>
+          </div>
+          <figcaption>Four ways to cut the same invoice into regions (sketched here), and how often repeated LIME runs agree on the explanation (consistency, 0 to 1). Segmenters built for photographs are the least stable; compact, text-aligned regions are the most. Telnoff et al., XAI Workshop @ IJCAI 2026.</figcaption>
+        </figure>
+
+        <p>So we measured it, varying the segmentation, the sampling and the surrogate model one at a time. The segmentation mattered most. On the same invoice, the agreement between repeated explanations went from 0.43 with Quickshift to 0.93 with regions built from OCR text boxes and 0.98 with a plain grid (Telnoff et al., 2026). The segmentation is not a preprocessing detail. It decides what an explanation is allowed to talk about. If it cannot point to “this line, this total, this signature”, it is not pointing to evidence.</p>
+
+        <h2>Who said it, where, and when</h2>
+        <p>Epidemic surveillance runs on documents too. Long before official figures, outbreaks show up in local news, in many languages, often in places with little annotated data. Several of our papers worked on finding those reports and pulling out the disease and the location they mention, across languages and at the level of individual words (Mutuvi et al., 2020; 2021).</p>
+        <p>An alert that says “cholera, somewhere, recently” is not useful. What an analyst needs is the sentence, the newspaper, the date and the place, so that the signal can be checked against other sources before anyone acts on it. Even the way a model splits words into tokens changes what it can find in low-resource languages (Mutuvi et al., 2023): the same report can produce an alert or nothing, depending on choices that nobody downstream will ever see.</p>
+
+        <h2>Edits are evidence too</h2>
+        <p>Some documents are never finished. A Wikipedia article is the sum of every revision ever made to it, and that history is part of what it says.</p>
+
+        <figure class="article-figure diff-fig reveal" aria-label="Two Wikipedia edits: offensive becomes counter-offensive; a cited quotation is deleted while the claim stays">
+          <div class="diff">
+            <p class="diff-tag">Narrative</p>
+            <p class="diff-text">…which led the Ukrainian government to launch a military <del>offensive</del><ins>counter-offensive</ins> against the insurgents</p>
+          </div>
+          <div class="diff">
+            <p class="diff-tag">Epistemic</p>
+            <p class="diff-text">…the outskirts [okraina] of Russia <del>(Pivtorak 2001)</del><span class="diff-note">claim kept, source gone</span></p>
+          </div>
+          <figcaption>Two revisions from English Wikipedia articles on Ukrainian heritage. Neither adds anything false. The first can shift who is seen as attacking; the second keeps the claim and removes its evidence. Garambois, Tamrazyan &amp; Boros, SIGIR 2026.</figcaption>
+        </figure>
+
+        <p>With Hamest Tamrazyan and M. Garambois we followed Ukrainian cultural heritage on English Wikipedia: from 25 seed concepts such as the Kyiv Pechersk Lavra, the Holodomor and Crimea, to 40 articles and their complete histories, 69,908 revisions by 19,769 editors. A language model restated and labelled every edit, and two experts checked thousands of them by hand. About one revision in five reshaped who is seen to have made, inherited or lost a heritage (Garambois et al., 2026; Tamrazyan et al., to appear).</p>
+        <p>Almost none of these edits are false. A word changes, a clause adds blame, a properly sourced quotation disappears while the sentence it supported stays. Fact-checking cannot catch an edit in which nothing is false, and the metadata the platform keeps, quality grades and page protection, did not separate these edits from the rest. The harm is only visible if you read the text as a sequence of claims, each with a source and an author, at a date.</p>
+
+        <h2>Data came from somewhere too</h2>
+        <p>The same logic applies to the documents we train models on. In the Apertus project, a fully open multilingual model built in Switzerland, part of the work was simply respecting where the data came from: openly available text, with website owners' opt-outs honoured, and a pipeline that can be inspected (Hernández-Cano et al., 2026). A training corpus is also a collection of documents, each with an origin, an owner and conditions. Treating it as an anonymous pile of tokens is a choice, not a fact.</p>
+
+        <h2>Keeping the trace</h2>
+        <p>None of this needs exotic methods. It needs systems that refuse to drop the link between a claim and where it came from:</p>
+        <ul>
+          <li><strong>Point back to the source.</strong> Every extracted value should carry its page, region, sentence or revision, so a person can check it in one click.</li>
+          <li><strong>Model relations, not only fields.</strong> A total that does not match its items is evidence; neither number alone is.</li>
+          <li><strong>Explain in the document's own units.</strong> Lines, cells, blocks and signatures, not colour patches.</li>
+          <li><strong>Keep time and authorship.</strong> When something was written, edited or reported is part of what it means.</li>
+          <li><strong>Treat flattening as interpretation.</strong> Turning a table or a page into text decides what a model can see; record how it was done.</li>
+          <li><strong>Evaluate verifiability.</strong> Ask not only whether the answer is right, but whether someone could tell if it were wrong.</li>
+        </ul>
+        <p>Documents were made to be checked. The least our systems can do is leave them checkable.</p>
+      </article>
+
+      <section class="article-references panel panel-white">
+        <p class="section-label">Paper references</p>
+        <h2>Related work</h2>
+        <div class="reference-list">
+          <a href="../papers/2023-receipt-dataset-for-document-forgery-detection.html">Tornés, Taburet, Boros, Rouis, Doucet, Gomez-Krämer et al. (2023a). Receipt Dataset for Document Forgery Detection. ICDAR 2023.</a>
+          <a href="../papers/2023-detecting-forged-receipts-with-domain-specific-ontology-based-entities-and.html">Tornés, Boros, Doucet, Gomez-Krämer &amp; Ogier (2023b). Detecting Forged Receipts with Domain-Specific Ontology-Based Entities &amp; Relations. ICDAR 2023.</a>
+          <a href="../publications.html">Tornés, Boros, Doucet, Gomez-Krämer, Ogier et al. (2019). Knowledge-based Techniques for Document Fraud Detection: A Comprehensive Study. CICLing 2019.</a>
+          <a href="https://www.scitepress.org/Documents/2023/122329" target="_blank" rel="noopener">Telnoff, Boros, Coustaty, Crohas, Doucet &amp; Le Bars (2023). An Explorative Guide on How to Detect Forged Car Insurance Claims with Language Models. KDIR 2023.</a>
+          <a href="../publications.html">Telnoff, Boros, Coustaty, Jarry, Crohas, Doucet et al. (2026). When Superpixels Fail on Documents: A Study of Segmentation for LIME Explanations. XAI Workshop @ IJCAI 2026.</a>
+          <a href="../papers/2020-multilingual-epidemiological-text-classification-a-comparative-study.html">Mutuvi, Boros, Doucet, Jatowt, Lejeune &amp; Odeo (2020). Multilingual Epidemiological Text Classification: A Comparative Study. COLING 2020.</a>
+          <a href="../papers/2021-token-level-multilingual-epidemic-dataset-for-event-extraction.html">Mutuvi, Boros, Doucet, Lejeune, Jatowt &amp; Odeo (2021). Token-Level Multilingual Epidemic Dataset for Event Extraction. TPDL 2021.</a>
+          <a href="../papers/2023-analyzing-the-impact-of-tokenization-on-multilingual-epidemic-surveillance.html">Mutuvi, Boros, Doucet, Lejeune, Jatowt &amp; Odeo (2023). Analyzing the Impact of Tokenization on Multilingual Epidemic Surveillance in Low-Resource Languages. ICDAR 2023.</a>
+          <a href="../papers/2026-a-dataset-of-cultural-heritage-manipulation-on-english-wikipedia-in-the-rus.html">Garambois, Tamrazyan &amp; Boros (2026). A Dataset of Cultural Heritage Manipulation on English Wikipedia in the Russo–Ukrainian Context. SIGIR 2026.</a>
+          <a>Tamrazyan, Garambois &amp; Boros. Weaponizing Cultural Heritage in the Digital Age: Evidence from Wikipedia Revisions. International Journal on Digital Libraries, to appear.</a>
+          <a href="../papers/2026-apertus-democratizing-open-and-compliant-llms-for-global-language-environme.html">Hernández-Cano, Hägele, Huang, Romanou, Solergibert et al. (2026). Apertus: Democratizing Open and Compliant LLMs for Global Language Environments. ACL 2026.</a>
+        </div>
+      </section>
+
+      <section class="project-nav panel panel-cream">
+        <a href="llms-in-archives.html">← LLMs in archives</a>
+        <a href="../writing.html">Writing index →</a>
+      </section>
+    </main>
+
+    <footer>
+<p>© <span id="year"></span> Emanuela Boros</p>
+</footer>
+  </div>
+
+  <script src="../script.js?v=202610291845"></script>
+</body>
+</html>
