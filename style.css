@@ -228,9 +228,11 @@ main > .section:first-child, main > .panel:first-child { border-top: 0; }
 /* stage 2: entities */
 .ent { border-radius: 4px; padding: 0 .12em; background-size: 0% 100%; background-repeat: no-repeat; transition: none; position: relative; }
 .ent[data-type]::after {
-  content: attr(data-type); position: relative; top: -.55em; margin-left: .2em;
-  font-family: var(--mono); font-size: .56rem; letter-spacing: .05em; opacity: 0;
+  content: attr(data-type); position: absolute; left: .12em; top: -1.05em; line-height: 1;
+  font-family: var(--mono); font-size: .56rem; letter-spacing: .05em; opacity: 0; pointer-events: none;
 }
+.pipe-stage .ent { white-space: nowrap; }
+.pipe-stage:nth-of-type(2) .pipe-text { line-height: 2.25; margin-top: .3rem; }
 .ent-loc { background-image: linear-gradient(color-mix(in srgb, var(--t-historical) 24%, transparent), color-mix(in srgb, var(--t-historical) 24%, transparent)); }
 .ent-loc::after { color: var(--t-historical); }
 .ent-date { background-image: linear-gradient(color-mix(in srgb, var(--t-semantic) 26%, transparent), color-mix(in srgb, var(--t-semantic) 26%, transparent)); }
@@ -246,11 +248,11 @@ main > .section:first-child, main > .panel:first-child { border-top: 0; }
 .pipe-graph { width: 100%; height: auto; display: block; overflow: visible; }
 .pipe-graph .edge { stroke: var(--rule-strong); stroke-width: 1.5; fill: none; stroke-dasharray: 160; stroke-dashoffset: 160; animation: drawEdge var(--cycle) var(--ease) infinite; animation-delay: var(--d, 0s); }
 .pipe-graph .node circle { stroke: var(--card); stroke-width: 3; }
-.pipe-graph .node { opacity: 0; transform-box: fill-box; transform-origin: center; animation: popNode var(--cycle) var(--ease) infinite; animation-delay: var(--d, 0s); }
+.pipe-graph .node { opacity: .22; transform-box: fill-box; transform-origin: center; animation: popNode var(--cycle) var(--ease) infinite; animation-delay: var(--d, 0s); }
 .pipe-graph text { font-family: var(--mono); font-size: 10px; fill: var(--ink-2); }
 .pipe-graph .hub text { font-family: var(--serif); font-size: 12px; fill: var(--ink); }
 @keyframes drawEdge { 0%, 46% { stroke-dashoffset: 160; } 60%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 160; opacity: 0; } }
-@keyframes popNode { 0%, 44% { opacity: 0; transform: scale(.6); } 52%, 92% { opacity: 1; transform: scale(1); } 100% { opacity: 0; } }
+@keyframes popNode { 0%, 44% { opacity: .22; transform: scale(.85); } 52%, 92% { opacity: 1; transform: scale(1); } 100% { opacity: .22; transform: scale(.85); } }
 .pipeline figcaption { font-size: .8rem; color: var(--muted); margin-top: .6rem; border-top: 1px solid var(--rule); padding-top: .7rem; }
 
 /* ---------- home: research themes ---------- */
