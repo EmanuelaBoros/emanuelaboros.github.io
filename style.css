@@ -760,3 +760,42 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .js .diff-fig:not(.is-visible) .diff-note { opacity: 0; }
 .diff-fig.is-visible .diff:nth-child(1) del { opacity: .55; }
 .diff-fig.is-visible .diff:nth-child(2) del { opacity: .35; }
+
+/* Essay 2: outbreak reports spreading on a map */
+.outbreak-fig { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1rem 1.4rem; align-items: center; }
+.outbreak-fig figcaption { grid-column: 1 / -1; }
+@media (max-width: 620px) { .outbreak-fig { grid-template-columns: 1fr; } }
+.outbreak-map { width: 100%; height: auto; display: block; }
+.outbreak-map .land circle { fill: var(--rule-strong); opacity: .55; }
+.outbreak-map .wave { fill: none; stroke: var(--accent); stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.outbreak-fig.is-visible .wave { animation: outbreakWave 3.2s var(--ease) infinite; }
+.outbreak-fig.is-visible .wave.w2 { animation-delay: 1.6s; }
+@keyframes outbreakWave { 0% { transform: scale(.4); opacity: .7; } 100% { transform: scale(9); opacity: 0; } }
+.outbreak-map .hop { fill: none; stroke: var(--t-semantic); stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .8; transition: stroke-dashoffset .9s var(--ease); transition-delay: calc(.7s * var(--i)); }
+.js .outbreak-fig:not(.is-visible) .hop { stroke-dashoffset: 1; }
+.outbreak-map .pin { transition: opacity .5s var(--ease); transition-delay: calc(.7s * var(--i) + .5s); }
+.outbreak-map .pin.origin { transition-delay: 0s; }
+.js .outbreak-fig:not(.is-visible) .pin { opacity: 0; }
+.outbreak-map .pin .core { fill: var(--t-semantic); stroke: var(--paper); stroke-width: 1.5; }
+.outbreak-map .pin .ring { fill: none; stroke: var(--t-semantic); stroke-width: 1; opacity: .5; }
+.outbreak-map .pin.origin .core { fill: var(--accent); }
+.outbreak-map .pin.origin .ring { stroke: var(--accent); }
+.outbreak-map .pin.official .core { fill: var(--t-cultural); }
+.outbreak-map .pin.official .ring { stroke: var(--t-cultural); }
+.outbreak-map text { font-family: var(--sans); font-size: 12.5px; fill: var(--ink-2); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; }
+.outbreak-map text .day { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+.alert-card { border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 6px; background: var(--card); padding: .8rem .9rem; font-size: .8rem; }
+.article-panel .alert-card .ac-head { margin: 0 0 .5rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.alert-card dl { margin: 0; display: grid; gap: .35rem; }
+.alert-card dl > div { display: grid; grid-template-columns: 4.6rem 1fr; gap: .4rem; transition: opacity .5s var(--ease); }
+.alert-card dt { font-family: var(--mono); font-size: .64rem; color: var(--muted); padding-top: .15rem; }
+.alert-card dd { margin: 0; color: var(--ink); line-height: 1.4; }
+.alert-card .ac-src dd { font-family: var(--serif); font-style: italic; }
+.alert-card mark { background: var(--accent-soft); color: var(--accent); border-radius: 3px; padding: 0 .1em; }
+.alert-card .ac-tok dd { display: flex; gap: .2rem; flex-wrap: wrap; }
+.alert-card .ac-tok span { font-family: var(--mono); font-size: .68rem; padding: .05rem .35rem; border: 1px dashed var(--accent); border-radius: 3px; color: var(--accent); }
+.article-panel .alert-card .ac-note { margin: .6rem 0 0; font-size: .74rem; line-height: 1.45; color: var(--muted); transition: opacity .6s var(--ease) 5.2s; }
+.alert-card dl > div:nth-child(1) { transition-delay: 3.4s; } .alert-card dl > div:nth-child(2) { transition-delay: 3.7s; }
+.alert-card dl > div:nth-child(3) { transition-delay: 4s; } .alert-card dl > div:nth-child(4) { transition-delay: 4.3s; }
+.alert-card dl > div:nth-child(5) { transition-delay: 4.8s; }
+.js .outbreak-fig:not(.is-visible) .alert-card dl > div, .js .outbreak-fig:not(.is-visible) .ac-note { opacity: 0; }
