@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=202610291818" />
+  <link rel="stylesheet" href="../style.css?v=202610291835" />
 </head>
 <body>
   <div class="page-frame">
@@ -30,27 +30,125 @@
     <main class="article-page-main">
       <article class="article-panel panel panel-cream">
         <a class="back-link" href="../writing.html">← back to writing</a>
-        <p class="section-label">Opinion</p>
+        <p class="section-label">Essay</p>
         <h1>LLMs in archives: fluent, useful, suspicious</h1>
-        <p class="post-date">Draft essay · archive AI · evidence trouble</p>
+        <p class="post-date">Essay · October 2026 · about 8 minutes</p>
 
         <div class="article-bubbles">
           <span>fluent, not innocent</span>
-          <span>archive ghosts</span>
           <span>OCR trouble</span>
           <span>historical entities</span>
           <span>source criticism</span>
-          <span>clean text, maybe</span>
           <span>no magic, please</span>
         </div>
 
-        <p class="article-lede">
+        <p class="article-lede">Large language models can help us read damaged collections. They can also hand us a sentence that is smooth, plausible and wrong, with nothing on its surface to tell the difference. Good prose is not the same thing as grounded historical understanding, and in archives that gap is the whole problem.</p>
+
+        <h2>The page is not the text</h2>
+        <p>Most of what we call a digital archive is text that a machine read once, years ago, at scale. Newspapers, books and registers were scanned and passed through optical character recognition (OCR) with the tools of the day, and that legacy OCR is still what search engines, historians and now language models read.</p>
+        <p>One line from the <em>Sydney Morning Herald</em> of 1859 shows the problem in miniature. The page says <em>Messrs. Mort and Co. sold, to-day, by auction</em>. The OCR says <em>Missus. Moat and Co. sold, to-day, by auction</em>. Two words out of eight. A reader skims past it; a search for the auctioneer Mort finds nothing; an entity tagger meets a woman called Moat who never existed.</p>
+        <figure class="article-figure readings reveal" aria-label="The same line as printed, as read by OCR, as corrected by a fluent model, and as it should be">
+          <div class="reading reading-page"><span class="reading-label">Page</span><img src="../images/writing/llms-in-archives/herald-1859-mort.png" alt="Scanned line: Messrs. Mort and Co. sold, to-day, by auction"></div>
+          <div class="reading reading-ocr"><span class="reading-label">OCR</span><p><mark>Missus</mark>. <mark>Moat</mark> and Co. sold, to-day, by auction,</p></div>
+          <div class="reading reading-llm"><span class="reading-label">Fluent fix</span><p>Messrs. <mark class="hidden-error">Moat</mark> and Co. sold, to-day, by auction,<span class="reading-note">still wrong, now invisible</span></p></div>
+          <div class="reading reading-truth"><span class="reading-label">Truth</span><p>Messrs. <mark>Mort</mark> and Co. sold, to-day, by auction,</p></div>
+          <figcaption>One line, four readings. <em>Sydney Morning Herald</em>, 1859 (Overproof dataset). The “fluent fix” is an illustration of the failure mode, not a specific model’s output.</figcaption>
+        </figure>
+        <p>These small errors are not cosmetic. Named entity recognition that scores around 90% on clean text can fall to around 60% as the word error rate climbs from 1% to 7% (Hamdi et al., 2019). In our own work on event detection over digitised documents, adding realistic OCR noise cut the performance of standard models sharply, and some architectures broke much faster than others (Boros et al., 2022). The errors are rarely in the boring words. They land on names, places and dates: the things historians actually search for.</p>
+
+        <figure class="article-figure ner-plot reveal">
+          <svg viewBox="0 0 640 300" role="img" aria-label="NER performance falls from 90% to 60% as OCR word error rate rises from 1% to 7% and character error rate from 8% to 20%">
+            <line class="gl" x1="48" x2="624" y1="245.8" y2="245.8"/><text class="tick" x="40" y="249.8" text-anchor="end">60</text><line class="gl" x1="48" x2="624" y1="174.6" y2="174.6"/><text class="tick" x="40" y="178.6" text-anchor="end">70</text><line class="gl" x1="48" x2="624" y1="103.4" y2="103.4"/><text class="tick" x="40" y="107.4" text-anchor="end">80</text><line class="gl" x1="48" x2="624" y1="32.2" y2="32.2"/><text class="tick" x="40" y="36.2" text-anchor="end">90</text><text class="tick" x="48.0" y="278" text-anchor="middle">0%</text><text class="tick" x="185.1" y="278" text-anchor="middle">5%</text><text class="tick" x="322.3" y="278" text-anchor="middle">10%</text><text class="tick" x="459.4" y="278" text-anchor="middle">15%</text><text class="tick" x="596.6" y="278" text-anchor="middle">20%</text>
+            <text class="axis-title" x="48" y="14">NER performance (%)</text>
+            <text class="axis-title" x="624" y="296" text-anchor="end">OCR error rate</text>
+            <polyline class="ln wer" pathLength="1" points="75.4,32.2 102.9,67.8 130.3,103.4 157.7,139.0 185.1,174.6 212.6,210.2 240.0,245.8"/>
+            <polyline class="ln cer" pathLength="1" points="267.4,32.2 322.3,67.8 377.1,103.4 432.0,139.0 486.9,174.6 541.7,210.2 596.6,245.8"/>
+            <circle class="dot wer" cx="75.4" cy="32.2" r="3.5" style="--i:0"/><circle class="dot wer" cx="102.9" cy="67.8" r="3.5" style="--i:1"/><circle class="dot wer" cx="130.3" cy="103.4" r="3.5" style="--i:2"/><circle class="dot wer" cx="157.7" cy="139.0" r="3.5" style="--i:3"/><circle class="dot wer" cx="185.1" cy="174.6" r="3.5" style="--i:4"/><circle class="dot wer" cx="212.6" cy="210.2" r="3.5" style="--i:5"/><circle class="dot wer" cx="240.0" cy="245.8" r="3.5" style="--i:6"/><circle class="dot cer" cx="267.4" cy="32.2" r="3.5" style="--i:0"/><circle class="dot cer" cx="322.3" cy="67.8" r="3.5" style="--i:1"/><circle class="dot cer" cx="377.1" cy="103.4" r="3.5" style="--i:2"/><circle class="dot cer" cx="432.0" cy="139.0" r="3.5" style="--i:3"/><circle class="dot cer" cx="486.9" cy="174.6" r="3.5" style="--i:4"/><circle class="dot cer" cx="541.7" cy="210.2" r="3.5" style="--i:5"/><circle class="dot cer" cx="596.6" cy="245.8" r="3.5" style="--i:6"/>
+            <text class="lab wer" x="174.2" y="96.3">word errors</text>
+            <text class="lab cer" x="453.9" y="96.3">character errors</text>
+          </svg>
+          <figcaption>Named entity recognition falls from about 90% to 60% as OCR word error rate goes from 1% to 7%, or character error rate from 8% to 20%. Data from Hamdi et al., JCDL 2019.</figcaption>
+        </figure>
+        <figure class="article-figure">
+          <img src="../images/writing/llms-in-archives/event-detection-noise.png" alt="Box plots of event detection F1 per language under clean text and four kinds of synthetic noise" loading="lazy">
+          <figcaption>Event detection F1 per language on clean text and under four kinds of simulated degradation: character degradation, bleed-through, blur and phantom characters. Boros et al., IJDL 2022.</figcaption>
+        </figure>
+        <h2>The temptation</h2>
+        <p>So the obvious idea is to ask a large language model to fix the text. It has read more than any of us, it writes impeccable French and German, and it will happily return a clean paragraph in seconds.</p>
+        <p>In 2024 we tested exactly that, on eight benchmarks spanning about ten centuries: six sets of OCR output, one of handwritten transcriptions, one of transcribed radio. We tried several models, several prompts, zero-shot and few-shot, and cut each collection into lines, sentences and regions. In those settings, the honest summary is that it did not work: corrections more often made the text worse than better, and the real question became which setup did the least damage (Boros et al., 2024).</p>
+        <figure class="article-figure">
+          <img src="../images/writing/llms-in-archives/llm-correction-heatmap.png" alt="Heatmap of post-correction improvement scores per model and dataset, mostly negative" loading="lazy">
+          <figcaption>Improvement score per model (rows) and benchmark (columns), sentence-level input, best prompt, zero-shot. Red means the corrected text is further from the ground truth than the OCR was. Boros et al., LaTeCH-CLfL 2024.</figcaption>
+        </figure>
+        <p>The more interesting finding came from reading the outputs. We annotated about 2,500 corrected passages against the ground truth. The models did not only miss errors. They paraphrased, modernised spelling, smoothed the syntax, finished sentences that were cut off, and sometimes produced text that was simply not on the page.</p>
+
+        <figure class="article-figure">
+          <img src="../images/writing/llms-in-archives/llm-error-categories.png" alt="Bar chart of manually annotated LLM correction behaviours for Llama 2, GPT-4 and BLOOMZ" loading="lazy">
+          <figcaption>What the models actually did, in about 2,500 manually annotated corrections: correct or partial answers on the left, paraphrasing, translation and invented text on the right. Boros et al., LaTeCH-CLfL 2024.</figcaption>
+        </figure>
+        <blockquote>A bad OCR error looks broken. A bad LLM correction looks fine.</blockquote>
+
+        <h2>Why fluency is the problem</h2>
+        <p>Before correction, the damage is visible. <em>Missus. Moat</em> looks odd; a careful reader or a quality filter can flag it. After a fluent correction, the damage is invisible. If the model writes <em>Messrs. Moat</em>, or swaps a rare local name for a famous one, the sentence is grammatical and confident and nobody will look twice.</p>
+        <p>That is the opposite of what an archive is for. Its value sits in the rare: the minor merchant, the misspelled village, the odd period spelling, the name that appears once. These are exactly the tokens a model trained to predict likely text is pulled away from. Even classic spelling correction has this habit of replacing correct but rare words, names especially, with more frequent ones; generative models do it with far more conviction.</p>
+        <p>The same pattern appears beyond OCR. When we asked ChatGPT to find entities in historical documents, the answer was: yes, but (Gonz&aacute;lez-Gallardo et al., 2023). In the HIPE-2026 evaluation on who was where, and when, the hardest part for the 17 participating teams was not the noisy text. It was telling explicit evidence from plausible inference (Opitz et al., 2026). Models are very good at plausible.</p>
+
+        <h2>Useful, though</h2>
+        <p>None of this means LLMs have no place in archives. Since 2024 the picture has moved quickly. Models tuned on pairs of OCR and corrected text can more than halve the character errors on nineteenth-century English newspapers (Thomas et al., 2024). Vision-language models that read the page image again, rather than patching the old text, now come close to the ground truth on printed pages (Semnani et al., 2025).</p>
+        <p>But most collections only keep the old text, not a fresh image pipeline. That is why we ran the ICDAR 2026 HIPE-OCRepair competition: text in, text out, with only what archives usually have, an OCR paragraph with its language, date and title. Four teams submitted fifty runs. On the noisiest pages, the best system removed about 85% of the remaining error. On clean pages there was almost nothing to fix, and every unnecessary edit counted against the system (Ehrmann et al., 2026).</p>
+        <figure class="article-figure repair-bars reveal" aria-label="cMER before and after the best system: clean pages 0.40% to 0.29%, noisy pages 5.46% to 0.82%">
+          <div class="rb-group">
+            <p class="rb-title">Noisy pages <span>OCR at 5.7% CER</span></p>
+            <div class="rb-row"><span class="rb-name">raw OCR</span><span class="rb-track"><span class="rb-bar raw" style="--w:100%"></span></span><span class="rb-val">5.46%</span></div>
+            <div class="rb-row"><span class="rb-name">best system</span><span class="rb-track"><span class="rb-bar fixed" style="--w:15%"></span></span><span class="rb-val">0.82%</span></div>
+            <p class="rb-gain">85% of the error removed</p>
+          </div>
+          <div class="rb-group">
+            <p class="rb-title">Clean pages <span>OCR at 0.4% CER</span></p>
+            <div class="rb-row"><span class="rb-name">raw OCR</span><span class="rb-track"><span class="rb-bar raw" style="--w:7.3%"></span></span><span class="rb-val">0.40%</span></div>
+            <div class="rb-row"><span class="rb-name">best system</span><span class="rb-track"><span class="rb-bar fixed" style="--w:5.3%"></span></span><span class="rb-val">0.29%</span></div>
+            <p class="rb-gain">little to fix; every needless edit counts</p>
+          </div>
+          <figcaption>Character match error rate (cMER) before and after the best system on the same 39 Fraktur books at two noise levels. HIPE-OCRepair, ICDAR 2026 (Ehrmann et al., 2026).</figcaption>
+        </figure>
+        <p>Our 2026 survey of the field reaches the same conclusion from the other side. Prompted, fine-tuned, reference-guided and multimodal approaches all exist, and none of them consistently wins. Results depend on the language, the document type and how bad the OCR was to begin with, and character error rate alone captures only part of what a generative corrector does (Boros et al., 2026).</p>
+
+        <h2>Looking inside</h2>
+        <p>There is also a way to be suspicious from the inside. Comparing the activations of Llama and Mistral on clean and corrupted versions of the same words, we found layers and individual neurons that respond strongly to OCR noise. Neutralising some of them gave small but real gains in entity recognition on noisy historical text: around one to two F1 points on newspapers, three to four on classical commentaries (Boros &amp; Ehrmann, 2024). Noise is not just a property of the input. It leaves a trace in the model, and that trace can be measured.</p>
+
+        <figure class="article-figure">
+          <img src="../images/writing/llms-in-archives/ocr-sensitive-layers.png" alt="Line charts of CKA similarity between clean and noisy activations per layer, with counts of OCR-sensitive neurons, for Llama 2 and Mistral" loading="lazy">
+          <figcaption>Similarity (CKA) between activations for clean and OCR-altered tokens, layer by layer, for Llama 2 (top) and Mistral (bottom), by severity of the alteration; the purple area counts OCR-sensitive neurons. Boros &amp; Ehrmann, ICADL 2024.</figcaption>
+        </figure>
+        <h2>What useful suspicion looks like</h2>
+        <p>If I had to turn this into practice, it would be a short list:</p>
+        <ul>
+          <li><strong>Keep the original next to the correction.</strong> A corrected text is a reading, not a replacement. Store both, and show both.</li>
+          <li><strong>Measure on clean pages too.</strong> A corrector that helps bad OCR but damages good OCR is not ready for a whole collection.</li>
+          <li><strong>Score what people use.</strong> Count names, places and dates found or lost, and whether search still works, not only characters.</li>
+          <li><strong>Give the model what the archive knows.</strong> Language, date and collection are cheap context; even the publication year helps entity recognition on the oldest and noisiest texts (Boros, 2025).</li>
+          <li><strong>Let it abstain.</strong> &ldquo;I am not sure&rdquo; is a valid output. A guess presented as a fact is not.</li>
+          <li><strong>Treat every output as a hypothesis.</strong> Source criticism does not stop because the source is a model.</li>
+        </ul>
+        <p>Fluent, useful, suspicious. The three words are not in tension. Useful, yes. Innocent, absolutely not.</p>
       </article>
 
       <section class="article-references panel panel-white">
         <p class="section-label">Paper references</p>
         <h2>Related work</h2>
         <div class="reference-list">
+          <a href="../publications.html">Boros, Ehrmann, Romanello, Najem-Meyer &amp; Kaplan (2024). Post-Correction of Historical Text Transcripts with Large Language Models: An Exploratory Study. LaTeCH-CLfL 2024.</a>
+          <a href="../papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html">Boros &amp; Ehrmann (2024). Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents. ICADL 2024.</a>
+          <a href="https://arxiv.org/abs/2607.08143" target="_blank" rel="noopener">Ehrmann, Boros, Opitz, Michail, Wagner &amp; Clematide (2026). ICDAR 2026 HIPE-OCRepair Competition on LLM-Assisted OCR Post-Correction for Historical Documents.</a>
+          <a href="../publications.html">Boros, Hamdi, Sun, Nguyen, Coustaty &amp; Doucet (2026). OCR Post-Correction in the Age of LLMs: A Survey of Historical Document Processing.</a>
+          <a href="../publications.html">Opitz, Racl&eacute;, Boros, Michail, Romanello, Ehrmann et al. (2026). CLEF HIPE-2026: Evaluating Accurate and Efficient Person&ndash;Place Relation Extraction from Multilingual Historical Texts. ECIR 2026.</a>
+          <a href="../papers/2023-yes-but-can-chatgpt-identify-entities-in-historical-documents.html">Gonz&aacute;lez-Gallardo, Boros et al. (2023). Yes but.. Can ChatGPT Identify Entities in Historical Documents? JCDL 2023.</a>
+          <a href="../papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html">Boros (2025). A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts. TPDL 2025.</a>
+          <a href="../papers/2022-assessing-the-impact-of-ocr-noise-on-multilingual-event-detection-over-digi.html">Boros, Nguyen, Lejeune &amp; Doucet (2022). Assessing the Impact of OCR Noise on Multilingual Event Detection over Digitised Documents. IJDL 23(3).</a>
+          <a href="https://huggingface.co/blog/emanuelaboros/can-llms-correct-historical-ocr-without-rewriting" target="_blank" rel="noopener">Can LLMs Correct Historical OCR Without Rewriting History? Hugging Face blog, October 2026.</a>
+          <a>Hamdi, Jean-Caurant, Sidere, Coustaty &amp; Doucet (2019). An Analysis of the Performance of Named Entity Recognition over OCRed Documents. JCDL 2019.</a>
+          <a>Thomas, Gaizauskas &amp; Lu (2024). Leveraging LLMs for Post-OCR Correction of Historical Newspapers. LT4HALA 2024.</a>
+          <a>Semnani et al. (2025). CHURRO: Making History Readable with an Open-Weight Large Vision-Language Model for High-Accuracy, Low-Cost Historical Text Recognition. EMNLP 2025.</a>
         </div>
       </section>
 
@@ -65,6 +163,6 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202610291818"></script>
+  <script src="../script.js?v=202610291835"></script>
 </body>
 </html>
