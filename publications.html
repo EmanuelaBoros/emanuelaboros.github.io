@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Publications · Emanuela Boros</title>
+<meta content="Full publication list of Emanuela Boros: NLP, information extraction, historical documents, OCR, cultural heritage." name="description"/>
+<script>document.documentElement.classList.add('js');</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="page-frame">
+<header class="site-header">
+<a aria-label="Home" class="logo" href="index.html">
+<span class="logo-mark">EB</span>
+<span class="logo-text">Emanuela Boros</span>
+</a>
+<nav aria-label="Main navigation" class="nav">
+<a href="things.html">Research</a>
+<a href="publications.html">Publications</a>
+<a href="writing.html">Writing</a>
+<a href="photography.html">Photography</a>
+<a href="index.html#about">About</a>
+</nav>
+</header>
+
+<main>
+<section class="project-hero">
+<div>
+<a class="back-link" href="index.html">← Home</a>
+<p class="section-label">Publications</p>
+<h1>Publications</h1>
+</div>
+<div>
+<p class="project-description">Papers, shared tasks, datasets and my PhD thesis, newest first. Titles with a link open a page with notes and figures. Citation counts are from <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>.</p>
+<dl class="stats">
+<div><dt>Citations</dt><dd>1,180</dd></div>
+<div><dt>h-index</dt><dd>17</dd></div>
+<div><dt>i10-index</dt><dd>27</dd></div>
+</dl>
+<p class="figure-note">Google Scholar, October 2026.</p>
+</div>
+</section>
+
+<section class="section pub-overview">
+<div class="section-head">
+<div><span class="section-num">Output by year</span><h2>Papers since 2009</h2></div>
+<p>Stacked by publication type. Hover a bar for the breakdown.</p>
+</div>
+<figure class="pub-chart reveal" id="pubChart"></figure>
+<div class="timeline-legend">
+<span><i class="legend-dot bar-conf"></i>Conference</span>
+<span><i class="legend-dot bar-journal"></i>Journal</span>
+<span><i class="legend-dot bar-workshop"></i>Workshop &amp; shared task</span>
+<span><i class="legend-dot bar-preprint"></i>Preprint &amp; data</span>
+<span><i class="legend-dot bar-thesis"></i>Thesis</span>
+</div>
+</section>
+
+<section class="section">
+<div class="pub-toolbar">
+<div class="pub-filters" id="pubFilters" role="group" aria-label="Filter by type">
+<button aria-pressed="true" data-filter="all" type="button">All</button>
+<button aria-pressed="false" data-filter="conf" type="button">Conference</button>
+<button aria-pressed="false" data-filter="journal" type="button">Journal</button>
+<button aria-pressed="false" data-filter="workshop" type="button">Workshop &amp; shared task</button>
+<button aria-pressed="false" data-filter="preprint" type="button">Preprint &amp; data</button>
+<button aria-pressed="false" data-filter="thesis" type="button">Thesis</button>
+<button aria-pressed="false" data-filter="fr" type="button">In French</button>
+</div>
+<label class="pub-search"><span class="sr-only">Search publications</span><input id="pubSearch" placeholder="Search title, author, venue" type="search"/></label>
+<span class="pub-count" id="pubCount"></span>
+</div>
+<div id="pubList"><noscript><p>The list needs JavaScript. See the full list on <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ&amp;sortby=pubdate">Google Scholar</a>.</p></noscript></div>
+</section>
+</main>
+<footer>
+<p>© <span id="year"></span> Emanuela Boros</p>
+<p><a href="https://github.com/emanuelaboros">GitHub</a> · <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ">Google Scholar</a></p>
+</footer>
+</div>
+<script src="publications.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

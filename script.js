@@ -78,7 +78,11 @@ if (portfolioImages.length) {
 
 // Scroll reveal: fade sections in and draw the subject-wave lines
 document.documentElement.classList.add('js');
-const revealTargets = document.querySelectorAll('.reveal, .waves, .subject-line-section');
+const revealTargets = document.querySelectorAll('.reveal, .waves, .subject-line-section, .pub-chart');
+// Anything already on screen at load is shown immediately
+revealTargets.forEach((el) => {
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+});
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
