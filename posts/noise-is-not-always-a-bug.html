@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noise is not always a bug · Emanuela Boros</title>
+<script>document.documentElement.classList.add('js');</script>
+  <meta name="description" content="An essay on OCR noise, period spelling and normalisation: why cleaning historical text can also erase what matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css?v=202610291857" />
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+<a aria-label="Home" class="logo" href="../index.html">
+<span class="logo-mark">EB</span>
+<span class="logo-text">Emanuela Boros</span>
+</a>
+<nav aria-label="Main navigation" class="nav">
+<a href="../things.html">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../writing.html">Writing</a>
+<a href="../photography.html">Photography</a>
+<a href="../index.html#about">About</a>
+</nav>
+</header>
+
+    <main class="article-page-main">
+      <article class="article-panel panel panel-cream">
+        <a class="back-link" href="../writing.html">← back to writing</a>
+        <p class="section-label">Essay</p>
+        <h1>Noise is not always a bug</h1>
+        <p class="post-date">Essay · October 2026 · about 7 minutes</p>
+
+        <div class="article-bubbles">
+          <span>OCR</span>
+          <span>period spelling</span>
+          <span>normalisation</span>
+          <span>robustness</span>
+          <span>what cleaning erases</span>
+        </div>
+
+        <p class="article-lede">In document processing, “noise” is whatever does not match our idea of the clean text. That idea is a choice. Some of what we clean away is damage. Some of it is the document.</p>
+
+        <h2>“ie vous emmène lundi”</h2>
+        <p>When we measured how much large language models could repair historical transcriptions, we sorted every benchmark into quality bands, from almost perfect to almost unreadable (Boros et al., 2024). One line from a French newspaper makes the scale easy to see.</p>
+
+        <figure class="article-figure bands-fig reveal" aria-label="The same French line at five OCR quality bands, from 99–100% similarity down to 0–40%">
+          <div class="band" style="--q:100%"><span class="band-q">99–100</span><span class="band-line">Alors, je vous emmène lundi</span><span class="band-meter"><i></i></span></div>
+          <div class="band" style="--q:90%"><span class="band-q">80–99</span><span class="band-line">Alors, je vous <b>emmene</b> lundi</span><span class="band-meter"><i></i></span></div>
+          <div class="band band-ie" style="--q:70%"><span class="band-q">60–80</span><span class="band-line">Alors, <b class="ie">ie</b> vous <b>emmene</b> lundi</span><span class="band-meter"><i></i></span></div>
+          <div class="band" style="--q:50%"><span class="band-q">40–60</span><span class="band-line"><b>A1ors</b>, <b>ie</b> vous <b>emmene</b> <b>lund1</b></span><span class="band-meter"><i></i></span></div>
+          <div class="band" style="--q:20%"><span class="band-q">0–40</span><span class="band-line"><b>A1o3</b>, <b>ie</b> <b>v0u5</b> <b>emmèn3</b> <b>1u%d1</b></span><span class="band-meter"><i></i></span></div>
+          <p class="band-note"><span>in a 1930s newspaper, <b>ie</b> is an OCR error</span><span>in a 1630s book, <b>ie</b> is how people wrote <em>je</em></span></p>
+          <figcaption>One line at five quality bands (similarity to the ground truth, %). Differences from the reference are marked. Boros et al., LaTeCH-CLfL 2024.</figcaption>
+        </figure>
+
+        <p>In a twentieth-century newspaper, “ie” for “je” is a recognition error: the engine confused two shapes. In a French book printed in the 1600s, “ie” is simply how the word was written, because <em>i</em> and <em>j</em> were not yet separate letters. The same two characters are noise in one collection and evidence in another.</p>
+        <p>This is not a rare corner case. The HIPE-2026 evaluation added a surprise domain of French texts from the sixteenth to the eighteenth century (Opitz et al., 2026). The German books in the HIPE-OCRepair benchmark are printed in Fraktur, with their own letter forms and conventions (Ehrmann et al., 2026). Our work on Armenian inscriptions had to teach the pipeline that “։” is the Armenian full stop, not a stray colon (Tamrazyan et al., 2026). Long s, abbreviations, hyphens at line ends, dialect spellings, a typesetter's own slip: a cleaner that does not know the period cannot tell which of these to keep.</p>
+
+        <h2>Cleaning has a cost</h2>
+        <p>Every correction method makes a bet about what the text should look like. Classic spelling correction such as SymSpell does improve entity recognition when OCR is very poor, but it is prone to replacing correct, rare words, names especially, with more frequent ones (Huynh et al., 2020). Large language models make the same bet with more conviction: in our 2024 study they changed the rendering of the text, paraphrased, even translated, when asked only to fix errors (Boros et al., 2024).</p>
+
+        <figure class="article-figure clean-fig reveal" aria-label="An early modern French line going from the printed page to raw OCR, to a faithful repair, to a modernised version that erases period spelling and replaces a rare name">
+          <div class="clean-row"><span class="clean-label">Page</span><p>Ie vous enuoye ceſte lettre par Monſieur de Viuonne</p></div>
+          <div class="clean-row"><span class="clean-label">OCR</span><p>Ie vous <b class="err">enu0ye</b> <b class="err">cefte</b> lettre par <b class="err">Monfieur</b> de <b class="err">Viu0nne</b></p></div>
+          <div class="clean-row"><span class="clean-label">Repaired</span><p>Ie vous <b class="fix">enuoye</b> <b class="fix">ceſte</b> lettre par <b class="fix">Monſieur</b> de <b class="fix">Viuonne</b><span class="clean-note ok">errors fixed, spelling kept</span></p></div>
+          <div class="clean-row"><span class="clean-label">Modernised</span><p><b class="lost">Je</b> vous <b class="lost">envoie</b> <b class="lost">cette</b> lettre par Monsieur de <b class="lost">Vienne</b><span class="clean-note bad">period spelling gone, name replaced</span></p></div>
+          <figcaption>An illustration, not a real document: an early modern line, its OCR (with the classic ſ → f and o → 0 confusions), a faithful repair, and a fluent modernisation. The last step reads best and keeps the least.</figcaption>
+        </figure>
+
+        <p>Even a careful benchmark has to decide what counts. In HIPE-OCRepair we scored corrections for search rather than for diplomatic fidelity: line-break hyphens are joined, case and punctuation are ignored, but accents are kept, so “é” is not “e” (Ehrmann et al., 2026). Each of those rules is reasonable. Each is also a decision about what is allowed to disappear, and a different project, an edition, a study of spelling, a history of typography, would decide differently.</p>
+
+        <h2>Noise carries information</h2>
+        <p>Noise is not only something to remove. It also tells us things.</p>
+        <p>Models notice it. When we compared what happens inside Llama and Mistral for clean and OCR-damaged versions of the same words, specific layers and neurons reacted strongly to the damage, and how strongly depended on the collection as much as on the model (Boros &amp; Ehrmann, 2024). The model has, in a sense, its own detector for “this text was read by a machine from an old page”.</p>
+        <p>Noise also travels with time. When we gave a named entity recognition model the publication year of each document, the gains were largest on the oldest and noisiest texts (Boros, 2025). Bad OCR, old print and old spelling come together, and knowing when a text was printed helps a model decide what an odd string is likely to be.</p>
+        <p>And the amount of noise in a page says something about the page: the paper, the press, the decade, the scanner, the collection. Before it is a problem, it is metadata.</p>
+
+        <h2>Robustness, not erasure</h2>
+        <p>So there is another option besides cleaning the text first: make the reader stronger and leave the source alone.</p>
+        <p>Much of my earlier work went that way. For the first HIPE evaluation we stacked extra Transformer layers on a pretrained model and extended its vocabulary with the unusual words and OCR errors found in the old newspapers, so that it could read through the damage instead of tripping on it (Boros et al., 2020a; 2020b). Later we added knowledge-based contexts, short passages retrieved for each sentence, which helped most precisely on the entities that contained digitisation errors (Boros et al., 2022; González-Gallardo et al., 2023). Nothing in the original text was changed. The model brought more to the reading.</p>
+        <p>Robustness has limits, of course. Past a certain level of damage, every model in those studies failed, and some pages genuinely need to be read again. But when the choice is between a model that copes with the source and a pipeline that quietly rewrites it, I would rather keep the source.</p>
+
+        <h2>Texture</h2>
+        <p>On this site, the old Romanian blog texts keep their missing diacritics and their two-dot pauses, and the photographs keep their grain. I left them that way because the roughness is part of what they say. Documents are no different. Some noise is damage, and we should repair it, carefully and reversibly. Some noise is history, voice and texture, and the job is to know which is which before reaching for the eraser.</p>
+      </article>
+
+      <section class="article-references panel panel-white">
+        <p class="section-label">Paper references</p>
+        <h2>Related work</h2>
+        <div class="reference-list">
+          <a href="../publications.html">Boros, Ehrmann, Romanello, Najem-Meyer &amp; Kaplan (2024). Post-Correction of Historical Text Transcripts with Large Language Models: An Exploratory Study. LaTeCH-CLfL 2024.</a>
+          <a href="https://arxiv.org/abs/2607.08143" target="_blank" rel="noopener">Ehrmann, Boros, Opitz, Michail, Wagner &amp; Clematide (2026). ICDAR 2026 HIPE-OCRepair Competition on LLM-Assisted OCR Post-Correction for Historical Documents.</a>
+          <a href="../publications.html">Opitz, Raclé, Boros, Michail, Romanello, Ehrmann et al. (2026). CLEF HIPE-2026: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts. ECIR 2026.</a>
+          <a href="../papers/2026-armenian-autoepidoc-automated-extraction-and-encoding-of-armenian-inscripti.html">Tamrazyan, Cornamusaz &amp; Boros (2026). Armenian AutoEpiDoc: Automated Extraction and Encoding of Armenian Inscriptions into EpiDoc TEI/XML. LaTeCH-CLfL 2026.</a>
+          <a href="../papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html">Boros &amp; Ehrmann (2024). Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents. ICADL 2024.</a>
+          <a href="../papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html">Boros (2025). A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts. TPDL 2025.</a>
+          <a href="../papers/2020-alleviating-digitization-errors-in-named-entity-recognition-for-historical.html">Boros, Hamdi, Linhares Pontes, Cabrera-Diego, Moreno, Sidere &amp; Doucet (2020a). Alleviating Digitization Errors in Named Entity Recognition for Historical Documents. CoNLL 2020.</a>
+          <a href="../publications.html">Boros, Linhares Pontes, Cabrera-Diego, Hamdi, Moreno et al. (2020b). Robust Named Entity Recognition and Linking on Historical Multilingual Documents. CLEF 2020 (HIPE-2020).</a>
+          <a href="../publications.html">Boros, González-Gallardo, Giamphy, Hamdi, Moreno et al. (2022). Knowledge-based Contexts for Historical Named Entity Recognition &amp; Linking. CLEF 2022 (HIPE-2022).</a>
+          <a href="../papers/2023-injecting-temporal-aware-knowledge-in-historical-named-entity-recognition.html">González-Gallardo, Boros, Giamphy, Hamdi, Moreno et al. (2023). Injecting Temporal-Aware Knowledge in Historical Named Entity Recognition. ECIR 2023.</a>
+          <a>Huynh, Hamdi &amp; Doucet (2020). When to Use OCR Post-correction for Named Entity Recognition? ICADL 2020.</a>
+        </div>
+      </section>
+
+      <section class="project-nav panel panel-cream">
+        <a href="documents-are-evidence.html">← Documents are evidence</a>
+        <a href="../writing.html">Writing index →</a>
+      </section>
+    </main>
+
+    <footer>
+<p>© <span id="year"></span> Emanuela Boros</p>
+</footer>
+  </div>
+
+  <script src="../script.js?v=202610291857"></script>
+</body>
+</html>

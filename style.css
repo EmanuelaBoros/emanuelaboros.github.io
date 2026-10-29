@@ -799,3 +799,39 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .alert-card dl > div:nth-child(3) { transition-delay: 4s; } .alert-card dl > div:nth-child(4) { transition-delay: 4.3s; }
 .alert-card dl > div:nth-child(5) { transition-delay: 4.8s; }
 .js .outbreak-fig:not(.is-visible) .alert-card dl > div, .js .outbreak-fig:not(.is-visible) .ac-note { opacity: 0; }
+
+/* Essay 3: OCR quality bands */
+.bands-fig { display: grid; gap: .35rem; }
+.band { display: grid; grid-template-columns: 3.6rem 1fr 5rem; align-items: center; gap: .8rem; padding: .45rem .8rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.band:nth-child(2) { transition-delay: .35s; } .band:nth-child(3) { transition-delay: .7s; } .band:nth-child(4) { transition-delay: 1.05s; } .band:nth-child(5) { transition-delay: 1.4s; }
+.js .bands-fig:not(.is-visible) .band { opacity: 0; transform: translateY(6px); }
+.band-q { font-family: var(--mono); font-size: .66rem; color: var(--muted); }
+.band-line { font-family: var(--serif); font-size: 1.08rem; color: var(--ink); }
+.band-line b { font-weight: 400; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: 0 .08em; }
+.band-meter { height: .4rem; background: var(--paper-2); border-radius: 3px; overflow: hidden; }
+.band-meter i { display: block; height: 100%; width: var(--q); background: color-mix(in srgb, var(--t-historical) calc(var(--q) * .9 + 10%), var(--accent)); border-radius: 3px; transition: width 1.2s var(--ease) 1.6s; }
+.js .bands-fig:not(.is-visible) .band-meter i { width: 0; }
+.band-ie .ie { outline: 1.5px solid var(--t-semantic); outline-offset: 1px; transition: outline-color .6s var(--ease) 2.8s; }
+.js .bands-fig:not(.is-visible) .band-ie .ie { outline-color: transparent; }
+.article-panel .band-note { margin: .4rem 0 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; font-family: var(--mono); font-size: .68rem; color: var(--ink-2); transition: opacity .6s var(--ease) 3s; }
+.band-note span:first-child b { color: var(--accent); font-weight: 500; }
+.band-note span:last-child b { color: var(--t-semantic); font-weight: 500; }
+.js .bands-fig:not(.is-visible) .band-note { opacity: 0; }
+@media (max-width: 560px) { .band { grid-template-columns: 1fr 4rem; } .band-q { grid-column: 1 / -1; } }
+
+/* Essay 3: cleaning stages */
+.clean-fig { display: grid; gap: .45rem; }
+.clean-row { display: grid; grid-template-columns: 6.5rem 1fr; align-items: center; gap: .8rem; padding: .55rem .8rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.clean-row:nth-child(2) { transition-delay: .5s; } .clean-row:nth-child(3) { transition-delay: 1.3s; } .clean-row:nth-child(4) { transition-delay: 2.3s; }
+.js .clean-fig:not(.is-visible) .clean-row { opacity: 0; transform: translateX(-10px); }
+.clean-label { font-family: var(--mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.article-panel .clean-row p { margin: 0; font-family: var(--serif); font-size: 1.1rem; color: var(--ink); line-height: 1.45; }
+.clean-row b { font-weight: 400; border-radius: 3px; padding: 0 .1em; }
+.clean-row .err { color: var(--accent); background: var(--accent-soft); }
+.clean-row .fix { color: var(--t-historical); background: color-mix(in srgb, var(--t-historical) 16%, transparent); }
+.clean-row .lost { color: var(--accent); text-decoration: underline dashed var(--accent); text-underline-offset: .22em; }
+.clean-note { margin-left: .6rem; font-family: var(--mono); font-size: .64rem; white-space: nowrap; transition: opacity .6s var(--ease); }
+.clean-note.ok { color: var(--t-historical); transition-delay: 1.9s; }
+.clean-note.bad { color: var(--accent); transition-delay: 3.1s; }
+.js .clean-fig:not(.is-visible) .clean-note { opacity: 0; }
+@media (max-width: 560px) { .clean-row { grid-template-columns: 1fr; gap: .3rem; } .clean-note { display: block; margin: .3rem 0 0; white-space: normal; } }
