@@ -1,343 +1,234 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Emanuela Boros</title>
-<meta content="Personal website of Emanuela Boros: AI for difficult documents, NLP, document analysis, cultural heritage, and photo projects." name="description"/>
+<meta content="Emanuela Boros — researcher in natural language processing and document AI: noisy and historical documents, information extraction, cultural heritage. Also photography." name="description"/>
+<script>document.documentElement.classList.add('js');</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet">
-</link></head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
 <body>
 <div class="page-frame">
 <header class="site-header">
 <a aria-label="Home" class="logo" href="index.html">
 <span class="logo-mark">EB</span>
-<span class="logo-text">EMANUELA<br/>BOROS</span>
+<span class="logo-text">Emanuela Boros</span>
 </a>
 <nav aria-label="Main navigation" class="nav">
-<a href="#about">About</a>
-<a href="#work">Work</a>
-<a href="things.html">Things</a>
+<a href="things.html">Research</a>
+<a href="index.html#publications">Publications</a>
 <a href="writing.html">Writing</a>
-<a href="#photo-projects">Photo projects</a>
-<a href="#contact">Contact</a>
+<a href="photography.html">Photography</a>
+<a href="index.html#about">About</a>
 </nav>
 </header>
-<!--<a aria-label="Open Quiet Soup Club on Etsy" class="etsy-corner-patch" href="https://www.etsy.com/shop/QuietSoupClub" rel="noopener" target="_blank">-->
-<!--<img alt="Quiet Soup Club Etsy shop badge: handmade candles, bookmarks, rugs, cup covers, and recipe mini books" src="images/quiet-soup-club-corner-patch.png"/>-->
-<!--</a>-->
+
 <main id="top">
-<section class="hero panel panel-pink">
-<div class="hero-copy">
-<!--          <p class="eyebrow">AI · difficult documents · cultural heritage · photographs</p>-->
-<h1>I study how machines read imperfect traces.</h1>
-<p class="hero-text">
+
+<!-- Hero -->
+<section class="hero">
+<div class="reveal">
+<div class="hero-role">
+<img alt="Illustrated portrait of Emanuela Boros" src="images/emanuela-bubble.jpg"/>
+<div>
+<strong>Emanuela Boros</strong>
+<span>Researcher · NLP &amp; document AI</span>
+</div>
+</div>
+<h1>I study how machines read <em>imperfect</em> traces.</h1>
+<p class="hero-lede">
+My work is on AI for difficult documents: noisy newspapers, OCR and HTR transcripts, handwritten archives, inscriptions, administrative and financial records. I build methods to extract people, places, events and relations from them, and I measure what models miss, invent or flatten along the way.
 </p>
-<div class="hero-actions">
-<a class="button button-primary" href="#work">See work</a>
-<a class="button button-light" href="things.html">Developed projects</a>
-<a class="button button-light" href="writing.html">Posts / opinions</a>
-</div>
-</div>
-<div class="hero-visual">
-<figure class="portrait-bubble">
-<img alt="Stylised portrait of Emanuela Boros" src="images/emanuela-bubble.jpg"/>
-<figcaption>yes, still human</figcaption>
-</figure>
-<aside aria-label="Current obsessions preview" class="obsession-board">
-<div class="board-header">CURRENT OBSESSIONS</div>
-<ul>
-<li><a href="things.html#noisy-documents"><span>01</span> AI for difficult documents</a></li>
-<li><a href="things.html#historical-ai"><span>02</span> Entities that change with time</a></li>
-<li><a href="things.html#multimodal-archives"><span>03</span> Archives as evidence machines</a></li>
-<li><a href="#photo-projects"><span>04</span> Photo projects, not lonely photos</a></li>
-<li><a href="writing.html"><span>05</span> Posts, notes, and useful trouble</a></li>
-</ul>
-<p>Not a moodboard. A small evidence locker.</p>
-</aside>
-</div>
-</section>
-<section class="about panel panel-cream two-col" id="about">
-<div>
-<!--<p class="section-label">About</p>-->
-<h2>Mostly serious work. Not always serious tone.</h2>
-</div>
-<p>
-Hello — I’m Ema. I work on machines that try to read difficult documents: noisy newspapers, OCR and HTR transcripts, handwritten archives, inscriptions, administrative records, financial texts, multilingual media, and visual cultural collections.
-<br/><br/>
-I care about what AI extracts from them — people, places, events, relations, narratives, uncertainty — but also about what it misses, invents, flattens, or quietly ruins while looking very confident. I come from both computer science and art, so I tend to treat documents as data, evidence, image, memory, and occasional trouble.
-<br/><br/>
-Outside research, I keep returning to photography, handmade things, gardening with variable success, films, series, mostly non-fantasy books, metal festivals, camping, and soup logic. I like clarity, good noise, dry humor, and people who get to the point without murdering the point.        </p>
-<div class="about-bubbles">
-<span>dry humor</span>
-<span>metal festivals</span>
-<span>photographs</span>
-<span>handmade things</span>
-<span>camping</span>
-<span>gardening</span>
-<span>non-fantasy books</span>
-<span>soup logic</span>
-</div>
-
-<div class="profile-badges" aria-label="Profile links">
-  <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">
-    <span>Scholar</span>
-    <strong>papers</strong>
-  </a>
-
-  <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener">
-    <span>LinkedIn</span>
-    <strong>work things</strong>
-  </a>
-
-  <a href="https://github.com/emanuelaboros" target="_blank" rel="noopener">
-    <span>GitHub</span>
-    <strong>code</strong>
-  </a>
-
-  <a href="https://orcid.org/YOUR_ORCID" target="_blank" rel="noopener">
-    <span>ORCID</span>
-    <strong>academic ID</strong>
-  </a>
-
-  <a href="https://www.etsy.com/shop/QuietSoupClub" target="_blank" rel="noopener">
-    <span>Quiet Soup Club</span>
-    <strong>soup logic</strong>
-  </a>
-</div>
-
-
-</section>
-<section class="work" id="work">
-<!--<div class="section-heading floating-heading">-->
-<!--<p class="section-label">Selected work</p>-->
-<!--<h2>Things I keep returning to</h2>-->
-<!--<p class="heading-note">A compressed map of recurring research themes. Each box opens a project page with the work behind it and selected papers.</p>-->
-<!--</div>-->
-<div aria-label="Clickable project themes" class="card-grid moving-card-grid">
-<a class="work-card card-red moving-card" href="things.html#noisy-documents">
-<span class="card-number">01</span>
-<h3>Noisy Documents</h3>
-<p>I study OCR, HTR, digitization errors, degraded text, and how noise changes downstream meaning.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-<a class="work-card card-orange moving-card" href="things.html#semantic-extraction">
-<span class="card-number">02</span>
-<h3>Semantic Extraction</h3>
-<p>I work on named entities, entity linking, relations, events, and the small structures that make documents searchable.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-<a class="work-card card-mint moving-card" href="things.html#historical-ai">
-<span class="card-number">03</span>
-<h3>Historical AI</h3>
-<p>I care about temporal modelling, multilingual archives, and language that refuses to stay stable.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-<a class="work-card card-orange moving-card" href="things.html#cultural-heritage">
-<span class="card-number">04</span>
-<h3>Cultural Heritage</h3>
-<p>I work with digital epigraphy, Armenian and Ukrainian heritage, cultural weaponization, and structured memory.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-<a class="work-card card-mint moving-card" href="things.html#multimodal-archives">
-<span class="card-number">05</span>
-<h3>Multimodal Archives</h3>
-<p>I connect text, image, layout, typography, photographs, and visual traces in document collections.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-<a class="work-card card-red moving-card" href="things.html#applied-document-intelligence">
-<span class="card-number">06</span>
-<h3>Applied Document Intelligence</h3>
-<p>I have also worked on document fraud, fake news detection, epidemic monitoring, and large-scale research infrastructures.</p>
-<span class="card-link-label">Research + papers →</span>
-</a>
-</div>
-</section>
-<section class="photo-projects panel panel-pink" id="photo-projects">
-<div class="section-heading project-heading-row">
-<div>
-<!--<p class="section-label">Photographs / video</p>-->
-<h2>Photograph / video projects</h2>
-</div>
-<p class="project-intro">
-            Older art portfolio projects and newer photo collections: rooms, objects, bodies, evidence, awkward freedom, and other visual trouble. Click a cover to open the full project.
-          </p>
-</div>
-<div aria-label="Project carousel controls" class="project-controls">
-<button aria-label="Previous photo project" class="slide-button" id="prevProject">‹</button>
-<button aria-label="Next photo project" class="slide-button" id="nextProject">›</button>
-</div>
-<div class="project-strip" id="projectStrip">
-<a class="project-cover cover-red" href="projects/fake-freedom.html">
-<img alt="Cover for Fake Freedom" src="images/photo-collections/fake-freedom/fake-freedom-01.jpg"/>
-<span class="project-number project-year">2017</span>
-<div>
-<h3>Fake Freedom</h3>
-<p>A photo sequence about performance, escape, and awkward freedom.</p>
-<small>2017 · photography · 8 images</small>
-</div>
-</a>
-<a class="project-cover cover-orange" href="projects/cutting-into-silence.html">
-<img alt="Cover for Cutting into Silence" src="images/photo-collections/cutting-into-silence/cutting-into-silence-01.jpg"/>
-<span class="project-number project-year">2014</span>
-<div>
-<h3>Cutting into Silence</h3>
-<p>A quiet sequence of surfaces, cuts, gestures, and withheld movement.</p>
-<small>2014 · photography · 7 images</small>
-</div>
-</a>
-<a class="project-cover cover-cream" href="projects/exhibition.html">
-<img alt="Cover for Exhibition" src="images/photo-collections/exhibition/exhibition-01.jpg"/>
-<span class="project-number project-year">2014</span>
-<div>
-<h3>Exhibition</h3>
-<p>Exhibition views, installation fragments, and documentation.</p>
-<small>2014 · exhibition documentation · 28 images</small>
-</div>
-</a>
-<a class="project-cover cover-yellow" href="projects/november-queue.html">
-<img alt="Cover for November Queue" src="images/photo-collections/november-queue/november-queue-01.jpg"/>
-<span class="project-number project-year">2014</span>
-<div>
-<h3>November Queue</h3>
-<p>Waiting, street fragments, bodies, and public-space choreography.</p>
-<small>2014 · photography · 6 images</small>
-</div>
-</a>
-<a class="project-cover cover-mint" href="projects/yellow-room.html">
-<img alt="Cover for Yellow Room" src="images/photo-collections/yellow-room/yellow-room-01.jpg"/>
-<span class="project-number project-year">2014</span>
-<div>
-<h3>Yellow Room</h3>
-<p>An interior, a colour, light, objects, and a room becoming a scene.</p>
-<small>2014 · photography · 5 images</small>
-</div>
-</a>
-<a class="project-cover cover-pink" href="projects/everything-but-you.html">
-<img alt="Cover for Everything but You" src="images/photo-collections/everything-but-you/everything-but-you-01.jpg"/>
-<span class="project-number project-year">2013</span>
-<div>
-<h3>Everything but You</h3>
-<p>Rooms, objects, absence, and traces of someone not directly shown.</p>
-<small>2013 · photography · 13 images</small>
-</div>
-</a>
-<a class="project-cover cover-red" href="projects/space-in-time.html">
-<img alt="Cover for Space in Time" src="images/portfolio/space-in-time-cover.jpg"/>
-<span class="project-number project-year">2010</span>
-<div>
-<h3>Space in Time</h3>
-<p>Private space, performance, rooms, projection, exhibition.</p>
-<small>2010 · performance · video · photography · programming · interactivity</small>
-</div>
-</a>
-<a class="project-cover cover-mint" href="projects/christmas-10.html">
-<img alt="Cover for Christmas '10" src="images/portfolio/christmas-10-cover.jpg"/>
-<span class="project-number project-year">2010</span>
-<div>
-<h3>Christmas '10</h3>
-<p>Small events, familiar surroundings, memory loops.</p>
-<small>2010 · photography</small>
-</div>
-</a>
-<a class="project-cover cover-yellow" href="projects/inainte-de-a-adormi.html">
-<img alt="Cover for Înainte de a adormi" src="images/portfolio/inainte-de-a-adormi-cover.jpg"/>
-<span class="project-number project-year">2010</span>
-<div>
-<h3>Înainte de a adormi</h3>
-<p>Video project, 2010; “cu 30 de ani înainte.”</p>
-<small>2010 · video</small>
-</div>
-</a>
-<a class="project-cover cover-cream" href="projects/tableau-vivant.html">
-<img alt="Cover for Tableau Vivant" src="images/portfolio/tableau-vivant-cover.jpg"/>
-<span class="project-number project-year">2009</span>
-<div>
-<h3>Tableau Vivant</h3>
-<p>Photography and exhibition views, 2009.</p>
-<small>2009 · photography</small>
-</div>
-</a>
-<a class="project-cover cover-orange" href="projects/tatarasi.html">
-<img alt="Cover for Tătărași" src="images/portfolio/tatarasi-cover.jpg"/>
-<span class="project-number project-year">2009</span>
-<div>
-<h3>Tătărași</h3>
-<p>Photography and exhibition views, 2009.</p>
-<small>2009 · photography</small>
-</div>
-</a>
-<a class="project-cover cover-mint" href="projects/a-reface.html">
-<img alt="Cover for A reface" src="images/portfolio/a-reface-cover.jpg"/>
-<span class="project-number project-year">2009</span>
-<div>
-<h3>A reface</h3>
-<p>Video stills from the 2009 portfolio.</p>
-<small>2009 · video</small>
-</div>
-</a>
-<a class="project-cover cover-red" href="projects/the-same.html">
-<img alt="Cover for The same" src="images/portfolio/the-same-cover.jpg"/>
-<span class="project-number project-year">2009</span>
-<div>
-<h3>The same</h3>
-<p>Video project, 2009.</p>
-<small>2009 · video</small>
-</div>
-</a>
-<a class="project-cover cover-yellow" href="projects/journal-2007.html">
-<img alt="Cover for 2007 Journal" src="images/portfolio/journal-2007-cover.jpg"/>
-<span class="project-number project-year">2007</span>
-<div>
-<h3>2007 Journal</h3>
-<p>A book of images, text fragments, truthfulness and staring.</p>
-<small>2007 · photography · book</small>
-</div>
-</a></div>
-</section>
-<section class="writing-preview panel panel-white" id="writing-preview">
-<div class="section-heading project-heading-row">
-<div>
-<!--<p class="section-label">Writing</p>-->
-<h2>Posts, notes, opinions</h2>
-</div>
-<p class="project-intro">
-            A place for short texts about AI, archives, cultural heritage, evidence, noise, and other things that refuse to stay neatly technical.
-          </p>
-</div>
-<div class="post-preview-grid">
-<a class="post-card" href="writing.html#llms-archives">
-<span>Opinion</span>
-<h3>LLMs in archives: fluent, useful, suspicious</h3>
-<p>On why good prose is not the same thing as grounded historical understanding.</p>
-</a>
-<a class="post-card" href="writing.html#documents-evidence">
-<span>Note</span>
-<h3>Documents are evidence, not just data</h3>
-<p>A small manifesto for building AI systems that keep traces attached to claims.</p>
-</a>
-</div>
-<a class="mini-link mini-link-block" href="writing.html">Read / add posts →</a>
-</section>
-<section class="contact panel panel-cream" id="contact">
-<div>
-<!--<p class="section-label">Contact</p>-->
-<h2>For collaborations, papers, archives, photographs, or suspiciously good ideas.</h2>
-</div>
-<div class="contact-links">
+<div class="link-row">
 <a href="mailto:emanuela.boros@univ-lr.fr">Email</a>
-<a href="https://github.com/emanuelaboros">GitHub</a>
-<a href="https://emanuelaboros.github.io">Website</a>
-<a href="https://www.etsy.com/shop/QuietSoupClub" rel="noopener" target="_blank">Quiet Soup Club</a>
+<a href="https://github.com/emanuelaboros" rel="noopener" target="_blank">GitHub</a>
+<!-- TODO: add real IDs, then uncomment
+<a href="https://scholar.google.com/citations?user=YOUR_ID" rel="noopener" target="_blank">Google Scholar</a>
+<a href="https://orcid.org/YOUR_ORCID" rel="noopener" target="_blank">ORCID</a>
+<a href="https://www.linkedin.com/in/YOUR_PROFILE" rel="noopener" target="_blank">LinkedIn</a>
+-->
+<a href="https://theses.hal.science/tel-01943841" rel="noopener" target="_blank">PhD thesis</a>
+</div>
+</div>
+
+<figure aria-label="Illustration: from a noisy scan to linked entities" class="pipeline reveal" style="--delay:.15s">
+<div class="pipe-stage">
+<div class="pipe-label"><span><b>01</b> Scan · OCR output</span><span>CER 6.1%</span></div>
+<div class="pipe-scan">
+<p class="pipe-text">La Roche<span class="noise">1</span>le, <span class="noise">l</span>4 juillet 189<span class="noise">O</span>. — Le Cons<span class="noise">c</span>il municipal s’est réuni à l’Hôtel de Vi<span class="noise">11</span>e.</p>
+</div>
+</div>
+<div class="pipe-stage">
+<div class="pipe-label"><span><b>02</b> Read · named entities</span><span>NER</span></div>
+<p class="pipe-text"><span class="ent ent-loc" data-type="LOC" style="--d:0s">La Rochelle</span>, <span class="ent ent-date" data-type="DATE" style="--d:.25s">14 juillet 1890</span>. — Le <span class="ent ent-org" data-type="ORG" style="--d:.5s">Conseil municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="LOC" style="--d:.75s">Hôtel de Ville</span>.</p>
+</div>
+<div class="pipe-stage">
+<div class="pipe-label"><span><b>03</b> Link · knowledge graph</span><span>EL</span></div>
+<svg aria-hidden="true" class="pipe-graph" viewBox="0 0 420 120">
+<path class="edge" d="M210 60 L70 28" style="--d:0s"/>
+<path class="edge" d="M210 60 L80 98" style="--d:.2s"/>
+<path class="edge" d="M210 60 L345 26" style="--d:.4s"/>
+<path class="edge" d="M210 60 L350 96" style="--d:.6s"/>
+<g class="node hub" style="--d:0s"><circle cx="210" cy="60" fill="var(--ink)" r="7"/><text text-anchor="middle" x="210" y="44">event: meeting</text></g>
+<g class="node" style="--d:.15s"><circle cx="70" cy="28" fill="var(--t-historical)" r="6"/><text x="84" y="31">La Rochelle</text></g>
+<g class="node" style="--d:.35s"><circle cx="80" cy="98" fill="var(--t-semantic)" r="6"/><text x="94" y="101">1890-07-14</text></g>
+<g class="node" style="--d:.55s"><circle cx="345" cy="26" fill="var(--t-cultural)" r="6"/><text text-anchor="end" x="333" y="29">city council</text></g>
+<g class="node" style="--d:.75s"><circle cx="350" cy="96" fill="var(--t-historical)" r="6"/><text text-anchor="end" x="338" y="99">town hall</text></g>
+</svg>
+</div>
+<figcaption>From noisy scan to structured evidence: the pipeline my research tries to make robust. Illustrative example.</figcaption>
+</figure>
+</section>
+
+<!-- Research -->
+<section class="section" id="research">
+<div class="section-head reveal">
+<div><span class="section-num">01 — Research</span><h2>Six threads I keep returning to</h2></div>
+<p>Each thread links to a page with the problem, the approach, and the papers behind it.</p>
+</div>
+<div class="theme-grid">
+<a class="theme t-noisy reveal" href="things.html#noisy-documents">
+<div class="theme-top"><span class="theme-num">01</span>
+<svg aria-hidden="true" class="glyph g-noise" viewBox="0 0 56 40"><rect height="26" width="5" x="8" y="10"/><rect height="18" width="5" x="17" y="18"/><rect height="30" width="5" x="26" y="6"/><rect height="14" width="5" x="35" y="22"/><rect height="22" width="5" x="44" y="14"/></svg></div>
+<h3>Noisy documents</h3>
+<p>OCR and HTR errors, degraded text, and how noise changes downstream meaning, not just character accuracy.</p>
+<span class="go">Research + papers →</span>
+</a>
+<a class="theme t-semantic reveal" href="things.html#semantic-extraction" style="--delay:.08s">
+<div class="theme-top"><span class="theme-num">02</span>
+<svg aria-hidden="true" class="glyph g-extract" viewBox="0 0 56 40"><rect class="word" height="4" rx="2" width="10" x="2" y="18"/><rect class="word hit" height="4" rx="2" width="18" x="19" y="18"/><rect class="word" height="4" rx="2" width="10" x="44" y="18"/><path class="bracket" d="M18 10 h-3 v20 h3"/><path class="bracket r" d="M38 10 h3 v20 h-3"/></svg></div>
+<h3>Semantic extraction</h3>
+<p>Named entities, entity linking, relations and events: the small structures that make collections searchable.</p>
+<span class="go">Research + papers →</span>
+</a>
+<a class="theme t-historical reveal" href="things.html#historical-ai" style="--delay:.16s">
+<div class="theme-top"><span class="theme-num">03</span>
+<svg aria-hidden="true" class="glyph g-time" viewBox="0 0 56 40"><line x1="6" x2="50" y1="20" y2="20"/><line class="tick" x1="6" x2="6" y1="15" y2="25"/><line class="tick" x1="28" x2="28" y1="15" y2="25"/><line class="tick" x1="50" x2="50" y1="15" y2="25"/><circle class="dot" cx="10" cy="20" r="4"/></svg></div>
+<h3>Historical AI</h3>
+<p>Temporal modelling and multilingual archives, for language whose names, borders and meanings keep shifting.</p>
+<span class="go">Research + papers →</span>
+</a>
+<a class="theme t-cultural reveal" href="things.html#cultural-heritage">
+<div class="theme-top"><span class="theme-num">04</span>
+<svg aria-hidden="true" class="glyph g-heritage" viewBox="0 0 56 40"><rect height="34" rx="3" width="40" x="8" y="3"/><line x1="14" x2="42" y1="12" y2="12"/><line x1="14" x2="38" y1="20" y2="20"/><line x1="14" x2="34" y1="28" y2="28"/></svg></div>
+<h3>Cultural heritage</h3>
+<p>Digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, and contested memory.</p>
+<span class="go">Research + papers →</span>
+</a>
+<a class="theme t-multimodal reveal" href="things.html#multimodal-archives" style="--delay:.08s">
+<div class="theme-top"><span class="theme-num">05</span>
+<svg aria-hidden="true" class="glyph g-multi" viewBox="0 0 56 40"><rect height="34" rx="3" width="46" x="5" y="3"/><rect class="img" height="14" rx="2" width="18" x="10" y="8"/><circle class="sun" cx="23" cy="12" r="2.5"/><line class="ln" x1="32" x2="46" y1="10" y2="10"/><line class="ln" x1="32" x2="44" y1="17" y2="17"/><line class="ln" x1="10" x2="46" y1="29" y2="29"/></svg></div>
+<h3>Multimodal archives</h3>
+<p>Text, image, layout and typography together, treating the page as a visual object and not only as OCR output.</p>
+<span class="go">Research + papers →</span>
+</a>
+<a class="theme t-applied reveal" href="things.html#applied-document-intelligence" style="--delay:.16s">
+<div class="theme-top"><span class="theme-num">06</span>
+<svg aria-hidden="true" class="glyph g-applied" viewBox="0 0 56 40"><rect height="34" rx="2" width="26" x="6" y="3"/><line class="ln" x1="11" x2="27" y1="11" y2="11"/><line class="ln" x1="11" x2="24" y1="17" y2="17"/><line class="ln" x1="11" x2="27" y1="23" y2="23"/><path class="check" d="M37 21 l5 6 l11 -14"/></svg></div>
+<h3>Applied document intelligence</h3>
+<p>Document fraud, misinformation, epidemic surveillance, and open LLMs built to hold up under real constraints.</p>
+<span class="go">Research + papers →</span>
+</a>
 </div>
 </section>
+
+<!-- Publications -->
+<section class="section" id="publications">
+<div class="section-head reveal">
+<div><span class="section-num">02 — Publications</span><h2>Selected papers</h2></div>
+<p>A short list. Below, how the six research threads move across the years, by selected papers per theme.</p>
+</div>
+<figure class="waves reveal">
+<div class="line-plot-wrap">
+<svg aria-labelledby="subject-line-title subject-line-desc" class="subject-line-plot" preserveaspectratio="xMinYMid meet" role="img" viewbox="0 0 980 360">
+<title id="subject-line-title">Subject waves over time</title>
+<desc id="subject-line-desc">A line-based visual map of selected papers grouped by main research themes over publication years.</desc>
+<rect class="plot-bg" height="324" rx="34" width="956" x="12" y="12"></rect>
+<line class="plot-grid-line" x1="72.0" x2="72.0" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="72.0" y="330">2012</text><line class="plot-grid-line" x1="168.4" x2="168.4" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="168.4" y="330">2014</text><line class="plot-grid-line" x1="264.9" x2="264.9" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="264.9" y="330">2019</text><line class="plot-grid-line" x1="361.3" x2="361.3" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="361.3" y="330">2020</text><line class="plot-grid-line" x1="457.8" x2="457.8" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="457.8" y="330">2021</text><line class="plot-grid-line" x1="554.2" x2="554.2" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="554.2" y="330">2022</text><line class="plot-grid-line" x1="650.7" x2="650.7" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="650.7" y="330">2023</text><line class="plot-grid-line" x1="747.1" x2="747.1" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="747.1" y="330">2024</text><line class="plot-grid-line" x1="843.6" x2="843.6" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="843.6" y="330">2025</text><line class="plot-grid-line" x1="940.0" x2="940.0" y1="42" y2="290"></line><text class="plot-year" text-anchor="middle" x="940.0" y="330">2026</text><line class="plot-grid-line plot-grid-horizontal" x1="72" x2="940" y1="290.0" y2="290.0"></line><line class="plot-grid-line plot-grid-horizontal" x1="72" x2="940" y1="208.2" y2="208.2"></line><line class="plot-grid-line plot-grid-horizontal" x1="72" x2="940" y1="126.3" y2="126.3"></line><line class="plot-grid-line plot-grid-horizontal" x1="72" x2="940" y1="42.0" y2="42.0"></line>
+<path aria-label="Noisy Documents" class="subject-line subject-line-noisy" d="M 72.0 290.0 C 88.1 290.0, 136.3 290.0, 168.4 290.0 C 200.6 290.0, 232.7 317.6, 264.9 290.0 C 297.0 262.4, 329.2 124.7, 361.3 124.7 C 393.5 124.7, 425.6 276.2, 457.8 290.0 C 489.9 303.8, 522.1 207.3, 554.2 207.3 C 586.4 207.3, 618.5 290.0, 650.7 290.0 C 682.8 290.0, 715.0 207.3, 747.1 207.3 C 779.3 207.3, 811.4 276.2, 843.6 290.0 C 875.7 303.8, 923.9 290.0, 940.0 290.0"></path><circle class="subject-point subject-point-noisy" cx="361.3" cy="124.7" r="13"><title>Noisy Documents · 2020</title></circle><circle class="subject-point subject-point-noisy" cx="554.2" cy="207.3" r="10"><title>Noisy Documents · 2022</title></circle><circle class="subject-point subject-point-noisy" cx="747.1" cy="207.3" r="10"><title>Noisy Documents · 2024</title></circle><path aria-label="Semantic Extraction" class="subject-line subject-line-semantic" d="M 72.0 290.0 C 88.1 276.2, 136.3 207.3, 168.4 207.3 C 200.6 207.3, 232.7 276.2, 264.9 290.0 C 297.0 303.8, 329.2 331.3, 361.3 290.0 C 393.5 248.7, 425.6 55.8, 457.8 42.0 C 489.9 28.2, 522.1 166.0, 554.2 207.3 C 586.4 248.7, 618.5 276.2, 650.7 290.0 C 682.8 303.8, 715.0 290.0, 747.1 290.0 C 779.3 290.0, 811.4 290.0, 843.6 290.0 C 875.7 290.0, 923.9 290.0, 940.0 290.0"></path><circle class="subject-point subject-point-semantic" cx="168.4" cy="207.3" r="10"><title>Semantic Extraction · 2014</title></circle><circle class="subject-point subject-point-semantic" cx="457.8" cy="42.0" r="16"><title>Semantic Extraction · 2021</title></circle><circle class="subject-point subject-point-semantic" cx="554.2" cy="207.3" r="10"><title>Semantic Extraction · 2022</title></circle><path aria-label="Historical AI" class="subject-line subject-line-historical" d="M 72.0 290.0 C 88.1 290.0, 136.3 290.0, 168.4 290.0 C 200.6 290.0, 232.7 290.0, 264.9 290.0 C 297.0 290.0, 329.2 290.0, 361.3 290.0 C 393.5 290.0, 425.6 290.0, 457.8 290.0 C 489.9 290.0, 522.1 317.6, 554.2 290.0 C 586.4 262.4, 618.5 124.7, 650.7 124.7 C 682.8 124.7, 715.0 276.2, 747.1 290.0 C 779.3 303.8, 811.4 221.1, 843.6 207.3 C 875.7 193.6, 923.9 207.3, 940.0 207.3"></path><circle class="subject-point subject-point-historical" cx="650.7" cy="124.7" r="13"><title>Historical AI · 2023</title></circle><circle class="subject-point subject-point-historical" cx="843.6" cy="207.3" r="10"><title>Historical AI · 2025</title></circle><circle class="subject-point subject-point-historical" cx="940.0" cy="207.3" r="10"><title>Historical AI · 2026</title></circle><path aria-label="Cultural Heritage" class="subject-line subject-line-cultural" d="M 72.0 290.0 C 88.1 290.0, 136.3 290.0, 168.4 290.0 C 200.6 290.0, 232.7 290.0, 264.9 290.0 C 297.0 290.0, 329.2 290.0, 361.3 290.0 C 393.5 290.0, 425.6 290.0, 457.8 290.0 C 489.9 290.0, 522.1 290.0, 554.2 290.0 C 586.4 290.0, 618.5 303.8, 650.7 290.0 C 682.8 276.2, 715.0 207.3, 747.1 207.3 C 779.3 207.3, 811.4 317.6, 843.6 290.0 C 875.7 262.4, 923.9 83.3, 940.0 42.0"></path><circle class="subject-point subject-point-cultural" cx="747.1" cy="207.3" r="10"><title>Cultural Heritage · 2024</title></circle><circle class="subject-point subject-point-cultural" cx="940.0" cy="42.0" r="16"><title>Cultural Heritage · 2026</title></circle><path aria-label="Multimodal Archives" class="subject-line subject-line-multimodal" d="M 72.0 207.3 C 88.1 221.1, 136.3 290.0, 168.4 290.0 C 200.6 290.0, 232.7 207.3, 264.9 207.3 C 297.0 207.3, 329.2 290.0, 361.3 290.0 C 393.5 290.0, 425.6 207.3, 457.8 207.3 C 489.9 207.3, 522.1 276.2, 554.2 290.0 C 586.4 303.8, 618.5 290.0, 650.7 290.0 C 682.8 290.0, 715.0 290.0, 747.1 290.0 C 779.3 290.0, 811.4 290.0, 843.6 290.0 C 875.7 290.0, 923.9 290.0, 940.0 290.0"></path><circle class="subject-point subject-point-multimodal" cx="72.0" cy="207.3" r="10"><title>Multimodal Archives · 2012</title></circle><circle class="subject-point subject-point-multimodal" cx="264.9" cy="207.3" r="10"><title>Multimodal Archives · 2019</title></circle><circle class="subject-point subject-point-multimodal" cx="457.8" cy="207.3" r="10"><title>Multimodal Archives · 2021</title></circle><path aria-label="Applied Document Intelligence" class="subject-line subject-line-applied" d="M 72.0 290.0 C 88.1 290.0, 136.3 290.0, 168.4 290.0 C 200.6 290.0, 232.7 303.8, 264.9 290.0 C 297.0 276.2, 329.2 221.1, 361.3 207.3 C 393.5 193.6, 425.6 193.6, 457.8 207.3 C 489.9 221.1, 522.1 317.6, 554.2 290.0 C 586.4 262.4, 618.5 42.0, 650.7 42.0 C 682.8 42.0, 715.0 248.7, 747.1 290.0 C 779.3 331.3, 811.4 290.0, 843.6 290.0 C 875.7 290.0, 923.9 290.0, 940.0 290.0"></path><circle class="subject-point subject-point-applied" cx="361.3" cy="207.3" r="10"><title>Applied Document Intelligence · 2020</title></circle><circle class="subject-point subject-point-applied" cx="457.8" cy="207.3" r="10"><title>Applied Document Intelligence · 2021</title></circle><circle class="subject-point subject-point-applied" cx="650.7" cy="42.0" r="16"><title>Applied Document Intelligence · 2023</title></circle>
+</svg>
+</div>
+<div aria-label="Subject colour legend" class="timeline-legend">
+<span><i class="legend-dot subject-noisy"></i>Noisy documents</span>
+<span><i class="legend-dot subject-semantic"></i>Semantic extraction</span>
+<span><i class="legend-dot subject-historical"></i>Historical AI</span>
+<span><i class="legend-dot subject-cultural"></i>Cultural heritage</span>
+<span><i class="legend-dot subject-multimodal"></i>Multimodal archives</span>
+<span><i class="legend-dot subject-applied"></i>Applied document intelligence</span>
+</div>
+</figure>
+<ul class="pub-list">
+<li class="reveal"><a class="t-cultural" href="papers/2026-a-dataset-of-cultural-heritage-manipulation-on-english-wikipedia-in-the-rus.html"><span class="pub-year">2026</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-cultural)"></i>A Dataset of Cultural Heritage Manipulation on English Wikipedia in the Russo–Ukrainian Context</span><span class="pub-venue">SIGIR</span></a></li>
+<li class="reveal"><a href="papers/2026-apertus-democratizing-open-and-compliant-llms-for-global-language-environme.html"><span class="pub-year">2026</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-applied)"></i>Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</span><span class="pub-venue">ACL</span></a></li>
+<li class="reveal"><a href="papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html"><span class="pub-year">2025</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-historical)"></i>A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts</span><span class="pub-venue">TPDL</span></a></li>
+<li class="reveal"><a href="papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html"><span class="pub-year">2024</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-noisy)"></i>Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents</span><span class="pub-venue">ICADL</span></a></li>
+<li class="reveal"><a href="papers/2023-yes-but-can-chatgpt-identify-entities-in-historical-documents.html"><span class="pub-year">2023</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-historical)"></i>Yes but.. Can ChatGPT Identify Entities in Historical Documents?</span><span class="pub-venue">JCDL</span></a></li>
+<li class="reveal"><a href="papers/2023-detecting-forged-receipts-with-domain-specific-ontology-based-entities-and.html"><span class="pub-year">2023</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-applied)"></i>Detecting Forged Receipts with Domain-Specific Ontology-Based Entities &amp; Relations</span><span class="pub-venue">ICDAR</span></a></li>
+<li class="reveal"><a href="papers/2021-a-multilingual-dataset-for-named-entity-recognition-entity-linking-and-stan.html"><span class="pub-year">2021</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-semantic)"></i>A Multilingual Dataset for Named Entity Recognition, Entity Linking and Stance Detection in Historical Newspapers</span><span class="pub-venue">SIGIR</span></a></li>
+<li class="reveal"><a href="papers/2014-event-role-extraction-using-domain-relevant-word-representations.html"><span class="pub-year">2014</span><span class="pub-title"><i class="pub-dot" style="--c:var(--t-semantic)"></i>Event Role Extraction using Domain-Relevant Word Representations</span><span class="pub-venue">EMNLP</span></a></li>
+</ul>
+<a class="more-link" href="things.html">All papers by research theme <span>→</span></a>
+</section>
+
+<!-- Writing -->
+<section class="section" id="writing">
+<div class="section-head reveal">
+<div><span class="section-num">03 — Writing</span><h2>Notes and essays</h2></div>
+<p>Shorter texts on AI, archives, evidence and noise. Less formal than papers.</p>
+</div>
+<ul class="note-list">
+<li class="reveal"><a href="posts/llms-in-archives.html"><span class="note-type">Essay</span><div><h3>LLMs in archives: fluent, useful, suspicious</h3><p>Why good prose is not the same thing as grounded historical understanding.</p></div></a></li>
+<li class="reveal is-draft"><div><span class="note-type">Note</span><div><h3>Documents are evidence, not just data</h3><p>Building AI systems that keep traces attached to claims.</p></div></div></li>
+<li class="reveal is-draft"><div><span class="note-type">Note</span><div><h3>Noise is not always a bug</h3><p>OCR, damaged scans, and why cleaning can also erase what matters.</p></div></div></li>
+</ul>
+<a class="more-link" href="writing.html">All writing <span>→</span></a>
+</section>
+
+<!-- Photography -->
+<section class="section" id="photography">
+<div class="section-head reveal">
+<div><span class="section-num">04 — Photography</span><h2>Photo and video projects</h2></div>
+<p>A parallel practice: rooms, objects, bodies and absence, from 2007 to now.</p>
+</div>
+<div class="photo-grid">
+<a class="photo-card reveal" href="projects/fake-freedom.html"><div class="frame"><img alt="Cover for Fake Freedom" loading="lazy" src="images/photo-collections/fake-freedom/fake-freedom-01.jpg"/></div><div class="meta"><h3>Fake Freedom</h3><span class="year">2017</span></div><p>Performance, escape, and awkward freedom.</p></a>
+<a class="photo-card reveal" href="projects/cutting-into-silence.html" style="--delay:.08s"><div class="frame"><img alt="Cover for Cutting into Silence" loading="lazy" src="images/photo-collections/cutting-into-silence/cutting-into-silence-01.jpg"/></div><div class="meta"><h3>Cutting into Silence</h3><span class="year">2014</span></div><p>Surfaces, cuts, gestures, withheld movement.</p></a>
+<a class="photo-card reveal" href="projects/november-queue.html" style="--delay:.16s"><div class="frame"><img alt="Cover for November Queue" loading="lazy" src="images/photo-collections/november-queue/november-queue-01.jpg"/></div><div class="meta"><h3>November Queue</h3><span class="year">2014</span></div><p>Waiting and public-space choreography.</p></a>
+<a class="photo-card reveal" href="projects/yellow-room.html"><div class="frame"><img alt="Cover for Yellow Room" loading="lazy" src="images/photo-collections/yellow-room/yellow-room-01.jpg"/></div><div class="meta"><h3>Yellow Room</h3><span class="year">2014</span></div><p>An interior becoming a scene.</p></a>
+<a class="photo-card reveal" href="projects/everything-but-you.html" style="--delay:.08s"><div class="frame"><img alt="Cover for Everything but You" loading="lazy" src="images/photo-collections/everything-but-you/everything-but-you-01.jpg"/></div><div class="meta"><h3>Everything but You</h3><span class="year">2013</span></div><p>Rooms, objects, and someone not shown.</p></a>
+<a class="photo-card reveal" href="projects/space-in-time.html" style="--delay:.16s"><div class="frame"><img alt="Cover for Space in Time" loading="lazy" src="images/portfolio/space-in-time-cover.jpg"/></div><div class="meta"><h3>Space in Time</h3><span class="year">2010</span></div><p>Performance, projection, interactivity.</p></a>
+</div>
+<a class="more-link" href="photography.html">All 14 projects <span>→</span></a>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+<div class="about-grid">
+<div class="reveal">
+<span class="section-num">05 — About</span>
+<h2>Mostly serious work, with a sense of humour</h2>
+</div>
+<div class="prose reveal" style="--delay:.1s">
+<p>I care about what AI extracts from documents, and also about what it misses, invents, flattens, or quietly ruins while sounding confident.</p>
+<p>I come from both computer science and visual practice, so I tend to look at documents as text, images, layouts and evidence all at once. My PhD was on neural methods for event extraction; since then I have worked on historical newspapers, epigraphy, document fraud, epidemic surveillance and open LLMs.</p>
+<p>Outside research: photography, handmade things (some of them sold at <a href="https://www.etsy.com/shop/QuietSoupClub" rel="noopener" target="_blank">Quiet Soup Club</a>), gardening with variable success, mostly non-fantasy books, metal festivals and camping.</p>
+<ul class="facts">
+<li><span>Focus</span><span>NLP, information extraction, document AI, digital humanities</span></li>
+<li><span>PhD</span><span><a href="https://theses.hal.science/tel-01943841" rel="noopener" target="_blank">Neural Methods for Event Extraction</a> (2018)</span></li>
+<li><span>Contact</span><span><a href="mailto:emanuela.boros@univ-lr.fr">emanuela.boros@univ-lr.fr</a></span></li>
+</ul>
+</div>
+</div>
+</section>
+
 </main>
 <footer>
-<p>© <span id="year"></span> Emanuela Boros. Built loudly, patched together, and probably thinking about soup.</p>
+<p>© <span id="year"></span> Emanuela Boros</p>
+<p><a href="mailto:emanuela.boros@univ-lr.fr">Email</a> · <a href="https://github.com/emanuelaboros">GitHub</a></p>
 </footer>
 </div>
 <script src="script.js"></script>

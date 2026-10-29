@@ -4,11 +4,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Things I keep returning to · Emanuela Boros</title>
+<title>Research · Emanuela Boros</title>
+<script>document.documentElement.classList.add('js');</script>
 <meta content="Developed projects, tools, datasets, demos, and recurring research themes by Emanuela Boros." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Inter:wght@400;600;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
@@ -16,83 +17,76 @@
 <header class="site-header">
 <a aria-label="Home" class="logo" href="index.html">
 <span class="logo-mark">EB</span>
-<span class="logo-text">EMANUELA<br/>BOROS</span>
+<span class="logo-text">Emanuela Boros</span>
 </a>
 <nav aria-label="Main navigation" class="nav">
-<a href="index.html#about">About</a>
-<a href="index.html#obsessions">Obsessions</a>
-<a href="index.html#work">Work</a>
-<a href="things.html">Things</a>
+<a href="things.html">Research</a>
+<a href="index.html#publications">Publications</a>
 <a href="writing.html">Writing</a>
-<a href="index.html#photo-projects">Photo projects</a>
-<a href="index.html#contact">Contact</a>
+<a href="photography.html">Photography</a>
+<a href="index.html#about">About</a>
 </nav>
 </header>
 <main class="project-page-main">
-<section class="project-hero panel panel-pink">
+<section class="project-hero">
 <div>
-<a class="back-link" href="index.html#work">← back home</a>
-<p class="section-label">Developed projects</p>
-<h1>Things I keep returning to</h1>
-<div class="project-meta">
-<span>tools</span>
-<span>datasets</span>
-<span>demos</span>
-<span>infrastructures</span>
-<span>unfinished obsessions</span>
+<a class="back-link" href="index.html">← Home</a>
+<p class="section-label">Research</p>
+<h1>Research themes and selected papers</h1>
 </div>
-</div>
+<p class="project-description">Six threads my work keeps returning to, from noisy OCR to cultural heritage and applied document intelligence. Each section describes the problem, what the work contains, and the most relevant papers, with notes and figures on each paper page.</p>
 </section>
 <section class="things-section panel panel-white">
 <div class="section-heading project-heading-row">
 <div>
 <!--<p class="section-label">Project map</p>-->
-<h2>Click one of the boxes</h2>
+<h2>Themes</h2>
 </div>
-<p class="project-intro">The cards move because the work does too: between archives, models, images, evaluation, and strange documents that do not behave.</p>
+<p class="project-intro">Jump to a theme, or scroll through all six.</p>
 </div>
-<div class="card-grid moving-card-grid">
-<a class="work-card card-red moving-card" href="#noisy-documents">
+<div class="card-grid">
+<a class="work-card card-red" href="#noisy-documents">
 <span class="card-number">01</span>
 <h3>Noisy Documents</h3>
 <p>OCR, HTR, damaged text, digitization errors, and semantic damage.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
-<a class="work-card card-orange moving-card" href="#semantic-extraction">
+<a class="work-card card-orange" href="#semantic-extraction">
 <span class="card-number">02</span>
 <h3>Semantic Extraction</h3>
 <p>Entities, events, relations, linking, and structured access to collections.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
-<a class="work-card card-mint moving-card" href="#historical-ai">
+<a class="work-card card-mint" href="#historical-ai">
 <span class="card-number">03</span>
 <h3>Historical AI</h3>
 <p>Time-aware models, historical language, multilingual collections, unstable meanings.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
-<a class="work-card card-orange moving-card" href="#cultural-heritage">
+<a class="work-card card-orange" href="#cultural-heritage">
 <span class="card-number">04</span>
 <h3>Cultural Heritage</h3>
 <p>Epigraphy, contested memory, endangered heritage, structured vocabularies.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
-<a class="work-card card-mint moving-card" href="#multimodal-archives">
+<a class="work-card card-mint" href="#multimodal-archives">
 <span class="card-number">05</span>
 <h3>Multimodal Archives</h3>
 <p>Text, image, layout, typography, photographs, and visual evidence.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
-<a class="work-card card-red moving-card" href="#applied-document-intelligence">
+<a class="work-card card-red" href="#applied-document-intelligence">
 <span class="card-number">06</span>
 <h3>Applied Document Intelligence</h3>
 <p>Fraud, misinformation, emergency events, and production-scale pipelines.</p>
-<span class="card-link-label">Jump there →</span>
+<span class="card-link-label">Jump to section ↓</span>
 </a>
 </div>
 </section>
     <section aria-labelledby="subject-line-heading" class="subject-line-section panel panel-white">
-<div class="section-heading subject-wave-heading">
-<h2 id="subject-line-heading"><span>Subject waves</span><span>over time</span></h2>
+<div class="section-heading project-heading-row subject-wave-heading">
+<h2 id="subject-line-heading">Themes over time</h2>
+<p class="project-intro">Selected papers per theme by year. Hover a line to isolate it.</p>
 <!--<p class="project-intro">A quick visual map of the curated papers below. The lines show when the main research subjects become more visible across years; it is a readable map, not a full bibliography.</p>-->
 </div>
 <div class="line-plot-wrap">
@@ -120,7 +114,7 @@
 <li>Designing post-correction and robustness experiments for historical and degraded text.</li>
 <li>Testing whether models remain reliable when the input is damaged, fragmented, or historically unstable.</li>
 </ul>
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list"><li><a href="papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html">Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents</a><span>ICADL 2024</span></li><li><a href="papers/2022-assessing-the-impact-of-ocr-noise-on-multilingual-event-detection-over-digi.html">Assessing the Impact of OCR Noise on Multilingual Event Detection over Digitised Documents</a><span>IJDL 2022</span></li><li><a href="papers/2020-alleviating-digitization-errors-in-named-entity-recognition-for-historical.html">Alleviating Digitization Errors in Named Entity Recognition for Historical Documents</a><span>CoNLL 2020</span></li><li><a href="papers/2020-a-comparison-of-sequential-and-combined-approaches-for-named-entity-recogni.html">A Comparison of Sequential and Combined Approaches for Named Entity Recognition in a Corpus of Handwritten Medieval Charters</a><span>ICFHR 2020</span></li></ul>
 </div>
 </section>
@@ -152,7 +146,7 @@
   </a>
 </div>
 
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list">
     <li><a href="papers/2022-exploring-entities-in-event-detection-as-question-answering.html">Exploring Entities in Event Detection as Question Answering</a><span>ECIR 2022</span></li>
     <li><a href="papers/2021-a-multilingual-dataset-for-named-entity-recognition-entity-linking-and-stan.html">A Multilingual Dataset for Named Entity Recognition, Entity Linking and Stance Detection in Historical Newspapers</a><span>SIGIR 2021</span></li>
@@ -174,7 +168,7 @@
 <li>Experiments with temporal knowledge injection, temporal fusion, and long-horizon representations.</li>
 <li>Critiques of fluent AI answers when evidence is weak, noisy, or historically misplaced.</li>
 </ul>
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list"><li><a href="papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html">A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts</a><span>TPDL 2025</span></li><li><a href="papers/2023-injecting-temporal-aware-knowledge-in-historical-named-entity-recognition.html">Injecting Temporal-Aware Knowledge in Historical Named Entity Recognition</a><span>ECIR 2023</span></li><li><a href="papers/2023-yes-but-can-chatgpt-identify-entities-in-historical-documents.html">Yes but.. Can ChatGPT Identify Entities in Historical Documents?</a><span>JCDL 2023</span></li></ul>
 </div>
 </section>
@@ -191,7 +185,7 @@
 <li>Digital epigraphy, inscription corpora, and standards-oriented encoding.</li>
 <li>Computational analysis of cultural heritage narratives, memory, and contested heritage.</li>
 </ul>
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list"><li><a href="papers/2026-a-dataset-of-cultural-heritage-manipulation-on-english-wikipedia-in-the-rus.html">A Dataset of Cultural Heritage Manipulation on English Wikipedia in the Russo–Ukrainian Context</a><span>SIGIR 2026</span></li><li><a href="papers/2026-building-a-skos-vocabulary-for-armenian-epigraphy-a-corpus-driven-and-nlp-a.html">Building a SKOS Vocabulary for Armenian Epigraphy: A Corpus-Driven and NLP-Assisted Approach</a><span>LaTeCH-CLfL 2026</span></li><li><a href="papers/2026-armenian-autoepidoc-automated-extraction-and-encoding-of-armenian-inscripti.html">Armenian AutoEpiDoc: Automated Extraction and Encoding of Armenian Inscriptions into EpiDoc TEI/XML</a><span>LaTeCH-CLfL 2026</span></li><li><a href="papers/2024-developing-a-standardised-vocabulary-for-ukrainian-epigraphy-and-expanding.html">Developing a Standardised Vocabulary for Ukrainian Epigraphy and Expanding Digital Epigraphic Resources</a><span>TPDL 2024</span></li></ul>
 </div>
 </section>
@@ -208,7 +202,7 @@
 <li>Connections between image processing, document analysis, and semantic modelling.</li>
 <li>Work that treats the page as a visual object, not only as text after OCR.</li>
 </ul>
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list"><li><a href="papers/2021-integrated-interdisciplinary-workflows-for-research-on-historical-newspaper.html">Integrated Interdisciplinary Workflows for Research on Historical Newspapers</a><span>JASIST 2021</span></li><li><a href="papers/2019-automatic-page-classification-in-a-large-collection-of-manuscripts-based-on.html">Automatic Page Classification in a Large Collection of Manuscripts Based on the International Image Interoperability Framework</a><span>ICDAR 2019</span></li><li><a href="papers/2012-targeting-a-practical-approach-for-robot-vision-with-ensembles-of-visual-fe.html">Targeting a Practical Approach for Robot Vision with Ensembles of Visual Features</a><span>ICCSW 2012</span></li></ul>
 </div>
 </section>
@@ -225,7 +219,7 @@
 <li>Multilingual epidemic monitoring and emergency event detection.</li>
 <li>Fake news, misinformation, and workflows where models have to survive real constraints.</li>
 </ul>
-<h3>Selected high-impact / most relevant papers</h3>
+<h3>Selected papers</h3>
 <ul class="paper-list"><li><a href="papers/2026-apertus-democratizing-open-and-compliant-llms-for-global-language-environme.html">Apertus: Democratizing Open and Compliant LLMs for Global Language Environments</a><span>ACL 2026</span></li>
     <li><a href="papers/2023-detecting-forged-receipts-with-domain-specific-ontology-based-entities-and.html">Detecting Forged Receipts with Domain-Specific Ontology-Based Entities &amp; Relations</a><span>ICDAR 2023</span></li>
     <li><a href="papers/2023-receipt-dataset-for-document-forgery-detection.html">Receipt Dataset for Document Forgery Detection</a><span>ICDAR 2023</span></li>
@@ -237,11 +231,11 @@
 </section>
 <section class="project-nav panel panel-cream">
 <a href="writing.html">Posts / opinions →</a>
-<a href="index.html#photo-projects">Photo projects →</a>
+<a href="photography.html">Photo projects →</a>
 </section>
 </main>
 <footer>
-<p>© <span id="year"></span> Emanuela Boros. Things I keep returning to.</p>
+<p>© <span id="year"></span> Emanuela Boros</p>
 </footer>
 </div>
 <script src="script.js"></script>
