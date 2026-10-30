@@ -835,3 +835,68 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .clean-note.bad { color: var(--accent); transition-delay: 3.1s; }
 .js .clean-fig:not(.is-visible) .clean-note { opacity: 0; }
 @media (max-width: 560px) { .clean-row { grid-template-columns: 1fr; gap: .3rem; } .clean-note { display: block; margin: .3rem 0 0; white-space: normal; } }
+
+/* Essay 3: OCR-sensitive neurons per layer */
+.neuron-fig { display: grid; gap: 1rem; }
+.nf-model { padding: .8rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+.article-panel .nf-name { margin: 0 0 .6rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .2rem 1rem; font-family: var(--mono); font-size: .68rem; color: var(--ink-2); line-height: 1.4; }
+.nf-name b { font-weight: 500; color: var(--ink); }
+.nf-bars { display: grid; grid-template-columns: repeat(32, 1fr); gap: 2px; height: 6.5rem; border-bottom: 1px solid var(--rule-strong); }
+.nf-bars span { display: flex; align-items: flex-end; height: 100%; }
+.nf-bars span:hover { background: var(--paper-2); }
+.nf-bars i { display: block; width: 100%; height: calc(var(--n) / 19 * 100%); background: var(--t-semantic); border-radius: 2px 2px 0 0; transform-origin: bottom; transition: transform .7s var(--ease) calc(var(--l) * 45ms); }
+.nf-bars i.peak { background: var(--accent); }
+.js .neuron-fig:not(.is-visible) .nf-bars i { transform: scaleY(0); }
+.article-panel .nf-axis { margin: .3rem 0 0; display: flex; justify-content: space-between; font-family: var(--mono); font-size: .62rem; color: var(--muted); }
+
+/* Essay 3: the trace an era leaves */
+.era-fig { display: grid; gap: .35rem; }
+.era-row { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: .8rem; padding: .5rem .8rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.era-row:nth-child(2) { transition-delay: .5s; } .era-row:nth-child(3) { transition-delay: 1s; } .era-row:nth-child(4) { transition-delay: 1.5s; }
+.js .era-fig:not(.is-visible) .era-row { opacity: 0; transform: translateX(-10px); }
+.era-year { font-family: var(--mono); font-size: .66rem; color: var(--muted); }
+.era-word { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); }
+.era-word b { font-weight: 400; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: 0 .1em; }
+.era-why { font-family: var(--mono); font-size: .66rem; color: var(--ink-2); transition: opacity .6s var(--ease) 2.2s; }
+.js .era-fig:not(.is-visible) .era-why { opacity: 0; }
+@media (max-width: 560px) { .era-row { grid-template-columns: 3.4rem minmax(0, 1fr); } .era-why { grid-column: 2; } }
+
+/* Essay 3: rewrite the source or strengthen the reader */
+.robust-fig { display: grid; gap: .7rem; }
+.article-panel .rf-source { margin: 0; justify-self: center; padding: .5rem .9rem; border: 1px solid var(--rule-strong); border-radius: 6px; background: var(--card); font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+.rf-source span { margin-right: .7rem; font-family: var(--mono); font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.rf-source b { font-weight: 400; color: var(--accent); background: var(--accent-soft); border-radius: 3px; padding: 0 .1em; }
+.rf-paths { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.rf-path { padding: .8rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+.article-panel .rf-path h4 { margin: 0 0 .6rem; font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .04em; color: var(--ink); }
+.article-panel .rf-step { margin: 0 0 .55rem; font-family: var(--sans); font-size: .8rem; color: var(--ink-2); line-height: 1.45; transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.article-panel .rf-step:last-child { margin-bottom: 0; }
+.rf-step q { font-style: italic; }
+.article-panel .rf-step.rf-1 { transition-delay: .5s; } .article-panel .rf-step.rf-2 { transition-delay: 1.5s; } .article-panel .rf-step.rf-3 { transition-delay: 2.5s; }
+.article-panel .rf-reader .rf-step.rf-1 { transition-delay: 3.3s; } .article-panel .rf-reader .rf-step.rf-2 { transition-delay: 4.3s; } .article-panel .rf-reader .rf-step.rf-3 { transition-delay: 5.3s; }
+.js .robust-fig:not(.is-visible) .rf-step { opacity: 0; transform: translateY(6px); }
+.article-panel .rf-text { font-family: var(--serif); font-size: 1rem; color: var(--ink); }
+.rf-text mark { color: inherit; border-radius: 3px; padding: .05em .25em; }
+.rf-text mark.bad { background: var(--accent-soft); }
+.rf-text mark.ok { background: color-mix(in srgb, var(--t-historical) 16%, transparent); }
+.rf-text em { margin-left: .25em; font-family: var(--mono); font-size: .6rem; font-style: normal; color: var(--ink-2); }
+.article-panel .rf-verdict { font-family: var(--mono); font-size: .66rem; }
+.article-panel .rf-verdict.bad { color: var(--accent); }
+.article-panel .rf-verdict.ok { color: var(--t-historical); }
+@media (max-width: 560px) { .rf-paths { grid-template-columns: 1fr; } .article-panel .rf-source { justify-self: stretch; } }
+
+/* Essay 3: damage or texture */
+.sort-fig { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+.sort-fig figcaption { grid-column: 1 / -1; }
+.sort-bin { padding: .8rem; border: 1px solid var(--rule); border-top: 2px solid var(--accent); border-radius: 6px; background: var(--card); }
+.sort-keep { border-top-color: var(--t-historical); }
+.article-panel .sort-bin h4 { margin: 0 0 .6rem; font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .04em; color: var(--ink); }
+.sort-bin ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .4rem; }
+.sort-bin li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); align-items: center; gap: .6rem; margin: 0; transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.sort-bin li:nth-child(2) { transition-delay: .35s; } .sort-bin li:nth-child(3) { transition-delay: .7s; } .sort-bin li:nth-child(4) { transition-delay: 1.05s; } .sort-bin li:nth-child(5) { transition-delay: 1.4s; }
+.js .sort-fig:not(.is-visible) .sort-repair li { opacity: 0; transform: translateX(14px); }
+.js .sort-fig:not(.is-visible) .sort-keep li { opacity: 0; transform: translateX(-14px); }
+.sort-bin b { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; color: var(--ink); }
+.sort-bin li span { font-family: var(--mono); font-size: .64rem; color: var(--ink-2); line-height: 1.35; }
+.sort-bin .grain { display: block; width: 4.6rem; height: 1.5rem; border-radius: 3px; }
+@media (max-width: 560px) { .sort-fig { grid-template-columns: 1fr; } }

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=202610291857" />
+  <link rel="stylesheet" href="../style.css?v=202610301718" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -77,16 +77,80 @@
         <h2>Noise carries information</h2>
         <p>Noise is not only something to remove. It also tells us things.</p>
         <p>Models notice it. When we compared what happens inside Llama and Mistral for clean and OCR-damaged versions of the same words, specific layers and neurons reacted strongly to the damage, and how strongly depended on the collection as much as on the model (Boros &amp; Ehrmann, 2024). The model has, in a sense, its own detector for “this text was read by a machine from an old page”.</p>
+
+        <figure class="article-figure neuron-fig reveal" aria-label="Bar charts of OCR-sensitive neurons per layer. Llama 2 has about 12 at layer 0 and a peak of about 19 at layer 25, with few elsewhere. Mistral has about 9 at layers 2 and 3, about 4 or 5 through layer 10, and few after that.">
+          <div class="nf-model">
+            <p class="nf-name"><b>Llama 2</b><span>peak: about 19 neurons at layer 25</span></p>
+            <div class="nf-bars"><span title="Layer 0: about 12 neurons"><i style="--n:12;--l:0"></i></span><span title="Layer 1: about 3 neurons"><i style="--n:3;--l:1"></i></span><span title="Layer 2: about 1 neuron"><i style="--n:1;--l:2"></i></span><span title="Layer 3: about 1 neuron"><i style="--n:1;--l:3"></i></span><span title="Layer 4: about 0 neurons"></span><span title="Layer 5: about 1 neuron"><i style="--n:1;--l:5"></i></span><span title="Layer 6: about 0 neurons"></span><span title="Layer 7: about 2 neurons"><i style="--n:2;--l:7"></i></span><span title="Layer 8: about 0 neurons"></span><span title="Layer 9: about 0 neurons"></span><span title="Layer 10: about 0 neurons"></span><span title="Layer 11: about 0 neurons"></span><span title="Layer 12: about 2 neurons"><i style="--n:2;--l:12"></i></span><span title="Layer 13: about 0 neurons"></span><span title="Layer 14: about 1 neuron"><i style="--n:1;--l:14"></i></span><span title="Layer 15: about 0 neurons"></span><span title="Layer 16: about 2 neurons"><i style="--n:2;--l:16"></i></span><span title="Layer 17: about 1 neuron"><i style="--n:1;--l:17"></i></span><span title="Layer 18: about 1 neuron"><i style="--n:1;--l:18"></i></span><span title="Layer 19: about 0 neurons"></span><span title="Layer 20: about 0 neurons"></span><span title="Layer 21: about 0 neurons"></span><span title="Layer 22: about 2 neurons"><i style="--n:2;--l:22"></i></span><span title="Layer 23: about 3 neurons"><i style="--n:3;--l:23"></i></span><span title="Layer 24: about 3 neurons"><i style="--n:3;--l:24"></i></span><span title="Layer 25: about 19 neurons"><i class="peak" style="--n:19;--l:25"></i></span><span title="Layer 26: about 0 neurons"></span><span title="Layer 27: about 0 neurons"></span><span title="Layer 28: about 1 neuron"><i style="--n:1;--l:28"></i></span><span title="Layer 29: about 0 neurons"></span><span title="Layer 30: about 1 neuron"><i style="--n:1;--l:30"></i></span><span title="Layer 31: about 0 neurons"></span></div>
+            <p class="nf-axis"><span>layer 0</span><span>layer 31</span></p>
+          </div>
+          <div class="nf-model">
+            <p class="nf-name"><b>Mistral</b><span>peak: about 9 neurons at layers 2 and 3</span></p>
+            <div class="nf-bars"><span title="Layer 0: about 0 neurons"></span><span title="Layer 1: about 0 neurons"></span><span title="Layer 2: about 9 neurons"><i class="peak" style="--n:9;--l:2"></i></span><span title="Layer 3: about 9 neurons"><i class="peak" style="--n:9;--l:3"></i></span><span title="Layer 4: about 4 neurons"><i style="--n:4;--l:4"></i></span><span title="Layer 5: about 4 neurons"><i style="--n:4;--l:5"></i></span><span title="Layer 6: about 5 neurons"><i style="--n:5;--l:6"></i></span><span title="Layer 7: about 4 neurons"><i style="--n:4;--l:7"></i></span><span title="Layer 8: about 4 neurons"><i style="--n:4;--l:8"></i></span><span title="Layer 9: about 4 neurons"><i style="--n:4;--l:9"></i></span><span title="Layer 10: about 4 neurons"><i style="--n:4;--l:10"></i></span><span title="Layer 11: about 1 neuron"><i style="--n:1;--l:11"></i></span><span title="Layer 12: about 0 neurons"></span><span title="Layer 13: about 1 neuron"><i style="--n:1;--l:13"></i></span><span title="Layer 14: about 0 neurons"></span><span title="Layer 15: about 0 neurons"></span><span title="Layer 16: about 0 neurons"></span><span title="Layer 17: about 0 neurons"></span><span title="Layer 18: about 0 neurons"></span><span title="Layer 19: about 0 neurons"></span><span title="Layer 20: about 1 neuron"><i style="--n:1;--l:20"></i></span><span title="Layer 21: about 3 neurons"><i style="--n:3;--l:21"></i></span><span title="Layer 22: about 3 neurons"><i style="--n:3;--l:22"></i></span><span title="Layer 23: about 0 neurons"></span><span title="Layer 24: about 3 neurons"><i style="--n:3;--l:24"></i></span><span title="Layer 25: about 2 neurons"><i style="--n:2;--l:25"></i></span><span title="Layer 26: about 2 neurons"><i style="--n:2;--l:26"></i></span><span title="Layer 27: about 1 neuron"><i style="--n:1;--l:27"></i></span><span title="Layer 28: about 0 neurons"></span><span title="Layer 29: about 0 neurons"></span><span title="Layer 30: about 0 neurons"></span><span title="Layer 31: about 4 neurons"><i style="--n:4;--l:31"></i></span></div>
+            <p class="nf-axis"><span>layer 0</span><span>layer 31</span></p>
+          </div>
+          <figcaption>Neurons flagged as OCR-sensitive, layer by layer, on the same scale. The two models notice the damage in different places. Values read approximately from the published chart (Boros &amp; Ehrmann, ICADL 2024). Hover a bar for its layer.</figcaption>
+        </figure>
         <p>Noise also travels with time. When we gave a named entity recognition model the publication year of each document, the gains were largest on the oldest and noisiest texts (Boros, 2025). Bad OCR, old print and old spelling come together, and knowing when a text was printed helps a model decide what an odd string is likely to be.</p>
         <p>And the amount of noise in a page says something about the page: the paper, the press, the decade, the scanner, the collection. Before it is a problem, it is metadata.</p>
+
+        <figure class="article-figure era-fig reveal" aria-label="Four periods and the kind of OCR error each tends to produce: long s in the 1630s, worn type in the 1860s, microfilm scans in the 1930s, and almost none in a laser-printed page from the 1990s">
+          <div class="era-row"><span class="era-year">1630s</span><span class="era-word">ceſte → <b>cefte</b></span><span class="era-why">long s read as f</span></div>
+          <div class="era-row"><span class="era-year">1860s</span><span class="era-word">lundi → <b>lnndi</b></span><span class="era-why">worn type, u read as n</span></div>
+          <div class="era-row"><span class="era-year">1930s</span><span class="era-word">dimanche → <b>dimancbe</b></span><span class="era-why">microfilm scan, h read as b</span></div>
+          <div class="era-row"><span class="era-year">1990s</span><span class="era-word">dimanche → dimanche</span><span class="era-why">laser print, nothing to report</span></div>
+          <figcaption>An illustration, not measured data: the kind of error is a trace of how, and roughly when, a page was made.</figcaption>
+        </figure>
 
         <h2>Robustness, not erasure</h2>
         <p>So there is another option besides cleaning the text first: make the reader stronger and leave the source alone.</p>
         <p>Much of my earlier work went that way. For the first HIPE evaluation we stacked extra Transformer layers on a pretrained model and extended its vocabulary with the unusual words and OCR errors found in the old newspapers, so that it could read through the damage instead of tripping on it (Boros et al., 2020a; 2020b). Later we added knowledge-based contexts, short passages retrieved for each sentence, which helped most precisely on the entities that contained digitisation errors (Boros et al., 2022; González-Gallardo et al., 2023). Nothing in the original text was changed. The model brought more to the reading.</p>
+
+        <figure class="article-figure robust-fig reveal" aria-label="The same damaged line handled two ways. Rewriting the source turns Viu0nne into Vienne, tagged as a place. Adding a retrieved context passage leaves the source unchanged, and the model tags Monsieur de Viu0nne as a person.">
+          <p class="rf-source"><span>source</span>lettre par Monſieur de <b>Viu0nne</b></p>
+          <div class="rf-paths">
+            <div class="rf-path rf-rewrite">
+              <h4>Clean first</h4>
+              <p class="rf-step rf-1">A cleaner rewrites the line</p>
+              <p class="rf-step rf-2 rf-text">lettre par Monsieur de <mark class="bad">Vienne <em>LOC</em></mark></p>
+              <p class="rf-step rf-3 rf-verdict bad">source changed, wrong entity</p>
+            </div>
+            <div class="rf-path rf-reader">
+              <h4>Strengthen the reader</h4>
+              <p class="rf-step rf-1">Retrieved context: <q>Vivonne, a town in Poitou and the noble family named after it</q></p>
+              <p class="rf-step rf-2 rf-text">lettre par <mark class="ok">Monſieur de Viu0nne <em>PERS</em></mark></p>
+              <p class="rf-step rf-3 rf-verdict ok">source kept, entity found</p>
+            </div>
+          </div>
+          <figcaption>An illustration of the two strategies, not a model output. On the right, nothing in the original line changes: the context is only something extra to read with.</figcaption>
+        </figure>
         <p>Robustness has limits, of course. Past a certain level of damage, every model in those studies failed, and some pages genuinely need to be read again. But when the choice is between a model that copes with the source and a pipeline that quietly rewrites it, I would rather keep the source.</p>
 
         <h2>Texture</h2>
         <p>On this site, the old Romanian blog texts keep their missing diacritics and their two-dot pauses, and the photographs keep their grain. I left them that way because the roughness is part of what they say. Documents are no different. Some noise is damage, and we should repair it, carefully and reversibly. Some noise is history, voice and texture, and the job is to know which is which before reaching for the eraser.</p>
+
+        <figure class="article-figure sort-fig reveal" aria-label="Examples sorted into two groups. Damage to repair: enu0ye, Monfieur, A1ors, 1u%d1. History, voice and texture to keep: ie, ceſte, Asa without diacritics, a two-dot pause, and photographic grain.">
+          <div class="sort-bin sort-repair">
+            <h4>Damage: repair, reversibly</h4>
+            <ul>
+              <li><b>enu0ye</b><span>o read as 0</span></li>
+              <li><b>Monfieur</b><span>ſ read as f</span></li>
+              <li><b>A1ors</b><span>l read as 1</span></li>
+              <li><b>1u%d1</b><span>lundi, barely there</span></li>
+            </ul>
+          </div>
+          <div class="sort-bin sort-keep">
+            <h4>History, voice, texture: keep</h4>
+            <ul>
+              <li><b>ie</b><span>je, in the 1630s</span></li>
+              <li><b>ceſte</b><span>the long s</span></li>
+              <li><b>Asa</b><span>my blog, no diacritics</span></li>
+              <li><b>..</b><span>my blog, a two-dot pause</span></li>
+              <li><svg class="grain" viewBox="0 0 64 24" role="img" aria-label="A patch of photographic grain"><filter id="sort-grain"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2"/><feColorMatrix type="matrix" values="1.8 0 0 0 -.4 1.8 0 0 0 -.4 1.8 0 0 0 -.4 0 0 0 0 1"/></filter><rect width="64" height="24" filter="url(#sort-grain)"/></svg><span>grain, in a photograph</span></li>
+            </ul>
+          </div>
+          <figcaption>A sorting, not a rule: the same string can land on either side, depending on the collection.</figcaption>
+        </figure>
       </article>
 
       <section class="article-references panel panel-white">
@@ -118,6 +182,6 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202610291857"></script>
+  <script src="../script.js?v=202610301718"></script>
 </body>
 </html>
