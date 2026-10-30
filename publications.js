@@ -99,6 +99,7 @@ const PUBLICATIONS = [
   { year: 2009, type: 'workshop', theme: 'multimodal', title: 'UAIC: Participation in ImageCLEF 2009 Robot Vision Task', authors: 'E. Boros, G. Roşca, A. Iftene', venue: 'CLEF 2009', cited: 7 },
 ];
 
+const TYPE_FILLS = { conf: 'var(--accent)', journal: 'var(--t-cultural)', workshop: 'var(--t-historical)', preprint: 'var(--t-semantic)', thesis: 'var(--ink)' };
 const TYPE_LABELS = {
   conf: 'Conference', journal: 'Journal', workshop: 'Workshop & shared task', preprint: 'Preprint & data', thesis: 'Thesis',
 };
@@ -217,6 +218,13 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
 (function renderPublications() {
   const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
+  // Small horizontal bars: rows of [label, count, background], largest first
+  const countBars = (el, rows) => {
+    if (!el) return;
+    const sorted = [...rows].sort((a, b) => b[1] - a[1]);
+    el.innerHTML = sorted.map(([label, n, bg], i) => `<div class="count-bar" title="${escape(label)}: ${n}"><span>${escape(label)}</span><b><i style="width:${(n / sorted[0][1]) * 100}%;${bg};--i:${i}"></i></b><em>${n}</em></div>`).join('');
+  };
+
   // Homepage: only the selected papers, marked home: true, newest first
   const homeList = document.getElementById('homePubs');
   if (homeList) {
@@ -271,7 +279,10 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     }
     const lines = series.map((s) => `<path class="subject-line subject-line-${s.t}" d="${path(s.pts)}"><title>${names[s.t]}: ${s.pts.reduce((n, p) => n + p[1], 0)} papers</title></path>`).join('');
     waves.innerHTML = `<svg class="subject-line-plot" viewBox="0 0 ${W} ${H}" role="img" aria-label="Publications per research theme per year, ${first}–${last}">${grid}${lines}</svg>`;
+    countBars(document.getElementById('themeBars'), themes.map((t) => [names[t], PUBLICATIONS.filter((p) => p.theme === t).length, `background:var(--t-${t})`]));
   }
+
+  countBars(document.getElementById('typeBars'), Object.keys(TYPE_LABELS).map((t) => [TYPE_LABELS[t], PUBLICATIONS.filter((p) => p.type === t).length, `background:${TYPE_FILLS[t]}`]));
 
   const list = document.getElementById('pubList');
   const chart = document.getElementById('pubChart');
