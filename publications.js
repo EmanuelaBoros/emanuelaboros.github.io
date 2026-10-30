@@ -4,10 +4,11 @@
 // page: optional link to a local paper page with notes and figures
 const PUBLICATIONS = [
   // 2026
+  { year: 2026, type: 'workshop', theme: 'cultural', title: 'Pluralistic Annotation of Cultural Weaponization on Wikipedia: A Multi-Annotator Case Study across Ukraine and Armenia', authors: 'C. Hamdane, H. Perekhoda, E. Boros, S. Prezioso, H. Tamrazyan', venue: 'First Workshop on Pluralistic AI NLP, 2026', short: 'Pluralistic AI NLP' },
   { year: 2026, type: 'conf', theme: 'historical', title: 'Beyond Single-Negative Preference: Multi-Negative DPO for LLM-Centric Historical Entity Linking', authors: 'T. N. Nguyen, E. Boros, A. Hamdi, A. Jatowt, M. Coustaty, A. Doucet', venue: 'Findings of EMNLP 2026' },
   { year: 2026, type: 'preprint', theme: 'noisy', title: 'OCR Post-Correction in the Age of LLMs: A Survey of Historical Document Processing', authors: 'E. Boros, A. Hamdi, W. Sun, T. N. Nguyen, M. Coustaty, A. Doucet', venue: 'Survey, 2026' },
   { year: 2026, type: 'workshop', theme: 'multimodal', title: 'When Superpixels Fail on Documents: A Study of Segmentation for LIME Explanations', authors: 'Q. Telnoff, E. Boros, M. Coustaty, R. Jarry, F. Crohas, A. Doucet', venue: 'XAI Workshop @ IJCAI 2026', short: 'XAI @ IJCAI' },
-  { year: 2026, type: 'conf', theme: 'historical', title: 'One Model, Many Guidelines: Instruction Fine-Tuning for Historical Named Entity Recognition', authors: 'T. N. Nguyen, E. Boros, A. Jatowt, M. Coustaty, A. Hamdi, A. Doucet', venue: 'ICDAR 2026' },
+  { year: 2026, type: 'conf', home: true, theme: 'historical', title: 'One Model, Many Guidelines: Instruction Fine-Tuning for Historical Named Entity Recognition', authors: 'T. N. Nguyen, E. Boros, A. Jatowt, M. Coustaty, A. Hamdi, A. Doucet', venue: 'ICDAR 2026' },
   { year: 2026, type: 'conf', home: true, theme: 'cultural', title: 'A Dataset of Cultural Heritage Manipulation on English Wikipedia in the Russo–Ukrainian Context', authors: 'M. Garambois, H. Tamrazyan, E. Boros', venue: 'SIGIR 2026', page: 'papers/2026-a-dataset-of-cultural-heritage-manipulation-on-english-wikipedia-in-the-rus.html' },
   { year: 2026, type: 'conf', home: true, theme: 'applied', title: 'Apertus: Democratizing Open and Compliant LLMs for Global Language Environments', authors: 'A. Hernández-Cano, A. Hägele, A. H. Huang, A. Romanou, A. J. Solergibert, et al. (incl. E. Boros)', venue: 'ACL 2026', cited: 67, page: 'papers/2026-apertus-democratizing-open-and-compliant-llms-for-global-language-environme.html' },
   { year: 2026, type: 'conf', theme: 'historical', title: 'CLEF HIPE-2026: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts', authors: 'J. Opitz, C. Raclé, E. Boros, A. Michail, M. Romanello, M. Ehrmann, et al.', venue: 'ECIR 2026', cited: 9 },
@@ -120,6 +121,12 @@ const neuronBars = [12,3,1,1,0,1,0,2,0,0,0,0,2,0,1,0,2,1,1,0,0,0,2,3,3,19,0,0,1,
   .map((n, l) => `<span>${n ? `<i class="pv-rise${n === 19 ? ' hot' : ''}" style="--n:${n};--d:${(l * .04).toFixed(2)}"></i>` : ''}</span>`).join('');
 const pvBar = (label, v, d, hot) => `<div class="pv-bar"><span>${label}</span><b><i class="pv-grow${hot ? ' hot' : ''}" style="width:${v * 100}%;--d:${d}"></i></b><em>${v.toFixed(2)}</em></div>`;
 const PREVIEWS = {
+  'Pluralistic Annotation': {
+    challenge: 'Whether a Wikipedia edit manipulates a historical or cultural narrative often depends on context, interpretation and who is judging it. It is not a straightforward classification task.',
+    result: 'Three experts labelled 400 edits on Ukraine and Armenia, and more than one-third prompted disagreement. Discussion often reached decisions majority voting could not, and “Ambiguous” marked genuine uncertainty, not annotation failure. Disagreement is worth keeping.',
+    note: 'Schematic',
+    fig: `<div class="pv-stack"><p class="pv-chip no pv-in" style="--d:.1"><small>expert 1</small>Potentially manipulative</p><p class="pv-chip pv-in" style="--d:.6"><small>expert 2</small>Not problematic</p><p class="pv-chip pv-in" style="--d:1.1"><small>expert 3</small>Ambiguous</p><p class="pv-verdict pv-in" style="--d:1.9">↓ discussion, not a majority vote</p></div>`,
+  },
   'Beyond Single-Negative': {
     challenge: 'Historical entity linking has to cope with OCR noise, old spellings and people missing from the knowledge base. Preference training usually shows the model only one wrong candidate per mention and discards the rest.',
     result: 'Comparing the right entity with all rejected candidates beats single-negative DPO and supervised fine-tuning in most settings, especially on NIL mentions, ambiguity, OCR noise and difficult names. Finding the candidates remains the bottleneck.',
