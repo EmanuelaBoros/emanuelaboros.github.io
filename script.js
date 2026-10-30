@@ -112,6 +112,13 @@ if (portfolioImages.length) {
 }
 
 
+// Photos: no context menu ("Open image in new tab", "Save image") and no dragging
+['contextmenu', 'dragstart'].forEach((type) => {
+  document.addEventListener(type, (event) => {
+    if (event.target.closest?.('.portfolio-plate img, .photo-card img, .lightbox canvas')) event.preventDefault();
+  });
+});
+
 // Scroll reveal: fade sections in and draw the subject-wave lines
 document.documentElement.classList.add('js');
 const revealTargets = document.querySelectorAll('.reveal, .waves, .subject-line-section, .pub-chart');
