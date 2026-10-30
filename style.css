@@ -981,3 +981,5 @@ details[open] .pub-toggle::after { transform: rotate(0); }
   .pub-venue { justify-self: start; }
   .pub-preview { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
 }
+.pv-chip s { color: var(--muted); }
+.pv-receipt .pv-chip b { display: inline-block; font-size: inherit; line-height: inherit; }

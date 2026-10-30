@@ -5,7 +5,7 @@
 const PUBLICATIONS = [
   // 2026
   { year: 2026, type: 'workshop', theme: 'cultural', title: 'Pluralistic Annotation of Cultural Weaponization on Wikipedia: A Multi-Annotator Case Study across Ukraine and Armenia', authors: 'C. Hamdane, H. Perekhoda, E. Boros, S. Prezioso, H. Tamrazyan', venue: 'First Workshop on Pluralistic AI NLP, 2026', short: 'Pluralistic AI NLP' },
-  { year: 2026, type: 'conf', theme: 'historical', title: 'Beyond Single-Negative Preference: Multi-Negative DPO for LLM-Centric Historical Entity Linking', authors: 'T. N. Nguyen, E. Boros, A. Hamdi, A. Jatowt, M. Coustaty, A. Doucet', venue: 'Findings of EMNLP 2026' },
+  { year: 2026, type: 'conf', home: true, theme: 'historical', title: 'Beyond Single-Negative Preference: Multi-Negative DPO for LLM-Centric Historical Entity Linking', authors: 'T. N. Nguyen, E. Boros, A. Hamdi, A. Jatowt, M. Coustaty, A. Doucet', venue: 'Findings of EMNLP 2026' },
   { year: 2026, type: 'preprint', theme: 'noisy', title: 'OCR Post-Correction in the Age of LLMs: A Survey of Historical Document Processing', authors: 'E. Boros, A. Hamdi, W. Sun, T. N. Nguyen, M. Coustaty, A. Doucet', venue: 'Survey, 2026' },
   { year: 2026, type: 'workshop', theme: 'multimodal', title: 'When Superpixels Fail on Documents: A Study of Segmentation for LIME Explanations', authors: 'Q. Telnoff, E. Boros, M. Coustaty, R. Jarry, F. Crohas, A. Doucet', venue: 'XAI Workshop @ IJCAI 2026', short: 'XAI @ IJCAI' },
   { year: 2026, type: 'conf', home: true, theme: 'historical', title: 'One Model, Many Guidelines: Instruction Fine-Tuning for Historical Named Entity Recognition', authors: 'T. N. Nguyen, E. Boros, A. Jatowt, M. Coustaty, A. Hamdi, A. Doucet', venue: 'ICDAR 2026' },
@@ -22,18 +22,18 @@ const PUBLICATIONS = [
   { year: 2026, type: 'preprint', theme: 'cultural', title: 'ArmEpiC – Armenian Epigraphic Corpus (ArtsakhEpiC Sub-Corpus)', authors: 'H. Tamrazyan, G. Hovhannisyan, A. Harutyunyan, E. Boros', venue: 'Dataset · Zenodo' },
   { year: 2026, type: 'conf', theme: 'semantic', lang: 'fr', title: 'Appariement de trames narratives : dépasser le chevauchement lexical en recherche d’information', authors: 'A. Hamdi, E. Boros, J. G. Moreno, A. Doucet', venue: 'CORIA 2026' },
   // 2025
-  { year: 2025, type: 'conf', theme: 'historical', title: 'A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts', authors: 'E. Boros', venue: 'TPDL 2025', page: 'papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html' },
+  { year: 2025, type: 'conf', home: true, theme: 'historical', title: 'A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts', authors: 'E. Boros', venue: 'TPDL 2025', page: 'papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html' },
   { year: 2025, type: 'conf', theme: 'cultural', title: 'Corpus-Based SKOS Development for Underrepresented and Endangered Ukrainian Epigraphic Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'Digital Heritage 2025' },
   { year: 2025, type: 'conf', theme: 'cultural', title: 'Corpus-Based SKOS Development for Ukrainian Epigraphy: A Digital Approach to Preserving Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'DH2025 · presentation' },
   // 2024
   { year: 2024, type: 'workshop', home: true, theme: 'noisy', title: 'Post-Correction of Historical Text Transcripts with Large Language Models: An Exploratory Study', authors: 'E. Boros, M. Ehrmann, M. Romanello, S. Najem-Meyer, F. Kaplan', venue: 'LaTeCH-CLfL 2024', cited: 85 },
-  { year: 2024, type: 'conf', home: true, theme: 'noisy', title: 'Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents', authors: 'E. Boros, M. Ehrmann', venue: 'ICADL 2024', cited: 3, page: 'papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html' },
+  { year: 2024, type: 'conf', theme: 'noisy', title: 'Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents', authors: 'E. Boros, M. Ehrmann', venue: 'ICADL 2024', cited: 3, page: 'papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html' },
   { year: 2024, type: 'conf', theme: 'cultural', title: 'Developing a Standardised Vocabulary for Ukrainian Epigraphy and Expanding Digital Epigraphic Resources', authors: 'H. Tamrazyan, E. Boros, F. Kaplan', venue: 'TPDL 2024', cited: 1, page: 'papers/2024-developing-a-standardised-vocabulary-for-ukrainian-epigraphy-and-expanding.html' },
   { year: 2024, type: 'conf', theme: 'applied', title: 'Swiss AI Initiative – Collecting Large Amounts of High-Quality Data for Training Large Language Models', authors: 'J. M. Deriu, M. Ehrmann, E. Boros, M. Büther, C. Sibille, I. Protsenko, M. Brucka, et al.', venue: 'SwissText 2024' },
   // 2023
-  { year: 2023, type: 'conf', home: true, theme: 'historical', title: 'Yes but.. Can ChatGPT Identify Entities in Historical Documents?', authors: 'C. E. González-Gallardo, E. Boros, N. Girdhar, A. Hamdi, J. G. Moreno, et al.', venue: 'JCDL 2023', cited: 77, page: 'papers/2023-yes-but-can-chatgpt-identify-entities-in-historical-documents.html' },
+  { year: 2023, type: 'conf', theme: 'historical', title: 'Yes but.. Can ChatGPT Identify Entities in Historical Documents?', authors: 'C. E. González-Gallardo, E. Boros, N. Girdhar, A. Hamdi, J. G. Moreno, et al.', venue: 'JCDL 2023', cited: 77, page: 'papers/2023-yes-but-can-chatgpt-identify-entities-in-historical-documents.html' },
   { year: 2023, type: 'conf', theme: 'historical', title: 'Injecting Temporal-Aware Knowledge in Historical Named Entity Recognition', authors: 'C. E. González-Gallardo, E. Boros, E. Giamphy, A. Hamdi, J. G. Moreno, et al.', venue: 'ECIR 2023', cited: 19, page: 'papers/2023-injecting-temporal-aware-knowledge-in-historical-named-entity-recognition.html' },
-  { year: 2023, type: 'conf', theme: 'applied', title: 'Receipt Dataset for Document Forgery Detection', authors: 'B. M. Tornés, T. Taburet, E. Boros, K. Rouis, A. Doucet, P. Gomez-Krämer, et al.', venue: 'ICDAR 2023', cited: 19, page: 'papers/2023-receipt-dataset-for-document-forgery-detection.html' },
+  { year: 2023, type: 'conf', home: true, theme: 'applied', title: 'Receipt Dataset for Document Forgery Detection', authors: 'B. M. Tornés, T. Taburet, E. Boros, K. Rouis, A. Doucet, P. Gomez-Krämer, et al.', venue: 'ICDAR 2023', cited: 19, page: 'papers/2023-receipt-dataset-for-document-forgery-detection.html' },
   { year: 2023, type: 'conf', theme: 'applied', title: 'Detecting Forged Receipts with Domain-Specific Ontology-Based Entities & Relations', authors: 'B. M. Tornés, E. Boros, A. Doucet, P. Gomez-Krämer, J. M. Ogier', venue: 'ICDAR 2023', cited: 10, page: 'papers/2023-detecting-forged-receipts-with-domain-specific-ontology-based-entities-and.html' },
   { year: 2023, type: 'conf', theme: 'applied', title: 'Analyzing the Impact of Tokenization on Multilingual Epidemic Surveillance in Low-Resource Languages', authors: 'S. Mutuvi, E. Boros, A. Doucet, G. Lejeune, A. Jatowt, M. Odeo', venue: 'ICDAR 2023', cited: 3, page: 'papers/2023-analyzing-the-impact-of-tokenization-on-multilingual-epidemic-surveillance.html' },
   { year: 2023, type: 'conf', theme: 'applied', title: 'An Explorative Guide on How to Detect Forged Car Insurance Claims with Language Models', authors: 'Q. Telnoff, E. Boros, M. Coustaty, F. Crohas, A. Doucet, F. Le Bars', venue: 'KDIR 2023', cited: 1 },
@@ -121,12 +121,6 @@ const neuronBars = [12,3,1,1,0,1,0,2,0,0,0,0,2,0,1,0,2,1,1,0,0,0,2,3,3,19,0,0,1,
   .map((n, l) => `<span>${n ? `<i class="pv-rise${n === 19 ? ' hot' : ''}" style="--n:${n};--d:${(l * .04).toFixed(2)}"></i>` : ''}</span>`).join('');
 const pvBar = (label, v, d, hot) => `<div class="pv-bar"><span>${label}</span><b><i class="pv-grow${hot ? ' hot' : ''}" style="width:${v * 100}%;--d:${d}"></i></b><em>${v.toFixed(2)}</em></div>`;
 const PREVIEWS = {
-  'Pluralistic Annotation': {
-    challenge: 'Whether a Wikipedia edit manipulates a historical or cultural narrative often depends on context, interpretation and who is judging it. It is not a straightforward classification task.',
-    result: 'Three experts labelled 400 edits on Ukraine and Armenia, and more than one-third prompted disagreement. Discussion often reached decisions majority voting could not, and “Ambiguous” marked genuine uncertainty, not annotation failure. Disagreement is worth keeping.',
-    note: 'Schematic',
-    fig: `<div class="pv-stack"><p class="pv-chip no pv-in" style="--d:.1"><small>expert 1</small>Potentially manipulative</p><p class="pv-chip pv-in" style="--d:.6"><small>expert 2</small>Not problematic</p><p class="pv-chip pv-in" style="--d:1.1"><small>expert 3</small>Ambiguous</p><p class="pv-verdict pv-in" style="--d:1.9">↓ discussion, not a majority vote</p></div>`,
-  },
   'Beyond Single-Negative': {
     challenge: 'Historical entity linking has to cope with OCR noise, old spellings and people missing from the knowledge base. Preference training usually shows the model only one wrong candidate per mention and discards the rest.',
     result: 'Comparing the right entity with all rejected candidates beats single-negative DPO and supervised fine-tuning in most settings, especially on NIL mentions, ambiguity, OCR noise and difficult names. Finding the candidates remains the bottleneck.',
@@ -163,10 +157,16 @@ const PREVIEWS = {
     href: 'https://arxiv.org/abs/2509.14233', note: 'From the paper',
     fig: `<div class="pv-stats"><p class="pv-in" style="--d:.1"><b>15T</b><span>tokens</span></p><p class="pv-in" style="--d:.5"><b>1,800+</b><span>languages</span></p><div class="pv-in" style="--d:.9"><b class="pv-meter"><i class="pv-grow" style="width:40%;--d:1.1"></i></b><span>about 40% of pretraining data not in English</span></div></div>`,
   },
+  'A Study of Temporal Fusion': {
+    challenge: 'Historical language does not stay still: names change, spellings move, and old documents arrive with OCR noise. Can a publication year help entity recognition, and how should a model take it in?',
+    result: 'Late fusion strategies are the most robust, especially in early or noisy periods, and late cross-attention is the strongest candidate. The gains are modest, but consistent enough to be useful.',
+    note: 'Schematic of the strongest strategy',
+    fig: `<div class="pv-stack pv-layers"><p class="pv-chip pv-in" style="--d:.1">tokens → encoder</p><p class="pv-chip pv-in" style="--d:.8">+ publication year</p><p class="pv-chip hot pv-in" style="--d:1.5">late cross-attention</p><p class="pv-chip pv-in" style="--d:2.2">entity labels</p></div>`,
+  },
   'Post-Correction of Historical': {
     challenge: 'Text from library and archive collections remains largely erroneous and noisy. Can large language models correct it, across languages, periods and document types?',
     result: 'Across fourteen models, LLMs were anything but efficient at this task. Besides fixing errors, they changed the rendering of the text, paraphrased and even translated it.',
-    note: 'Schematic',
+    href: 'https://aclanthology.org/2024.latechclfl-1.14/', note: 'Schematic',
     fig: `<div class="pv-stack pv-outcomes"><p class="pv-chip pv-in" style="--d:.1">Alors, <b>ie</b> vous <b>emmene</b> lundi</p><p class="pv-chip ok pv-in" style="--d:.9"><small>fixed</small>Alors, je vous emmène lundi</p><p class="pv-chip no pv-in" style="--d:1.6"><small>paraphrased</small>Donc, je vous conduis lundi</p><p class="pv-chip no pv-in" style="--d:2.3"><small>translated</small>So, I’ll take you on Monday</p></div>`,
   },
   'Investigating OCR-Sensitive': {
@@ -180,6 +180,12 @@ const PREVIEWS = {
     result: 'Yes, but: it shows several shortcomings, from inconsistent annotation guidelines and complex entities to code-switching and how specific the prompt is. Archives missing from the public internet also hurt its performance.',
     note: 'The shortcomings found',
     fig: `<div class="pv-stack"><p class="pv-verdict big pv-in" style="--d:.1">Yes but..</p><p class="pv-chip no pv-in" style="--d:.8">guideline consistency</p><p class="pv-chip no pv-in" style="--d:1.2">entity complexity</p><p class="pv-chip no pv-in" style="--d:1.6">code-switching</p><p class="pv-chip no pv-in" style="--d:2">prompt specificity</p></div>`,
+  },
+  'Receipt Dataset': {
+    challenge: 'Forged documents are a real problem, but research on detecting them lacks public, realistic data to work with.',
+    result: 'A public dataset of 988 scanned receipts with their transcriptions, of which 163 were realistically altered and annotated, plus image-based and text-based baselines for the detection task.',
+    note: 'Dataset figures from the paper; the altered total is an illustration',
+    fig: `<div class="pv-stats pv-receipt"><div class="pv-in" style="--d:.1"><p class="pv-chip"><small>total</small><s>14.40</s> <b class="pv-in" style="--d:1">41.40</b></p></div><p class="pv-in" style="--d:1.6"><b>988</b><span>scanned receipts</span></p><p class="pv-in" style="--d:2"><b>163</b><span>altered and annotated</span></p><div class="pv-in" style="--d:2.4"><b class="pv-meter"><i class="pv-grow hot" style="width:16.5%;--d:2.6"></i></b></div></div>`,
   },
   'Assessing the Impact of OCR Noise': {
     challenge: 'Poor scans and weak OCR can hinder event detection, yet earlier studies depended on transcriptions validated by hand, which takes a lot of work.',
@@ -211,10 +217,10 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
 (function renderPublications() {
   const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  // Homepage: newest papers plus the ones marked home: true, newest first
+  // Homepage: only the selected papers, marked home: true, newest first
   const homeList = document.getElementById('homePubs');
   if (homeList) {
-    const picks = PUBLICATIONS.filter((p, i) => i < 4 || p.home);
+    const picks = PUBLICATIONS.filter((p) => p.home);
     homeList.innerHTML = picks.map((p) => {
       const pv = previewOf(p);
       const href = p.page || (pv && pv.href) || 'publications.html';
