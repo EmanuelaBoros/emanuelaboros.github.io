@@ -900,3 +900,84 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .sort-bin li span { font-family: var(--mono); font-size: .64rem; color: var(--ink-2); line-height: 1.35; }
 .sort-bin .grain { display: block; width: 4.6rem; height: 1.5rem; border-radius: 3px; }
 @media (max-width: 560px) { .sort-fig { grid-template-columns: 1fr; } }
+
+/* Homepage: paper previews. Keyframes only set the start, so with reduced motion each figure shows its final state. */
+.pub-list details summary { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr) auto 1rem; gap: 1.2rem; align-items: baseline; padding: 1.05rem .2rem; color: var(--ink); cursor: pointer; list-style: none; transition: background .25s, padding .3s var(--ease); }
+.pub-list details summary::-webkit-details-marker { display: none; }
+.pub-list details summary:hover, .pub-list details[open] summary { background: var(--card); padding-left: .8rem; }
+.pub-list details summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.pub-toggle { position: relative; align-self: center; width: .8rem; height: .8rem; }
+.pub-toggle::before, .pub-toggle::after { content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1.5px; margin-top: -.75px; background: var(--muted); transition: transform .3s var(--ease), background .25s; }
+.pub-toggle::after { transform: rotate(90deg); }
+details[open] .pub-toggle::before, details[open] .pub-toggle::after { background: var(--accent); }
+details[open] .pub-toggle::after { transform: rotate(0); }
+.pub-preview { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: 1.8rem; padding: .4rem .8rem 1.6rem; background: var(--card); animation: pvIn .45s var(--ease); }
+.pv-fig { margin: 0; align-self: start; display: flex; flex-direction: column; justify-content: space-between; gap: .7rem; padding: .9rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+.pv-fig figcaption { font-family: var(--mono); font-size: .62rem; line-height: 1.4; color: var(--muted); }
+.pv-text h4 { margin: 0 0 .25rem; font-family: var(--mono); font-size: .66rem; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.pv-text p { margin: 0 0 .9rem; font-size: .92rem; line-height: 1.55; color: var(--ink-2); }
+.pub-list .pv-more, .pub-list .pv-more:hover { display: inline; padding: 0; background: none; font-family: var(--mono); font-size: .72rem; color: var(--accent); }
+.pub-list .pv-more:hover { text-decoration: underline; }
+.pv-fig p { margin: 0; }
+@keyframes pvIn { from { opacity: 0; transform: translateY(6px); } }
+@keyframes pvGrow { from { transform: scaleX(0); } }
+@keyframes pvRise { from { transform: scaleY(0); } }
+@keyframes pvPop { from { opacity: 0; transform: scale(.3); } }
+@keyframes pvDraw { from { stroke-dashoffset: 1; } }
+@keyframes pvMark { from { background-color: transparent; } }
+.pv-in { animation: pvIn .55s var(--ease) both; animation-delay: calc(var(--d) * 1s); }
+.pv-grow { display: block; height: 100%; background: var(--t-semantic); border-radius: 2px; transform-origin: left; animation: pvGrow .9s var(--ease) both; animation-delay: calc(var(--d) * 1s); }
+.pv-grow.hot, .pv-rise.hot, .pv-pop.hot { background: var(--accent); }
+.pv-chip { font-family: var(--serif); font-size: .92rem; line-height: 1.3; padding: .28rem .55rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--card); color: var(--ink); }
+.pv-chip small { display: block; font-family: var(--mono); font-size: .6rem; color: var(--muted); }
+.pv-chip b { font-weight: 400; color: var(--accent); background: var(--accent-soft); border-radius: 2px; padding: 0 .08em; }
+.pv-chip.ok { border-color: var(--t-historical); }
+.pv-chip.no { border-left: 2px solid var(--accent); }
+.pv-chip.hot { border-color: var(--t-semantic); background: color-mix(in srgb, var(--t-semantic) 14%, transparent); }
+.pv-cands, .pv-stack { display: grid; gap: .3rem; }
+.pv-verdict { font-family: var(--mono); font-size: .68rem; color: var(--accent); text-align: center; padding-top: .2rem; }
+.pv-verdict.big { font-family: var(--serif); font-size: 1.25rem; font-style: italic; color: var(--ink); padding: 0 0 .2rem; }
+.pv-bars { display: grid; gap: .55rem; }
+.pv-bar { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr) 2rem; gap: .5rem; align-items: center; font-family: var(--mono); font-size: .64rem; color: var(--ink-2); }
+.pv-bar b, .pv-meter, .pv-range b { display: block; height: .55rem; background: var(--paper-2); border-radius: 2px; overflow: hidden; }
+.pv-bar em { font-style: normal; text-align: right; }
+.pv-guide { display: grid; gap: .3rem; }
+.pv-card { font-family: var(--serif); font-size: .92rem; line-height: 1.5; padding: .4rem .6rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--card); color: var(--ink); }
+.pv-card small { display: block; font-family: var(--mono); font-size: .6rem; color: var(--muted); }
+.pv-arrow { text-align: center; color: var(--muted); line-height: 1; }
+.pv-mark { color: inherit; border-radius: 3px; padding: .05em .2em; background-color: var(--accent-soft); animation: pvMark .6s var(--ease) both; animation-delay: calc(var(--d) * 1s); }
+.pv-mark em { font-family: var(--mono); font-size: .58rem; font-style: normal; color: var(--ink-2); }
+.pv-dots { display: grid; grid-template-columns: repeat(10, 1fr); gap: .4rem; justify-items: center; }
+.pv-dots i { display: block; width: .9rem; height: .9rem; border-radius: 50%; background: var(--rule-strong); }
+.pv-pop { animation: pvPop .4s var(--ease) both; animation-delay: calc(var(--d) * 1s); transform-box: fill-box; transform-origin: center; }
+.pv-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.pv-stats div { grid-column: 1 / -1; }
+.pv-stats b:not(.pv-meter) { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 400; line-height: 1.1; color: var(--ink); }
+.pv-stats span { display: block; font-family: var(--mono); font-size: .62rem; color: var(--ink-2); margin-top: .25rem; }
+.pv-neurons { display: grid; grid-template-columns: repeat(32, 1fr); gap: 1.5px; height: 7rem; border-bottom: 1px solid var(--rule-strong); }
+.pv-neurons span { display: flex; align-items: flex-end; height: 100%; }
+.pv-rise { display: block; width: 100%; height: calc(var(--n) / 19 * 100%); background: var(--t-semantic); border-radius: 1.5px 1.5px 0 0; transform-origin: bottom; animation: pvRise .6s var(--ease) both; animation-delay: calc(var(--d) * 1s); }
+.pv-noise { display: grid; gap: .5rem; }
+.pv-noise p { display: grid; grid-template-columns: 1fr auto; gap: .6rem; align-items: baseline; }
+.pv-noise span { font-family: var(--mono); font-size: .62rem; color: var(--ink-2); }
+.pv-noise b { position: relative; font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink); }
+.pv-noise b i { font-style: normal; opacity: .22; }
+.n-blur { filter: blur(1.4px); }
+.n-phantom { text-shadow: .22em .08em 0 color-mix(in srgb, var(--ink) 32%, transparent); }
+.n-bleed::after { content: attr(data-t); position: absolute; left: 0; top: .1em; transform: scaleX(-1); opacity: .2; }
+.pv-venn { width: 100%; max-width: 15rem; align-self: center; overflow: visible; }
+.pv-draw { fill: color-mix(in srgb, var(--t-semantic) 9%, transparent); stroke: var(--t-semantic); stroke-width: 1.5; stroke-dasharray: 1; animation: pvDraw 1.1s var(--ease) both; animation-delay: calc(var(--d) * 1s); }
+.pv-core { fill: var(--accent); }
+.pv-venn text { font-family: var(--mono); font-size: 8.5px; fill: var(--ink-2); }
+.pv-cover { display: grid; gap: .8rem; }
+.pv-range { display: grid; grid-template-columns: auto 1fr auto; gap: .5rem; align-items: center; font-family: var(--mono); font-size: .64rem; color: var(--ink-2); }
+.pv-row { display: flex; flex-wrap: wrap; gap: .3rem; }
+.pv-tasks { font-family: var(--mono); font-size: .68rem; color: var(--ink-2); }
+.pv-layers .pv-chip { text-align: center; font-family: var(--mono); font-size: .72rem; }
+@media (max-width: 640px) {
+  .pub-list details summary { grid-template-columns: minmax(0, 1fr) 1rem; gap: .3rem .8rem; }
+  .pub-list details summary > .pub-year, .pub-list details summary > .pub-title, .pub-list details summary > .pub-venue { grid-column: 1; }
+  .pub-toggle { grid-column: 2; grid-row: 1; }
+  .pub-venue { justify-self: start; }
+  .pub-preview { grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
+}

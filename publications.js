@@ -114,6 +114,93 @@ const RANKS = [
 ];
 const rankOf = (p) => (p.type === 'conf' || p.type === 'journal') && (RANKS.find(([re]) => re.test(p.venue)) || [])[1];
 
+// Homepage previews: the challenge, the conclusion and a small animated figure per paper.
+// Figures animate each time a preview opens; delays are in seconds (--d).
+const neuronBars = [12,3,1,1,0,1,0,2,0,0,0,0,2,0,1,0,2,1,1,0,0,0,2,3,3,19,0,0,1,0,1,0]
+  .map((n, l) => `<span>${n ? `<i class="pv-rise${n === 19 ? ' hot' : ''}" style="--n:${n};--d:${(l * .04).toFixed(2)}"></i>` : ''}</span>`).join('');
+const pvBar = (label, v, d, hot) => `<div class="pv-bar"><span>${label}</span><b><i class="pv-grow${hot ? ' hot' : ''}" style="width:${v * 100}%;--d:${d}"></i></b><em>${v.toFixed(2)}</em></div>`;
+const PREVIEWS = {
+  'Beyond Single-Negative': {
+    challenge: 'Historical entity linking has to cope with OCR noise, old spellings and people missing from the knowledge base. Preference training usually shows the model only one wrong candidate per mention and discards the rest.',
+    result: 'Comparing the right entity with all rejected candidates beats single-negative DPO and supervised fine-tuning in most settings, especially on NIL mentions, ambiguity, OCR noise and difficult names. Finding the candidates remains the bottleneck.',
+    href: 'https://arxiv.org/abs/2609.07379', note: 'Schematic',
+    fig: `<div class="pv-cands"><p class="pv-chip ok pv-in" style="--d:.1">correct entity</p><p class="pv-chip no pv-in" style="--d:.7">rejected candidate<small>single-negative stops here</small></p><p class="pv-chip no pv-in" style="--d:1.5">rejected candidate</p><p class="pv-chip no pv-in" style="--d:1.8">rejected candidate</p><p class="pv-chip no pv-in" style="--d:2.1">NIL</p></div>`,
+  },
+  'OCR Post-Correction in the Age': {
+    challenge: 'LLMs and vision–language models have spread quickly through OCR post-correction since 2022, with very different methods, data and ways of measuring success.',
+    result: 'No single approach consistently wins: results depend on language, document type, OCR quality and context. Character and word error rates capture only part of how these models behave, and many collections and languages remain poorly covered.',
+    note: 'The survey’s taxonomy',
+    fig: `<div class="pv-stack"><p class="pv-chip pv-in" style="--d:.1">prompted, text only</p><p class="pv-chip pv-in" style="--d:.5">instruction-tuned, fine-tuned</p><p class="pv-chip pv-in" style="--d:.9">reference-guided</p><p class="pv-chip pv-in" style="--d:1.3">multimodal, image + text</p><p class="pv-verdict pv-in" style="--d:2">no single winner</p></div>`,
+  },
+  'When Superpixels Fail': {
+    challenge: 'LIME on document images usually relies on superpixels made for natural images, and these do not follow text regions, layout blocks or identification codes.',
+    result: 'Document-aware segmentations give steadier, more faithful explanations, and they expose shortcuts through identification codes that superpixels often hide. Segmentation is part of the explanation method, not neutral preprocessing.',
+    href: 'https://arxiv.org/abs/2609.07462', note: 'Agreement between repeated explanations, one invoice',
+    fig: `<div class="pv-bars">${pvBar('Quickshift', .43, .1)}${pvBar('SLIC', .79, .5)}${pvBar('OCR boxes', .93, .9, true)}${pvBar('4×4 grid', .98, 1.3, true)}</div>`,
+  },
+  'One Model, Many Guidelines': {
+    challenge: 'Historical named entity recognition breaks on OCR noise and changing spelling, and datasets may label the same span differently under different annotation guidelines.',
+    result: 'A single model that reads the guidelines takes the best score in 6 of 7 dataset–language settings, averaging 69.9 F1, without language-specific fine-tuning. It also holds up better as entities get more damaged.',
+    note: 'Example from the ICDAR poster',
+    fig: `<div class="pv-guide"><p class="pv-card pv-in" style="--d:.1"><small>guideline</small>ORG: named institutions</p><p class="pv-arrow pv-in" style="--d:.8">↓</p><p class="pv-card pv-in" style="--d:1.1">la <mark class="pv-mark" style="--d:1.9">Société suisse du Grutli <em>ORG</em></mark> … à <mark class="pv-mark" style="--d:2.4">Berne <em>LOC</em></mark></p></div>`,
+  },
+  'A Dataset of Cultural Heritage': {
+    challenge: 'On English Wikipedia, articles about Ukrainian heritage are contested revision by revision. No single edit needs to be false for the picture to shift.',
+    result: 'A dataset of 40 articles with their complete histories: 69,908 revisions by 19,769 editors, labelled by a language model and checked by experts. About one revision in five reshaped who is seen to have made, inherited or lost a heritage.',
+    note: 'About 1 revision in 5',
+    fig: `<div class="pv-dots">${Array.from({ length: 40 }, (_, i) => `<i class="pv-pop${[3, 9, 12, 18, 21, 27, 30, 36].includes(i) ? ' hot' : ''}" style="--d:${(i * .05).toFixed(2)}"></i>`).join('')}</div>`,
+  },
+  'Apertus': {
+    challenge: 'Today’s open models have two systemic shortcomings: data compliance and multilingual representation.',
+    result: 'Fully open models trained only on openly available data, across more than 1,800 languages. They approach the state of the art among fully open models on multilingual benchmarks, and data scripts, checkpoints and training code are all released.',
+    href: 'https://arxiv.org/abs/2509.14233', note: 'From the paper',
+    fig: `<div class="pv-stats"><p class="pv-in" style="--d:.1"><b>15T</b><span>tokens</span></p><p class="pv-in" style="--d:.5"><b>1,800+</b><span>languages</span></p><div class="pv-in" style="--d:.9"><b class="pv-meter"><i class="pv-grow" style="width:40%;--d:1.1"></i></b><span>about 40% of pretraining data not in English</span></div></div>`,
+  },
+  'Post-Correction of Historical': {
+    challenge: 'Text from library and archive collections remains largely erroneous and noisy. Can large language models correct it, across languages, periods and document types?',
+    result: 'Across fourteen models, LLMs were anything but efficient at this task. Besides fixing errors, they changed the rendering of the text, paraphrased and even translated it.',
+    note: 'Schematic',
+    fig: `<div class="pv-stack pv-outcomes"><p class="pv-chip pv-in" style="--d:.1">Alors, <b>ie</b> vous <b>emmene</b> lundi</p><p class="pv-chip ok pv-in" style="--d:.9"><small>fixed</small>Alors, je vous emmène lundi</p><p class="pv-chip no pv-in" style="--d:1.6"><small>paraphrased</small>Donc, je vous conduis lundi</p><p class="pv-chip no pv-in" style="--d:2.3"><small>translated</small>So, I’ll take you on Monday</p></div>`,
+  },
+  'Investigating OCR-Sensitive': {
+    challenge: 'OCR noise is usually cleaned before modelling. But where does the damage appear inside the model itself?',
+    result: 'OCR noise leaves measurable traces inside Llama 2 and Mistral: selected neurons consistently react to it. Neutralising them can improve entity recognition, with the strongest gains in specific middle and late layers.',
+    note: 'OCR-sensitive neurons per layer, Llama 2 (approximate)',
+    fig: `<div class="pv-neurons">${neuronBars}</div>`,
+  },
+  'Yes but.. Can ChatGPT': {
+    challenge: 'Can ChatGPT find named entities in primary sources such as historical newspapers and classical commentaries, zero-shot, compared with state-of-the-art systems?',
+    result: 'Yes, but: it shows several shortcomings, from inconsistent annotation guidelines and complex entities to code-switching and how specific the prompt is. Archives missing from the public internet also hurt its performance.',
+    note: 'The shortcomings found',
+    fig: `<div class="pv-stack"><p class="pv-verdict big pv-in" style="--d:.1">Yes but..</p><p class="pv-chip no pv-in" style="--d:.8">guideline consistency</p><p class="pv-chip no pv-in" style="--d:1.2">entity complexity</p><p class="pv-chip no pv-in" style="--d:1.6">code-switching</p><p class="pv-chip no pv-in" style="--d:2">prompt specificity</p></div>`,
+  },
+  'Assessing the Impact of OCR Noise': {
+    challenge: 'Poor scans and weak OCR can hinder event detection, yet earlier studies depended on transcriptions validated by hand, which takes a lot of work.',
+    result: 'We injected four common kinds of synthetic noise into clean annotated text, in several languages. Dataset imbalance, annotation style and language characteristics turned out to be the most important factors.',
+    note: 'The four noise types, simulated',
+    fig: `<div class="pv-noise"><p class="pv-in" style="--d:.1"><span>character degradation</span><b>e<i>p</i>id<i>e</i>m<i>i</i>c</b></p><p class="pv-in" style="--d:.7"><span>bleed-through</span><b class="n-bleed" data-t="epidemic">epidemic</b></p><p class="pv-in" style="--d:1.3"><span>blur</span><b class="n-blur">epidemic</b></p><p class="pv-in" style="--d:1.9"><span>phantom characters</span><b class="n-phantom">epidemic</b></p></div>`,
+  },
+  'Integrated Interdisciplinary': {
+    challenge: 'Humanities scholars, computer scientists and librarians all work on digitised newspapers, each with their own workflows and traditions. Using these sources fully takes integrated approaches.',
+    result: 'A schematic synthesis of how the disciplines work, where they differ and where they meet, and a proposed integrated digital hermeneutics workflow for research on digital cultural heritage.',
+    note: 'Schematic',
+    fig: `<svg class="pv-venn" viewBox="0 0 240 150" role="img" aria-label="Three overlapping circles for humanities, computer science and libraries"><circle class="pv-draw" pathLength="1" cx="92" cy="58" r="44" style="--d:.1"/><circle class="pv-draw" pathLength="1" cx="148" cy="58" r="44" style="--d:.6"/><circle class="pv-draw" pathLength="1" cx="120" cy="100" r="44" style="--d:1.1"/><circle class="pv-core pv-pop" cx="120" cy="72" r="9" style="--d:2"/><text class="pv-in" x="79" y="40" style="--d:.5" text-anchor="middle">humanities</text><text class="pv-in" x="161" y="40" style="--d:1" text-anchor="middle">computing</text><text class="pv-in" x="120" y="126" style="--d:1.5" text-anchor="middle">libraries</text></svg>`,
+  },
+  'A Multilingual Dataset': {
+    challenge: 'Annotated historical resources are scarce, so information extraction performs worse on old texts than on contemporary ones.',
+    result: 'The NewsEye dataset: historical newspapers from 1850 to 1950, annotated for named entities and linked to Wikidata where possible, with the author’s stance towards each entity.',
+    note: 'What the dataset covers',
+    fig: `<div class="pv-cover"><p class="pv-range"><span>1850</span><b><i class="pv-grow" style="width:100%;--d:.1"></i></b><span>1950</span></p><p class="pv-row"><span class="pv-chip pv-in" style="--d:1">French</span><span class="pv-chip pv-in" style="--d:1.2">German</span><span class="pv-chip pv-in" style="--d:1.4">Finnish</span><span class="pv-chip pv-in" style="--d:1.6">Swedish</span></p><p class="pv-row pv-tasks"><span class="pv-in" style="--d:2">entities</span><span class="pv-in" style="--d:2.3">→ links</span><span class="pv-in" style="--d:2.6">→ stance</span></p></div>`,
+  },
+  'Alleviating Digitization Errors': {
+    challenge: 'Can entity recognition survive damaged OCR in historical newspapers, with no language-specific features and no separate correction step?',
+    result: 'Stacking one or two Transformer blocks on top of BERT improves recognition on French and German newspapers, without hurting a modern benchmark. The model gets sturdier while the source text stays as it is.',
+    note: 'The architecture',
+    fig: `<div class="pv-stack pv-layers"><p class="pv-chip pv-in" style="--d:1.8">CRF</p><p class="pv-chip hot pv-in" style="--d:1.2">+ Transformer block</p><p class="pv-chip hot pv-in" style="--d:.7">+ Transformer block</p><p class="pv-chip pv-in" style="--d:.1">BERT</p></div>`,
+  },
+};
+const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWith(k))?.[1];
+
 (function renderPublications() {
   const escape = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -121,10 +208,21 @@ const rankOf = (p) => (p.type === 'conf' || p.type === 'journal') && (RANKS.find
   const homeList = document.getElementById('homePubs');
   if (homeList) {
     const picks = PUBLICATIONS.filter((p, i) => i < 4 || p.home);
-    homeList.innerHTML = picks.map((p) => `<li class="reveal"><a href="${p.page || 'publications.html'}">
+    homeList.innerHTML = picks.map((p) => {
+      const pv = previewOf(p);
+      const href = p.page || (pv && pv.href) || 'publications.html';
+      const external = href.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
+      return `<li class="reveal"><details name="home-pub"><summary>
       <span class="pub-year">${p.year}</span>
       <span class="pub-title"><i class="pub-dot" style="--c:var(--t-${p.theme})"></i>${escape(p.title)}</span>
-      <span class="pub-venue">${escape(p.short || p.venue.replace(/,? (19|20)\d{2}$/, ''))}</span></a></li>`).join('');
+      <span class="pub-venue">${escape(p.short || p.venue.replace(/,? (19|20)\d{2}$/, ''))}</span>
+      <span class="pub-toggle" aria-hidden="true"></span></summary>
+      <div class="pub-preview">
+        <figure class="pv-fig">${pv ? pv.fig : ''}<figcaption>${pv ? pv.note : ''}</figcaption></figure>
+        <div class="pv-text"><h4>Challenge</h4><p>${pv ? pv.challenge : ''}</p><h4>Conclusion</h4><p>${pv ? pv.result : ''}</p>
+        <a class="pv-more" href="${href}"${external}>More on this paper →</a></div>
+      </div></details></li>`;
+    }).join('');
   }
 
   // Themes over time: papers per theme per year, as smooth lines
