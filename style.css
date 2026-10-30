@@ -983,3 +983,4 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 }
 .pv-chip s { color: var(--muted); }
 .pv-receipt .pv-chip b { display: inline-block; font-size: inherit; line-height: inherit; }
+.waves-note { margin-top: .7rem; font-family: var(--mono); font-size: .68rem; color: var(--muted); }
