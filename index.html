@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=202611022308" rel="stylesheet"/>
+<link href="style.css?v=202611022330" rel="stylesheet"/>
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -48,11 +48,18 @@
 <div class="reveal">
 <h1>I study how machines read <em>imperfect</em> traces.</h1>
 <p class="hero-lede">
-My work is on AI for noisy documents: historical newspapers, OCR and HTR transcripts, handwritten archives, inscriptions, administrative and financial records. I build methods to extract people, places, events and relations from them, and I measure what models miss, invent or flatten along the way.
+My work is on AI for difficult documents: receipts and insurance claims, epidemic reports, news and social media, historical newspapers and archives. I build methods to extract people, places, events and relations from them, and I measure what models miss, invent or flatten along the way.
 </p>
 </div>
-<figure aria-label="Illustration: a noisy line of OCR is corrected, read and indexed" class="clipping reveal" style="--delay:.15s">
-<div class="clipping-sheet">
+<figure aria-label="Illustration: a noisy newspaper line, an altered receipt, an epidemic report and a social media post are corrected, read and indexed" class="clipping reveal" style="--delay:.15s">
+<div class="clipping-sheets">
+<div class="clipping-types">
+<button aria-pressed="true" class="clipping-type is-active" type="button">historical newspaper</button>
+<button aria-pressed="false" class="clipping-type" type="button">receipt</button>
+<button aria-pressed="false" class="clipping-type" type="button">epidemic report</button>
+<button aria-pressed="false" class="clipping-type" type="button">social media post</button>
+</div>
+<div class="clipping-sheet is-active">
 <p class="clipping-text"><span class="ent ent-loc" data-type="place" style="--d:0s">La Roche<span class="fix" style="--f:0s"><s>1</s><ins>l</ins></span>le</span>, <span class="ent ent-date" data-type="date" style="--d:.2s"><span class="fix" style="--f:.2s"><s>l</s><ins>1</ins></span>4 juillet 189<span class="fix" style="--f:.4s"><s>O</s><ins>0</ins></span></span>. — Le <span class="ent ent-org" data-type="organisation" style="--d:.4s">Cons<span class="fix" style="--f:.6s"><s>c</s><ins>e</ins></span>il municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="place" style="--d:.6s">Hôtel de Vi<span class="fix" style="--f:.8s"><s>11</s><ins>ll</ins></span>e</span>.</p>
 <ol class="clipping-index">
 <li class="whole" style="--d:0s"><span>Meeting of the city council</span><i></i><span>event</span></li>
@@ -62,7 +69,37 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 <li style="--d:.6s"><span>Hôtel de Ville</span><i></i><span>place</span></li>
 </ol>
 </div>
-<figcaption>A noisy line is corrected, read and indexed, and the original stays visible underneath. Illustrative example.</figcaption>
+<div class="clipping-sheet">
+<p class="clipping-text"><span class="ent ent-org" data-type="company" style="--d:0s">Épicer<span class="fix" style="--f:0s"><s>1</s><ins>i</ins></span>e du Port</span> · <span class="ent ent-date" data-type="date" style="--d:.2s">14/03/2023</span> · <span class="ent ent-loc" data-type="product" style="--d:.4s">café 5,10</span> · <span class="ent ent-loc" data-type="product" style="--d:.6s">pain 2,40</span> · <span class="ent ent-date" data-type="amounts to" style="--d:.8s">TOTAL <span class="fix" style="--f:.4s"><s>9,50</s><ins>≠ 7,50</ins></span></span></p>
+<ol class="clipping-index">
+<li class="whole" style="--d:0s"><span>café + pain = 7,50, but the total says 9,50</span><i></i><span>altered?</span></li>
+<li style="--d:0s"><span>Épicerie du Port</span><i></i><span>company</span></li>
+<li style="--d:.2s"><span>2023-03-14</span><i></i><span>date</span></li>
+<li style="--d:.4s"><span>café, 5,10</span><i></i><span>product</span></li>
+<li style="--d:.6s"><span>pain, 2,40</span><i></i><span>product</span></li>
+</ol>
+</div>
+<div class="clipping-sheet">
+<p class="clipping-text"><span class="ent ent-date" data-type="date" style="--d:0s">12 March</span>: <span class="ent ent-org" data-type="count" style="--d:.2s">14 suspected cases</span> of <span class="ent ent-date" data-type="disease" style="--d:.4s">cho<span class="fix" style="--f:0s"><s>1</s><ins>l</ins></span>era</span> reported in <span class="ent ent-loc" data-type="place" style="--d:.6s">Kisumu</span>, health officials said.</p>
+<ol class="clipping-index">
+<li class="whole" style="--d:0s"><span>Cholera outbreak</span><i></i><span>event</span></li>
+<li style="--d:0s"><span>cholera</span><i></i><span>disease</span></li>
+<li style="--d:.2s"><span>Kisumu</span><i></i><span>place</span></li>
+<li style="--d:.4s"><span>14</span><i></i><span>suspected cases</span></li>
+<li style="--d:.6s"><span>12 March</span><i></i><span>date</span></li>
+</ol>
+</div>
+<div class="clipping-sheet">
+<p class="clipping-text">omg the river is ov<span class="fix" style="--f:0s"><s>3</s><ins>e</ins></span>r the bridge on <span class="ent ent-loc" data-type="place" style="--d:0s">Rue du Port</span>!! <span class="ent ent-org" data-type="affected" style="--d:.2s"><span class="fix" style="--f:.3s"><s>ppl</s><ins>people</ins></span> stuck on roofs</span>, pls <span class="ent ent-date" data-type="need" style="--d:.4s">send boats</span> <span class="ent ent-date" data-type="topic" style="--d:.6s">#flood</span></p>
+<ol class="clipping-index">
+<li class="whole" style="--d:0s"><span>Flood, people stranded</span><i></i><span>event</span></li>
+<li style="--d:0s"><span>Rue du Port</span><i></i><span>place</span></li>
+<li style="--d:.2s"><span>people on roofs</span><i></i><span>affected</span></li>
+<li style="--d:.4s"><span>boats</span><i></i><span>need</span></li>
+<li style="--d:.6s"><span>#flood</span><i></i><span>topic</span></li>
+</ol>
+</div>
+</div>
 </figure>
 </div>
 </section>
@@ -73,16 +110,28 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 <div class="folio-main">
 <h2 class="reveal">Six threads I keep returning to</h2>
 <div class="thread-list">
+<a class="thread t-semantic reveal" href="things.html#semantic-extraction">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-extract" viewBox="0 0 56 40"><rect class="word" height="4" rx="2" width="10" x="2" y="18"/><rect class="word hit" height="4" rx="2" width="18" x="19" y="18"/><rect class="word" height="4" rx="2" width="10" x="44" y="18"/><path class="bracket" d="M18 10 h-3 v20 h3"/><path class="bracket r" d="M38 10 h3 v20 h-3"/></svg></span>
+<h3>Semantic extraction</h3>
+<div class="thread-body"><p>Named entities, entity linking, relations and events: the small structures that make collections searchable.</p><code>[La Rochelle] place</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
+</a>
+<a class="thread t-applied reveal" href="things.html#applied-document-intelligence">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-applied" viewBox="0 0 56 40"><rect height="34" rx="2" width="26" x="6" y="3"/><line class="ln" x1="11" x2="27" y1="11" y2="11"/><line class="ln" x1="11" x2="24" y1="17" y2="17"/><line class="ln" x1="11" x2="27" y1="23" y2="23"/><path class="check" d="M37 21 l5 6 l11 -14"/></svg></span>
+<h3>Applied document intelligence</h3>
+<div class="thread-body"><p>Document fraud, misinformation, epidemic surveillance, and open LLMs built to hold up under real constraints.</p><code>a receipt: is the total real?</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
+</a>
 <a class="thread t-noisy reveal" href="things.html#noisy-documents">
 <span class="thread-glyph"><svg aria-hidden="true" class="glyph g-noise" viewBox="0 0 56 40"><rect height="26" width="5" x="8" y="10"/><rect height="18" width="5" x="17" y="18"/><rect height="30" width="5" x="26" y="6"/><rect height="14" width="5" x="35" y="22"/><rect height="22" width="5" x="44" y="14"/></svg></span>
 <h3>Noisy documents</h3>
 <div class="thread-body"><p>OCR and HTR errors, degraded text, and how noise changes downstream meaning, not just character accuracy.</p><code>Vi11e → Ville</code></div>
 <span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="thread t-semantic reveal" href="things.html#semantic-extraction">
-<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-extract" viewBox="0 0 56 40"><rect class="word" height="4" rx="2" width="10" x="2" y="18"/><rect class="word hit" height="4" rx="2" width="18" x="19" y="18"/><rect class="word" height="4" rx="2" width="10" x="44" y="18"/><path class="bracket" d="M18 10 h-3 v20 h3"/><path class="bracket r" d="M38 10 h3 v20 h-3"/></svg></span>
-<h3>Semantic extraction</h3>
-<div class="thread-body"><p>Named entities, entity linking, relations and events: the small structures that make collections searchable.</p><code>[La Rochelle] place</code></div>
+<a class="thread t-multimodal reveal" href="things.html#multimodality">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-multi" viewBox="0 0 56 40"><rect height="34" rx="3" width="46" x="5" y="3"/><rect class="img" height="14" rx="2" width="18" x="10" y="8"/><circle class="sun" cx="23" cy="12" r="2.5"/><line class="ln" x1="32" x2="46" y1="10" y2="10"/><line class="ln" x1="32" x2="44" y1="17" y2="17"/><line class="ln" x1="10" x2="46" y1="29" y2="29"/></svg></span>
+<h3>Multimodality</h3>
+<div class="thread-body"><p>Text, images, layout and visual signals modelled together, rather than treating everything as plain text.</p><code>text + image + layout</code></div>
 <span aria-hidden="true" class="thread-go">→</span>
 </a>
 <a class="thread t-historical reveal" href="things.html#historical-ai">
@@ -95,18 +144,6 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 <span class="thread-glyph"><svg aria-hidden="true" class="glyph g-heritage" viewBox="0 0 56 40"><rect height="34" rx="3" width="40" x="8" y="3"/><line x1="14" x2="42" y1="12" y2="12"/><line x1="14" x2="38" y1="20" y2="20"/><line x1="14" x2="34" y1="28" y2="28"/></svg></span>
 <h3>Cultural heritage</h3>
 <div class="thread-body"><p>Digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, and contested memory.</p><code>։ the Armenian full stop, not a colon</code></div>
-<span aria-hidden="true" class="thread-go">→</span>
-</a>
-<a class="thread t-multimodal reveal" href="things.html#multimodality">
-<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-multi" viewBox="0 0 56 40"><rect height="34" rx="3" width="46" x="5" y="3"/><rect class="img" height="14" rx="2" width="18" x="10" y="8"/><circle class="sun" cx="23" cy="12" r="2.5"/><line class="ln" x1="32" x2="46" y1="10" y2="10"/><line class="ln" x1="32" x2="44" y1="17" y2="17"/><line class="ln" x1="10" x2="46" y1="29" y2="29"/></svg></span>
-<h3>Multimodality</h3>
-<div class="thread-body"><p>Text, images, layout and visual signals modelled together, rather than treating everything as plain text.</p><code>text + image + layout</code></div>
-<span aria-hidden="true" class="thread-go">→</span>
-</a>
-<a class="thread t-applied reveal" href="things.html#applied-document-intelligence">
-<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-applied" viewBox="0 0 56 40"><rect height="34" rx="2" width="26" x="6" y="3"/><line class="ln" x1="11" x2="27" y1="11" y2="11"/><line class="ln" x1="11" x2="24" y1="17" y2="17"/><line class="ln" x1="11" x2="27" y1="23" y2="23"/><path class="check" d="M37 21 l5 6 l11 -14"/></svg></span>
-<h3>Applied document intelligence</h3>
-<div class="thread-body"><p>Document fraud, misinformation, epidemic surveillance, and open LLMs built to hold up under real constraints.</p><code>a receipt: is the total real?</code></div>
 <span aria-hidden="true" class="thread-go">→</span>
 </a>
 </div>
@@ -184,7 +221,7 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 <p><a href="https://github.com/emanuelaboros">GitHub</a> · <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ">Google Scholar</a></p>
 </footer>
 </div>
-<script src="publications.js?v=202611022308"></script>
-<script src="script.js?v=202611022308"></script>
+<script src="publications.js?v=202611022330"></script>
+<script src="script.js?v=202611022330"></script>
 </body>
 </html>

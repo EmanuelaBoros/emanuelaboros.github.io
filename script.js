@@ -121,3 +121,29 @@ document.querySelectorAll('.lang-toggle').forEach((btn) => {
     btn.textContent = ro ? 'English version' : 'Romanian original';
   });
 });
+
+// Alternate the clippings and light up the matching bubble; each runs one animation cycle (12s).
+// Clicking a bubble shows that example and restarts the timer.
+(() => {
+  const sheets = document.querySelectorAll('.clipping-sheet');
+  const types = document.querySelectorAll('.clipping-type');
+  if (sheets.length < 2) return;
+  const auto = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let i = 0;
+  let timer;
+  const show = (n) => {
+    sheets[i].classList.remove('is-active');
+    types[i].classList.remove('is-active');
+    types[i].setAttribute('aria-pressed', 'false');
+    i = n;
+    sheets[i].classList.add('is-active');
+    types[i].classList.add('is-active');
+    types[i].setAttribute('aria-pressed', 'true');
+    if (auto) {
+      clearInterval(timer);
+      timer = setInterval(() => show((i + 1) % sheets.length), 12000);
+    }
+  };
+  types.forEach((t, n) => t.addEventListener('click', () => show(n)));
+  show(0);
+})();

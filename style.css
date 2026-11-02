@@ -215,6 +215,21 @@ main > .section:first-child, main > .panel:first-child { border-top: 0; }
 /* ---------- home: clipping figure (animated) ---------- */
 /* A proofread scrap of paper: corrections arrive above the line, entity types below it. */
 .clipping { margin: 0; --cycle: 12s; }
+.clipping-sheets { display: grid; }
+.clipping-sheets { position: relative; }
+.clipping-types { position: absolute; z-index: 1; top: .8rem; right: .9rem; left: .9rem; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .3rem; pointer-events: none; }
+.clipping-type { pointer-events: auto; cursor: pointer; font-family: var(--mono); font-size: .68rem; line-height: 1; padding: .3rem .6rem; border: 1px solid var(--rule-strong); border-radius: 999px; color: var(--muted); background: var(--card); transition: color .4s, background .4s, border-color .4s; }
+.clipping-type:hover { color: var(--accent); border-color: var(--accent); }
+.clipping-type.is-active { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); }
+.clipping-text { padding-top: .8rem; }
+@media (max-width: 480px) {
+  .clipping-type { font-size: .6rem; padding: .28rem .45rem; }
+  .clipping-text { padding-top: 2.8rem; }
+}
+.clipping-sheets > * { grid-area: 1 / 1; }
+.clipping-sheet { transition: opacity .5s var(--ease); }
+.clipping-sheet:not(.is-active) { opacity: 0; visibility: hidden; }
+.clipping-sheet:not(.is-active)::after, .clipping-sheet:not(.is-active) *, .clipping-sheet:not(.is-active) *::after { animation: none !important; }
 .clipping-sheet {
   position: relative; overflow: hidden; background: var(--card);
   padding: clamp(1.2rem, 3vw, 2.2rem) clamp(1.1rem, 3vw, 2.4rem) clamp(1.8rem, 3.6vw, 2.8rem);
