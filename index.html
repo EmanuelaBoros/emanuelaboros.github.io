@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=202610310921" rel="stylesheet"/>
+<link href="style.css?v=202611022308" rel="stylesheet"/>
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -31,115 +31,93 @@
 <main id="top">
 
 <!-- Hero -->
-<section class="hero">
-<div class="reveal">
-<div class="hero-role">
+<section class="hero folio">
+<aside class="margin hero-margin reveal">
 <img alt="Illustrated portrait of Emanuela Boros" src="images/emanuela-bubble.jpg"/>
-<div>
 <strong>Emanuela Boros</strong>
-<span>Researcher · NLP &amp; document AI</span>
-</div>
-</div>
+<span>Researcher, NLP &amp; document AI</span>
+<ul class="margin-links">
+<li><a href="https://github.com/emanuelaboros" rel="noopener" target="_blank">GitHub</a></li>
+<li><a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ" rel="noopener" target="_blank">Google Scholar</a></li>
+<li><a href="https://orcid.org/0000-0001-6299-9452" rel="noopener" target="_blank">ORCID</a></li>
+<li><a href="https://www.linkedin.com/in/emanuelaboros/" rel="noopener" target="_blank">LinkedIn</a></li>
+<li><a href="https://theses.hal.science/tel-01943841" rel="noopener" target="_blank">PhD thesis</a></li>
+</ul>
+</aside>
+<div class="folio-main">
+<div class="reveal">
 <h1>I study how machines read <em>imperfect</em> traces.</h1>
 <p class="hero-lede">
 My work is on AI for noisy documents: historical newspapers, OCR and HTR transcripts, handwritten archives, inscriptions, administrative and financial records. I build methods to extract people, places, events and relations from them, and I measure what models miss, invent or flatten along the way.
 </p>
-<div class="link-row">
-<a href="https://github.com/emanuelaboros" rel="noopener" target="_blank">GitHub</a>
-<a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>
-<a href="https://orcid.org/0000-0001-6299-9452" rel="noopener" target="_blank">ORCID</a>
-<a href="https://www.linkedin.com/in/emanuelaboros/" rel="noopener" target="_blank">LinkedIn</a>
-<a href="https://theses.hal.science/tel-01943841" rel="noopener" target="_blank">PhD thesis</a>
 </div>
+<figure aria-label="Illustration: a noisy line of OCR is corrected, read and indexed" class="clipping reveal" style="--delay:.15s">
+<div class="clipping-sheet">
+<p class="clipping-text"><span class="ent ent-loc" data-type="place" style="--d:0s">La Roche<span class="fix" style="--f:0s"><s>1</s><ins>l</ins></span>le</span>, <span class="ent ent-date" data-type="date" style="--d:.2s"><span class="fix" style="--f:.2s"><s>l</s><ins>1</ins></span>4 juillet 189<span class="fix" style="--f:.4s"><s>O</s><ins>0</ins></span></span>. — Le <span class="ent ent-org" data-type="organisation" style="--d:.4s">Cons<span class="fix" style="--f:.6s"><s>c</s><ins>e</ins></span>il municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="place" style="--d:.6s">Hôtel de Vi<span class="fix" style="--f:.8s"><s>11</s><ins>ll</ins></span>e</span>.</p>
+<ol class="clipping-index">
+<li class="whole" style="--d:0s"><span>Meeting of the city council</span><i></i><span>event</span></li>
+<li style="--d:0s"><span>La Rochelle</span><i></i><span>place</span></li>
+<li style="--d:.2s"><span>1890-07-14</span><i></i><span>date</span></li>
+<li style="--d:.4s"><span>Conseil municipal</span><i></i><span>organisation</span></li>
+<li style="--d:.6s"><span>Hôtel de Ville</span><i></i><span>place</span></li>
+</ol>
 </div>
-
-<figure aria-label="Illustration: from a noisy scan to linked entities" class="pipeline reveal" style="--delay:.15s">
-<div class="pipe-stage">
-<div class="pipe-label"><span><b>01</b> Scan · OCR output</span><span>CER 6.1%</span></div>
-<div class="pipe-scan">
-<p class="pipe-text">La Roche<span class="noise">1</span>le, <span class="noise">l</span>4 juillet 189<span class="noise">O</span>. — Le Cons<span class="noise">c</span>il municipal s’est réuni à l’Hôtel de Vi<span class="noise">11</span>e.</p>
-</div>
-</div>
-<div class="pipe-stage">
-<div class="pipe-label"><span><b>02</b> Read · named entities</span><span>NER</span></div>
-<p class="pipe-text"><span class="ent ent-loc" data-type="LOC" style="--d:0s">La Rochelle</span>, <span class="ent ent-date" data-type="DATE" style="--d:.25s">14 juillet 1890</span>. — Le <span class="ent ent-org" data-type="ORG" style="--d:.5s">Conseil municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="LOC" style="--d:.75s">Hôtel de Ville</span>.</p>
-</div>
-<div class="pipe-stage">
-<div class="pipe-label"><span><b>03</b> Link · knowledge graph</span><span>EL</span></div>
-<svg aria-hidden="true" class="pipe-graph" viewBox="0 0 420 120">
-<path class="edge" d="M210 60 L70 28" style="--d:0s"/>
-<path class="edge" d="M210 60 L80 98" style="--d:.2s"/>
-<path class="edge" d="M210 60 L345 26" style="--d:.4s"/>
-<path class="edge" d="M210 60 L350 96" style="--d:.6s"/>
-<g class="node hub" style="--d:0s"><circle cx="210" cy="60" fill="var(--ink)" r="7"/><text text-anchor="middle" x="210" y="44">event: meeting</text></g>
-<g class="node" style="--d:.15s"><circle cx="70" cy="28" fill="var(--t-historical)" r="6"/><text x="84" y="31">La Rochelle</text></g>
-<g class="node" style="--d:.35s"><circle cx="80" cy="98" fill="var(--t-semantic)" r="6"/><text x="94" y="101">1890-07-14</text></g>
-<g class="node" style="--d:.55s"><circle cx="345" cy="26" fill="var(--t-cultural)" r="6"/><text text-anchor="end" x="333" y="29">city council</text></g>
-<g class="node" style="--d:.75s"><circle cx="350" cy="96" fill="var(--t-historical)" r="6"/><text text-anchor="end" x="338" y="99">town hall</text></g>
-</svg>
-</div>
-<figcaption>From noisy scan to structured evidence: the pipeline my research tries to make robust. Illustrative example.</figcaption>
+<figcaption>A noisy line is corrected, read and indexed, and the original stays visible underneath. Illustrative example.</figcaption>
 </figure>
+</div>
 </section>
 
 <!-- Research -->
-<section class="section" id="research">
-<div class="section-head reveal">
-<div><span class="section-num">01 — Research</span><h2>Six threads I keep returning to</h2></div>
-<p>Each thread links to a page with the problem, the approach, and the papers behind it.</p>
-</div>
-<div class="theme-grid">
-<a class="theme t-noisy reveal" href="things.html#noisy-documents">
-<div class="theme-top"><span class="theme-num">01</span>
-<svg aria-hidden="true" class="glyph g-noise" viewBox="0 0 56 40"><rect height="26" width="5" x="8" y="10"/><rect height="18" width="5" x="17" y="18"/><rect height="30" width="5" x="26" y="6"/><rect height="14" width="5" x="35" y="22"/><rect height="22" width="5" x="44" y="14"/></svg></div>
+<section class="section folio" id="research">
+<aside class="margin reveal"><span class="margin-label">Research</span><p>Each thread links to a page with the problem, the approach, and the papers behind it.</p></aside>
+<div class="folio-main">
+<h2 class="reveal">Six threads I keep returning to</h2>
+<div class="thread-list">
+<a class="thread t-noisy reveal" href="things.html#noisy-documents">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-noise" viewBox="0 0 56 40"><rect height="26" width="5" x="8" y="10"/><rect height="18" width="5" x="17" y="18"/><rect height="30" width="5" x="26" y="6"/><rect height="14" width="5" x="35" y="22"/><rect height="22" width="5" x="44" y="14"/></svg></span>
 <h3>Noisy documents</h3>
-<p>OCR and HTR errors, degraded text, and how noise changes downstream meaning, not just character accuracy.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>OCR and HTR errors, degraded text, and how noise changes downstream meaning, not just character accuracy.</p><code>Vi11e → Ville</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="theme t-semantic reveal" href="things.html#semantic-extraction" style="--delay:.08s">
-<div class="theme-top"><span class="theme-num">02</span>
-<svg aria-hidden="true" class="glyph g-extract" viewBox="0 0 56 40"><rect class="word" height="4" rx="2" width="10" x="2" y="18"/><rect class="word hit" height="4" rx="2" width="18" x="19" y="18"/><rect class="word" height="4" rx="2" width="10" x="44" y="18"/><path class="bracket" d="M18 10 h-3 v20 h3"/><path class="bracket r" d="M38 10 h3 v20 h-3"/></svg></div>
+<a class="thread t-semantic reveal" href="things.html#semantic-extraction">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-extract" viewBox="0 0 56 40"><rect class="word" height="4" rx="2" width="10" x="2" y="18"/><rect class="word hit" height="4" rx="2" width="18" x="19" y="18"/><rect class="word" height="4" rx="2" width="10" x="44" y="18"/><path class="bracket" d="M18 10 h-3 v20 h3"/><path class="bracket r" d="M38 10 h3 v20 h-3"/></svg></span>
 <h3>Semantic extraction</h3>
-<p>Named entities, entity linking, relations and events: the small structures that make collections searchable.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>Named entities, entity linking, relations and events: the small structures that make collections searchable.</p><code>[La Rochelle] place</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="theme t-historical reveal" href="things.html#historical-ai" style="--delay:.16s">
-<div class="theme-top"><span class="theme-num">03</span>
-<svg aria-hidden="true" class="glyph g-time" viewBox="0 0 56 40"><line x1="6" x2="50" y1="20" y2="20"/><line class="tick" x1="6" x2="6" y1="15" y2="25"/><line class="tick" x1="28" x2="28" y1="15" y2="25"/><line class="tick" x1="50" x2="50" y1="15" y2="25"/><circle class="dot" cx="10" cy="20" r="4"/></svg></div>
+<a class="thread t-historical reveal" href="things.html#historical-ai">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-time" viewBox="0 0 56 40"><line x1="6" x2="50" y1="20" y2="20"/><line class="tick" x1="6" x2="6" y1="15" y2="25"/><line class="tick" x1="28" x2="28" y1="15" y2="25"/><line class="tick" x1="50" x2="50" y1="15" y2="25"/><circle class="dot" cx="10" cy="20" r="4"/></svg></span>
 <h3>Historical AI</h3>
-<p>Temporal modelling and multilingual archives, for language whose names, borders and meanings keep shifting.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>Temporal modelling and multilingual archives, for language whose names, borders and meanings keep shifting.</p><code>“ie” for “je”, 1630s</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="theme t-cultural reveal" href="things.html#cultural-heritage">
-<div class="theme-top"><span class="theme-num">04</span>
-<svg aria-hidden="true" class="glyph g-heritage" viewBox="0 0 56 40"><rect height="34" rx="3" width="40" x="8" y="3"/><line x1="14" x2="42" y1="12" y2="12"/><line x1="14" x2="38" y1="20" y2="20"/><line x1="14" x2="34" y1="28" y2="28"/></svg></div>
+<a class="thread t-cultural reveal" href="things.html#cultural-heritage">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-heritage" viewBox="0 0 56 40"><rect height="34" rx="3" width="40" x="8" y="3"/><line x1="14" x2="42" y1="12" y2="12"/><line x1="14" x2="38" y1="20" y2="20"/><line x1="14" x2="34" y1="28" y2="28"/></svg></span>
 <h3>Cultural heritage</h3>
-<p>Digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, and contested memory.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>Digital epigraphy, Armenian and Ukrainian inscriptions, structured vocabularies, and contested memory.</p><code>։ the Armenian full stop, not a colon</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="theme t-multimodal reveal" href="things.html#multimodality" style="--delay:.08s">
-<div class="theme-top"><span class="theme-num">05</span>
-<svg aria-hidden="true" class="glyph g-multi" viewBox="0 0 56 40"><rect height="34" rx="3" width="46" x="5" y="3"/><rect class="img" height="14" rx="2" width="18" x="10" y="8"/><circle class="sun" cx="23" cy="12" r="2.5"/><line class="ln" x1="32" x2="46" y1="10" y2="10"/><line class="ln" x1="32" x2="44" y1="17" y2="17"/><line class="ln" x1="10" x2="46" y1="29" y2="29"/></svg></div>
+<a class="thread t-multimodal reveal" href="things.html#multimodality">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-multi" viewBox="0 0 56 40"><rect height="34" rx="3" width="46" x="5" y="3"/><rect class="img" height="14" rx="2" width="18" x="10" y="8"/><circle class="sun" cx="23" cy="12" r="2.5"/><line class="ln" x1="32" x2="46" y1="10" y2="10"/><line class="ln" x1="32" x2="44" y1="17" y2="17"/><line class="ln" x1="10" x2="46" y1="29" y2="29"/></svg></span>
 <h3>Multimodality</h3>
-<p>Text, images, layout and visual signals modelled together, rather than treating everything as plain text.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>Text, images, layout and visual signals modelled together, rather than treating everything as plain text.</p><code>text + image + layout</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
-<a class="theme t-applied reveal" href="things.html#applied-document-intelligence" style="--delay:.16s">
-<div class="theme-top"><span class="theme-num">06</span>
-<svg aria-hidden="true" class="glyph g-applied" viewBox="0 0 56 40"><rect height="34" rx="2" width="26" x="6" y="3"/><line class="ln" x1="11" x2="27" y1="11" y2="11"/><line class="ln" x1="11" x2="24" y1="17" y2="17"/><line class="ln" x1="11" x2="27" y1="23" y2="23"/><path class="check" d="M37 21 l5 6 l11 -14"/></svg></div>
+<a class="thread t-applied reveal" href="things.html#applied-document-intelligence">
+<span class="thread-glyph"><svg aria-hidden="true" class="glyph g-applied" viewBox="0 0 56 40"><rect height="34" rx="2" width="26" x="6" y="3"/><line class="ln" x1="11" x2="27" y1="11" y2="11"/><line class="ln" x1="11" x2="24" y1="17" y2="17"/><line class="ln" x1="11" x2="27" y1="23" y2="23"/><path class="check" d="M37 21 l5 6 l11 -14"/></svg></span>
 <h3>Applied document intelligence</h3>
-<p>Document fraud, misinformation, epidemic surveillance, and open LLMs built to hold up under real constraints.</p>
-<span class="go">Research + papers →</span>
+<div class="thread-body"><p>Document fraud, misinformation, epidemic surveillance, and open LLMs built to hold up under real constraints.</p><code>a receipt: is the total real?</code></div>
+<span aria-hidden="true" class="thread-go">→</span>
 </a>
+</div>
 </div>
 </section>
 
 <!-- Publications -->
-<section class="section" id="publications">
-<div class="section-head reveal">
-<div><span class="section-num">02 — Publications</span><h2>Selected papers</h2></div>
-<p>1,180 citations · h-index 17 on <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>. Open a paper below for its challenge and conclusion.</p>
-</div>
+<section class="section folio" id="publications">
+<aside class="margin reveal"><span class="margin-label">Publications</span><p>1,180 citations · h-index 17 on <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ" rel="noopener" target="_blank">Google Scholar</a>. Open a paper below for its challenge and conclusion.</p></aside>
+<div class="folio-main">
+<h2 class="reveal">Selected papers</h2>
 <ul class="pub-list" id="homePubs"></ul>
 <figure class="waves reveal" style="margin-top:3.5rem">
 <div class="line-plot-wrap" id="themeWaves"></div>
@@ -164,31 +142,30 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 </figure>
 </div>
 <a class="more-link" href="publications.html">Full list: <span data-pub-total>85</span> publications <span>→</span></a>
+</div>
 </section>
 
 <!-- Writing -->
-<section class="section" id="writing">
-<div class="section-head reveal">
-<div><span class="section-num">03 — Writing</span><h2>Notes and essays</h2></div>
-<p>Shorter texts on AI, archives, evidence and noise. Less formal than papers.</p>
-</div>
+<section class="section folio" id="writing">
+<aside class="margin reveal"><span class="margin-label">Writing</span><p>Shorter texts on AI, archives, evidence and noise. Less formal than papers.</p></aside>
+<div class="folio-main">
+<h2 class="reveal">Notes and essays</h2>
 <ul class="note-list">
 <li class="reveal"><a href="posts/llms-in-archives.html"><span class="note-type">Essay</span><div><h3>LLMs in archives: fluent, useful, suspicious</h3><p>Why good prose is not the same thing as grounded historical understanding.</p></div></a></li>
 <li class="reveal"><a href="posts/documents-are-evidence.html"><span class="note-type">Essay</span><div><h3>Documents are evidence, not just data</h3><p>Building AI systems that keep traces attached to claims.</p></div></a></li>
 <li class="reveal"><a href="posts/noise-is-not-always-a-bug.html"><span class="note-type">Essay</span><div><h3>Noise is not always a bug</h3><p>OCR, damaged scans, and why cleaning can also erase what matters.</p></div></a></li>
 </ul>
 <a class="more-link" href="writing.html">All writing <span>→</span></a>
+</div>
 </section>
 
 
 <!-- About -->
-<section class="section" id="about">
-<div class="about-grid">
-<div class="reveal">
-<span class="section-num">04 — About</span>
-<h2>Mostly serious work, with a sense of humour</h2>
-</div>
-<div class="prose reveal" style="--delay:.1s">
+<section class="section folio" id="about">
+<aside class="margin reveal"><span class="margin-label">About</span></aside>
+<div class="folio-main">
+<h2 class="reveal">Mostly serious work, with a sense of humour</h2>
+<div class="prose about-prose reveal">
 <p>I care about what AI extracts from documents, and also about what it misses, invents, flattens, or quietly ruins while sounding confident.</p>
 <p>I come from both computer science and visual practice, so I tend to look at documents as text, images, layouts and evidence all at once. My PhD was on neural methods for event extraction; since then I have worked on historical newspapers, epigraphy, document fraud, epidemic surveillance and open LLMs.</p>
 <p>Outside research: photography, handmade things, gardening with variable success, mostly non-fantasy books, metal festivals and camping.</p>
@@ -207,7 +184,7 @@ My work is on AI for noisy documents: historical newspapers, OCR and HTR transcr
 <p><a href="https://github.com/emanuelaboros">GitHub</a> · <a href="https://scholar.google.com/citations?user=JKQGkrIAAAAJ">Google Scholar</a></p>
 </footer>
 </div>
-<script src="publications.js?v=202610310921"></script>
-<script src="script.js?v=202610310921"></script>
+<script src="publications.js?v=202611022308"></script>
+<script src="script.js?v=202611022308"></script>
 </body>
 </html>
