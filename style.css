@@ -688,7 +688,7 @@ figure.pa { margin: 1.3rem 0; }
 .pa.play .rock { animation: paRock 1.8s ease-in-out 3; }
 @keyframes paRock { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-5deg); } 75% { transform: rotate(5deg); } }
 .pa-line { display: block; width: fit-content; white-space: pre; }
-.pa.play .pa-line { animation: paType calc(var(--n) * .04s) steps(var(--n)) var(--d, 0s) both; }
+.pa.play .pa-line { animation: paType calc(var(--n) * var(--c, .04s)) steps(var(--n)) var(--d, 0s) both; }
 @keyframes paType { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 .pa-cursor { display: inline-block; width: .55ch; height: 1em; margin-left: .3ch; vertical-align: -.12em; background: var(--accent); }
 .pa.play .pa-cursor { animation: paBlink 1s steps(2) var(--d, 0s) 6; }
@@ -714,6 +714,27 @@ figure.pa { margin: 1.3rem 0; }
 .pa svg .num { fill: var(--ink); stroke: none; font-family: var(--serif); font-size: 30px; }
 .pa svg .num.past { fill: var(--muted); }
 .pa svg .num.later { fill: var(--rule-strong); }
+.pa svg .screen { fill: var(--accent); stroke: none; opacity: .16; }
+.pa.play .screen { animation: paFlick 2.4s steps(1) 3; }
+@keyframes paFlick { 0% { opacity: .1; } 20% { opacity: .3; } 45% { opacity: .08; } 60% { opacity: .24; } 85% { opacity: .12; } }
+.pa svg .press { fill: var(--accent); stroke: none; opacity: .3; }
+.pa.play .press { animation: paPress 1s ease-in-out .9s 4; }
+@keyframes paPress { 50% { opacity: .9; } }
+.pa.play .wander { animation: paWander 4s ease-in-out both; }
+@keyframes paWander { 0%, 24% { transform: translate(-100px, -24px); } 12% { transform: translate(-100px, 0); } 36%, 60% { transform: translate(-60px, -24px); } 48% { transform: translate(-60px, 0); } 72%, 92% { transform: translate(-20px, -24px); } 82% { transform: translate(-20px, 0); } 100% { transform: none; } }
+.pa .gone { display: inline-block; width: 0; overflow: hidden; vertical-align: bottom; font-style: normal; }
+.pa.play .gone { animation: paGone 3s steps(1) both; }
+@keyframes paGone { 0% { width: 1ch; } 100% { width: 0; } }
+.pa svg .dash { stroke-dasharray: 3 4; }
+.pa .slam { transform-origin: 60px 50px; }
+.pa.play .slam { animation: paSlam 2.2s cubic-bezier(.7, 0, 1, .5) both; }
+@keyframes paSlam { 0%, 55% { transform: rotate(-65deg); } 92% { transform: rotate(3deg); } 100% { transform: none; } }
+.pa.play .ring { animation: paRing 1s ease-in-out var(--d, 0s) 3; }
+@keyframes paRing { 0%, 100% { opacity: .15; } 40% { opacity: 1; } }
+.pa .wall { opacity: .14; }
+.pa.play .wall { animation: paWall 1.4s var(--ease) var(--d, 0s) both; }
+@keyframes paWall { from { opacity: 1; } }
+.pa .snap { transform: translate(var(--x), var(--y)); }
 /* end personal text animations */
 .personal-body p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.6; margin: 0 0 .8rem; color: var(--ink-2); }
 .personal-code { font-family: var(--mono); font-size: .78rem; line-height: 1.5; color: var(--muted); margin: 0 0 .8rem; }

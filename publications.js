@@ -261,7 +261,7 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
   // Themes over time: papers per theme per year, as smooth lines
   const waves = document.getElementById('themeWaves');
   if (waves) {
-    const themes = ['noisy', 'semantic', 'historical', 'cultural', 'multimodal', 'applied'];
+    const themes = ['semantic', 'applied', 'noisy', 'multimodal', 'historical', 'cultural'];
     const names = { noisy: 'Noisy documents', semantic: 'Semantic extraction', historical: 'Historical AI', cultural: 'Cultural heritage', multimodal: 'Multimodality', applied: 'Applied document intelligence' };
     const first = Math.min(...PUBLICATIONS.map((p) => p.year));
     const last = Math.max(...PUBLICATIONS.map((p) => p.year));
