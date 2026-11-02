@@ -147,3 +147,16 @@ document.querySelectorAll('.lang-toggle').forEach((btn) => {
   types.forEach((t, n) => t.addEventListener('click', () => show(n)));
   show(0);
 })();
+
+// personal-text animations: play when scrolled to, again if the text is closed and reopened
+(() => {
+  const figures = document.querySelectorAll('.personal-text .pa');
+  if (!figures.length) return;
+  const seen = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add('play');
+      else if (e.target.checkVisibility && !e.target.checkVisibility()) e.target.classList.remove('play');
+    });
+  }, { threshold: 0.5 });
+  figures.forEach((f) => seen.observe(f));
+})();
