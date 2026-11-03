@@ -683,14 +683,37 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 @keyframes skSoak { from { opacity: 0; } }
 .sketch .morph-a, .sketch .morph-b, .sketch .peek { transform-box: view-box; transform-origin: 200px 188px; }
 .sketch .morph-b { opacity: 0; }
-.sketch.play .morph-a { animation: skPrincess 10s ease-in-out 6s both; }
-.sketch.play .morph-b { animation: skWolf 10s ease-in-out 6s both; }
-@keyframes skPrincess { 0%, 22% { opacity: 1; transform: none; } 36%, 78% { opacity: 0; transform: scale(1.06, 1.24); } 92%, 100% { opacity: 1; transform: none; } }
-@keyframes skWolf { 0%, 22% { opacity: 0; transform: scale(.82, .78); } 36%, 78% { opacity: 1; transform: none; } 92%, 100% { opacity: 0; transform: scale(.82, .78); } }
+.sketch.play .morph-a { animation: skPrincess 5s ease-in-out 6s both; }
+.sketch.play .morph-b { animation: skWolf 5s ease-in-out 6s both; }
+@keyframes skPrincess { 0%, 30% { opacity: 1; transform: none; } 70%, 100% { opacity: 0; transform: scale(1.06, 1.24); } }
+@keyframes skWolf { 0%, 30% { opacity: 0; transform: scale(.82, .78); } 70%, 100% { opacity: 1; transform: none; } }
 .sketch .peek { transform: translateX(22px); }
 .sketch.play .peek { animation: skPeek 3.4s ease-in-out 5s 5 both; }
 @keyframes skPeek { 0%, 100% { transform: translateX(22px); } 30%, 62% { transform: none; } }
-@media (prefers-reduced-motion: reduce) { .js .sketch svg { visibility: visible; } .sketch.play * { animation: none !important; } .sketch .peek { transform: none; } }
+.sketch .creep { opacity: 0; }
+.sketch.play .creep { animation: skCreep 2.6s ease-in-out var(--s) both; }
+@keyframes skCreep { from { opacity: 0; } to { opacity: var(--o, .8); } }
+.sketch.play .fade { animation: skFade 2.4s ease-in var(--s) both; }
+@keyframes skFade { to { opacity: 0; } }
+.sketch .float { opacity: 0; }
+.sketch.play .float { animation: skFloat 3.4s ease-out var(--s) 3 both; }
+@keyframes skFloat { 0% { opacity: 0; transform: translate(0, 4px); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate(-34px, -30px); } }
+.sketch .paw { opacity: 0; }
+.sketch.play .paw { animation: skPaw 3.6s ease-in-out var(--s) 4 both; }
+@keyframes skPaw { 0%, 100% { opacity: 0; transform: translateX(34px); } 40%, 70% { opacity: 1; transform: none; } }
+.sketch .knock { transform-box: view-box; }
+.sketch.play .knock { animation: skKnock 2.7s ease-out var(--s) 3 both; }
+@keyframes skKnock { 0%, 10%, 33%, 43%, 66%, 76%, 100% { transform: none; } 3%, 36%, 69% { transform: translateX(2.4px) rotate(.7deg); } 6%, 39%, 72% { transform: translateX(-1.6px) rotate(-.4deg); } }
+.sketch .toc { opacity: 0; }
+.sketch.play .toc { animation: skToc 2.7s linear var(--s) 3 both; }
+@keyframes skToc { 0% { opacity: 0; } 4%, 26% { opacity: 1; } 34%, 100% { opacity: 0; } }
+.sketch .shrink-a, .sketch .shrink-b { transform-box: view-box; transform-origin: 200px 148px; }
+.sketch .shrink-b { opacity: 0; }
+.sketch.play .shrink-a { animation: skShrinkA 7s ease-in-out 6s both; }
+.sketch.play .shrink-b { animation: skShrinkB 7s ease-in-out 6s both; }
+@keyframes skShrinkA { 0%, 12% { opacity: 1; transform: none; } 60% { opacity: .5; transform: scale(.55); } 78%, 100% { opacity: 0; transform: scale(.28); } }
+@keyframes skShrinkB { 0%, 55% { opacity: 0; transform: scale(.6); } 85%, 100% { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .js .sketch svg { visibility: visible; } .sketch .morph-a { opacity: 0; } .sketch .morph-b { opacity: 1; } .sketch .shrink-a { opacity: 0; } .sketch .shrink-b { opacity: 1; } .sketch .toc { opacity: 1; } .sketch .float, .sketch .paw { opacity: 1; } .sketch .creep { opacity: var(--o, .8); } .sketch.play * { animation: none !important; } .sketch .peek { transform: none; } }
 .personal-story { display: grid; gap: .3rem; margin: 0 0 2rem; padding: 1.2rem 1.4rem; border: 1px solid var(--rule-strong); border-radius: 4px; color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s; }
 .personal-story:hover { border-color: var(--ink); transform: translateY(-2px); }
 .personal-story-label { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
