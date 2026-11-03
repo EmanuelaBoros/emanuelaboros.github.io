@@ -647,24 +647,31 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 
 /* Personal texts (writing page) */
 .personal-list { border-bottom: 1px solid var(--rule); }
-.personal-text { border-top: 1px solid var(--rule); }
-.personal-text summary { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) auto 1.2rem; gap: .2rem 1rem; align-items: center; padding: .85rem 0; cursor: pointer; list-style: none; }
+.personal-group { border-top: 1px solid var(--rule-strong); }
+.personal-group > summary { display: grid; grid-template-columns: 4.4rem minmax(0, 1fr) 1.2rem; align-items: center; padding: 1rem 0; cursor: pointer; list-style: none; }
+.personal-group > summary::-webkit-details-marker { display: none; }
+.personal-group > summary .personal-year { font-size: 1.05rem; color: var(--ink); }
+.personal-group > summary:hover .personal-year { color: var(--accent); }
+.personal-count { font-family: var(--mono); font-size: .7rem; color: var(--muted); }
+.personal-group[open] > summary .personal-toggle::after { transform: rotate(0deg); }
+.personal-group-list { margin-left: 4.4rem; padding-bottom: .4rem; }
+.personal-group-list .personal-text:first-child { border-top: 1px solid var(--rule); }
+.personal-text + .personal-text { border-top: 1px solid var(--rule); }
+.personal-text summary { display: grid; grid-template-columns: minmax(0, 1fr) 1.2rem; gap: .2rem 1rem; align-items: center; padding: .85rem 0; cursor: pointer; list-style: none; }
 .personal-text summary::-webkit-details-marker { display: none; }
-.personal-year { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em; color: var(--muted); }
+.personal-year { font-family: var(--mono); font-size: .78rem; letter-spacing: .04em; color: var(--muted); }
 .personal-text h3 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; margin: 0; transition: color .2s; }
 .personal-text summary:hover h3 { color: var(--accent); }
-.personal-type { font-family: var(--mono); font-size: .68rem; line-height: 1; padding: .3rem .6rem; border: 1px solid var(--rule-strong); border-radius: 999px; color: var(--ink-2); }
 .personal-toggle { position: relative; width: .8rem; height: .8rem; justify-self: end; }
 .personal-toggle::before, .personal-toggle::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--ink-2); transition: transform .25s var(--ease); }
 .personal-toggle::after { transform: rotate(90deg); }
 .personal-text[open] .personal-toggle::after { transform: rotate(0deg); }
-.personal-text[open] .personal-type { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); }
-.personal-open { max-width: 64ch; margin-left: 4.4rem; padding: .2rem 0 1.4rem; }
+.personal-text[open] .personal-open { max-width: 64ch; padding: .2rem 0 1.4rem; }
 .personal-lang { font-family: var(--mono); font-size: .7rem; margin: 0 0 .8rem; }
 @media (max-width: 560px) {
-  .personal-text summary { grid-template-columns: minmax(0, 1fr) auto 1rem; }
-  .personal-year { grid-column: 1 / -1; }
-  .personal-open { margin-left: 0; }
+  .personal-text summary { grid-template-columns: minmax(0, 1fr) 1rem; }
+  .personal-group > summary { grid-template-columns: 3.6rem minmax(0, 1fr) 1rem; }
+  .personal-group-list { margin-left: 0; }
 }
 /* personal text animations */
 /* Small drawings inside the texts, played once when scrolled to. The base styles are the final frame. */
