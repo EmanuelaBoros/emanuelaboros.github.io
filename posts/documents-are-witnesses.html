@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Documents are evidence · Emanuela Boros</title>
+  <title>Documents are witnesses · Emanuela Boros</title>
 <script>document.documentElement.classList.add('js');</script>
   <meta name="description" content="An essay on receipts, claims, page layouts, outbreak reports and Wikipedia revisions: why AI systems should keep the trace between a claim and its source." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=202611030037" />
+  <link rel="stylesheet" href="../style.css?v=202611031132" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -32,7 +32,7 @@
       <article class="article-panel panel panel-cream">
         <a class="back-link" href="../writing.html">← back to writing</a>
         <p class="section-label">Essay</p>
-        <h1>Documents are evidence, not just data</h1>
+        <h1>Documents are witnesses, not just data</h1>
         <p class="post-date">Essay · October 2026 · about 8 minutes</p>
 
         <div class="article-bubbles">
@@ -44,7 +44,7 @@
           <span>provenance</span>
         </div>
 
-        <p class="article-lede">A receipt, an insurance claim, a news report about an outbreak, a revision of a Wikipedia article. We feed them to models as text, rows or pixels. But each of them exists to prove something to someone, and an AI system that forgets where a claim came from has kept the data and thrown away the evidence.</p>
+        <p class="article-lede">A receipt, an insurance claim, a news report about an outbreak, a revision of a Wikipedia article. We feed them to models as text, rows or pixels. But each of them exists to prove something to someone, and an AI system that forgets where a claim came from has kept the data and thrown away the witness.</p>
 
         <h2>A document is a claim with a witness</h2>
         <p>A receipt says: this shop, on this day, sold these things at these prices, for this total. Nobody reads a receipt for pleasure. It is there to be checked, by an accountant, an employer, an insurer, a tax office.</p>
@@ -66,12 +66,12 @@
           <figcaption>An illustration of the kind of forgery in the dataset: one digit moved, an image that still looks clean. Read as a set of entities and relations, the receipt contradicts itself.</figcaption>
         </figure>
 
-        <p>Read as a bag of words, a forged receipt is almost identical to the real one. Read as a set of claims that have to agree with each other, it is not. In a second paper we gave a language model the receipt three ways: as raw text, as extracted entities, and as triples built from a small ontology of shops, products, prices and totals. How well forgeries were caught depended on which entities and relations the model could see (Tornés et al., 2023b). The evidence is not in any single field. It is in whether the fields still hold together.</p>
+        <p>Read as a bag of words, a forged receipt is almost identical to the real one. Read as a set of claims that have to agree with each other, it is not. In a second paper we gave a language model the receipt three ways: as raw text, as extracted entities, and as triples built from a small ontology of shops, products, prices and totals. How well forgeries were caught depended on which entities and relations the model could see (Tornés et al., 2023b). The proof is not in any single field. It is in whether the fields still hold together.</p>
         <p>Car insurance claims make the same point from the other direction. Most of what an insurer holds is a table: dates, amounts, vehicle, policy. To use a language model at all, we had to serialise those tables into text, and the way we flattened them changed what the model could learn (Telnoff et al., 2023). Turning a record into a sentence is already an interpretation.</p>
 
         <h2>A page is not a photo</h2>
-        <p>Even the explanation of a decision has to respect where the evidence sits. LIME, a popular explanation method, hides regions of an image and watches how the classifier's answer changes. The regions usually come from superpixel algorithms designed for photographs, where pixels of similar colour belong together. On a document page, that logic cuts words in half and joins lines that have nothing to do with each other.</p>
-        <p>The standard benchmark for this, RVL-CDIP, has its own history. Its pages come from the Legacy Tobacco Documents Library, industry papers made public through the 1998 tobacco settlement: documents that were, quite literally, evidence before they became training data.</p>
+        <p>Even the explanation of a decision has to respect where the proof sits. LIME, a popular explanation method, hides regions of an image and watches how the classifier's answer changes. The regions usually come from superpixel algorithms designed for photographs, where pixels of similar colour belong together. On a document page, that logic cuts words in half and joins lines that have nothing to do with each other.</p>
+        <p>The standard benchmark for this, RVL-CDIP, has its own history. Its pages come from the Legacy Tobacco Documents Library, industry papers made public through the 1998 tobacco settlement: documents that were, quite literally, court exhibits before they became training data.</p>
 
         <figure class="article-figure seg-fig reveal" aria-label="Consistency of LIME explanations for four segmentations: Quickshift 0.43, SLIC 0.79, OCR boxes 0.93, 4 by 4 grid 0.98">
           <div class="seg-grid">
@@ -99,7 +99,7 @@
           <figcaption>Four ways to cut the same invoice into regions (sketched here), and how often repeated LIME runs agree on the explanation (consistency, 0 to 1). Segmenters built for photographs are the least stable; compact, text-aligned regions are the most. Telnoff et al., XAI Workshop @ IJCAI 2026.</figcaption>
         </figure>
 
-        <p>So we measured it, varying the segmentation, the sampling and the surrogate model one at a time. The segmentation mattered most. On the same invoice, the agreement between repeated explanations went from 0.43 with Quickshift to 0.93 with regions built from OCR text boxes and 0.98 with a plain grid (Telnoff et al., 2026). The segmentation is not a preprocessing detail. It decides what an explanation is allowed to talk about. If it cannot point to “this line, this total, this signature”, it is not pointing to evidence.</p>
+        <p>So we measured it, varying the segmentation, the sampling and the surrogate model one at a time. The segmentation mattered most. On the same invoice, the agreement between repeated explanations went from 0.43 with Quickshift to 0.93 with regions built from OCR text boxes and 0.98 with a plain grid (Telnoff et al., 2026). The segmentation is not a preprocessing detail. It decides what an explanation is allowed to talk about. If it cannot point to “this line, this total, this signature”, it is not pointing to anything.</p>
 
         <h2>Who said it, where, and when</h2>
         <p>Epidemic surveillance runs on documents too. Long before official figures, outbreaks show up in local news, in many languages, often in places with little annotated data. Several of our papers worked on finding those reports and pulling out the disease and the location they mention, across languages and at the level of individual words (Mutuvi et al., 2020; 2021).</p>
@@ -125,7 +125,7 @@
         </figure>
         <p>An alert that says “cholera, somewhere, recently” is not useful. What an analyst needs is the sentence, the newspaper, the date and the place, so that the signal can be checked against other sources before anyone acts on it. Even the way a model splits words into tokens changes what it can find in low-resource languages (Mutuvi et al., 2023): the same report can produce an alert or nothing, depending on choices that nobody downstream will ever see.</p>
 
-        <h2>Edits are evidence too</h2>
+        <h2>Edits are part of the record</h2>
         <p>Some documents are never finished. A Wikipedia article is the sum of every revision ever made to it, and that history is part of what it says.</p>
 
         <figure class="article-figure diff-fig reveal" aria-label="Two Wikipedia edits: offensive becomes counter-offensive; a cited quotation is deleted while the claim stays">
@@ -137,7 +137,7 @@
             <p class="diff-tag">Epistemic</p>
             <p class="diff-text">…the outskirts [okraina] of Russia <del>(Pivtorak 2001)</del><span class="diff-note">claim kept, source gone</span></p>
           </div>
-          <figcaption>Two revisions from English Wikipedia articles on Ukrainian heritage. Neither adds anything false. The first can shift who is seen as attacking; the second keeps the claim and removes its evidence. Garambois, Tamrazyan &amp; Boros, SIGIR 2026.</figcaption>
+          <figcaption>Two revisions from English Wikipedia articles on Ukrainian heritage. Neither adds anything false. The first can shift who is seen as attacking; the second keeps the claim and removes its source. Garambois, Tamrazyan &amp; Boros, SIGIR 2026.</figcaption>
         </figure>
 
         <p>With Hamest Tamrazyan and M. Garambois we followed Ukrainian cultural heritage on English Wikipedia: from 25 seed concepts such as the Kyiv Pechersk Lavra, the Holodomor and Crimea, to 40 articles and their complete histories, 69,908 revisions by 19,769 editors. A language model restated and labelled every edit, and two experts checked thousands of them by hand. About one revision in five reshaped who is seen to have made, inherited or lost a heritage (Garambois et al., 2026; Tamrazyan et al., to appear).</p>
@@ -150,7 +150,7 @@
         <p>None of this needs exotic methods. It needs systems that refuse to drop the link between a claim and where it came from:</p>
         <ul>
           <li><strong>Point back to the source.</strong> Every extracted value should carry its page, region, sentence or revision, so a person can check it in one click.</li>
-          <li><strong>Model relations, not only fields.</strong> A total that does not match its items is evidence; neither number alone is.</li>
+          <li><strong>Model relations, not only fields.</strong> A total that does not match its items is a clue; neither number alone is.</li>
           <li><strong>Explain in the document's own units.</strong> Lines, cells, blocks and signatures, not colour patches.</li>
           <li><strong>Keep time and authorship.</strong> When something was written, edited or reported is part of what it means.</li>
           <li><strong>Treat flattening as interpretation.</strong> Turning a table or a page into text decides what a model can see; record how it was done.</li>
@@ -188,6 +188,6 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202611030037"></script>
+  <script src="../script.js?v=202611031132"></script>
 </body>
 </html>

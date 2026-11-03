@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LLMs in archives · Emanuela Boros</title>
 <script>document.documentElement.classList.add('js');</script>
-  <meta name="description" content="A short essay on large language models, archives, evidence, OCR trouble, and useful suspicion." />
+  <meta name="description" content="A short essay on large language models, archives, provenance, OCR trouble, and useful suspicion." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../style.css?v=202611030037" />
+  <link rel="stylesheet" href="../style.css?v=202611031132" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -92,7 +92,7 @@
         <h2>Why fluency is the problem</h2>
         <p>Before correction, the damage is visible. <em>Missus. Moat</em> looks odd; a careful reader or a quality filter can flag it. After a fluent correction, the damage is invisible. If the model writes <em>Messrs. Moat</em>, or swaps a rare local name for a famous one, the sentence is grammatical and confident and nobody will look twice.</p>
         <p>That is the opposite of what an archive is for. Its value sits in the rare: the minor merchant, the misspelled village, the odd period spelling, the name that appears once. These are exactly the tokens a model trained to predict likely text is pulled away from. Even classic spelling correction has this habit of replacing correct but rare words, names especially, with more frequent ones; generative models do it with far more conviction.</p>
-        <p>The same pattern appears beyond OCR. When we asked ChatGPT to find entities in historical documents, the answer was: yes, but (Gonz&aacute;lez-Gallardo et al., 2023). In the HIPE-2026 evaluation on who was where, and when, the hardest part for the 17 participating teams was not the noisy text. It was telling explicit evidence from plausible inference (Opitz et al., 2026). Models are very good at plausible.</p>
+        <p>The same pattern appears beyond OCR. When we asked ChatGPT to find entities in historical documents, the answer was: yes, but (Gonz&aacute;lez-Gallardo et al., 2023). In the HIPE-2026 evaluation on who was where, and when, the hardest part for the 17 participating teams was not the noisy text. It was telling what a text explicitly says from plausible inference (Opitz et al., 2026). Models are very good at plausible.</p>
 
         <h2>Useful, though</h2>
         <p>None of this means LLMs have no place in archives. Since 2024 the picture has moved quickly. Models tuned on pairs of OCR and corrected text can more than halve the character errors on nineteenth-century English newspapers (Thomas et al., 2024). Vision-language models that read the page image again, rather than patching the old text, now come close to the ground truth on printed pages (Semnani et al., 2025).</p>
@@ -155,7 +155,7 @@
 
       <section class="project-nav panel panel-cream">
         <a href="../writing.html">← Writing index</a>
-        <a href="documents-are-evidence.html">Documents are evidence →</a>
+        <a href="documents-are-witnesses.html">Documents are witnesses →</a>
       </section>
     </main>
 
@@ -164,6 +164,6 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202611030037"></script>
+  <script src="../script.js?v=202611031132"></script>
 </body>
 </html>
