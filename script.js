@@ -148,9 +148,9 @@ document.querySelectorAll('.lang-toggle').forEach((btn) => {
   show(0);
 })();
 
-// personal-text animations: play when scrolled to, again if the text is closed and reopened
+// small text animations (personal texts and the story): play when scrolled to, again if the text is closed and reopened
 (() => {
-  const figures = document.querySelectorAll('.personal-text .pa');
+  const figures = document.querySelectorAll('.personal-text .pa, .story .pa, .story .sketch');
   if (!figures.length) return;
   const seen = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
