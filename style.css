@@ -1091,6 +1091,7 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 .pv-text p { margin: 0 0 .9rem; font-size: .92rem; line-height: 1.55; color: var(--ink-2); }
 .pub-list .pv-more, .pub-list .pv-more:hover { display: inline; padding: 0; background: none; font-family: var(--mono); font-size: .72rem; color: var(--accent); }
 .pub-list .pv-more:hover { text-decoration: underline; }
+.pub-list .pv-more + .pv-more { margin-left: 1rem; }
 .pv-fig p { margin: 0; }
 @keyframes pvIn { from { opacity: 0; transform: translateY(6px); } }
 @keyframes pvGrow { from { transform: scaleX(0); } }
