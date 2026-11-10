@@ -107,11 +107,12 @@ const TYPE_LABELS = {
 
 // Venue rankings: CORE 2023 for conferences, SCImago quartile for journals.
 // Only main-track papers; workshops, Findings and competitions are not ranked.
+// KDIR is a track of IC3K (CORE C). JCDL, ICADL, SoICT and ICCP have no CORE 2023 rank.
 const RANKS = [
   [/^(ACL|EMNLP|SIGIR) /, 'CORE A*'],
   [/^(ECIR|ICDAR) /, 'CORE A'],
   [/^(COLING|CoNLL|TPDL|ICFHR) /, 'CORE B'],
-  [/^(CICLing|NLDB) /, 'CORE C'],
+  [/^(CICLing|NLDB|KDIR) /, 'CORE C'],
   [/^JASIST$/, 'SJR Q1'],
   [/^International Journal on Digital Libraries/, 'SJR Q2'],
 ];
