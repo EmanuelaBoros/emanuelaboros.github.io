@@ -239,6 +239,21 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     el.innerHTML = sorted.map(([label, n, bg], i) => `<div class="count-bar" title="${escape(label)}: ${n}"><span>${escape(label)}</span><b><i style="width:${(n / sorted[0][1]) * 100}%;${bg};--i:${i}"></i></b><em>${n}</em></div>`).join('');
   };
 
+  // Themes page: every paper of a theme, newest first (replaces the hand-picked fallback list)
+  const themeIds = { 'semantic-extraction': 'semantic', 'applied-document-intelligence': 'applied', 'noisy-documents': 'noisy', 'multimodality': 'multimodal', 'historical-ai': 'historical', 'cultural-heritage': 'cultural' };
+  Object.entries(themeIds).forEach(([id, theme]) => {
+    const ul = document.querySelector(`#${id} .paper-list`);
+    if (!ul) return;
+    const papers = PUBLICATIONS.filter((p) => p.theme === theme);
+    ul.innerHTML = papers.map((p) => {
+      const link = p.page || p.url;
+      const title = link ? `<a href="${link}"${p.url && !p.page ? ' target="_blank" rel="noopener"' : ''}>${escape(p.title)}</a>` : `<a>${escape(p.title)}</a>`;
+      return `<li>${title}<span>${escape(p.short || p.venue.replace(/,? (19|20)\d{2}$/, ''))} ${p.year}</span></li>`;
+    }).join('');
+    const h = ul.previousElementSibling;
+    if (h && h.tagName === 'H3') h.textContent = `Papers (${papers.length})`;
+  });
+
   // Homepage: only the selected papers, marked home: true, newest first
   const homeList = document.getElementById('homePubs');
   if (homeList) {
