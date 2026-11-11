@@ -632,7 +632,6 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .pub-type { font-family: var(--mono); font-size: .64rem; letter-spacing: .03em; padding: .1rem .45rem; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); }
 .pub-rank { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
 .pub-rank[data-rank="A*"], .pub-rank[data-rank="Q1"] { background: var(--accent); color: var(--paper); border-color: var(--accent); }
-.pub-has-notes { border-color: var(--accent); color: var(--accent); }
 .pub-cites { text-align: right; font-family: var(--serif); font-size: 1.3rem; line-height: 1.1; color: var(--ink); }
 .pub-cites small { display: block; font-family: var(--mono); font-size: .6rem; color: var(--muted); letter-spacing: .05em; }
 @media (max-width: 640px) {

@@ -318,7 +318,6 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
       const rank = rankOf(p);
       if (rank) tags.push(`<span class="pub-type pub-rank" data-rank="${rank.split(' ')[1]}" title="${rank.startsWith('CORE') ? 'CORE 2023 conference rank' : 'SCImago journal quartile'}">${rank}</span>`);
       if (p.lang === 'fr') tags.push('<span class="pub-type">FR</span>');
-      if (p.page) tags.push('<span class="pub-type pub-has-notes">notes + figures</span>');
       return `<li class="pub-item" data-type="${p.type}" data-ranked="${rank ? 'yes' : 'no'}" data-lang="${p.lang || 'en'}" data-text="${escape((p.title + ' ' + p.authors + ' ' + p.venue).toLowerCase())}">
         <div class="pub-main"><h3>${title}</h3><p class="pub-authors">${boldMe(p.authors)}</p>
         <p class="pub-meta"><span class="pub-venue-name">${escape(p.venue)}</span>${tags.join('')}</p></div>
