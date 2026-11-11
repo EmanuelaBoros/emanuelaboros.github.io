@@ -274,6 +274,30 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     }
   });
 
+  // Themes page: order cards, sections and legend by number of papers (ties keep page order)
+  const cardsWrap = document.querySelector('.card-grid');
+  if (cardsWrap && document.getElementById('semantic-extraction')) {
+    const size = (id) => PUBLICATIONS.filter((p) => p.theme === themeIds[id]).length;
+    const ids = Object.keys(themeIds).sort((a, b) => size(b) - size(a));
+    ids.forEach((id, i) => {
+      const card = cardsWrap.querySelector(`a[href="#${id}"]`);
+      cardsWrap.append(card);
+      card.querySelector('.card-number').textContent = String(i + 1).padStart(2, '0');
+    });
+    const secs = ids.map((id) => document.getElementById(id));
+    const after = secs[0].parentElement.querySelector('.project-nav');
+    secs.forEach((sec, i) => {
+      after.before(sec);
+      sec.classList.toggle('panel-cream', i % 2 === 0);
+      sec.classList.toggle('panel-white', i % 2 === 1);
+    });
+    const legend = document.querySelector('.subject-legend');
+    if (legend) ids.forEach((id) => {
+      const item = legend.querySelector(`.subject-${themeIds[id]}`)?.parentElement;
+      if (item) legend.append(item);
+    });
+  }
+
   // Homepage: only the selected papers, marked home: true, newest first
   const homeList = document.getElementById('homePubs');
   if (homeList) {
