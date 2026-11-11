@@ -597,6 +597,7 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .pub-chart svg:hover .bar { opacity: .55; }
 .pub-chart svg .bar:hover { opacity: 1; }
 .bar-conf { fill: var(--accent); background: var(--accent); }
+.bar-national { fill: var(--t-applied); background: var(--t-applied); }
 .bar-journal { fill: var(--t-cultural); background: var(--t-cultural); }
 .bar-workshop { fill: var(--t-historical); background: var(--t-historical); }
 .bar-preprint { fill: var(--t-semantic); background: var(--t-semantic); }
