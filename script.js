@@ -160,3 +160,24 @@ document.querySelectorAll('.lang-toggle').forEach((btn) => {
   }, { threshold: 0.5 });
   figures.forEach((f) => seen.observe(f));
 })();
+
+// photography previews: short looping clips laid over the cover photo; they play only while on screen
+(() => {
+  const cards = document.querySelectorAll('.photo-card[data-video]');
+  if (!cards.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      const v = e.target.querySelector('video');
+      if (e.isIntersecting) {
+        if (!v) {
+          const clip = document.createElement('video');
+          clip.src = e.target.dataset.video;
+          clip.muted = true; clip.loop = true; clip.playsInline = true; clip.preload = 'auto'; clip.setAttribute('aria-hidden', 'true');
+          clip.addEventListener('canplay', () => { clip.classList.add('is-ready'); clip.play().catch(() => {}); }, { once: true });
+          e.target.querySelector('.frame').prepend(clip);
+        } else v.play().catch(() => {});
+      } else if (v) v.pause();
+    });
+  }, { threshold: 0.25 });
+  cards.forEach((c) => io.observe(c));
+})();
