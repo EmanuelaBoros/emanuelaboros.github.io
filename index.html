@@ -51,25 +51,15 @@
 My work is on AI for difficult documents: receipts and insurance claims, epidemic reports, news and social media, historical newspapers and archives. I build methods to extract people, places, events and relations from them, and I measure what models miss, invent or flatten along the way.
 </p>
 </div>
-<figure aria-label="Illustration: a noisy newspaper line, an altered receipt, an epidemic report and a social media post are corrected, read and indexed" class="clipping reveal" style="--delay:.15s">
+<figure aria-label="Illustration: an altered receipt, a noisy newspaper line, an epidemic report and a social media post are corrected, read and indexed" class="clipping reveal" style="--delay:.15s">
 <div class="clipping-sheets">
 <div class="clipping-types">
-<button aria-pressed="true" class="clipping-type is-active" type="button">historical newspaper</button>
-<button aria-pressed="false" class="clipping-type" type="button">receipt</button>
+<button aria-pressed="true" class="clipping-type is-active" type="button">receipt</button>
+<button aria-pressed="false" class="clipping-type" type="button">historical newspaper</button>
 <button aria-pressed="false" class="clipping-type" type="button">epidemic report</button>
 <button aria-pressed="false" class="clipping-type" type="button">social media post</button>
 </div>
 <div class="clipping-sheet is-active">
-<p class="clipping-text"><span class="ent ent-loc" data-type="place" style="--d:0s">La Roche<span class="fix" style="--f:0s"><s>1</s><ins>l</ins></span>le</span>, <span class="ent ent-date" data-type="date" style="--d:.2s"><span class="fix" style="--f:.2s"><s>l</s><ins>1</ins></span>4 juillet 189<span class="fix" style="--f:.4s"><s>O</s><ins>0</ins></span></span>. — Le <span class="ent ent-org" data-type="organisation" style="--d:.4s">Cons<span class="fix" style="--f:.6s"><s>c</s><ins>e</ins></span>il municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="place" style="--d:.6s">Hôtel de Vi<span class="fix" style="--f:.8s"><s>11</s><ins>ll</ins></span>e</span>.</p>
-<ol class="clipping-index">
-<li class="whole" style="--d:0s"><span>Meeting of the city council</span><i></i><span>event</span></li>
-<li style="--d:0s"><span>La Rochelle</span><i></i><span>place</span></li>
-<li style="--d:.2s"><span>1890-07-14</span><i></i><span>date</span></li>
-<li style="--d:.4s"><span>Conseil municipal</span><i></i><span>organisation</span></li>
-<li style="--d:.6s"><span>Hôtel de Ville</span><i></i><span>place</span></li>
-</ol>
-</div>
-<div class="clipping-sheet">
 <p class="clipping-text"><span class="ent ent-org" data-type="company" style="--d:0s">Épicer<span class="fix" style="--f:0s"><s>1</s><ins>i</ins></span>e du Port</span> · <span class="ent ent-date" data-type="date" style="--d:.2s">14/03/2023</span> · <span class="ent ent-loc" data-type="product" style="--d:.4s">café 5,10</span> · <span class="ent ent-loc" data-type="product" style="--d:.6s">pain 2,40</span> · <span class="ent ent-date" data-type="amounts to" style="--d:.8s">TOTAL <span class="fix" style="--f:.4s"><s>9,50</s><ins>≠ 7,50</ins></span></span></p>
 <ol class="clipping-index">
 <li class="whole" style="--d:0s"><span>café + pain = 7,50, but the total says 9,50</span><i></i><span>altered?</span></li>
@@ -77,6 +67,16 @@ My work is on AI for difficult documents: receipts and insurance claims, epidemi
 <li style="--d:.2s"><span>2023-03-14</span><i></i><span>date</span></li>
 <li style="--d:.4s"><span>café, 5,10</span><i></i><span>product</span></li>
 <li style="--d:.6s"><span>pain, 2,40</span><i></i><span>product</span></li>
+</ol>
+</div>
+<div class="clipping-sheet">
+<p class="clipping-text"><span class="ent ent-loc" data-type="place" style="--d:0s">La Roche<span class="fix" style="--f:0s"><s>1</s><ins>l</ins></span>le</span>, <span class="ent ent-date" data-type="date" style="--d:.2s"><span class="fix" style="--f:.2s"><s>l</s><ins>1</ins></span>4 juillet 189<span class="fix" style="--f:.4s"><s>O</s><ins>0</ins></span></span>. — Le <span class="ent ent-org" data-type="organisation" style="--d:.4s">Cons<span class="fix" style="--f:.6s"><s>c</s><ins>e</ins></span>il municipal</span> s’est réuni à l’<span class="ent ent-loc" data-type="place" style="--d:.6s">Hôtel de Vi<span class="fix" style="--f:.8s"><s>11</s><ins>ll</ins></span>e</span>.</p>
+<ol class="clipping-index">
+<li class="whole" style="--d:0s"><span>Meeting of the city council</span><i></i><span>event</span></li>
+<li style="--d:0s"><span>La Rochelle</span><i></i><span>place</span></li>
+<li style="--d:.2s"><span>1890-07-14</span><i></i><span>date</span></li>
+<li style="--d:.4s"><span>Conseil municipal</span><i></i><span>organisation</span></li>
+<li style="--d:.6s"><span>Hôtel de Ville</span><i></i><span>place</span></li>
 </ol>
 </div>
 <div class="clipping-sheet">
