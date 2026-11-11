@@ -252,6 +252,26 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     }).join('');
     const h = ul.previousElementSibling;
     if (h && h.tagName === 'H3') h.textContent = `Papers (${papers.length})`;
+
+    // Small papers-per-year plot under the theme description
+    const tags = document.querySelector(`#${id} .thing-tags`);
+    if (tags && !document.querySelector(`#${id} .theme-mini`)) {
+      const first = Math.min(...PUBLICATIONS.map((p) => p.year)), last = Math.max(...PUBLICATIONS.map((p) => p.year));
+      const years = []; for (let y = first; y <= last; y++) years.push(y);
+      const counts = years.map((y) => papers.filter((p) => p.year === y).length);
+      const top = Math.max(...counts), W = 600, H = 90, base = 68, bw = W / years.length;
+      const bars = years.map((y, i) => {
+        const n = counts[i], h = n ? Math.max(4, (n / top) * (base - 16)) : 0;
+        return `<g><title>${y}: ${n} ${n === 1 ? 'paper' : 'papers'}</title>`
+          + (n ? `<rect x="${i * bw + bw * 0.16}" y="${base - h}" width="${bw * 0.68}" height="${h}" rx="2" style="--i:${i}"/><text class="mini-n" x="${i * bw + bw / 2}" y="${base - h - 4}" text-anchor="middle">${n}</text>` : `<line x1="${i * bw + bw * 0.3}" x2="${i * bw + bw * 0.7}" y1="${base - 0.5}" y2="${base - 0.5}"/>`)
+          + (y % 3 === first % 3 || y === last ? `<text class="mini-y" x="${i * bw + bw / 2}" y="${H - 8}" text-anchor="middle">${y}</text>` : '') + '</g>';
+      }).join('');
+      const fig = document.createElement('figure');
+      fig.className = 'theme-mini';
+      fig.style.setProperty('--c', `var(--t-${theme})`);
+      fig.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Papers per year, ${papers.length} in total">${bars}<line class="mini-axis" x1="0" x2="${W}" y1="${base}" y2="${base}"/></svg><figcaption>Papers per year</figcaption>`;
+      tags.after(fig);
+    }
   });
 
   // Homepage: only the selected papers, marked home: true, newest first

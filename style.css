@@ -1199,3 +1199,12 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 .lightbox-caption { color: #cfcac0; font-family: var(--mono); font-size: .76rem; margin-top: .8rem; text-align: center; }
 .lightbox-close { position: absolute; top: -14px; right: -14px; width: 38px; height: 38px; border-radius: 50%; border: 0; background: #fff; color: #111; font-size: 1.3rem; cursor: pointer; }
 .portfolio-plate img, .photo-card img, .lightbox img { -webkit-user-drag: none; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+
+.theme-mini { margin: 1.4rem 0 1.6rem; }
+.theme-mini svg { display: block; width: 100%; max-width: 640px; height: auto; overflow: visible; }
+.theme-mini rect { fill: color-mix(in srgb, var(--c) 55%, var(--paper)); stroke: var(--c); stroke-width: 1; }
+.theme-mini line { stroke: var(--rule-strong); stroke-width: 1; }
+.theme-mini .mini-axis { stroke: var(--rule-strong); }
+.theme-mini text { font-family: var(--mono); font-size: 10px; fill: var(--muted); }
+.theme-mini .mini-n { fill: var(--ink-2); }
+.theme-mini figcaption { margin-top: .2rem; font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--muted); }
