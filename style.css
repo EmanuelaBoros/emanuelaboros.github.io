@@ -490,7 +490,9 @@ footer a { color: var(--muted); }
 .project-detail::before { content: ""; grid-column: 1; width: 28px; height: 3px; background: var(--c, var(--accent)); margin-bottom: .4rem; border-radius: 2px; }
 #noisy-documents { --c: var(--t-noisy); } #semantic-extraction { --c: var(--t-semantic); } #historical-ai { --c: var(--t-historical); }
 #cultural-heritage { --c: var(--t-cultural); } #multimodality { --c: var(--t-multimodal); } #applied-document-intelligence { --c: var(--t-applied); }
-.project-detail > .research-block { grid-row: 1 / span 5; }
+.project-detail { grid-template-rows: repeat(5, auto) 1fr; }
+.project-detail > .research-block { grid-row: 1 / span 6; }
+.project-detail > .theme-mini { grid-column: 1; }
 @media (max-width: 860px) { .project-detail { grid-template-columns: 1fr; } .project-detail > * { grid-column: 1 !important; grid-row: auto !important; } }
 .research-block h3 { font-family: var(--mono); font-size: .74rem; font-weight: 400; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 .8rem; }
 .research-block h3 ~ h3 { margin-top: 2rem; }
