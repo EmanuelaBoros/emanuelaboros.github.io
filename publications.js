@@ -107,10 +107,11 @@ const TYPE_LABELS = {
 };
 
 // Venue rankings: CORE 2023 for conferences, SCImago quartile for journals.
-// Main-track and Findings papers take their conference rank; workshops and competitions are not ranked.
+// Main-track papers take their conference rank, Findings one tier below (A); workshops and competitions are not ranked.
 // KDIR is a track of IC3K (CORE C). JCDL, ICADL, SoICT and ICCP have no CORE 2023 rank.
 const RANKS = [
-  [/^(Findings of )?(ACL|EMNLP|SIGIR) /, 'CORE A*'],
+  [/^Findings of (ACL|EMNLP) /, 'CORE A'],
+  [/^(ACL|EMNLP|SIGIR) /, 'CORE A*'],
   [/^(ECIR|ICDAR) /, 'CORE A'],
   [/^(COLING|CoNLL|TPDL|ICFHR) /, 'CORE B'],
   [/^(CICLing|NLDB|KDIR) /, 'CORE C'],
