@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why a language model can sound sure and be wrong · Emanuela Boros</title>
 <script>document.documentElement.classList.add('js');</script>
-  <meta name="description" content="Fluent text is not evidence. A short note on why I like models that show where an answer comes from." />
+  <meta name="description" content="An animated walk-through of a language model repairing a damaged newspaper line: it picks the likeliest word, writes it fluently, and is wrong." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css?v=202611031742" />
+  <link rel="stylesheet" href="stepper.css?v=1" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -33,15 +34,26 @@
         <a class="back-link" href="../writing.html">← back to writing</a>
         <p class="section-label">In plain words</p>
         <h1>Why a language model can sound sure and be wrong</h1>
-        <p class="post-date">In plain words · November 2026 · about 2 minutes</p>
+        <p class="post-date">In plain words · November 2026 · about 3 minutes</p>
         <div class="article-bubbles"><span>LLMs</span><span>provenance</span><span>uncertainty</span></div>
-        <p class="article-lede">Fluent text is not evidence. A short note on why I like models that show where an answer comes from.</p>
-        <p>A large language model is trained to produce text that sounds like a good continuation of what came before. That is a different goal from being right. Most of the time the two go together. Sometimes they do not, and the model sounds exactly as confident in both cases.</p>
-        <h2>The archive problem</h2>
-        <p>In an archive, the difference matters. If a model “repairs” a damaged line of a newspaper, the result may read beautifully and still say something the page never said. It may change a name, modernise a spelling, or fill a gap with the most likely word instead of the true one.</p>
-        <h2>What I ask of a system</h2>
-        <p>Keep the trace. Show the original next to the correction, say what was changed, and keep a way to go back to the source. A fluent answer is a starting point for checking, not the end of it.</p>
-        <p>See also: <a href="llms-in-archives.html">LLMs in archives: fluent, useful, suspicious</a>.</p>
+        <p class="article-lede">Fluent text is not evidence. Here is how a model can repair a line beautifully and get it wrong.</p>
+        <p>A large language model is trained to write text that sounds like a good continuation of what came before. That is not the same as being right. Press play to watch it repair a damaged line.</p>
+
+        <div class="st" id="st">
+          <div class="stage" id="stage" aria-live="polite"></div>
+          <section class="cap"><h2 id="caph"></h2><p id="capp"></p></section>
+          <div class="ctrl">
+            <button id="prev">Back</button>
+            <button id="play" class="primary">Play</button>
+            <button id="next">Next</button>
+            <div class="dotsnav" id="nav" role="group" aria-label="Steps"></div>
+          </div>
+          <p class="foot">Illustrative example with invented numbers. The names are made up for the demonstration.</p>
+        </div>
+
+        <h2>What to take from it</h2>
+        <p>A model makes the same confident noise when it reads a word and when it guesses one. In an archive that matters: a repaired name, date or place can change what the document seems to say. I ask of any system that it keeps the trace, shows what changed and stays checkable against the source. A fluent answer is a place to start checking, not to stop.</p>
+        <p>See also: <a href="llms-in-archives.html">LLMs in archives: fluent, useful, suspicious</a> and <a href="documents-are-witnesses.html">Documents are witnesses, not just data</a>.</p>
       </article>
     </main>
 
@@ -50,6 +62,26 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202611031742"></script>
+    <script src="../script.js?v=202611031742"></script>
+  <script src="stepper.js?v=1"></script>
+  <script>
+
+function lbl(t){return '<p class="rowlabel">'+t+'</p>'}
+function bars(rows){return '<div class="bars">'+rows.map(function(r,i){return '<div class="bar'+(r[3]?' top':'')+'"><span>'+r[0]+'</span><span class="trk"><span class="fill grow" style="--w:'+r[1]+'%;--c:'+(r[2]||'var(--t-cultural)')+';--d:'+i*130+'"></span></span><span class="v">'+r[1]+'%</span></div>'}).join('')+'</div>'}
+var GAP='<span style="display:inline-block;width:5.2em;height:1.05em;vertical-align:-.15em;background:repeating-linear-gradient(45deg,var(--paper-2),var(--paper-2) 4px,var(--rule-strong) 4px,var(--rule-strong) 5px);border-radius:3px"></span>';
+Stepper({steps:[
+ {h:'A line with a hole in it',p:'A newspaper line is damaged: a stain has covered one word. We ask a language model to repair the line.',
+  render:function(){return lbl('The page')+'<div class="line in">“Monsieur '+GAP+' a écrit hier au maire.”</div>'}},
+ {h:'The model weighs the options',p:'A language model scores possible words by how well they fit the sentence, not by what the page shows. Surnames that are common in French newspapers score highest.',
+  render:function(){return lbl('Likely words for the gap')+bars([['Dupont',41,'var(--t-cultural)',1],['Durand',33],['Dubois',26]])}},
+ {h:'It writes the likeliest one',p:'The output is smooth and plausible. Nothing in the sentence shows that one word was guessed rather than read.',
+  render:function(){return lbl('Model output')+'<div class="line in">“Monsieur <b style="border-bottom:3px solid var(--t-cultural)">Dupont</b> a écrit hier au maire.”</div>'+lbl('How it reads')+'<div class="bars"><div class="bar"><span>Fluency</span><span class="trk"><span class="fill grow" style="--w:96%;--c:var(--t-historical)"></span></span><span class="v">high</span></div></div>'}},
+ {h:'But the page said something else',p:'The real name under the stain was <em>Duvoisin</em>, a rarer surname that was not among the options at all. A fluent sentence is not evidence that the word is right.',
+  render:function(){return lbl('What the page really said')+'<div class="line">“Monsieur <b class="bad">Duvoisin</b> a écrit hier au maire.”</div>'+lbl('What the model wrote')+'<div class="line">“Monsieur Dupont a écrit hier au maire.”</div>'+'<div class="bars"><div class="bar"><span>Fluency</span><span class="trk"><span class="fill" style="--w:96%;--c:var(--t-historical)"></span></span><span class="v">high</span></div><div class="bar"><span>Correct</span><span class="trk"><span class="fill" style="--w:0%;--c:var(--accent)"></span></span><span class="v">no</span></div></div>'}},
+ {h:'Keep the trace',p:'The fix is not a better-sounding model. It is a record: say what was guessed, how unsure the system was, and where the original is, so that someone can check.',
+  render:function(){return lbl('What a repair should keep')+'<div class="note in" style="display:grid;gap:.4rem"><span><b>Page shows:</b> <code>▒▒▒▒▒</code> (unreadable, line 4)</span><span><b>Model wrote:</b> <code>Dupont</code></span><span><b>Status:</b> <span class="tag" style="background:var(--t-semantic);margin-left:0">guessed · 41%</span></span><span><b>Original:</b> <code>page 3, crop 12</code></span></div>'}}
+],interval:5000});
+
+  </script>
 </body>
 </html>

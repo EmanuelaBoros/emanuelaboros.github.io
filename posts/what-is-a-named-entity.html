@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is a named entity, and why is “Paris” hard? · Emanuela Boros</title>
 <script>document.documentElement.classList.add('js');</script>
-  <meta name="description" content="People, places and organisations are the anchors of a text. Finding them is easy for us and surprisingly hard for a machine, especially in historical documents." />
+  <meta name="description" content="An animated walk-through of named entity recognition and linking: finding people and places in a sentence, then deciding which one, with old newspapers as the hard case." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css?v=202611031742" />
+  <link rel="stylesheet" href="stepper.css?v=1" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -33,14 +34,26 @@
         <a class="back-link" href="../writing.html">← back to writing</a>
         <p class="section-label">In plain words</p>
         <h1>What is a named entity, and why is “Paris” hard?</h1>
-        <p class="post-date">In plain words · November 2026 · about 2 minutes</p>
+        <p class="post-date">In plain words · November 2026 · about 4 minutes</p>
         <div class="article-bubbles"><span>named entities</span><span>entity linking</span><span>historical texts</span></div>
         <p class="article-lede">People, places and organisations are the anchors of a text. Finding them is easy for us and surprisingly hard for a machine, especially in historical documents.</p>
-        <p>In a sentence like “the mayor of Lausanne met Mr. Dupont”, the words that point to specific real things, <em>Lausanne</em> and <em>Dupont</em>, are called <strong>named entities</strong>. Finding them is the first step in turning a pile of text into something you can ask questions of: who appears, where, and with whom?</p>
-        <h2>Two separate problems</h2>
-        <p>The first is <strong>recognising</strong> the name: this span of words is a person, that one is a place. The second is <strong>linking</strong> it: which Lausanne, which Dupont? Linking means connecting the mention to an entry in a knowledge base such as Wikidata.</p>
-        <h2>Why history makes it harder</h2>
-        <p>“Paris” can be a city in France, a city in Texas, or a person in a myth. Names were spelled differently, places changed their names or their borders, and many people mentioned in old newspapers have no entry anywhere. Add OCR errors on top, and a system has to guess from very little. A good system should also be able to say “I do not know”.</p>
+        <p>In “Mr. Dupont left Paris for Lausanne in 1893”, some words point to specific real things. Those are <strong>named entities</strong>. Press play to see the two tasks a system has to do with them.</p>
+
+        <div class="st" id="st">
+          <div class="stage" id="stage" aria-live="polite"></div>
+          <section class="cap"><h2 id="caph"></h2><p id="capp"></p></section>
+          <div class="ctrl">
+            <button id="prev">Back</button>
+            <button id="play" class="primary">Play</button>
+            <button id="next">Next</button>
+            <div class="dotsnav" id="nav" role="group" aria-label="Steps"></div>
+          </div>
+          <p class="foot">Toy scores for one illustrative sentence. Real systems rank thousands of candidates, but the logic is the same.</p>
+        </div>
+
+        <h2>What to take from it</h2>
+        <p>Recognising a name and linking it are separate problems, and each fails in its own way. Ambiguity, spelling variation, changing borders and OCR errors all push the same way in historical documents: less evidence, flatter scores. The useful property is not always getting the answer, it is knowing when the answer is uncertain.</p>
+        <p>See also: <a href="what-is-ocr.html">What is OCR, and why does it misread old newspapers?</a></p>
       </article>
     </main>
 
@@ -49,6 +62,30 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202611031742"></script>
+    <script src="../script.js?v=202611031742"></script>
+  <script src="stepper.js?v=1"></script>
+  <script>
+
+var C={P:'var(--t-historical)',L:'var(--t-cultural)',D:'var(--t-semantic)'};
+function span(t,k,name,d){return '<span class="in" style="--d:'+d+';border-bottom:3px solid '+C[k]+';padding-bottom:1px">'+t+'<span class="tag" style="background:'+C[k]+'">'+name+'</span></span>'}
+function bars(rows,thr){return '<div class="bars">'+rows.map(function(r,i){return '<div class="bar'+(r[3]?' top':'')+(r[4]?' low':'')+'"><span>'+r[0]+'</span><span class="trk"><span class="fill grow" style="--w:'+r[1]+'%;--c:'+(r[2]||'var(--t-cultural)')+';--d:'+i*130+'"></span></span><span class="v">'+r[1]+'%</span></div>'}).join('')+'</div>'}
+function lbl(t){return '<p class="rowlabel">'+t+'</p>'}
+var SENT='Mr. Dupont left Paris for Lausanne in 1893.';
+Stepper({steps:[
+ {h:'A plain sentence',p:'To a computer this is a string of characters. It does not know that some of the words point to real people and places.',
+  render:function(){return lbl('Text')+'<div class="line in">'+SENT+'</div>'}},
+ {h:'Recognising: which words are names?',p:'The first task is <strong>recognition</strong>: mark the spans that name a person, a place, an organisation or a date, and say what kind each one is.',
+  render:function(){return lbl('Named entities found')+'<div class="line">'+['Mr. Dupont','left','Paris','for','Lausanne','in','1893'].map(function(w,i){return w==='Mr. Dupont'?span(w,'P','person',0):w==='Paris'?span(w,'L','place',250):w==='Lausanne'?span(w,'L','place',500):w==='1893'?span(w,'D','date',750):w}).join(' ')+'.</div>'}},
+ {h:'Linking: which Paris?',p:'The second task is <strong>linking</strong>: connect the mention to one entry in a knowledge base such as Wikidata. Paris alone is ambiguous, and with no other clue the system can only use how common each meaning is.',
+  render:function(){return lbl('Candidates for “Paris”, no context yet')+bars([['Paris, France',48,'var(--t-cultural)',1],['Paris, Texas',30],['Paris, prince of Troy',22]])}},
+ {h:'Context settles it',p:'The words around the mention help. <em>Lausanne</em> and <em>1893</em> fit a European city far better than a small town in Texas or a figure of myth, so the score for Paris, France jumps.',
+  render:function(){return lbl('Same mention, with the rest of the sentence')+bars([['Paris, France',86,'var(--t-cultural)',1],['Paris, Texas',9],['Paris, prince of Troy',5]])}},
+ {h:'Old newspapers make it harder',p:'Now suppose the text comes from OCR: <em>Pnris</em>, <em>Ieft</em>, <em>Lausane</em>. Names were also spelled in several ways, and many people mentioned in old papers appear in no knowledge base at all. The evidence is thin and the scores are flat.',
+  render:function(){return lbl('OCR text')+'<div class="line"><span>Mr. Dupont </span><b class="bad">Ieft</b> <b class="bad">Pnris</b> for <b class="bad">Lausane</b> in 1893.</div>'+lbl('Candidates for “Pnris”')+bars([['Paris, France',34,'var(--t-cultural)',0],['Pernis, Netherlands',27],['Prins, Sweden',18]])}},
+ {h:'A good system can say “I do not know”',p:'When no candidate is convincing, the honest output is <strong>no link</strong>. A wrong link looks exactly like a right one in the archive, and a gap can be filled later, so abstaining is often the better answer.',
+  render:function(){return lbl('Confidence needed to link: 60%')+bars([['Paris, France',34,'var(--t-cultural)',0,1],['Pernis, Netherlands',27,'',0,1],['Prins, Sweden',18,'',0,1]])+'<div class="note in" style="--d:500"><b>Output:</b> <code>Pnris → no link (NIL)</code>. Left unlinked, flagged for a human.</div>'}}
+],interval:5000});
+
+  </script>
 </body>
 </html>

@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>What is OCR, and why does it misread old newspapers? · Emanuela Boros</title>
 <script>document.documentElement.classList.add('js');</script>
-  <meta name="description" content="OCR is the step that turns a scanned page into text a computer can search. On old print it makes mistakes, and those mistakes travel." />
+  <meta name="description" content="An animated walk-through of how OCR turns a scanned page into text, and how one close call between two letters ends up hiding a place from search." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css?v=202611031742" />
+  <link rel="stylesheet" href="stepper.css?v=1" />
   <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -33,15 +34,26 @@
         <a class="back-link" href="../writing.html">← back to writing</a>
         <p class="section-label">In plain words</p>
         <h1>What is OCR, and why does it misread old newspapers?</h1>
-        <p class="post-date">In plain words · November 2026 · about 2 minutes</p>
+        <p class="post-date">In plain words · November 2026 · about 3 minutes</p>
         <div class="article-bubbles"><span>OCR</span><span>scanning</span><span>old print</span></div>
-        <p class="article-lede">OCR is the step that turns a scanned page into text a computer can search. On old print it makes mistakes, and those mistakes travel.</p>
-        <p>When a library “digitises” a newspaper, it first takes a photograph of every page. A photograph is not text: you cannot search it, copy it or feed it to a language model. <strong>OCR</strong> (optical character recognition) is the software that looks at the picture and writes down the letters it thinks it sees.</p>
-        <h2>Why old pages are hard</h2>
-        <p>Modern OCR is very good on clean, modern print. Historical pages are different: the paper is yellowed or stained, the ink bled through from the other side, the typeface is unusual, and columns are packed tightly together. The software confuses shapes that look alike, such as <em>l</em> and <em>1</em>, or the old long <em>ſ</em> and <em>f</em>.</p>
-        <h2>Why it matters</h2>
-        <p>A small error at the start becomes a bigger one later. If a name is misspelled in the text, a search will not find it, and a system that looks for people and places will not recognise it. Much of my work starts from this point: what can we still do with text that is a little wrong, and how do we avoid trusting it too much?</p>
-        <p>See also: <a href="noise-is-not-always-a-bug.html">Noise is not always a bug</a>.</p>
+        <p class="article-lede">OCR is the step that turns a scan into text a computer can search. On old print it makes small mistakes, and those mistakes travel.</p>
+        <p>A scanned page is a picture. <strong>OCR</strong> (optical character recognition) is the software that reads it. Press play to follow one line through the process.</p>
+
+        <div class="st" id="st">
+          <div class="stage" id="stage" aria-live="polite"></div>
+          <section class="cap"><h2 id="caph"></h2><p id="capp"></p></section>
+          <div class="ctrl">
+            <button id="prev">Back</button>
+            <button id="play" class="primary">Play</button>
+            <button id="next">Next</button>
+            <div class="dotsnav" id="nav" role="group" aria-label="Steps"></div>
+          </div>
+          <p class="foot">Toy numbers for one illustrative line. Real OCR engines give a score for every character in the same way.</p>
+        </div>
+
+        <h2>What to take from it</h2>
+        <p>OCR is very good on clean modern print and much less certain on historical pages: yellowed paper, ink from the other side, unusual typefaces, tight columns. It always gives an answer, and it does not tell you which letters were close calls. A small slip at this first step is invisible later, which is why so much of my work asks what we can still do with text that is a little wrong.</p>
+        <p>See also: <a href="ocr-lost-features.html">Why one OCR mistake switches off a model's features</a> and <a href="noise-is-not-always-a-bug.html">Noise is not always a bug</a>.</p>
       </article>
     </main>
 
@@ -50,6 +62,28 @@
 </footer>
   </div>
 
-  <script src="../script.js?v=202611031742"></script>
+    <script src="../script.js?v=202611031742"></script>
+  <script src="stepper.js?v=1"></script>
+  <script>
+
+var LINE='Monſieur de Viuonne';
+function cells(fn){return '<div class="line" style="display:flex;flex-wrap:wrap;gap:3px">'+LINE.split('').map(fn).join('')+'</div>'}
+var box='display:inline-block;min-width:1.15em;text-align:center;padding:2px 3px;border-radius:4px';
+function lbl(t){return '<p class="rowlabel">'+t+'</p>'}
+Stepper({steps:[
+ {h:'A page is only a picture',p:'A library scans the page. What the computer gets is a grid of grey pixels, not text. You cannot search a picture, so a program has to read it first.',
+  render:function(){return lbl('The scan')+'<div class="in" style="background:#e9dfc8;border:1px solid var(--rule-strong);border-radius:6px;padding:1.4rem 1rem;filter:blur(.6px) sepia(.3);transform:rotate(-.6deg)"><div class="line" style="color:#3a3326">'+LINE+'</div></div>'}},
+ {h:'It cuts the line into letters',p:'The first job of the software is to find where each letter is. It draws a box around every shape it thinks is a character.',
+  render:function(){return lbl('Finding letters')+cells(function(c,i){return c===' '?'<span style="width:.6em"></span>':'<span class="in" style="--d:'+i*70+';'+box+';border:1px solid var(--t-cultural);color:var(--ink)">'+c+'</span>'})}},
+ {h:'It guesses each letter',p:'For every box it compares the shape with the letters it knows and gives each a score. Most boxes are easy. The old long <em>ſ</em> looks a lot like an <em>f</em>, and an <em>o</em> with a smudge looks like a <em>0</em>.',
+  render:function(){return lbl('Scores for two letters')+'<div class="bars">'+
+   [['ſ → <b>f</b>',52,'var(--accent)',1],['ſ → ſ',44,'var(--t-historical)',0],['ſ → s',4,'var(--rule-strong)',0],['o → <b>0</b>',58,'var(--accent)',1],['o → o',40,'var(--t-historical)',0]].map(function(r,i){return '<div class="bar'+(r[3]?' top':'')+'"><span>'+r[0]+'</span><span class="trk"><span class="fill grow" style="--w:'+r[1]+'%;--c:'+r[2]+';--d:'+i*120+'"></span></span><span class="v">'+r[1]+'%</span></div>'}).join('')+'</div>'}},
+ {h:'It keeps the highest score',p:'The software must output one letter per box, so it keeps the top score, even when the winner leads by a few points. Here two close calls both go the wrong way.',
+  render:function(){return lbl('What the page really says')+'<div class="line">Monſieur de Viuonne</div>'+lbl('What OCR outputs')+'<div class="line in">Mon<b class="bad">f</b>ieur de Viu<b class="bad">0</b>nne</div>'}},
+ {h:'The error travels',p:'Nothing downstream knows the page said something else. A search for the place name finds nothing, and a program that looks for places does not see one, so the town disappears from the archive.',
+  render:function(){return lbl('Search the digitised text')+'<div class="note in"><code>Viuonne</code> → <b class="bad">0 results</b></div>'+'<div class="line in" style="--d:300">Mon<b class="bad">f</b>ieur de <span style="border-bottom:2px dashed var(--accent)">Viu<b class="bad">0</b>nne</span></div><p class="foot" style="margin:0">A place name the model cannot recognise as a place.</p>'}}
+],interval:5000});
+
+  </script>
 </body>
 </html>
