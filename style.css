@@ -430,6 +430,10 @@ main > .section:first-child, main > .panel:first-child { border-top: 0; }
 .post-list > a:not(.draft-disabled):hover strong, .note-list a:hover h3 { color: var(--accent); }
 .draft-disabled { pointer-events: none; }
 .draft-disabled strong::after, .is-draft h3::after { content: "  · forthcoming"; font-family: var(--mono); font-size: .68rem; color: var(--muted); letter-spacing: .04em; }
+.plain-words .post-list > a { grid-template-columns: 7.5rem minmax(0, 1fr); }
+.plain-words .post-list > a > span.thumb { display: block; padding: 0; color: var(--ink); background: var(--card, transparent); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; align-self: start; }
+.plain-words .thumb svg { display: block; width: 100%; height: auto; }
+@media (max-width: 560px) { .plain-words .post-list > a > span.thumb { max-width: 7.5rem; } }
 @media (max-width: 560px) { .post-list > a, .note-list > li > a, .note-list > li > div { grid-template-columns: 1fr; gap: .3rem; } .post-list em, .note-list p { grid-column: 1; } }
 
 /* ---------- about / contact ---------- */
