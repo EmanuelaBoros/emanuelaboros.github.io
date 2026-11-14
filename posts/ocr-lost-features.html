@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why one OCR mistake switches off a model's features · Emanuela Boros</title>
+<script>document.documentElement.classList.add('js');</script>
+  <meta name="description" content="An animated walk-through of what an OCR error does inside a named entity recognition model: which internal features switch off, and how the damage reaches correct neighbouring words." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../style.css?v=202611031742" />
+  <style>
+.lf{--lamp-off:var(--paper-2);--lamp-on:var(--t-semantic);--lost:var(--accent);--new:var(--t-historical);--hl:var(--t-cultural);margin:2rem 0}
+.lf *{box-sizing:border-box}
+.lf p{margin:0;font-size:inherit;line-height:1.5;color:inherit}
+.lf .stage{background:var(--card);border:1px solid var(--rule);border-radius:var(--radius);padding:1.1rem;min-height:440px;display:flex;flex-direction:column;gap:14px}
+.lf .rowlabel{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 .45rem}
+.lf .row{display:flex;gap:8px}
+.lf .tok{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:6px}
+.lf .chip{font-family:var(--serif);font-size:1.05rem;text-align:center;padding:4px 2px;border:1px solid var(--rule-strong);border-radius:6px;color:var(--ink);overflow-wrap:anywhere;background:var(--paper)}
+.lf .chip.bad{border-color:var(--lost);color:var(--lost)}
+.lf .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:6px;border:1px solid var(--rule);border-radius:6px;background:var(--paper)}
+.lf .lamp{aspect-ratio:1;border-radius:50%;background:var(--lamp-off);border:1px solid var(--rule);transition:background .4s,box-shadow .4s}
+.lf .lamp.on{background:var(--lamp-on);border-color:var(--lamp-on)}
+.lf .lamp.lost{background:var(--lamp-off);border-color:var(--lost);box-shadow:0 0 0 1px var(--lost) inset}
+.lf .lamp.new{background:var(--lamp-on);border-color:var(--new);box-shadow:0 0 0 2px var(--new)}
+.lf .lamp.hl{outline:2px solid var(--hl);outline-offset:2px;animation:lfpulse 1.2s ease-in-out infinite}
+@keyframes lfpulse{50%{outline-offset:4px}}
+.lf .fl{font-family:var(--mono);font-size:.72rem;text-align:center;color:var(--muted);min-height:1.2em}
+.lf .fl b{color:var(--lost);font-weight:500}
+.lf [hidden]{display:none!important}
+.lf .detail{border:1px dashed var(--rule-strong);border-radius:8px;padding:.6rem .8rem;font-size:.9rem;color:var(--ink-2)}
+.lf .detail code{font-family:var(--mono);font-size:.82rem;color:var(--ink)}
+.lf .meter{position:relative;height:30px;margin:24px 4px 6px;background:var(--lamp-off);border-radius:6px}
+.lf .mk{position:absolute;top:-19px;transform:translateX(-50%);font-family:var(--mono);font-size:.68rem;white-space:nowrap}
+.lf .mk::after{content:"";position:absolute;left:50%;top:17px;height:30px;width:2px;background:currentColor}
+.lf .mk.clean{color:var(--lamp-on)} .lf .mk.ocr{color:var(--lost)} .lf .mk.thr{color:var(--muted)}
+.lf .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.78rem;color:var(--muted);font-family:var(--mono)}
+.lf .legend i{display:inline-block;width:11px;height:11px;border-radius:50%;vertical-align:-1px;margin-right:5px;background:var(--lamp-off);border:1px solid var(--rule-strong)}
+.lf .legend .a{background:var(--lamp-on);border-color:var(--lamp-on)} .lf .legend .b{border-color:var(--lost)} .lf .legend .c{background:var(--lamp-on);border-color:var(--new);box-shadow:0 0 0 1px var(--new)}
+.lf .freq{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:520px){.lf .freq{grid-template-columns:1fr}}
+.lf .dots{display:grid;grid-template-columns:repeat(20,1fr);gap:2px}
+.lf .dots span{aspect-ratio:1;background:var(--lamp-off);border-radius:2px}
+.lf .dots span.on{background:var(--lamp-on)}
+.lf .big{font-family:var(--mono);font-size:1.25rem;font-weight:500;color:var(--ink);margin-top:.5rem}
+.lf .cap{margin-top:12px;border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1rem;min-height:128px}
+.lf .cap h2{margin:0 0 .3rem;font-size:1.3rem}
+.lf .cap p{font-size:1.02rem;line-height:1.65;color:var(--ink-2)}
+.lf .ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.lf button{font-family:var(--sans);font-size:.88rem;padding:.5rem .95rem;border-radius:999px;border:1px solid var(--rule-strong);background:var(--card);color:var(--ink);cursor:pointer}
+.lf button:hover{border-color:var(--ink)}
+.lf button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.lf button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.lf button:disabled{opacity:.4;cursor:default}
+.lf .dotsnav{display:flex;gap:6px;margin-left:auto}
+.lf .dotsnav button{padding:0;width:11px;height:11px;border-radius:50%;background:var(--lamp-off);border:1px solid var(--rule-strong)}
+.lf .dotsnav button[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
+.lf .foot{font-size:.8rem;color:var(--muted);margin-top:12px}
+@media (prefers-reduced-motion:reduce){.lf .lamp{transition:none}.lf .lamp.hl{animation:none}}
+</style>
+  <script data-goatcounter="https://emanuelaboros.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <div class="page-frame">
+    <header class="site-header">
+<a aria-label="Home" class="logo" href="../index.html">
+<span class="logo-mark">EB</span>
+<span class="logo-text">Emanuela Boros</span>
+</a>
+<nav aria-label="Main navigation" class="nav">
+<a href="../things.html">Research</a>
+<a href="../publications.html">Publications</a>
+<a href="../writing.html">Writing</a>
+<a href="../photography.html">Photography</a>
+<a href="../index.html#about">About</a>
+</nav>
+</header>
+
+    <main class="article-page-main">
+      <article class="article-panel panel panel-cream">
+        <a class="back-link" href="../writing.html">← back to writing</a>
+        <p class="section-label">In plain words</p>
+        <h1>Why one OCR mistake switches off a model's features</h1>
+        <p class="post-date">In plain words · November 2026 · about 4 minutes</p>
+        <div class="article-bubbles"><span>OCR</span><span>named entities</span><span>interpretability</span></div>
+        <p class="article-lede">When OCR gets one word wrong, the damage does not stay on that word. Here is what happens inside the model, one step at a time.</p>
+        <p>A named entity recogniser reads text and marks the people, places and organisations in it. Inside, it turns every word into a long list of numbers. We can rewrite that list as a row of <strong>features</strong>, think of them as lamps, where each lamp lights up for one pattern, such as “a digit three” or “a surname”. Press play and watch what an OCR error does to the lamps.</p>
+
+        <div class="lf" id="lf">
+<div class="stage" id="stage" aria-live="polite">
+    <div id="bulbview">
+      <p class="rowlabel">Clean text (reference)</p>
+      <div class="row" id="cleanrow"></div>
+      <div id="ocrblock" hidden style="margin-top:16px">
+        <p class="rowlabel">OCR text</p>
+        <div class="row" id="ocrrow"></div>
+      </div>
+    </div>
+    <div class="detail" id="detail" hidden></div>
+    <div id="meterblock" hidden>
+      <div class="meter" id="meter">
+        <span class="mk thr" style="left:40%">half of clean = 2.0</span>
+      </div>
+    </div>
+    <div class="legend" id="legend" hidden>
+      <span><i class="a"></i>feature on</span>
+      <span><i></i>off</span>
+      <span><i class="b"></i>lost: on in clean, now off</span>
+      <span><i class="c"></i>new: only in OCR</span>
+    </div>
+    <div id="freqview" hidden>
+      <div class="freq">
+        <div>
+          <p class="rowlabel">Clean text: 100 words</p>
+          <div class="dots" id="dotsA"></div>
+          <p class="big" id="fa">1 of 100 = 1%</p>
+        </div>
+        <div>
+          <p class="rowlabel">Junk OCR inserted: 100 tokens</p>
+          <div class="dots" id="dotsB"></div>
+          <p class="big" id="fb">20 of 100 = 20%</p>
+        </div>
+      </div>
+      <p style="margin:14px 0 0"><span class="big" id="aff">20 ÷ 1 = 20</span></p>
+    </div>
+  </div>
+
+  <section class="cap" id="cap"><h2 id="caph"></h2><p id="capp"></p></section>
+
+  <div class="ctrl">
+    <button id="prev">Back</button>
+    <button id="play" class="primary">Play</button>
+    <button id="next">Next</button>
+    <div class="dotsnav" id="nav" role="group" aria-label="Steps"></div>
+  </div>
+  
+          <p class="foot">Toy numbers: here a word has 24 lamps and three or four are on. In the real model a word has 2,048 lamps and exactly 32 are on.</p>
+        </div>
+
+        <h2>What to take from it</h2>
+        <p>Counting wrong characters understates the cost of OCR. A misread word loses most of the features the model relied on, and a correctly spelled neighbour can lose some too. Those lost features are what I measure in my research, and the lamps that light up mostly on OCR junk can show where a page is damaged even when no clean text exists.</p>
+        <p>See also: <a href="what-is-ocr.html">What is OCR, and why does it misread old newspapers?</a> and <a href="noise-is-not-always-a-bug.html">Noise is not always a bug</a>.</p>
+      </article>
+    </main>
+
+    <footer>
+<p>© <span id="year"></span> Emanuela Boros</p>
+</footer>
+  </div>
+
+  <script src="../script.js?v=202611031742"></script>
+  <script>
+(function(){
+  // Toy data. Values are how strongly a lamp is on; index is the lamp number (0..23).
+  var CLEAN=[ {t:'for',  on:{1:2.2,9:1.8,15:2.0}},
+              {t:'1350', on:{2:4.1,5:4.0,14:3.2,19:2.6}},
+              {t:'sold', on:{3:3.5,11:3.0,17:2.0}},
+              {t:'Brown',on:{6:4.4,8:2.8,13:2.5,22:1.9}} ];
+  var OCR  =[ {t:'for',  on:{1:1.0,9:1.7,15:1.9}},
+              {t:'1850', on:{2:3.9,5:1.5,20:2.4}},
+              {t:'sokl', on:{11:2.8,17:2.1,21:1.6}},
+              {t:'Brovvn',on:{8:0.9,13:2.4,18:2.0}} ];
+  var BAD=[false,true,true,true];
+  var HL=5, HLTOK=1;
+  var STEPS=[
+    {h:'Start with clean text', p:'A scanned newspaper line, typed correctly by a human. We call this the reference: “for 1350 sold Brown”.'},
+    {h:'The model reads each word', p:'Inside the NER model, every word becomes a long list of numbers. A helper network (a sparse autoencoder) rewrites that list as a row of lamps, one lamp per feature. For now every lamp is off.'},
+    {h:'Only a few lamps turn on', p:'Per word, most lamps stay off and a handful turn on. In code: a feature is a column of a big array, and it fires when its value is greater than 0. In the paper, 32 of 2,048 lamps are on for each word.'},
+    {h:'One lamp = one pattern', p:'After training, a lamp tends to mean one recognisable thing. The highlighted lamp on “1350” fires on the digit 3 in any language: 3, three, trois. We learn this by looking at which words switch it on most.'},
+    {h:'Now the OCR version', p:'OCR read “1350” as “1850”, “sold” as “sokl”, “Brown” as “Brovvn”. The same lamps are read again, this time for the OCR words. Notice that the word “for” was transcribed correctly.'},
+    {h:'Compare the same lamp', p:'The digit-3 lamp was at 4.0 on the clean word and 1.5 on the OCR word. The paper’s rule: a feature is lost if its OCR value is below half of its clean value. Half of 4.0 is 2.0, and 1.5 is below it, so the lamp is lost.'},
+    {h:'Damage spills over', p:'Count the lost lamps per word. The misread words lose most of theirs. But “for”, which is spelled correctly, also loses one lamp out of its three. That is spillover: a wrong neighbour affects a correct word.'},
+    {h:'What “frequency” means', p:'Frequency is how often a lamp is on, as a share of the words you look at. Take a lamp that detects garbled letter strings. It is on for 1 in 100 clean words but 20 in 100 junk tokens that OCR inserted. Dividing gives a noise affinity of 20.'},
+    {h:'Why it matters', p:'A lamp with high noise affinity fires mostly on OCR junk, so it works as a smoke detector: it needs no clean text. Lost lamps show what the model missed, and noise lamps show where, even when you only have the OCR.'}
+  ];
+  var cur=0, timer=null, playing=false;
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(id){return document.getElementById(id)};
+
+  function lampsFor(n){var s='';for(var i=0;i<24;i++)s+='<div class="lamp" data-i="'+i+'"></div>';return s}
+  function buildRow(rowId,data,ocr){
+    var h='';
+    data.forEach(function(d,k){
+      h+='<div class="tok"><div class="chip'+(ocr&&BAD[k]?' bad':'')+'">'+d.t+'</div>'+
+         '<div class="grid">'+lampsFor()+'</div><div class="fl"></div></div>';
+    });
+    $(rowId).innerHTML=h;
+  }
+  buildRow('cleanrow',CLEAN,false); buildRow('ocrrow',OCR,true);
+  function dots(id,n){var h='';for(var i=0;i<100;i++)h+='<span'+(i<n?' class="on"':'')+'></span>';$(id).innerHTML=h}
+  dots('dotsA',1); dots('dotsB',20);
+
+  function paint(step){
+    var cleanTok=$('cleanrow').children, ocrTok=$('ocrrow').children;
+    var showOn=step>=2, showHL=(step===3||step===5);
+    for(var k=0;k<4;k++){
+      var cl=cleanTok[k].querySelectorAll('.lamp'), oc=ocrTok[k].querySelectorAll('.lamp');
+      var lost=0,total=Object.keys(CLEAN[k].on).length;
+      for(var i=0;i<24;i++){
+        cl[i].className='lamp'+(showOn&&CLEAN[k].on[i]?' on':'');
+        var c=CLEAN[k].on[i], o=OCR[k].on[i], cls='lamp';
+        if(step>=5){
+          if(c&&(!o||o<0.5*c)){cls+=' lost';lost++}
+          else if(c&&o)cls+=' on';
+          else if(o&&!c)cls+=' new';
+        }else if(o)cls+=' on';
+        oc[i].className=cls;
+        if(showHL&&k===HLTOK&&i===HL){cl[i].className+=' hl'; if(step===5)oc[i].className+=' hl'}
+      }
+      ocrTok[k].querySelector('.fl').innerHTML=step>=6?('<b>'+lost+'</b> of '+total+' lost'):'';
+      cleanTok[k].querySelector('.fl').innerHTML=step>=2&&step<4?(total+' on'):'';
+    }
+    $('ocrblock').hidden=step<4||step>=7;
+    $('bulbview').hidden=step>=7&&step<8?true:false;
+    $('freqview').hidden=!(step===7);
+    $('bulbview').hidden=(step===7);
+    $('legend').hidden=!(step>=5&&step!==7);
+    $('meterblock').hidden=step!==5;
+    var d=$('detail');
+    if(step===3){d.hidden=false;d.innerHTML='Lamp #905 &middot; fires on <code>3</code>, <code>three</code>, <code>trois</code> &middot; value on “1350”: <code>4.0</code>'}
+    else if(step===5){d.hidden=false;d.innerHTML='Lamp #905 on the word 1350: clean <code>4.0</code> &rarr; OCR <code>1.5</code>. Rule: lost if <code>OCR &lt; 0.5 &times; clean</code>, here <code>1.5 &lt; 2.0</code> &rarr; <b style="color:var(--lost)">lost</b>'}
+    else if(step===8){d.hidden=false;d.innerHTML='Lost lamps &rarr; what the model missed. Lamps with high noise affinity &rarr; where the OCR is junk. Both can be counted per page.'}
+    else d.hidden=true;
+    if(step===5){
+      var m=$('meter');
+      m.innerHTML='<span class="mk thr" style="left:40%">half of clean = 2.0</span>'+
+        '<span class="mk clean" style="left:80%">clean 4.0</span><span class="mk ocr" style="left:30%">OCR 1.5</span>';
+    }
+    if(step===7){$('fa').textContent='1 of 100 = 1%';$('fb').textContent='20 of 100 = 20%';$('aff').textContent='noise affinity = 20% ÷ 1% = 20'}
+    $('caph').textContent=STEPS[step].h; $('capp').textContent=STEPS[step].p;
+    $('prev').disabled=step===0; $('next').disabled=step===STEPS.length-1;
+    var nav=$('nav').children; for(var j=0;j<nav.length;j++){nav[j].setAttribute('aria-current',j===step?'true':'false')}
+  }
+  // step 8 shows the bulb view again with all marks
+  var origPaint=paint;
+  paint=function(step){
+    origPaint(step===8?6:step);
+    $('caph').textContent=STEPS[step].h; $('capp').textContent=STEPS[step].p;
+    var d=$('detail');
+    if(step===8){d.hidden=false;d.innerHTML='Lost lamps &rarr; what the model missed. Lamps with high noise affinity &rarr; where the OCR is junk. Both can be counted without a human reading the page.'}
+    $('prev').disabled=step===0; $('next').disabled=step===STEPS.length-1;
+    var nav=$('nav').children; for(var j=0;j<nav.length;j++){nav[j].setAttribute('aria-current',j===step?'true':'false')}
+  };
+
+  var navh='';STEPS.forEach(function(s,i){navh+='<button type="button" aria-label="Step '+(i+1)+': '+s.h+'" data-s="'+i+'"></button>'});$('nav').innerHTML=navh;
+  function go(n){cur=Math.max(0,Math.min(STEPS.length-1,n));paint(cur)}
+  function tick(){ if(cur>=STEPS.length-1){go(0)} else go(cur+1) }
+  function setPlay(on){
+    playing=on; $('play').textContent=on?'Pause':'Play';
+    if(timer){clearInterval(timer);timer=null}
+    if(on)timer=setInterval(tick,4500);
+  }
+  $('prev').onclick=function(){setPlay(false);go(cur-1)};
+  $('next').onclick=function(){setPlay(false);go(cur+1)};
+  $('play').onclick=function(){
+    if(playing){setPlay(false)}
+    else{ if(cur>=STEPS.length-1)go(0); else go(cur+1); setPlay(true) }
+  };
+  $('nav').onclick=function(e){var s=e.target.getAttribute&&e.target.getAttribute('data-s');if(s!==null&&s!==undefined){setPlay(false);go(+s)}};
+  go(0); setPlay(false);
+})();
+</script>
+</body>
+</html>
