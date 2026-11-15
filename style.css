@@ -645,6 +645,7 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .pub-count { font-family: var(--mono); font-size: .76rem; color: var(--muted); }
 
 .pub-year-group { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.5rem; border-top: 1px solid var(--rule); padding: 1.6rem 0 .6rem; }
+.pub-item[hidden], .pub-year-group[hidden] { display: none; }
 .pub-year-group h2 { font-family: var(--mono); font-size: .95rem; font-weight: 400; color: var(--accent); position: sticky; top: 90px; align-self: start; margin: .2rem 0 0; }
 .pub-year-group ol { list-style: none; margin: 0; padding: 0; }
 .pub-item { display: grid; grid-template-columns: minmax(0, 1fr) 4rem; gap: 1.2rem; padding: 0 0 1.4rem; }
