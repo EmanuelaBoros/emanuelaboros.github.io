@@ -301,6 +301,13 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     });
   }
 
+  // Homepage: order the research threads like the themes page (by number of papers)
+  const threadList = document.querySelector('.thread-list');
+  if (threadList) {
+    const size = (a) => PUBLICATIONS.filter((p) => p.theme === themeIds[a.getAttribute('href').split('#')[1]]).length;
+    [...threadList.querySelectorAll('a.thread')].sort((a, b) => size(b) - size(a)).forEach((a) => threadList.append(a));
+  }
+
   // Homepage: only the selected papers, marked home: true, newest first
   const homeList = document.getElementById('homePubs');
   if (homeList) {
