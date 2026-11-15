@@ -746,6 +746,9 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 @keyframes skKnock { 0%, 10%, 33%, 43%, 66%, 76%, 100% { transform: none; } 3%, 36%, 69% { transform: translateX(2.4px) rotate(.7deg); } 6%, 39%, 72% { transform: translateX(-1.6px) rotate(-.4deg); } }
 .sketch .toc { opacity: 0; }
 .sketch.play .toc { animation: skToc 2.7s linear var(--s) 3 both; }
+.sketch.scribble svg { background: #0d0c0b; }
+.sketch.scribble .ink { stroke: #f3efe6; }
+.sketch.scribble text { letter-spacing: .02em; }
 @keyframes skToc { 0% { opacity: 0; } 4%, 26% { opacity: 1; } 34%, 100% { opacity: 0; } }
 .sketch .shrink-a, .sketch .shrink-b { transform-box: view-box; transform-origin: 200px 148px; }
 .sketch .shrink-b { opacity: 0; }
