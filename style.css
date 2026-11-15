@@ -622,6 +622,7 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .pub-chart svg:hover .bar { opacity: .55; }
 .pub-chart svg .bar:hover { opacity: 1; }
 .bar-conf { fill: var(--accent); background: var(--accent); }
+.bar-interdisciplinary { fill: var(--t-multimodal); background: var(--t-multimodal); }
 .bar-national { fill: var(--t-applied); background: var(--t-applied); }
 .bar-journal { fill: var(--t-cultural); background: var(--t-cultural); }
 .bar-workshop { fill: var(--t-historical); background: var(--t-historical); }
@@ -656,13 +657,14 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .5rem; margin: 0; }
 .pub-venue-name { font-size: .86rem; font-style: italic; font-family: var(--serif); color: var(--ink-2); margin-right: .2rem; }
 .pub-type { font-family: var(--mono); font-size: .64rem; letter-spacing: .03em; padding: .1rem .45rem; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); }
-.pub-type-conf, .pub-type-national, .pub-type-journal, .pub-type-workshop, .pub-type-preprint, .pub-type-thesis {
+.pub-type-conf, .pub-type-interdisciplinary, .pub-type-national, .pub-type-journal, .pub-type-workshop, .pub-type-preprint, .pub-type-thesis {
   --tag: var(--accent);
   background: color-mix(in srgb, var(--tag) 16%, var(--paper, transparent));
   border-color: color-mix(in srgb, var(--tag) 38%, transparent);
   color: color-mix(in srgb, var(--tag) 62%, var(--ink));
 }
 .pub-type-conf { --tag: var(--accent); }
+.pub-type-interdisciplinary { --tag: var(--t-multimodal); }
 .pub-type-national { --tag: var(--t-applied); }
 .pub-type-journal { --tag: var(--t-cultural); }
 .pub-type-workshop { --tag: var(--t-historical); }

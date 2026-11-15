@@ -1,12 +1,12 @@
 // Publication list, rendered by publications.html.
 // Source: Google Scholar (Nov 2026), deduplicated and cleaned by hand.
-// type: conf | national | journal | workshop | preprint | thesis   lang: 'fr' for French papers
+// type: conf | interdisciplinary | national | journal | workshop | preprint | thesis   lang: 'fr' for French papers
 // page: optional link to a local page about the paper
 // code: optional link to the paper's code repository (shown on the homepage)
 const PUBLICATIONS = [
   // 2026
   { year: 2026, type: 'journal', theme: 'cultural', title: 'Weaponizing Cultural Heritage in the Digital Age: Evidence from Wikipedia Revisions', authors: 'H. Tamrazyan, M. Garambois, E. Boros', venue: 'International Journal on Digital Libraries 27(4)', short: 'IJDL', url: 'https://doi.org/10.1007/s00799-026-00452-0' },
-  { year: 2026, type: 'conf', theme: 'historical', title: 'Meaning, similarity, and relevance. Reflections on the integration of Multilingual and Multimodal Embeddings in Historical Media Research', authors: 'M. Düring, V. Cao, K. Beelen, C. Mello, M. Ehrmann, S. Clematide, E. Boros, et al.', venue: 'DH2026', url: 'https://zenodo.org/records/24164018' },
+  { year: 2026, type: 'interdisciplinary', theme: 'historical', title: 'Meaning, similarity, and relevance. Reflections on the integration of Multilingual and Multimodal Embeddings in Historical Media Research', authors: 'M. Düring, V. Cao, K. Beelen, C. Mello, M. Ehrmann, S. Clematide, E. Boros, et al.', venue: 'DH2026', url: 'https://zenodo.org/records/24164018' },
   { year: 2026, type: 'workshop', theme: 'cultural', title: 'Pluralistic Annotation of Cultural Weaponization on Wikipedia: A Multi-Annotator Case Study across Ukraine and Armenia', authors: 'C. Hamdane, H. Perekhoda, E. Boros, S. Prezioso, H. Tamrazyan', venue: 'First Workshop on Pluralistic AI NLP @ EMNLP 2026', short: 'Pluralistic AI NLP @ EMNLP' },
   { year: 2026, type: 'conf', home: true, theme: 'historical', code: 'https://github.com/EmanuelaBoros/mdpo-nel', title: 'Beyond Single-Negative Preference: Multi-Negative DPO for LLM-Centric Historical Entity Linking', authors: 'T. N. Nguyen, E. Boros, A. Hamdi, A. Jatowt, M. Coustaty, A. Doucet', venue: 'Findings of EMNLP 2026' },
   { year: 2026, type: 'preprint', theme: 'noisy', title: 'OCR Post-Correction in the Age of LLMs: A Survey of Historical Document Processing', authors: 'E. Boros, A. Hamdi, W. Sun, T. N. Nguyen, M. Coustaty, A. Doucet', venue: 'Survey, 2026' },
@@ -26,8 +26,8 @@ const PUBLICATIONS = [
   { year: 2026, type: 'national', theme: 'semantic', lang: 'fr', title: 'Appariement de trames narratives : dépasser le chevauchement lexical en recherche d’information', authors: 'A. Hamdi, E. Boros, J. G. Moreno, A. Doucet', venue: 'CORIA 2026' },
   // 2025
   { year: 2025, type: 'conf', home: true, theme: 'historical', code: 'https://github.com/EmanuelaBoros/temporal-ner', title: 'A Study of Temporal Fusion Strategies for Named Entity Recognition in Historical Texts', authors: 'E. Boros', venue: 'TPDL 2025', page: 'papers/2025-a-study-of-temporal-fusion-strategies-for-named-entity-recognition-in-histo.html' },
-  { year: 2025, type: 'conf', theme: 'cultural', title: 'Corpus-Based SKOS Development for Underrepresented and Endangered Ukrainian Epigraphic Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'Digital Heritage 2025' },
-  { year: 2025, type: 'conf', theme: 'cultural', title: 'Corpus-Based SKOS Development for Ukrainian Epigraphy: A Digital Approach to Preserving Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'DH2025 · presentation' },
+  { year: 2025, type: 'interdisciplinary', theme: 'cultural', title: 'Corpus-Based SKOS Development for Underrepresented and Endangered Ukrainian Epigraphic Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'Digital Heritage 2025' },
+  { year: 2025, type: 'interdisciplinary', theme: 'cultural', title: 'Corpus-Based SKOS Development for Ukrainian Epigraphy: A Digital Approach to Preserving Heritage', authors: 'H. Tamrazyan, E. Boros', venue: 'DH2025 · presentation' },
   // 2024
   { year: 2024, type: 'workshop', home: true, theme: 'noisy', code: 'https://github.com/impresso/llm-transcript-postcorrection', title: 'Post-Correction of Historical Text Transcripts with Large Language Models: An Exploratory Study', authors: 'E. Boros, M. Ehrmann, M. Romanello, S. Najem-Meyer, F. Kaplan', venue: 'LaTeCH-CLfL @ ACL 2024', cited: 89 },
   { year: 2024, type: 'conf', theme: 'noisy', code: 'https://github.com/EmanuelaBoros/ocr-sensitive-neurons', title: 'Investigating OCR-Sensitive Neurons to Improve Entity Recognition in Historical Documents', authors: 'E. Boros, M. Ehrmann', venue: 'ICADL 2024', cited: 3, page: 'papers/2024-investigating-ocr-sensitive-neurons-to-improve-entity-recognition-in-histor.html' },
@@ -102,9 +102,9 @@ const PUBLICATIONS = [
   { year: 2009, type: 'workshop', theme: 'multimodal', title: 'UAIC: Participation in ImageCLEF 2009 Robot Vision Task', authors: 'E. Boros, G. Roşca, A. Iftene', venue: 'CLEF 2009', cited: 7 },
 ];
 
-const TYPE_FILLS = { conf: 'var(--accent)', national: 'var(--t-applied)', journal: 'var(--t-cultural)', workshop: 'var(--t-historical)', preprint: 'var(--t-semantic)', thesis: 'var(--ink)' };
+const TYPE_FILLS = { conf: 'var(--accent)', interdisciplinary: 'var(--t-multimodal)', national: 'var(--t-applied)', journal: 'var(--t-cultural)', workshop: 'var(--t-historical)', preprint: 'var(--t-semantic)', thesis: 'var(--ink)' };
 const TYPE_LABELS = {
-  conf: 'Conference', national: 'National conference', journal: 'Journal', workshop: 'Workshop & shared task', preprint: 'Preprint & data', thesis: 'Thesis',
+  conf: 'Conference', interdisciplinary: 'Interdisciplinary conference', national: 'National conference', journal: 'Journal', workshop: 'Workshop & shared task', preprint: 'Preprint & data', thesis: 'Thesis',
 };
 
 // Venue rankings: CORE 2023 for conferences, SCImago quartile for journals.
@@ -393,7 +393,7 @@ const previewOf = (p) => Object.entries(PREVIEWS).find(([k]) => p.title.startsWi
     const first = 2009, last = Math.max(...years);
     const span = [];
     for (let y = first; y <= last; y++) span.push(y);
-    const order = ['conf', 'national', 'journal', 'workshop', 'preprint', 'thesis'];
+    const order = ['conf', 'interdisciplinary', 'national', 'journal', 'workshop', 'preprint', 'thesis'];
     const max = Math.max(...span.map((y) => PUBLICATIONS.filter((p) => p.year === y).length));
     const W = 900, H = 240, pad = 28, bw = (W - pad * 2) / span.length;
     const unit = (H - 50) / max;
