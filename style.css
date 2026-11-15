@@ -749,6 +749,10 @@ a.post-card:hover { border-color: var(--ink); transform: translateY(-2px); color
 .sketch.scribble svg { background: #0d0c0b; }
 .sketch.scribble .ink { stroke: #f3efe6; }
 .sketch.scribble text { letter-spacing: .02em; }
+@keyframes skRunR { 0%, 8% { transform: none; opacity: 1; } 80% { transform: translate(98px, 0); opacity: 1; } 100% { transform: translate(112px, 0); opacity: 0; } }
+@keyframes skRunG { 0%, 8% { transform: none; opacity: 1; } 82% { transform: translate(168px, 0); opacity: 1; } 100% { transform: translate(190px, 0); opacity: 0; } }
+.sketch.play .runR { animation: skRunR 3.4s ease-in var(--s) both; }
+.sketch.play .runG { animation: skRunG 3.9s ease-in-out calc(var(--s) + .5s) both; }
 @keyframes skToc { 0% { opacity: 0; } 4%, 26% { opacity: 1; } 34%, 100% { opacity: 0; } }
 .sketch .shrink-a, .sketch .shrink-b { transform-box: view-box; transform-origin: 200px 148px; }
 .sketch .shrink-b { opacity: 0; }
