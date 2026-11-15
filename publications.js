@@ -5,6 +5,7 @@
 // code: optional link to the paper's code repository (shown on the homepage)
 const PUBLICATIONS = [
   // 2026
+  { year: 2026, type: 'journal', theme: 'cultural', title: 'Weaponizing Cultural Heritage in the Digital Age: Evidence from Wikipedia Revisions', authors: 'H. Tamrazyan, M. Garambois, E. Boros', venue: 'International Journal on Digital Libraries 27(4)', short: 'IJDL', url: 'https://doi.org/10.1007/s00799-026-00452-0' },
   { year: 2026, type: 'conf', theme: 'historical', title: 'Meaning, similarity, and relevance. Reflections on the integration of Multilingual and Multimodal Embeddings in Historical Media Research', authors: 'M. Düring, V. Cao, K. Beelen, C. Mello, M. Ehrmann, S. Clematide, E. Boros, et al.', venue: 'DH2026', url: 'https://zenodo.org/records/24164018' },
   { year: 2026, type: 'workshop', theme: 'cultural', title: 'Pluralistic Annotation of Cultural Weaponization on Wikipedia: A Multi-Annotator Case Study across Ukraine and Armenia', authors: 'C. Hamdane, H. Perekhoda, E. Boros, S. Prezioso, H. Tamrazyan', venue: 'First Workshop on Pluralistic AI NLP @ EMNLP 2026', short: 'Pluralistic AI NLP @ EMNLP' },
   { year: 2026, type: 'conf', home: true, theme: 'historical', code: 'https://github.com/EmanuelaBoros/mdpo-nel', title: 'Beyond Single-Negative Preference: Multi-Negative DPO for LLM-Centric Historical Entity Linking', authors: 'T. N. Nguyen, E. Boros, A. Hamdi, A. Jatowt, M. Coustaty, A. Doucet', venue: 'Findings of EMNLP 2026' },
