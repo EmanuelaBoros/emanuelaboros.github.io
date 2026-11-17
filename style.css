@@ -1249,3 +1249,15 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 .photo-card .frame > video.is-ready { opacity: 1; }
 .photo-card[data-video] img, .photo-card[data-video]:hover img { animation: none; transform: none; scale: 1; }
 .photo-card[data-video] .art-marks { z-index: 2; }
+/* gothic night sketches: painted scenes that fade in, with flickering candles */
+.sketch.gothic svg { background: #0e1118; }
+.sketch .drop { opacity: 0; }
+.sketch.play .drop { animation: gDrop 3.4s ease-out var(--s) both; }
+@keyframes gDrop { from { opacity: 0; transform: translateY(-26px); } to { opacity: var(--o, 1); transform: none; } }
+.sketch .flame { transform-box: fill-box; transform-origin: 50% 100%; }
+.sketch.play .flame { animation: gFlame 1.3s ease-in-out infinite alternate; }
+@keyframes gFlame { from { transform: scale(1, 1); opacity: .95; } to { transform: scale(.82, 1.18) translateX(.6px); opacity: .75; } }
+.sketch .trainin { transform-box: view-box; }
+.sketch.play .trainin { animation: gTrain 7s cubic-bezier(.2, .6, .3, 1) 3s both; }
+@keyframes gTrain { from { transform: translateX(260px); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .sketch .drop { opacity: var(--o, 1); } .sketch.gothic .flame { animation: none; } }
