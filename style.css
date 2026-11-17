@@ -1270,3 +1270,33 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 @keyframes gTwinkle { 0%, 100% { opacity: .95; transform: scale(1); } 50% { opacity: .25; transform: scale(.7); } }
 .sketch.play .sway { animation: gSway 2.4s ease-in-out infinite alternate; transform-origin: 0 100%; }
 @keyframes gSway { from { transform: rotate(-6deg) skewX(-4deg); } to { transform: rotate(7deg) skewX(5deg); } }
+/* storybook sketches: painted greens, iron beds, small moving things */
+.sketch.storybook svg { background: #2f6b49; }
+.sketch.storybook .mote { opacity: .5; }
+.sketch.play .mote { animation: gMote 7s ease-in-out infinite alternate; }
+@keyframes gMote { from { transform: translate(0, 0); opacity: .15; } to { transform: translate(6px, -16px); opacity: .85; } }
+.sketch .swayl { transform-box: fill-box; transform-origin: 50% 0; }
+.sketch.play .swayl { animation: gSwayL 5s ease-in-out infinite alternate; }
+@keyframes gSwayL { from { transform: skewX(-2.5deg); } to { transform: skewX(2.5deg); } }
+.sketch.play .runbet { animation: gRunBet 9s ease-in-out var(--s) infinite alternate both; }
+@keyframes gRunBet { 0% { transform: translate(-50px, -46px); } 50% { transform: translate(60px, 10px); } 100% { transform: translate(190px, -52px); } }
+.sketch .bedcome { opacity: 0; }
+.sketch.play .bedgone { transform-origin: 200px 196px; animation: gBedGone 4.5s ease-in var(--s) both; }
+.sketch.play .bedcome { animation: gBedCome 3s ease-out var(--s) both; }
+@keyframes gBedGone { 0% { opacity: 1; transform: none; } 70% { opacity: .6; transform: scale(.7, .55); } 100% { opacity: 0; transform: scale(.45, .3); } }
+@keyframes gBedCome { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+.sketch.play .bob { animation: gBob .55s ease-in-out infinite alternate; }
+@keyframes gBob { from { transform: scale(1, 1); } to { transform: scale(1.03, .94); } }
+.sketch .crumb { opacity: 0; }
+.sketch.play .crumb { animation: gCrumb 2.2s ease-in infinite; }
+@keyframes gCrumb { 0% { opacity: 0; transform: translate(0, 0); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(-8px, 70px); } }
+.sketch.play .flapL { animation: gFlapL .9s ease-in-out infinite alternate; }
+.sketch.play .flapR { animation: gFlapR .9s ease-in-out infinite alternate; }
+@keyframes gFlapL { from { transform: scale(1, 1); } to { transform: scale(.82, 1.06); } }
+@keyframes gFlapR { from { transform: scale(1, 1); } to { transform: scale(.82, 1.06); } }
+.sketch.play .slide { animation: gSlide 10s ease-in-out var(--s) both; }
+@keyframes gSlide { from { transform: none; } to { transform: translateX(46px); } }
+.sketch .ears { transform-box: fill-box; transform-origin: 50% 100%; }
+.sketch.play .ears { animation: gEars 3s ease-in-out infinite; }
+@keyframes gEars { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .sketch .bedgone { opacity: 0; } .sketch .bedcome { opacity: 1; } }
