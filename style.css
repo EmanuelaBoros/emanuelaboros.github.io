@@ -1261,3 +1261,12 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 .sketch.play .trainin { animation: gTrain 7s cubic-bezier(.2, .6, .3, 1) 3s both; }
 @keyframes gTrain { from { transform: translateX(260px); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .sketch .drop { opacity: var(--o, 1); } .sketch.gothic .flame { animation: none; } }
+/* ink-wash night sketches: grey paper, torn notes, twinkling stars */
+.sketch.inkwash svg { background: #7a7a73; }
+.sketch .flutter, .sketch .twinkle, .sketch .sway { transform-box: fill-box; }
+.sketch.play .flutter { animation: gFlutter 5s ease-in-out infinite alternate; }
+@keyframes gFlutter { 0% { transform: translate(0, 0) rotate(-2.5deg); } 50% { transform: translate(3px, -5px) rotate(1.5deg); } 100% { transform: translate(-2px, 3px) rotate(3deg); } }
+.sketch.play .twinkle { animation: gTwinkle 3s ease-in-out infinite; transform-origin: center; }
+@keyframes gTwinkle { 0%, 100% { opacity: .95; transform: scale(1); } 50% { opacity: .25; transform: scale(.7); } }
+.sketch.play .sway { animation: gSway 2.4s ease-in-out infinite alternate; transform-origin: 0 100%; }
+@keyframes gSway { from { transform: rotate(-6deg) skewX(-4deg); } to { transform: rotate(7deg) skewX(5deg); } }
