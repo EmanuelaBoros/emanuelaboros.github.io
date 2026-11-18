@@ -1303,3 +1303,9 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 
 .story-body .story-sign{text-align:center;letter-spacing:.08em;margin:1.4em 0}
 .story-body .story-break{text-align:center;letter-spacing:.7em;margin:2em 0;opacity:.8;font-size:1.5em;line-height:1}
+
+/* about: small looping clip beside the description */
+.about-clip{float:right;width:150px;margin:.3rem 0 1rem 1.6rem}
+.about-clip video{display:block;width:100%;height:auto;border-radius:6px}
+.about-prose .facts{clear:both}
+@media (max-width:560px){.about-clip{width:110px}}
