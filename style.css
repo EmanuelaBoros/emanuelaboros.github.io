@@ -1300,3 +1300,5 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 .sketch.play .ears { animation: gEars 3s ease-in-out infinite; }
 @keyframes gEars { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(5deg); } }
 @media (prefers-reduced-motion: reduce) { .sketch .bedgone { opacity: 0; } .sketch .bedcome { opacity: 1; } }
+
+.story-body .story-sign{text-align:center;letter-spacing:.08em;margin:1.4em 0}
