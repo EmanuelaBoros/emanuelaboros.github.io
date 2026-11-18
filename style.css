@@ -1302,4 +1302,4 @@ details[open] .pub-toggle::after { transform: rotate(0); }
 @media (prefers-reduced-motion: reduce) { .sketch .bedgone { opacity: 0; } .sketch .bedcome { opacity: 1; } }
 
 .story-body .story-sign{text-align:center;letter-spacing:.08em;margin:1.4em 0}
-.story-body .story-break{text-align:center;letter-spacing:.6em;margin:2em 0;opacity:.75;font-size:2.2em;font-weight:900;line-height:1}
+.story-body .story-break{text-align:center;letter-spacing:.7em;margin:2em 0;opacity:.8;font-size:1.5em;line-height:1}
